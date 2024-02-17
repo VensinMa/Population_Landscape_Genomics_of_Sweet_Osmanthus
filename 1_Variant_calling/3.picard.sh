@@ -15,6 +15,23 @@ reference_genome="/public1/guop/mawx/workspace/wild_snpcalling/0.genome/LYG.hic.
 # 创建输出目录（如果不存在）
 mkdir -p "$output_dir/sam" "$output_dir/bam" "$output_dir/sorted_bam" "$output_dir/markdup" "$gatk_dir" "$output_dir/tmp"
 
+# 构建参考基因组索引（如果尚未构建）
+if [ ! -f "$reference_genome.bwt" ]; then
+    echo "Building BWA index for reference genome..." >> "$log_file"
+    bwa index "$reference_genome" >> "$log_file" 2>&1
+fi
+
+if [ ! -f "$reference_genome.fai" ]; then
+    echo "Creating fasta index for reference genome..." >> "$log_file"
+    samtools faidx "$reference_genome" >> "$log_file" 2>&1
+fi
+
+dict_file="${reference_genome%.*}.dict"
+if [ ! -f "$dict_file" ]; then
+    echo "Creating sequence dictionary for reference genome..." >> "$log_file"
+    gatk CreateSequenceDictionary -R "$reference_genome" -O "$dict_file" >> "$log_file" 2>&1
+fi
+
 # 设置日志文件
 log_file="$output_dir/bwa_picard_gatk_processing.log"
 
