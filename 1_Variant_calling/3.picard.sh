@@ -13,7 +13,7 @@ gatk_dir="/public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf"
 reference_genome="/public1/guop/mawx/workspace/wild_snpcalling/0.genome/LYG.hic.fasta"
 
 # 创建输出目录（如果不存在）
-mkdir -p "$output_dir/sam" "$output_dir/bam" "$output_dir/sorted_bam" "$output_dir/markdup" "$gatk_dir" "$output_dir/tmp"
+mkdir -p tmp "$output_dir/sam" "$output_dir/bam" "$output_dir/sorted_bam" "$output_dir/markdup" "$gatk_dir" "$output_dir/tmp"
 
 # 设置日志文件
 log_file="$output_dir/gatk_picard_HaplotypeCaller_processing.log"
