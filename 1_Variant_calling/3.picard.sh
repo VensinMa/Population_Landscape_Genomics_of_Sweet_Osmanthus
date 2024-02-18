@@ -15,6 +15,9 @@ reference_genome="/public1/guop/mawx/workspace/wild_snpcalling/0.genome/LYG.hic.
 # 创建输出目录（如果不存在）
 mkdir -p "$output_dir/sam" "$output_dir/bam" "$output_dir/sorted_bam" "$output_dir/markdup" "$gatk_dir" "$output_dir/tmp"
 
+# 设置日志文件
+log_file="$output_dir/gatk_picard_HaplotypeCaller_processing.log"
+
 # 构建参考基因组索引（如果尚未构建）
 if [ ! -f "$reference_genome.bwt" ]; then
     echo "Building BWA index for reference genome..." >> "$log_file"
@@ -32,9 +35,6 @@ if [ ! -f "$dict_file" ]; then
     gatk CreateSequenceDictionary -R "$reference_genome" -O "$dict_file" >> "$log_file" 2>&1
 fi
 
-# 设置日志文件
-log_file="$output_dir/gatk_picard_HaplotypeCaller_processing.log"
-
 # 记录脚本开始时间
 echo "Script started at $(date)" >> "$log_file"
 
@@ -45,7 +45,7 @@ process_bam() {
 
     # Picard MarkDuplicates去重
     echo "Marking duplicates for $base_name at $(date)" >> "$log_file"
-    java -jar /path/to/picard/picard.jar MarkDuplicates \
+    java -jar /public1/guop/mawx/software/picard/picard.jar MarkDuplicates \
         -I "$sorted_bam_path" \
         -O "$output_dir/markdup/${base_name}.markdup.bam" \
         -M "$output_dir/markdup/${base_name}.markdup.metrics.txt" \
