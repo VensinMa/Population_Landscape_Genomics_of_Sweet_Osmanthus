@@ -33,7 +33,7 @@ if [ ! -f "$dict_file" ]; then
 fi
 
 # 设置日志文件
-log_file="$output_dir/bwa_picard_gatk_processing.log"
+log_file="$output_dir/gatk_picard_HaplotypeCaller_processing.log"
 
 # 记录脚本开始时间
 echo "Script started at $(date)" >> "$log_file"
@@ -59,7 +59,7 @@ process_bam() {
     echo "Indexing marked duplicates BAM completed for $base_name at $(date)" >> "$log_file"
 
     # 运行GATK HaplotypeCaller进行变异检测
-    echo "Running GATK HaplotypeCaller for $base_name at $(date)" >> "$log_file"
+    echo "Running GATK HaplotypeC(aller for $base_name at $(date)" >> "$log_file"
     gatk --java-options '-Xmx32g -XX:ParallelGCThreads=16 -Djava.io.tmpdir=./tmp' HaplotypeCaller \
         -R "$reference_genome" \
         -I "$output_dir/markdup/${base_name}.markdup.bam" \
