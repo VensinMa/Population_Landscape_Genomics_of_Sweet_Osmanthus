@@ -7,7 +7,7 @@ raw_data_dir="/public1/guop/mawx/workspace/wild_snpcalling/2.cleaned_data"
 output_dir="/public1/guop/mawx/workspace/wild_snpcalling/3.bwa_sam_bam"
 
 # 设置GATK输出目录
-gatk_dir="/public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf"
+gatk_dir="/public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/raw_gvcf"
 
 # 定义参考基因组文件
 reference_genome="/public1/guop/mawx/workspace/wild_snpcalling/0.genome/LYG.hic.fasta"
