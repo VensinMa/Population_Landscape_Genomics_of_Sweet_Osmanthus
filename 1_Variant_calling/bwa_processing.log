@@ -1,0 +1,2144 @@
+BWA processing started at 2024年 02月 10日 星期六 14:17:57 CST
+Starting BWA-MEM for BN_3
+Starting BWA-MEM for BN_2
+Starting BWA-MEM for BN_4
+Starting BWA-MEM for BN_5
+Starting BWA-MEM for BN_7
+Starting BWA-MEM for BN_9
+Starting BWA-MEM for CP_1
+Starting BWA-MEM for CP_2
+Starting BWA-MEM for CP_3
+Starting BWA-MEM for CP_4
+Starting BWA-MEM for CP_5
+Starting BWA-MEM for CP_6
+Starting BWA-MEM for CX_2
+Starting BWA-MEM for CX_10
+Starting BWA-MEM for CX_3
+Starting BWA-MEM for CX_4
+Starting BWA-MEM for CX_5
+Starting BWA-MEM for CX_7
+Starting BWA-MEM for CX_9
+Starting BWA-MEM for DA_1
+Starting BWA-MEM for DA_2
+Starting BWA-MEM for DA_4
+Starting BWA-MEM for DA_6
+Starting BWA-MEM for DA_7
+Starting BWA-MEM for DA_8
+Starting BWA-MEM for DRS_2
+Starting BWA-MEM for DRS_1
+Starting BWA-MEM for DRS_4
+Starting BWA-MEM for DRS_5
+Starting BWA-MEM for DRS_6
+Starting BWA-MEM for DST_1
+Starting BWA-MEM for DST_2
+Starting BWA-MEM for DRS_7
+Starting BWA-MEM for DST_4
+Starting BWA-MEM for DST_5
+Starting BWA-MEM for DST_7
+Starting BWA-MEM for DST_9
+Starting BWA-MEM for DST_8
+Starting BWA-MEM for DYNC_1
+Starting BWA-MEM for DYNC_10
+BWA-MEM completed for DA_7
+Converting SAM to BAM for DA_7
+BWA-MEM completed for BN_2
+Converting SAM to BAM for BN_2
+SAM to BAM conversion completed for DA_7
+Sorting BAM for DA_7
+BWA-MEM completed for DA_8
+Converting SAM to BAM for DA_8
+SAM to BAM conversion completed for BN_2
+Sorting BAM for BN_2
+BWA-MEM completed for DA_2
+Converting SAM to BAM for DA_2
+BWA-MEM completed for DA_6
+Converting SAM to BAM for DA_6
+BWA-MEM completed for DRS_4
+Converting SAM to BAM for DRS_4
+SAM to BAM conversion completed for DA_8
+Sorting BAM for DA_8
+BAM sorting completed for BN_2
+Indexing sorted BAM for BN_2
+Indexing completed for BN_2
+All processing steps completed for BN_2
+Starting BWA-MEM for DYNC_16
+BAM sorting completed for DA_7
+Indexing sorted BAM for DA_7
+Indexing completed for DA_7
+All processing steps completed for DA_7
+Starting BWA-MEM for DYNC_2
+BWA-MEM completed for BN_4
+Converting SAM to BAM for BN_4
+SAM to BAM conversion completed for DA_6
+Sorting BAM for DA_6
+BWA-MEM completed for DRS_5
+Converting SAM to BAM for DRS_5
+SAM to BAM conversion completed for DRS_4
+Sorting BAM for DRS_4
+SAM to BAM conversion completed for DA_2
+Sorting BAM for DA_2
+BAM sorting completed for DA_8
+Indexing sorted BAM for DA_8
+SAM to BAM conversion completed for DRS_5
+Sorting BAM for DRS_5
+Indexing completed for DA_8
+All processing steps completed for DA_8
+Starting BWA-MEM for DYNC_3
+BWA-MEM completed for BN_7
+Converting SAM to BAM for BN_7
+BWA-MEM completed for DRS_2
+Converting SAM to BAM for DRS_2
+SAM to BAM conversion completed for BN_4
+Sorting BAM for BN_4
+BWA-MEM completed for DA_4
+Converting SAM to BAM for DA_4
+BWA-MEM completed for BN_3
+Converting SAM to BAM for BN_3
+BAM sorting completed for DA_2
+Indexing sorted BAM for DA_2
+BAM sorting completed for DA_6
+Indexing sorted BAM for DA_6
+Indexing completed for DA_6
+All processing steps completed for DA_6
+Starting BWA-MEM for DYNC_5
+BAM sorting completed for DRS_4
+Indexing sorted BAM for DRS_4
+Indexing completed for DA_2
+All processing steps completed for DA_2
+Starting BWA-MEM for DYNC_6
+Indexing completed for DRS_4
+All processing steps completed for DRS_4
+Starting BWA-MEM for DYNC_7
+BWA-MEM completed for DA_1
+Converting SAM to BAM for DA_1
+BAM sorting completed for DRS_5
+Indexing sorted BAM for DRS_5
+Indexing completed for DRS_5
+All processing steps completed for DRS_5
+Starting BWA-MEM for EJ_1
+SAM to BAM conversion completed for DRS_2
+Sorting BAM for DRS_2
+SAM to BAM conversion completed for DA_4
+Sorting BAM for DA_4
+BWA-MEM completed for BN_9
+Converting SAM to BAM for BN_9
+SAM to BAM conversion completed for BN_7
+Sorting BAM for BN_7
+SAM to BAM conversion completed for BN_3
+Sorting BAM for BN_3
+BAM sorting completed for BN_4
+Indexing sorted BAM for BN_4
+Indexing completed for BN_4
+All processing steps completed for BN_4
+Starting BWA-MEM for EJ_3
+SAM to BAM conversion completed for DA_1
+Sorting BAM for DA_1
+BWA-MEM completed for DRS_6
+Converting SAM to BAM for DRS_6
+BWA-MEM completed for BN_5
+Converting SAM to BAM for BN_5
+BAM sorting completed for DA_4
+Indexing sorted BAM for DA_4
+SAM to BAM conversion completed for BN_9
+Sorting BAM for BN_9
+BAM sorting completed for BN_7
+Indexing sorted BAM for BN_7
+Indexing completed for DA_4
+All processing steps completed for DA_4
+Starting BWA-MEM for EJ_4
+BAM sorting completed for DRS_2
+Indexing sorted BAM for DRS_2
+Indexing completed for DRS_2
+All processing steps completed for DRS_2
+Starting BWA-MEM for EJ_6
+Indexing completed for BN_7
+All processing steps completed for BN_7
+Starting BWA-MEM for EJ_7
+BAM sorting completed for BN_3
+Indexing sorted BAM for BN_3
+Indexing completed for BN_3
+All processing steps completed for BN_3
+Starting BWA-MEM for EJ_8
+SAM to BAM conversion completed for DRS_6
+Sorting BAM for DRS_6
+BAM sorting completed for DA_1
+Indexing sorted BAM for DA_1
+Indexing completed for DA_1
+All processing steps completed for DA_1
+Starting BWA-MEM for FZA_1
+BWA-MEM completed for DRS_7
+Converting SAM to BAM for DRS_7
+SAM to BAM conversion completed for BN_5
+Sorting BAM for BN_5
+BWA-MEM completed for DRS_1
+Converting SAM to BAM for DRS_1
+BAM sorting completed for BN_9
+Indexing sorted BAM for BN_9
+Indexing completed for BN_9
+All processing steps completed for BN_9
+BAM sorting completed for DRS_6
+Indexing sorted BAM for DRS_6
+Starting BWA-MEM for FZA_3
+SAM to BAM conversion completed for DRS_7
+Sorting BAM for DRS_7
+BWA-MEM completed for DYNC_10
+Converting SAM to BAM for DYNC_10
+Indexing completed for DRS_6
+All processing steps completed for DRS_6
+Starting BWA-MEM for FZA_4
+BAM sorting completed for BN_5
+Indexing sorted BAM for BN_5
+Indexing completed for BN_5
+All processing steps completed for BN_5
+Starting BWA-MEM for FZA_5
+SAM to BAM conversion completed for DRS_1
+Sorting BAM for DRS_1
+SAM to BAM conversion completed for DYNC_10
+Sorting BAM for DYNC_10
+BAM sorting completed for DRS_7
+Indexing sorted BAM for DRS_7
+Indexing completed for DRS_7
+All processing steps completed for DRS_7
+Starting BWA-MEM for FZA_6
+BAM sorting completed for DRS_1
+Indexing sorted BAM for DRS_1
+BAM sorting completed for DYNC_10
+Indexing sorted BAM for DYNC_10
+Indexing completed for DRS_1
+All processing steps completed for DRS_1
+Starting BWA-MEM for FZA_8
+Indexing completed for DYNC_10
+All processing steps completed for DYNC_10
+Starting BWA-MEM for GHX_10
+BWA-MEM completed for CX_3
+Converting SAM to BAM for CX_3
+BWA-MEM completed for DYNC_1
+Converting SAM to BAM for DYNC_1
+SAM to BAM conversion completed for CX_3
+Sorting BAM for CX_3
+SAM to BAM conversion completed for DYNC_1
+Sorting BAM for DYNC_1
+BWA-MEM completed for CX_4
+Converting SAM to BAM for CX_4
+BWA-MEM completed for CX_7
+Converting SAM to BAM for CX_7
+BAM sorting completed for DYNC_1
+Indexing sorted BAM for DYNC_1
+Indexing completed for DYNC_1
+All processing steps completed for DYNC_1
+Starting BWA-MEM for GHX_1
+BWA-MEM completed for CP_3
+Converting SAM to BAM for CP_3
+BAM sorting completed for CX_3
+Indexing sorted BAM for CX_3
+Indexing completed for CX_3
+All processing steps completed for CX_3
+Starting BWA-MEM for GHX_13
+BWA-MEM completed for CP_5
+Converting SAM to BAM for CP_5
+BWA-MEM completed for CX_2
+Converting SAM to BAM for CX_2
+SAM to BAM conversion completed for CX_7
+Sorting BAM for CX_7
+SAM to BAM conversion completed for CX_4
+Sorting BAM for CX_4
+SAM to BAM conversion completed for CP_3
+Sorting BAM for CP_3
+BWA-MEM completed for CP_4
+Converting SAM to BAM for CP_4
+SAM to BAM conversion completed for CX_2
+Sorting BAM for CX_2
+BWA-MEM completed for DST_8
+Converting SAM to BAM for DST_8
+SAM to BAM conversion completed for CP_5
+Sorting BAM for CP_5
+BAM sorting completed for CX_7
+Indexing sorted BAM for CX_7
+Indexing completed for CX_7
+All processing steps completed for CX_7
+Starting BWA-MEM for GHX_2
+BAM sorting completed for CX_4
+Indexing sorted BAM for CX_4
+BAM sorting completed for CP_3
+Indexing sorted BAM for CP_3
+Indexing completed for CX_4
+All processing steps completed for CX_4
+Starting BWA-MEM for GHX_4
+SAM to BAM conversion completed for CP_4
+Sorting BAM for CP_4
+Indexing completed for CP_3
+All processing steps completed for CP_3
+Starting BWA-MEM for GHX_8
+BWA-MEM completed for CX_9
+Converting SAM to BAM for CX_9
+SAM to BAM conversion completed for DST_8
+Sorting BAM for DST_8
+BWA-MEM completed for CX_5
+Converting SAM to BAM for CX_5
+BAM sorting completed for CX_2
+Indexing sorted BAM for CX_2
+Indexing completed for CX_2
+All processing steps completed for CX_2
+Starting BWA-MEM for GHX_9
+BAM sorting completed for CP_5
+Indexing sorted BAM for CP_5
+Indexing completed for CP_5
+All processing steps completed for CP_5
+Starting BWA-MEM for HJLL_1
+SAM to BAM conversion completed for CX_9
+Sorting BAM for CX_9
+SAM to BAM conversion completed for CX_5
+Sorting BAM for CX_5
+BWA-MEM completed for CP_6
+Converting SAM to BAM for CP_6
+BWA-MEM completed for DST_5
+Converting SAM to BAM for DST_5
+BAM sorting completed for CP_4
+Indexing sorted BAM for CP_4
+BAM sorting completed for DST_8
+Indexing sorted BAM for DST_8
+Indexing completed for CP_4
+All processing steps completed for CP_4
+Starting BWA-MEM for HJLL_2
+Indexing completed for DST_8
+All processing steps completed for DST_8
+Starting BWA-MEM for HJLL_3
+BWA-MEM completed for CP_2
+Converting SAM to BAM for CP_2
+BAM sorting completed for CX_9
+Indexing sorted BAM for CX_9
+BWA-MEM completed for CP_1
+Converting SAM to BAM for CP_1
+Indexing completed for CX_9
+All processing steps completed for CX_9
+Starting BWA-MEM for HJLL_6
+BWA-MEM completed for DST_1
+Converting SAM to BAM for DST_1
+SAM to BAM conversion completed for CP_6
+Sorting BAM for CP_6
+SAM to BAM conversion completed for DST_5
+Sorting BAM for DST_5
+BAM sorting completed for CX_5
+Indexing sorted BAM for CX_5
+Indexing completed for CX_5
+All processing steps completed for CX_5
+Starting BWA-MEM for HJLL_7
+SAM to BAM conversion completed for CP_2
+Sorting BAM for CP_2
+BWA-MEM completed for DST_9
+Converting SAM to BAM for DST_9
+BWA-MEM completed for DST_2
+Converting SAM to BAM for DST_2
+SAM to BAM conversion completed for CP_1
+Sorting BAM for CP_1
+SAM to BAM conversion completed for DST_1
+Sorting BAM for DST_1
+BAM sorting completed for DST_5
+Indexing sorted BAM for DST_5
+BAM sorting completed for CP_6
+Indexing sorted BAM for CP_6
+Indexing completed for CP_6
+All processing steps completed for CP_6
+Starting BWA-MEM for HYX_1
+Indexing completed for DST_5
+All processing steps completed for DST_5
+Starting BWA-MEM for HYX_2
+BWA-MEM completed for DST_7
+Converting SAM to BAM for DST_7
+SAM to BAM conversion completed for DST_9
+Sorting BAM for DST_9
+BAM sorting completed for CP_2
+Indexing sorted BAM for CP_2
+Indexing completed for CP_2
+All processing steps completed for CP_2
+Starting BWA-MEM for HYX_3
+BWA-MEM completed for DST_4
+Converting SAM to BAM for DST_4
+SAM to BAM conversion completed for DST_2
+Sorting BAM for DST_2
+BAM sorting completed for CP_1
+Indexing sorted BAM for CP_1
+BAM sorting completed for DST_1
+Indexing sorted BAM for DST_1
+Indexing completed for CP_1
+All processing steps completed for CP_1
+Starting BWA-MEM for HYX_4
+Indexing completed for DST_1
+All processing steps completed for DST_1
+Starting BWA-MEM for HYX_5
+SAM to BAM conversion completed for DST_7
+Sorting BAM for DST_7
+SAM to BAM conversion completed for DST_4
+Sorting BAM for DST_4
+BAM sorting completed for DST_9
+Indexing sorted BAM for DST_9
+BWA-MEM completed for FZA_5
+Converting SAM to BAM for FZA_5
+Indexing completed for DST_9
+All processing steps completed for DST_9
+Starting BWA-MEM for HYX_6
+BWA-MEM completed for FZA_1
+Converting SAM to BAM for FZA_1
+BAM sorting completed for DST_2
+Indexing sorted BAM for DST_2
+Indexing completed for DST_2
+All processing steps completed for DST_2
+Starting BWA-MEM for JD_1
+SAM to BAM conversion completed for FZA_5
+Sorting BAM for FZA_5
+BWA-MEM completed for DYNC_2
+Converting SAM to BAM for DYNC_2
+BAM sorting completed for DST_7
+Indexing sorted BAM for DST_7
+Indexing completed for DST_7
+All processing steps completed for DST_7
+Starting BWA-MEM for JD_3
+SAM to BAM conversion completed for FZA_1
+Sorting BAM for FZA_1
+BAM sorting completed for DST_4
+Indexing sorted BAM for DST_4
+Indexing completed for DST_4
+All processing steps completed for DST_4
+Starting BWA-MEM for JD_4
+BWA-MEM completed for FZA_4
+Converting SAM to BAM for FZA_4
+SAM to BAM conversion completed for DYNC_2
+Sorting BAM for DYNC_2
+BAM sorting completed for FZA_5
+Indexing sorted BAM for FZA_5
+Indexing completed for FZA_5
+All processing steps completed for FZA_5
+Starting BWA-MEM for JD_5
+BWA-MEM completed for FZA_3
+Converting SAM to BAM for FZA_3
+SAM to BAM conversion completed for FZA_4
+Sorting BAM for FZA_4
+BAM sorting completed for FZA_1
+Indexing sorted BAM for FZA_1
+Indexing completed for FZA_1
+All processing steps completed for FZA_1
+Starting BWA-MEM for JD_6
+BAM sorting completed for DYNC_2
+Indexing sorted BAM for DYNC_2
+Indexing completed for DYNC_2
+All processing steps completed for DYNC_2
+Starting BWA-MEM for JD_7
+SAM to BAM conversion completed for FZA_3
+Sorting BAM for FZA_3
+BWA-MEM completed for DYNC_16
+Converting SAM to BAM for DYNC_16
+BWA-MEM completed for DYNC_5
+Converting SAM to BAM for DYNC_5
+BAM sorting completed for FZA_4
+Indexing sorted BAM for FZA_4
+Indexing completed for FZA_4
+All processing steps completed for FZA_4
+Starting BWA-MEM for JD_9
+BWA-MEM completed for FZA_6
+Converting SAM to BAM for FZA_6
+SAM to BAM conversion completed for DYNC_16
+Sorting BAM for DYNC_16
+BWA-MEM completed for GHX_10
+Converting SAM to BAM for GHX_10
+BWA-MEM completed for DYNC_6
+Converting SAM to BAM for DYNC_6
+BWA-MEM completed for GHX_1
+Converting SAM to BAM for GHX_1
+BAM sorting completed for FZA_3
+Indexing sorted BAM for FZA_3
+Indexing completed for FZA_3
+All processing steps completed for FZA_3
+Starting BWA-MEM for JFS_1
+SAM to BAM conversion completed for DYNC_5
+Sorting BAM for DYNC_5
+BWA-MEM completed for FZA_8
+Converting SAM to BAM for FZA_8
+SAM to BAM conversion completed for FZA_6
+Sorting BAM for FZA_6
+SAM to BAM conversion completed for DYNC_6
+Sorting BAM for DYNC_6
+SAM to BAM conversion completed for GHX_10
+Sorting BAM for GHX_10
+BWA-MEM completed for DYNC_7
+Converting SAM to BAM for DYNC_7
+SAM to BAM conversion completed for GHX_1
+Sorting BAM for GHX_1
+BAM sorting completed for DYNC_16
+Indexing sorted BAM for DYNC_16
+Indexing completed for DYNC_16
+All processing steps completed for DYNC_16
+Starting BWA-MEM for JFS_14
+BWA-MEM completed for DYNC_3
+Converting SAM to BAM for DYNC_3
+SAM to BAM conversion completed for FZA_8
+Sorting BAM for FZA_8
+BAM sorting completed for DYNC_5
+Indexing sorted BAM for DYNC_5
+Indexing completed for DYNC_5
+All processing steps completed for DYNC_5
+Starting BWA-MEM for JFS_15
+BAM sorting completed for FZA_6
+Indexing sorted BAM for FZA_6
+Indexing completed for FZA_6
+All processing steps completed for FZA_6
+Starting BWA-MEM for JFS_18
+SAM to BAM conversion completed for DYNC_7
+Sorting BAM for DYNC_7
+BAM sorting completed for DYNC_6
+Indexing sorted BAM for DYNC_6
+BWA-MEM completed for GHX_13
+Converting SAM to BAM for GHX_13
+Indexing completed for DYNC_6
+All processing steps completed for DYNC_6
+Starting BWA-MEM for JFS_24
+BWA-MEM completed for GHX_2
+Converting SAM to BAM for GHX_2
+BAM sorting completed for GHX_1
+Indexing sorted BAM for GHX_1
+SAM to BAM conversion completed for DYNC_3
+Sorting BAM for DYNC_3
+Indexing completed for GHX_1
+All processing steps completed for GHX_1
+Starting BWA-MEM for JFS_4
+BAM sorting completed for GHX_10
+Indexing sorted BAM for GHX_10
+Indexing completed for GHX_10
+All processing steps completed for GHX_10
+Starting BWA-MEM for JFS_6
+BAM sorting completed for FZA_8
+Indexing sorted BAM for FZA_8
+SAM to BAM conversion completed for GHX_13
+Sorting BAM for GHX_13
+Indexing completed for FZA_8
+All processing steps completed for FZA_8
+Starting BWA-MEM for JFS_9
+SAM to BAM conversion completed for GHX_2
+Sorting BAM for GHX_2
+BAM sorting completed for DYNC_3
+Indexing sorted BAM for DYNC_3
+BAM sorting completed for DYNC_7
+Indexing sorted BAM for DYNC_7
+Indexing completed for DYNC_3
+All processing steps completed for DYNC_3
+Starting BWA-MEM for JMX_1
+Indexing completed for DYNC_7
+All processing steps completed for DYNC_7
+Starting BWA-MEM for JMX_13
+BAM sorting completed for GHX_2
+Indexing sorted BAM for GHX_2
+Indexing completed for GHX_2
+All processing steps completed for GHX_2
+Starting BWA-MEM for JMX_2
+BAM sorting completed for GHX_13
+Indexing sorted BAM for GHX_13
+Indexing completed for GHX_13
+All processing steps completed for GHX_13
+Starting BWA-MEM for JMX_3
+BWA-MEM completed for GHX_4
+Converting SAM to BAM for GHX_4
+BWA-MEM completed for GHX_8
+Converting SAM to BAM for GHX_8
+SAM to BAM conversion completed for GHX_4
+Sorting BAM for GHX_4
+SAM to BAM conversion completed for GHX_8
+Sorting BAM for GHX_8
+BWA-MEM completed for GHX_9
+Converting SAM to BAM for GHX_9
+BAM sorting completed for GHX_4
+Indexing sorted BAM for GHX_4
+Indexing completed for GHX_4
+All processing steps completed for GHX_4
+Starting BWA-MEM for JMX_5
+BAM sorting completed for GHX_8
+Indexing sorted BAM for GHX_8
+Indexing completed for GHX_8
+All processing steps completed for GHX_8
+Starting BWA-MEM for JMX_6
+SAM to BAM conversion completed for GHX_9
+Sorting BAM for GHX_9
+BAM sorting completed for GHX_9
+Indexing sorted BAM for GHX_9
+Indexing completed for GHX_9
+All processing steps completed for GHX_9
+Starting BWA-MEM for JMX_7
+BWA-MEM completed for CX_10
+Converting SAM to BAM for CX_10
+BWA-MEM completed for EJ_3
+Converting SAM to BAM for EJ_3
+BWA-MEM completed for EJ_7
+Converting SAM to BAM for EJ_7
+BWA-MEM completed for EJ_4
+Converting SAM to BAM for EJ_4
+SAM to BAM conversion completed for CX_10
+Sorting BAM for CX_10
+BWA-MEM completed for EJ_1
+Converting SAM to BAM for EJ_1
+SAM to BAM conversion completed for EJ_7
+Sorting BAM for EJ_7
+BWA-MEM completed for EJ_8
+Converting SAM to BAM for EJ_8
+BWA-MEM completed for EJ_6
+Converting SAM to BAM for EJ_6
+SAM to BAM conversion completed for EJ_3
+Sorting BAM for EJ_3
+SAM to BAM conversion completed for EJ_4
+Sorting BAM for EJ_4
+SAM to BAM conversion completed for EJ_1
+Sorting BAM for EJ_1
+SAM to BAM conversion completed for EJ_6
+Sorting BAM for EJ_6
+SAM to BAM conversion completed for EJ_8
+Sorting BAM for EJ_8
+BAM sorting completed for CX_10
+Indexing sorted BAM for CX_10
+Indexing completed for CX_10
+All processing steps completed for CX_10
+Starting BWA-MEM for JMX_8
+BAM sorting completed for EJ_7
+Indexing sorted BAM for EJ_7
+Indexing completed for EJ_7
+All processing steps completed for EJ_7
+Starting BWA-MEM for LCJ_10
+BAM sorting completed for EJ_3
+Indexing sorted BAM for EJ_3
+Indexing completed for EJ_3
+All processing steps completed for EJ_3
+Starting BWA-MEM for LCJ_11
+BAM sorting completed for EJ_4
+Indexing sorted BAM for EJ_4
+Indexing completed for EJ_4
+All processing steps completed for EJ_4
+Starting BWA-MEM for LCJ_13
+BAM sorting completed for EJ_1
+Indexing sorted BAM for EJ_1
+Indexing completed for EJ_1
+All processing steps completed for EJ_1
+Starting BWA-MEM for LCJ_6
+BAM sorting completed for EJ_6
+Indexing sorted BAM for EJ_6
+BAM sorting completed for EJ_8
+Indexing sorted BAM for EJ_8
+Indexing completed for EJ_6
+All processing steps completed for EJ_6
+Starting BWA-MEM for LCJ_7
+Indexing completed for EJ_8
+All processing steps completed for EJ_8
+Starting BWA-MEM for LCJ_9
+BWA-MEM completed for JFS_1
+Converting SAM to BAM for JFS_1
+SAM to BAM conversion completed for JFS_1
+Sorting BAM for JFS_1
+BWA-MEM completed for HJLL_1
+Converting SAM to BAM for HJLL_1
+BAM sorting completed for JFS_1
+Indexing sorted BAM for JFS_1
+Indexing completed for JFS_1
+All processing steps completed for JFS_1
+Starting BWA-MEM for LQ_13
+BWA-MEM completed for JMX_2
+Converting SAM to BAM for JMX_2
+BWA-MEM completed for HJLL_3
+Converting SAM to BAM for HJLL_3
+SAM to BAM conversion completed for JMX_2
+Sorting BAM for JMX_2
+SAM to BAM conversion completed for HJLL_1
+Sorting BAM for HJLL_1
+BAM sorting completed for JMX_2
+Indexing sorted BAM for JMX_2
+SAM to BAM conversion completed for HJLL_3
+Sorting BAM for HJLL_3
+Indexing completed for JMX_2
+All processing steps completed for JMX_2
+Starting BWA-MEM for LQ_14
+BWA-MEM completed for JMX_3
+Converting SAM to BAM for JMX_3
+BAM sorting completed for HJLL_1
+Indexing sorted BAM for HJLL_1
+Indexing completed for HJLL_1
+All processing steps completed for HJLL_1
+Starting BWA-MEM for LQ_15
+BWA-MEM completed for JFS_4
+Converting SAM to BAM for JFS_4
+SAM to BAM conversion completed for JMX_3
+Sorting BAM for JMX_3
+BWA-MEM completed for HJLL_7
+Converting SAM to BAM for HJLL_7
+BWA-MEM completed for HJLL_6
+Converting SAM to BAM for HJLL_6
+BWA-MEM completed for HJLL_2
+Converting SAM to BAM for HJLL_2
+BAM sorting completed for HJLL_3
+Indexing sorted BAM for HJLL_3
+Indexing completed for HJLL_3
+All processing steps completed for HJLL_3
+Starting BWA-MEM for LQ_16
+SAM to BAM conversion completed for JFS_4
+Sorting BAM for JFS_4
+BWA-MEM completed for JFS_18
+Converting SAM to BAM for JFS_18
+BWA-MEM completed for JMX_1
+Converting SAM to BAM for JMX_1
+BAM sorting completed for JMX_3
+Indexing sorted BAM for JMX_3
+Indexing completed for JMX_3
+All processing steps completed for JMX_3
+Starting BWA-MEM for LQ_8
+SAM to BAM conversion completed for JFS_18
+Sorting BAM for JFS_18
+SAM to BAM conversion completed for HJLL_7
+Sorting BAM for HJLL_7
+BWA-MEM completed for JMX_13
+Converting SAM to BAM for JMX_13
+SAM to BAM conversion completed for HJLL_6
+Sorting BAM for HJLL_6
+SAM to BAM conversion completed for HJLL_2
+Sorting BAM for HJLL_2
+BAM sorting completed for JFS_4
+Indexing sorted BAM for JFS_4
+Indexing completed for JFS_4
+All processing steps completed for JFS_4
+SAM to BAM conversion completed for JMX_1
+Starting BWA-MEM for LQ_9
+Sorting BAM for JMX_1
+BWA-MEM completed for JFS_15
+Converting SAM to BAM for JFS_15
+BWA-MEM completed for JFS_6
+Converting SAM to BAM for JFS_6
+BAM sorting completed for JFS_18
+Indexing sorted BAM for JFS_18
+Indexing completed for JFS_18
+All processing steps completed for JFS_18
+Starting BWA-MEM for LS_10
+SAM to BAM conversion completed for JMX_13
+Sorting BAM for JMX_13
+SAM to BAM conversion completed for JFS_6
+Sorting BAM for JFS_6
+BWA-MEM completed for JFS_24
+Converting SAM to BAM for JFS_24
+BWA-MEM completed for JFS_9
+Converting SAM to BAM for JFS_9
+BAM sorting completed for JMX_1
+Indexing sorted BAM for JMX_1
+SAM to BAM conversion completed for JFS_15
+Sorting BAM for JFS_15
+Indexing completed for JMX_1
+All processing steps completed for JMX_1
+Starting BWA-MEM for LS_1
+BAM sorting completed for JMX_13
+Indexing sorted BAM for JMX_13
+Indexing completed for JMX_13
+All processing steps completed for JMX_13
+Starting BWA-MEM for LS_12
+BAM sorting completed for HJLL_6
+Indexing sorted BAM for HJLL_6
+Indexing completed for HJLL_6
+All processing steps completed for HJLL_6
+Starting BWA-MEM for LS_2
+BAM sorting completed for HJLL_7
+Indexing sorted BAM for HJLL_7
+BWA-MEM completed for JD_4
+Converting SAM to BAM for JD_4
+SAM to BAM conversion completed for JFS_9
+BAM sorting completed for HJLL_2
+Sorting BAM for JFS_9
+Indexing sorted BAM for HJLL_2
+SAM to BAM conversion completed for JFS_24
+Sorting BAM for JFS_24
+Indexing completed for HJLL_2
+All processing steps completed for HJLL_2
+Starting BWA-MEM for LS_5
+Indexing completed for HJLL_7
+All processing steps completed for HJLL_7
+Starting BWA-MEM for LS_6
+BAM sorting completed for JFS_6
+Indexing sorted BAM for JFS_6
+Indexing completed for JFS_6
+All processing steps completed for JFS_6
+Starting BWA-MEM for LS_7
+BWA-MEM completed for HYX_1
+Converting SAM to BAM for HYX_1
+BAM sorting completed for JFS_15
+Indexing sorted BAM for JFS_15
+Indexing completed for JFS_15
+All processing steps completed for JFS_15
+Starting BWA-MEM for LX_2
+SAM to BAM conversion completed for JD_4
+Sorting BAM for JD_4
+BAM sorting completed for JFS_24
+Indexing sorted BAM for JFS_24
+BWA-MEM completed for JFS_14
+Converting SAM to BAM for JFS_14
+Indexing completed for JFS_24
+All processing steps completed for JFS_24
+Starting BWA-MEM for LX_4
+BAM sorting completed for JFS_9
+Indexing sorted BAM for JFS_9
+Indexing completed for JFS_9
+All processing steps completed for JFS_9
+Starting BWA-MEM for LX_5
+BWA-MEM completed for JMX_5
+Converting SAM to BAM for JMX_5
+BWA-MEM completed for HYX_5
+Converting SAM to BAM for HYX_5
+SAM to BAM conversion completed for HYX_1
+Sorting BAM for HYX_1
+SAM to BAM conversion completed for JFS_14
+Sorting BAM for JFS_14
+BWA-MEM completed for JD_6
+Converting SAM to BAM for JD_6
+SAM to BAM conversion completed for JMX_5
+Sorting BAM for JMX_5
+BWA-MEM completed for JD_7
+Converting SAM to BAM for JD_7
+SAM to BAM conversion completed for HYX_5
+Sorting BAM for HYX_5
+BAM sorting completed for JD_4
+Indexing sorted BAM for JD_4
+BWA-MEM completed for HYX_3
+Converting SAM to BAM for HYX_3
+Indexing completed for JD_4
+All processing steps completed for JD_4
+Starting BWA-MEM for LX_6
+SAM to BAM conversion completed for JD_6
+Sorting BAM for JD_6
+BAM sorting completed for JFS_14
+Indexing sorted BAM for JFS_14
+Indexing completed for JFS_14
+All processing steps completed for JFS_14
+Starting BWA-MEM for LX_8
+BAM sorting completed for JMX_5
+Indexing sorted BAM for JMX_5
+Indexing completed for JMX_5
+All processing steps completed for JMX_5
+Starting BWA-MEM for LX_9
+SAM to BAM conversion completed for JD_7
+Sorting BAM for JD_7
+BWA-MEM completed for JD_3
+Converting SAM to BAM for JD_3
+BWA-MEM completed for HYX_6
+Converting SAM to BAM for HYX_6
+BAM sorting completed for HYX_1
+Indexing sorted BAM for HYX_1
+Indexing completed for HYX_1
+All processing steps completed for HYX_1
+Starting BWA-MEM for NFM_1
+SAM to BAM conversion completed for HYX_3
+Sorting BAM for HYX_3
+BWA-MEM completed for JD_9
+Converting SAM to BAM for JD_9
+BAM sorting completed for HYX_5
+Indexing sorted BAM for HYX_5
+Indexing completed for HYX_5
+All processing steps completed for HYX_5
+Starting BWA-MEM for O_DSMX
+SAM to BAM conversion completed for JD_3
+Sorting BAM for JD_3
+SAM to BAM conversion completed for HYX_6
+Sorting BAM for HYX_6
+SAM to BAM conversion completed for JD_9
+Sorting BAM for JD_9
+BAM sorting completed for JD_6
+Indexing sorted BAM for JD_6
+BAM sorting completed for JD_7
+Indexing sorted BAM for JD_7
+Indexing completed for JD_6
+All processing steps completed for JD_6
+Starting BWA-MEM for O_MXL
+Indexing completed for JD_7
+All processing steps completed for JD_7
+Starting BWA-MEM for O_MZGH
+BWA-MEM completed for JD_1
+Converting SAM to BAM for JD_1
+BWA-MEM completed for LCJ_11
+Converting SAM to BAM for LCJ_11
+BWA-MEM completed for JMX_6
+Converting SAM to BAM for JMX_6
+BAM sorting completed for HYX_3
+Indexing sorted BAM for HYX_3
+Indexing completed for HYX_3
+All processing steps completed for HYX_3
+Starting BWA-MEM for O_XYWJM
+BWA-MEM completed for JMX_7
+Converting SAM to BAM for JMX_7
+SAM to BAM conversion completed for LCJ_11
+Sorting BAM for LCJ_11
+SAM to BAM conversion completed for JMX_6
+Sorting BAM for JMX_6
+BAM sorting completed for JD_3
+Indexing sorted BAM for JD_3
+Indexing completed for JD_3
+All processing steps completed for JD_3
+Starting BWA-MEM for O_ZNMX
+SAM to BAM conversion completed for JMX_7
+Sorting BAM for JMX_7
+BAM sorting completed for HYX_6
+Indexing sorted BAM for HYX_6
+BAM sorting completed for JD_9
+Indexing sorted BAM for JD_9
+SAM to BAM conversion completed for JD_1
+Sorting BAM for JD_1
+Indexing completed for JD_9
+All processing steps completed for JD_9
+Starting BWA-MEM for QDH_10
+Indexing completed for HYX_6
+All processing steps completed for HYX_6
+Starting BWA-MEM for QDH_11
+BWA-MEM completed for JD_5
+Converting SAM to BAM for JD_5
+BWA-MEM completed for LCJ_6
+Converting SAM to BAM for LCJ_6
+BAM sorting completed for LCJ_11
+Indexing sorted BAM for LCJ_11
+Indexing completed for LCJ_11
+All processing steps completed for LCJ_11
+Starting BWA-MEM for QDH_1
+BAM sorting completed for JMX_6
+Indexing sorted BAM for JMX_6
+Indexing completed for JMX_6
+All processing steps completed for JMX_6
+Starting BWA-MEM for QDH_12
+SAM to BAM conversion completed for LCJ_6
+Sorting BAM for LCJ_6
+BAM sorting completed for JMX_7
+Indexing sorted BAM for JMX_7
+BWA-MEM completed for HYX_4
+Converting SAM to BAM for HYX_4
+Indexing completed for JMX_7
+All processing steps completed for JMX_7
+Starting BWA-MEM for QDH_14
+SAM to BAM conversion completed for JD_5
+Sorting BAM for JD_5
+BWA-MEM completed for LCJ_9
+Converting SAM to BAM for LCJ_9
+BAM sorting completed for LCJ_6
+Indexing sorted BAM for LCJ_6
+Indexing completed for LCJ_6
+All processing steps completed for LCJ_6
+Starting BWA-MEM for QDH_2
+BAM sorting completed for JD_1
+Indexing sorted BAM for JD_1
+Indexing completed for JD_1
+All processing steps completed for JD_1
+Starting BWA-MEM for QDH_3
+BWA-MEM completed for HYX_2
+Converting SAM to BAM for HYX_2
+SAM to BAM conversion completed for LCJ_9
+Sorting BAM for LCJ_9
+SAM to BAM conversion completed for HYX_4
+Sorting BAM for HYX_4
+BWA-MEM completed for LCJ_7
+Converting SAM to BAM for LCJ_7
+BWA-MEM completed for LCJ_13
+Converting SAM to BAM for LCJ_13
+BWA-MEM completed for LCJ_10
+Converting SAM to BAM for LCJ_10
+SAM to BAM conversion completed for LCJ_7
+Sorting BAM for LCJ_7
+SAM to BAM conversion completed for LCJ_13
+Sorting BAM for LCJ_13
+BAM sorting completed for JD_5
+Indexing sorted BAM for JD_5
+Indexing completed for JD_5
+All processing steps completed for JD_5
+Starting BWA-MEM for QDH_4
+BAM sorting completed for LCJ_9
+Indexing sorted BAM for LCJ_9
+Indexing completed for LCJ_9
+All processing steps completed for LCJ_9
+Starting BWA-MEM for QDH_6
+SAM to BAM conversion completed for LCJ_10
+Sorting BAM for LCJ_10
+SAM to BAM conversion completed for HYX_2
+Sorting BAM for HYX_2
+BAM sorting completed for LCJ_7
+Indexing sorted BAM for LCJ_7
+Indexing completed for LCJ_7
+All processing steps completed for LCJ_7
+Starting BWA-MEM for QDH_7
+BAM sorting completed for LCJ_13
+Indexing sorted BAM for LCJ_13
+Indexing completed for LCJ_13
+All processing steps completed for LCJ_13
+Starting BWA-MEM for QST_1
+BAM sorting completed for LCJ_10
+Indexing sorted BAM for LCJ_10
+Indexing completed for LCJ_10
+All processing steps completed for LCJ_10
+Starting BWA-MEM for QST_2
+BAM sorting completed for HYX_4
+Indexing sorted BAM for HYX_4
+BWA-MEM completed for JMX_8
+Converting SAM to BAM for JMX_8
+Indexing completed for HYX_4
+All processing steps completed for HYX_4
+Starting BWA-MEM for QST_3
+SAM to BAM conversion completed for JMX_8
+Sorting BAM for JMX_8
+BWA-MEM completed for LQ_14
+Converting SAM to BAM for LQ_14
+BWA-MEM completed for LQ_13
+Converting SAM to BAM for LQ_13
+BAM sorting completed for JMX_8
+Indexing sorted BAM for JMX_8
+Indexing completed for JMX_8
+All processing steps completed for JMX_8
+Starting BWA-MEM for RX_2
+BWA-MEM completed for LS_2
+Converting SAM to BAM for LS_2
+BAM sorting completed for HYX_2
+Indexing sorted BAM for HYX_2
+SAM to BAM conversion completed for LQ_14
+Sorting BAM for LQ_14
+Indexing completed for HYX_2
+All processing steps completed for HYX_2
+Starting BWA-MEM for RX_4
+BWA-MEM completed for LS_1
+Converting SAM to BAM for LS_1
+BWA-MEM completed for LS_7
+Converting SAM to BAM for LS_7
+SAM to BAM conversion completed for LQ_13
+Sorting BAM for LQ_13
+SAM to BAM conversion completed for LS_2
+Sorting BAM for LS_2
+BWA-MEM completed for LQ_16
+Converting SAM to BAM for LQ_16
+BAM sorting completed for LQ_14
+Indexing sorted BAM for LQ_14
+Indexing completed for LQ_14
+All processing steps completed for LQ_14
+Starting BWA-MEM for RX_5
+BWA-MEM completed for LS_10
+Converting SAM to BAM for LS_10
+SAM to BAM conversion completed for LS_7
+Sorting BAM for LS_7
+SAM to BAM conversion completed for LS_1
+Sorting BAM for LS_1
+SAM to BAM conversion completed for LQ_16
+Sorting BAM for LQ_16
+BWA-MEM completed for LX_4
+Converting SAM to BAM for LX_4
+BAM sorting completed for LS_2
+Indexing sorted BAM for LS_2
+Indexing completed for LS_2
+All processing steps completed for LS_2
+Starting BWA-MEM for RX_7
+BAM sorting completed for LQ_13
+Indexing sorted BAM for LQ_13
+Indexing completed for LQ_13
+All processing steps completed for LQ_13
+Starting BWA-MEM for RX_8
+SAM to BAM conversion completed for LS_10
+Sorting BAM for LS_10
+BAM sorting completed for LQ_16
+Indexing sorted BAM for LQ_16
+Indexing completed for LQ_16
+All processing steps completed for LQ_16
+Starting BWA-MEM for RX_9
+SAM to BAM conversion completed for LX_4
+Sorting BAM for LX_4
+BAM sorting completed for LS_7
+Indexing sorted BAM for LS_7
+BAM sorting completed for LS_1
+Indexing sorted BAM for LS_1
+Indexing completed for LS_7
+All processing steps completed for LS_7
+Starting BWA-MEM for SFZ_10
+Indexing completed for LS_1
+All processing steps completed for LS_1
+Starting BWA-MEM for SFZ_1
+BWA-MEM completed for LQ_8
+Converting SAM to BAM for LQ_8
+BWA-MEM completed for LS_5
+Converting SAM to BAM for LS_5
+BAM sorting completed for LX_4
+Indexing sorted BAM for LX_4
+BAM sorting completed for LS_10
+Indexing sorted BAM for LS_10
+Indexing completed for LX_4
+All processing steps completed for LX_4
+Starting BWA-MEM for SFZ_2
+Indexing completed for LS_10
+All processing steps completed for LS_10
+Starting BWA-MEM for SFZ_3
+BWA-MEM completed for LX_2
+Converting SAM to BAM for LX_2
+BWA-MEM completed for LQ_15
+Converting SAM to BAM for LQ_15
+SAM to BAM conversion completed for LS_5
+Sorting BAM for LS_5
+SAM to BAM conversion completed for LQ_8
+Sorting BAM for LQ_8
+SAM to BAM conversion completed for LX_2
+Sorting BAM for LX_2
+BWA-MEM completed for LQ_9
+Converting SAM to BAM for LQ_9
+BAM sorting completed for LS_5
+Indexing sorted BAM for LS_5
+SAM to BAM conversion completed for LQ_15
+Sorting BAM for LQ_15
+Indexing completed for LS_5
+All processing steps completed for LS_5
+Starting BWA-MEM for SFZ_4
+BAM sorting completed for LQ_8
+Indexing sorted BAM for LQ_8
+Indexing completed for LQ_8
+All processing steps completed for LQ_8
+Starting BWA-MEM for SFZ_5
+BWA-MEM completed for LX_5
+Converting SAM to BAM for LX_5
+BAM sorting completed for LX_2
+Indexing sorted BAM for LX_2
+Indexing completed for LX_2
+All processing steps completed for LX_2
+Starting BWA-MEM for SFZ_6
+SAM to BAM conversion completed for LQ_9
+Sorting BAM for LQ_9
+BWA-MEM completed for LS_12
+Converting SAM to BAM for LS_12
+SAM to BAM conversion completed for LX_5
+Sorting BAM for LX_5
+BAM sorting completed for LQ_15
+Indexing sorted BAM for LQ_15
+Indexing completed for LQ_15
+All processing steps completed for LQ_15
+Starting BWA-MEM for SFZ_7
+BWA-MEM completed for LX_6
+Converting SAM to BAM for LX_6
+BAM sorting completed for LQ_9
+Indexing sorted BAM for LQ_9
+Indexing completed for LQ_9
+All processing steps completed for LQ_9
+Starting BWA-MEM for SFZ_8
+BWA-MEM completed for LX_9
+Converting SAM to BAM for LX_9
+SAM to BAM conversion completed for LX_6
+Sorting BAM for LX_6
+SAM to BAM conversion completed for LS_12
+Sorting BAM for LS_12
+BWA-MEM completed for LX_8
+Converting SAM to BAM for LX_8
+BAM sorting completed for LX_5
+Indexing sorted BAM for LX_5
+SAM to BAM conversion completed for LX_9
+Sorting BAM for LX_9
+Indexing completed for LX_5
+All processing steps completed for LX_5
+Starting BWA-MEM for SFZ_9
+SAM to BAM conversion completed for LX_8
+Sorting BAM for LX_8
+BAM sorting completed for LX_6
+Indexing sorted BAM for LX_6
+Indexing completed for LX_6
+All processing steps completed for LX_6
+Starting BWA-MEM for SK_10
+BAM sorting completed for LS_12
+Indexing sorted BAM for LS_12
+Indexing completed for LS_12
+All processing steps completed for LS_12
+Starting BWA-MEM for SK_1
+BAM sorting completed for LX_9
+Indexing sorted BAM for LX_9
+Indexing completed for LX_9
+All processing steps completed for LX_9
+Starting BWA-MEM for SK_2
+BAM sorting completed for LX_8
+Indexing sorted BAM for LX_8
+BWA-MEM completed for QDH_11
+Converting SAM to BAM for QDH_11
+Indexing completed for LX_8
+All processing steps completed for LX_8
+Starting BWA-MEM for SK_4
+SAM to BAM conversion completed for QDH_11
+Sorting BAM for QDH_11
+BAM sorting completed for QDH_11
+Indexing sorted BAM for QDH_11
+Indexing completed for QDH_11
+All processing steps completed for QDH_11
+Starting BWA-MEM for SK_7
+BWA-MEM completed for QDH_10
+Converting SAM to BAM for QDH_10
+BWA-MEM completed for QDH_1
+Converting SAM to BAM for QDH_1
+BWA-MEM completed for LS_6
+Converting SAM to BAM for LS_6
+SAM to BAM conversion completed for QDH_1
+Sorting BAM for QDH_1
+BWA-MEM completed for O_MXL
+Converting SAM to BAM for O_MXL
+BWA-MEM completed for QDH_3
+Converting SAM to BAM for QDH_3
+SAM to BAM conversion completed for QDH_10
+Sorting BAM for QDH_10
+BWA-MEM completed for QDH_2
+Converting SAM to BAM for QDH_2
+BWA-MEM completed for QDH_14
+Converting SAM to BAM for QDH_14
+SAM to BAM conversion completed for QDH_3
+Sorting BAM for QDH_3
+SAM to BAM conversion completed for O_MXL
+Sorting BAM for O_MXL
+BAM sorting completed for QDH_1
+Indexing sorted BAM for QDH_1
+Indexing completed for QDH_1
+All processing steps completed for QDH_1
+Starting BWA-MEM for SK_8
+SAM to BAM conversion completed for LS_6
+Sorting BAM for LS_6
+BWA-MEM completed for QDH_4
+Converting SAM to BAM for QDH_4
+BAM sorting completed for QDH_10
+Indexing sorted BAM for QDH_10
+Indexing completed for QDH_10
+All processing steps completed for QDH_10
+Starting BWA-MEM for SK_9
+SAM to BAM conversion completed for QDH_2
+Sorting BAM for QDH_2
+SAM to BAM conversion completed for QDH_14
+Sorting BAM for QDH_14
+SAM to BAM conversion completed for QDH_4
+Sorting BAM for QDH_4
+BAM sorting completed for QDH_3
+Indexing sorted BAM for QDH_3
+Indexing completed for QDH_3
+All processing steps completed for QDH_3
+Starting BWA-MEM for SL_1
+BWA-MEM completed for NFM_1
+Converting SAM to BAM for NFM_1
+BAM sorting completed for O_MXL
+Indexing sorted BAM for O_MXL
+Indexing completed for O_MXL
+All processing steps completed for O_MXL
+Starting BWA-MEM for SL_2
+BAM sorting completed for QDH_2
+Indexing sorted BAM for QDH_2
+BAM sorting completed for LS_6
+Indexing sorted BAM for LS_6
+Indexing completed for QDH_2
+All processing steps completed for QDH_2
+Starting BWA-MEM for SL_3
+Indexing completed for LS_6
+All processing steps completed for LS_6
+Starting BWA-MEM for SL_4
+BWA-MEM completed for QDH_6
+Converting SAM to BAM for QDH_6
+SAM to BAM conversion completed for NFM_1
+Sorting BAM for NFM_1
+BAM sorting completed for QDH_14
+Indexing sorted BAM for QDH_14
+Indexing completed for QDH_14
+All processing steps completed for QDH_14
+Starting BWA-MEM for SL_5
+BAM sorting completed for QDH_4
+Indexing sorted BAM for QDH_4
+Indexing completed for QDH_4
+All processing steps completed for QDH_4
+Starting BWA-MEM for SLZ_1
+BAM sorting completed for NFM_1
+Indexing sorted BAM for NFM_1
+Indexing completed for NFM_1
+All processing steps completed for NFM_1
+Starting BWA-MEM for SLZ_3
+SAM to BAM conversion completed for QDH_6
+Sorting BAM for QDH_6
+BWA-MEM completed for QDH_7
+Converting SAM to BAM for QDH_7
+SAM to BAM conversion completed for QDH_7
+Sorting BAM for QDH_7
+BAM sorting completed for QDH_6
+Indexing sorted BAM for QDH_6
+Indexing completed for QDH_6
+All processing steps completed for QDH_6
+Starting BWA-MEM for SLZ_4
+BWA-MEM completed for O_DSMX
+Converting SAM to BAM for O_DSMX
+BAM sorting completed for QDH_7
+Indexing sorted BAM for QDH_7
+Indexing completed for QDH_7
+All processing steps completed for QDH_7
+Starting BWA-MEM for SLZ_6
+SAM to BAM conversion completed for O_DSMX
+Sorting BAM for O_DSMX
+BWA-MEM completed for RX_2
+Converting SAM to BAM for RX_2
+BWA-MEM completed for O_ZNMX
+Converting SAM to BAM for O_ZNMX
+SAM to BAM conversion completed for RX_2
+Sorting BAM for RX_2
+BAM sorting completed for O_DSMX
+Indexing sorted BAM for O_DSMX
+Indexing completed for O_DSMX
+All processing steps completed for O_DSMX
+Starting BWA-MEM for SLZ_7
+SAM to BAM conversion completed for O_ZNMX
+Sorting BAM for O_ZNMX
+BAM sorting completed for RX_2
+Indexing sorted BAM for RX_2
+Indexing completed for RX_2
+All processing steps completed for RX_2
+Starting BWA-MEM for SLZ_8
+BAM sorting completed for O_ZNMX
+Indexing sorted BAM for O_ZNMX
+Indexing completed for O_ZNMX
+All processing steps completed for O_ZNMX
+Starting BWA-MEM for ST_1
+BWA-MEM completed for RX_7
+Converting SAM to BAM for RX_7
+BWA-MEM completed for O_MZGH
+Converting SAM to BAM for O_MZGH
+BWA-MEM completed for RX_9
+Converting SAM to BAM for RX_9
+SAM to BAM conversion completed for RX_7
+Sorting BAM for RX_7
+SAM to BAM conversion completed for O_MZGH
+Sorting BAM for O_MZGH
+SAM to BAM conversion completed for RX_9
+Sorting BAM for RX_9
+BAM sorting completed for RX_7
+Indexing sorted BAM for RX_7
+Indexing completed for RX_7
+All processing steps completed for RX_7
+Starting BWA-MEM for ST_2
+BAM sorting completed for RX_9
+Indexing sorted BAM for RX_9
+BAM sorting completed for O_MZGH
+Indexing sorted BAM for O_MZGH
+Indexing completed for RX_9
+All processing steps completed for RX_9
+Starting BWA-MEM for ST_3
+Indexing completed for O_MZGH
+All processing steps completed for O_MZGH
+Starting BWA-MEM for ST_4
+BWA-MEM completed for O_XYWJM
+Converting SAM to BAM for O_XYWJM
+SAM to BAM conversion completed for O_XYWJM
+Sorting BAM for O_XYWJM
+BWA-MEM completed for RX_4
+Converting SAM to BAM for RX_4
+BWA-MEM completed for RX_5
+Converting SAM to BAM for RX_5
+BAM sorting completed for O_XYWJM
+Indexing sorted BAM for O_XYWJM
+Indexing completed for O_XYWJM
+All processing steps completed for O_XYWJM
+Starting BWA-MEM for ST_5
+SAM to BAM conversion completed for RX_4
+Sorting BAM for RX_4
+SAM to BAM conversion completed for RX_5
+Sorting BAM for RX_5
+BWA-MEM completed for QDH_12
+Converting SAM to BAM for QDH_12
+BWA-MEM completed for SLZ_1
+Converting SAM to BAM for SLZ_1
+SAM to BAM conversion completed for SLZ_1
+Sorting BAM for SLZ_1
+BAM sorting completed for RX_4
+Indexing sorted BAM for RX_4
+Indexing completed for RX_4
+All processing steps completed for RX_4
+Starting BWA-MEM for ST_6
+BWA-MEM completed for RX_8
+Converting SAM to BAM for RX_8
+BWA-MEM completed for SL_2
+Converting SAM to BAM for SL_2
+BAM sorting completed for RX_5
+Indexing sorted BAM for RX_5
+Indexing completed for RX_5
+All processing steps completed for RX_5
+Starting BWA-MEM for ST_7
+SAM to BAM conversion completed for QDH_12
+Sorting BAM for QDH_12
+BAM sorting completed for SLZ_1
+Indexing sorted BAM for SLZ_1
+Indexing completed for SLZ_1
+All processing steps completed for SLZ_1
+Starting BWA-MEM for ST_8
+SAM to BAM conversion completed for SL_2
+Sorting BAM for SL_2
+SAM to BAM conversion completed for RX_8
+Sorting BAM for RX_8
+BAM sorting completed for SL_2
+Indexing sorted BAM for SL_2
+Indexing completed for SL_2
+All processing steps completed for SL_2
+Starting BWA-MEM for SXK_1
+BWA-MEM completed for SL_1
+Converting SAM to BAM for SL_1
+BWA-MEM completed for QST_2
+Converting SAM to BAM for QST_2
+BAM sorting completed for QDH_12
+Indexing sorted BAM for QDH_12
+BWA-MEM completed for SL_5
+Converting SAM to BAM for SL_5
+Indexing completed for QDH_12
+All processing steps completed for QDH_12
+Starting BWA-MEM for SXK_2
+BAM sorting completed for RX_8
+Indexing sorted BAM for RX_8
+Indexing completed for RX_8
+All processing steps completed for RX_8
+Starting BWA-MEM for SXK_3
+SAM to BAM conversion completed for SL_1
+Sorting BAM for SL_1
+SAM to BAM conversion completed for SL_5
+Sorting BAM for SL_5
+BWA-MEM completed for SL_4
+Converting SAM to BAM for SL_4
+BWA-MEM completed for SLZ_6
+Converting SAM to BAM for SLZ_6
+BWA-MEM completed for SLZ_4
+Converting SAM to BAM for SLZ_4
+SAM to BAM conversion completed for QST_2
+Sorting BAM for QST_2
+SAM to BAM conversion completed for SLZ_6
+Sorting BAM for SLZ_6
+SAM to BAM conversion completed for SL_4
+Sorting BAM for SL_4
+BAM sorting completed for SL_1
+Indexing sorted BAM for SL_1
+Indexing completed for SL_1
+All processing steps completed for SL_1
+Starting BWA-MEM for SXK_4
+BWA-MEM completed for SL_3
+Converting SAM to BAM for SL_3
+BWA-MEM completed for SFZ_6
+Converting SAM to BAM for SFZ_6
+SAM to BAM conversion completed for SLZ_4
+Sorting BAM for SLZ_4
+BAM sorting completed for SL_5
+Indexing sorted BAM for SL_5
+Indexing completed for SL_5
+All processing steps completed for SL_5
+Starting BWA-MEM for SXK_5
+BWA-MEM completed for SLZ_3
+Converting SAM to BAM for SLZ_3
+BAM sorting completed for SL_4
+Indexing sorted BAM for SL_4
+BAM sorting completed for SLZ_6
+Indexing sorted BAM for SLZ_6
+Indexing completed for SL_4
+All processing steps completed for SL_4
+Starting BWA-MEM for SXK_6
+Indexing completed for SLZ_6
+All processing steps completed for SLZ_6
+Starting BWA-MEM for WYL_1
+SAM to BAM conversion completed for SL_3
+Sorting BAM for SL_3
+BWA-MEM completed for SFZ_10
+Converting SAM to BAM for SFZ_10
+BAM sorting completed for SLZ_4
+Indexing sorted BAM for SLZ_4
+Indexing completed for SLZ_4
+All processing steps completed for SLZ_4
+Starting BWA-MEM for WYL_3
+SAM to BAM conversion completed for SFZ_6
+Sorting BAM for SFZ_6
+SAM to BAM conversion completed for SLZ_3
+Sorting BAM for SLZ_3
+BAM sorting completed for QST_2
+Indexing sorted BAM for QST_2
+BWA-MEM completed for SLZ_7
+Converting SAM to BAM for SLZ_7
+BWA-MEM completed for SFZ_5
+Converting SAM to BAM for SFZ_5
+Indexing completed for QST_2
+All processing steps completed for QST_2
+Starting BWA-MEM for WYL_4
+BAM sorting completed for SL_3
+Indexing sorted BAM for SL_3
+Indexing completed for SL_3
+All processing steps completed for SL_3
+Starting BWA-MEM for WYL_6
+BWA-MEM completed for SK_4
+Converting SAM to BAM for SK_4
+BWA-MEM completed for SFZ_1
+Converting SAM to BAM for SFZ_1
+SAM to BAM conversion completed for SLZ_7
+Sorting BAM for SLZ_7
+SAM to BAM conversion completed for SFZ_10
+Sorting BAM for SFZ_10
+BAM sorting completed for SLZ_3
+Indexing sorted BAM for SLZ_3
+Indexing completed for SLZ_3
+All processing steps completed for SLZ_3
+Starting BWA-MEM for WYL_8
+SAM to BAM conversion completed for SFZ_5
+Sorting BAM for SFZ_5
+BWA-MEM completed for SLZ_8
+Converting SAM to BAM for SLZ_8
+SAM to BAM conversion completed for SK_4
+Sorting BAM for SK_4
+BAM sorting completed for SLZ_7
+Indexing sorted BAM for SLZ_7
+Indexing completed for SLZ_7
+All processing steps completed for SLZ_7
+Starting BWA-MEM for XC_1
+BAM sorting completed for SFZ_6
+Indexing sorted BAM for SFZ_6
+SAM to BAM conversion completed for SFZ_1
+Sorting BAM for SFZ_1
+Indexing completed for SFZ_6
+All processing steps completed for SFZ_6
+Starting BWA-MEM for XC_2
+BWA-MEM completed for SFZ_7
+Converting SAM to BAM for SFZ_7
+SAM to BAM conversion completed for SLZ_8
+Sorting BAM for SLZ_8
+BAM sorting completed for SFZ_10
+Indexing sorted BAM for SFZ_10
+Indexing completed for SFZ_10
+All processing steps completed for SFZ_10
+Starting BWA-MEM for XC_5
+SAM to BAM conversion completed for SFZ_7
+Sorting BAM for SFZ_7
+BAM sorting completed for SLZ_8
+Indexing sorted BAM for SLZ_8
+Indexing completed for SLZ_8
+All processing steps completed for SLZ_8
+Starting BWA-MEM for XC_6
+BAM sorting completed for SFZ_5
+Indexing sorted BAM for SFZ_5
+Indexing completed for SFZ_5
+All processing steps completed for SFZ_5
+Starting BWA-MEM for XC_7
+BWA-MEM completed for SFZ_3
+Converting SAM to BAM for SFZ_3
+BAM sorting completed for SK_4
+Indexing sorted BAM for SK_4
+BAM sorting completed for SFZ_1
+Indexing sorted BAM for SFZ_1
+Indexing completed for SK_4
+All processing steps completed for SK_4
+Starting BWA-MEM for XC_8
+Indexing completed for SFZ_1
+All processing steps completed for SFZ_1
+Starting BWA-MEM for XNF_1
+BWA-MEM completed for SFZ_4
+Converting SAM to BAM for SFZ_4
+BWA-MEM completed for SK_7
+Converting SAM to BAM for SK_7
+BWA-MEM completed for SK_2
+Converting SAM to BAM for SK_2
+BWA-MEM completed for SK_10
+Converting SAM to BAM for SK_10
+SAM to BAM conversion completed for SFZ_3
+Sorting BAM for SFZ_3
+BAM sorting completed for SFZ_7
+Indexing sorted BAM for SFZ_7
+Indexing completed for SFZ_7
+All processing steps completed for SFZ_7
+Starting BWA-MEM for XNF_3
+SAM to BAM conversion completed for SFZ_4
+Sorting BAM for SFZ_4
+SAM to BAM conversion completed for SK_7
+Sorting BAM for SK_7
+SAM to BAM conversion completed for SK_2
+Sorting BAM for SK_2
+BWA-MEM completed for SFZ_2
+Converting SAM to BAM for SFZ_2
+BWA-MEM completed for SK_8
+Converting SAM to BAM for SK_8
+BWA-MEM completed for SK_1
+Converting SAM to BAM for SK_1
+SAM to BAM conversion completed for SK_10
+Sorting BAM for SK_10
+BAM sorting completed for SFZ_3
+Indexing sorted BAM for SFZ_3
+Indexing completed for SFZ_3
+All processing steps completed for SFZ_3
+Starting BWA-MEM for XNF_4
+SAM to BAM conversion completed for SK_8
+Sorting BAM for SK_8
+BWA-MEM completed for QST_1
+Converting SAM to BAM for QST_1
+BAM sorting completed for SFZ_4
+Indexing sorted BAM for SFZ_4
+Indexing completed for SFZ_4
+All processing steps completed for SFZ_4
+Starting BWA-MEM for XNF_5
+BAM sorting completed for SK_2
+Indexing sorted BAM for SK_2
+BAM sorting completed for SK_7
+Indexing sorted BAM for SK_7
+Indexing completed for SK_2
+All processing steps completed for SK_2
+Starting BWA-MEM for XNF_6
+Indexing completed for SK_7
+All processing steps completed for SK_7
+Starting BWA-MEM for XNF_7
+SAM to BAM conversion completed for SK_1
+Sorting BAM for SK_1
+SAM to BAM conversion completed for SFZ_2
+Sorting BAM for SFZ_2
+BAM sorting completed for SK_10
+Indexing sorted BAM for SK_10
+Indexing completed for SK_10
+All processing steps completed for SK_10
+Starting BWA-MEM for YK_1
+BWA-MEM completed for SFZ_8
+Converting SAM to BAM for SFZ_8
+BWA-MEM completed for QST_3
+Converting SAM to BAM for QST_3
+SAM to BAM conversion completed for QST_1
+Sorting BAM for QST_1
+BAM sorting completed for SK_8
+Indexing sorted BAM for SK_8
+Indexing completed for SK_8
+All processing steps completed for SK_8
+Starting BWA-MEM for YK_3
+SAM to BAM conversion completed for SFZ_8
+Sorting BAM for SFZ_8
+BAM sorting completed for SK_1
+Indexing sorted BAM for SK_1
+Indexing completed for SK_1
+All processing steps completed for SK_1
+Starting BWA-MEM for YK_4
+BAM sorting completed for SFZ_2
+Indexing sorted BAM for SFZ_2
+SAM to BAM conversion completed for QST_3
+Sorting BAM for QST_3
+Indexing completed for SFZ_2
+All processing steps completed for SFZ_2
+Starting BWA-MEM for YK_7
+BAM sorting completed for QST_1
+Indexing sorted BAM for QST_1
+Indexing completed for QST_1
+All processing steps completed for QST_1
+Starting BWA-MEM for YK_8
+BAM sorting completed for SFZ_8
+Indexing sorted BAM for SFZ_8
+BWA-MEM completed for ST_1
+Converting SAM to BAM for ST_1
+Indexing completed for SFZ_8
+All processing steps completed for SFZ_8
+Starting BWA-MEM for YX_1
+BAM sorting completed for QST_3
+Indexing sorted BAM for QST_3
+Indexing completed for QST_3
+All processing steps completed for QST_3
+Starting BWA-MEM for YX_2
+BWA-MEM completed for SXK_1
+Converting SAM to BAM for SXK_1
+SAM to BAM conversion completed for ST_1
+Sorting BAM for ST_1
+SAM to BAM conversion completed for SXK_1
+Sorting BAM for SXK_1
+BWA-MEM completed for SK_9
+Converting SAM to BAM for SK_9
+BWA-MEM completed for SXK_5
+Converting SAM to BAM for SXK_5
+BWA-MEM completed for SXK_2
+Converting SAM to BAM for SXK_2
+BAM sorting completed for SXK_1
+Indexing sorted BAM for SXK_1
+Indexing completed for SXK_1
+All processing steps completed for SXK_1
+Starting BWA-MEM for YX_3
+BAM sorting completed for ST_1
+Indexing sorted BAM for ST_1
+Indexing completed for ST_1
+All processing steps completed for ST_1
+Starting BWA-MEM for YX_6
+BWA-MEM completed for WYL_4
+Converting SAM to BAM for WYL_4
+SAM to BAM conversion completed for SXK_5
+Sorting BAM for SXK_5
+SAM to BAM conversion completed for WYL_4
+Sorting BAM for WYL_4
+SAM to BAM conversion completed for SXK_2
+Sorting BAM for SXK_2
+SAM to BAM conversion completed for SK_9
+Sorting BAM for SK_9
+BAM sorting completed for SXK_5
+Indexing sorted BAM for SXK_5
+Indexing completed for SXK_5
+All processing steps completed for SXK_5
+Starting BWA-MEM for YX_7
+BWA-MEM completed for WYL_8
+Converting SAM to BAM for WYL_8
+BAM sorting completed for WYL_4
+Indexing sorted BAM for WYL_4
+Indexing completed for WYL_4
+All processing steps completed for WYL_4
+Starting BWA-MEM for YZY_10
+BWA-MEM completed for WYL_3
+Converting SAM to BAM for WYL_3
+BAM sorting completed for SXK_2
+Indexing sorted BAM for SXK_2
+Indexing completed for SXK_2
+All processing steps completed for SXK_2
+Starting BWA-MEM for YZY_11
+BWA-MEM completed for SXK_3
+Converting SAM to BAM for SXK_3
+SAM to BAM conversion completed for WYL_8
+Sorting BAM for WYL_8
+BWA-MEM completed for WYL_6
+Converting SAM to BAM for WYL_6
+SAM to BAM conversion completed for WYL_3
+Sorting BAM for WYL_3
+BAM sorting completed for SK_9
+Indexing sorted BAM for SK_9
+Indexing completed for SK_9
+All processing steps completed for SK_9
+Starting BWA-MEM for YZY_2
+SAM to BAM conversion completed for SXK_3
+Sorting BAM for SXK_3
+BAM sorting completed for WYL_8
+Indexing sorted BAM for WYL_8
+Indexing completed for WYL_8
+All processing steps completed for WYL_8
+Starting BWA-MEM for YZY_4
+BWA-MEM completed for ST_2
+Converting SAM to BAM for ST_2
+BAM sorting completed for WYL_3
+Indexing sorted BAM for WYL_3
+SAM to BAM conversion completed for WYL_6
+Sorting BAM for WYL_6
+Indexing completed for WYL_3
+All processing steps completed for WYL_3
+Starting BWA-MEM for YZY_7
+BWA-MEM completed for ST_4
+Converting SAM to BAM for ST_4
+SAM to BAM conversion completed for ST_2
+Sorting BAM for ST_2
+BAM sorting completed for WYL_6
+Indexing sorted BAM for WYL_6
+Indexing completed for WYL_6
+All processing steps completed for WYL_6
+Starting BWA-MEM for YZY_8
+BWA-MEM completed for SXK_6
+Converting SAM to BAM for SXK_6
+BAM sorting completed for SXK_3
+Indexing sorted BAM for SXK_3
+Indexing completed for SXK_3
+All processing steps completed for SXK_3
+Starting BWA-MEM for ZJP_10
+SAM to BAM conversion completed for ST_4
+Sorting BAM for ST_4
+SAM to BAM conversion completed for SXK_6
+Sorting BAM for SXK_6
+BWA-MEM completed for SXK_4
+Converting SAM to BAM for SXK_4
+BAM sorting completed for ST_2
+Indexing sorted BAM for ST_2
+BWA-MEM completed for ST_3
+Converting SAM to BAM for ST_3
+Indexing completed for ST_2
+All processing steps completed for ST_2
+Starting BWA-MEM for ZJP_1
+BWA-MEM completed for XNF_1
+Converting SAM to BAM for XNF_1
+SAM to BAM conversion completed for SXK_4
+Sorting BAM for SXK_4
+BAM sorting completed for SXK_6
+Indexing sorted BAM for SXK_6
+Indexing completed for SXK_6
+All processing steps completed for SXK_6
+Starting BWA-MEM for ZJP_2
+BAM sorting completed for ST_4
+Indexing sorted BAM for ST_4
+Indexing completed for ST_4
+All processing steps completed for ST_4
+Starting BWA-MEM for ZJP_3
+SAM to BAM conversion completed for ST_3
+Sorting BAM for ST_3
+BWA-MEM completed for ST_6
+Converting SAM to BAM for ST_6
+SAM to BAM conversion completed for XNF_1
+Sorting BAM for XNF_1
+BWA-MEM completed for ST_5
+Converting SAM to BAM for ST_5
+BAM sorting completed for SXK_4
+Indexing sorted BAM for SXK_4
+BWA-MEM completed for ST_8
+Converting SAM to BAM for ST_8
+Indexing completed for SXK_4
+All processing steps completed for SXK_4
+Starting BWA-MEM for ZJP_4
+BAM sorting completed for XNF_1
+Indexing sorted BAM for XNF_1
+Indexing completed for XNF_1
+All processing steps completed for XNF_1
+Starting BWA-MEM for ZJP_5
+SAM to BAM conversion completed for ST_5
+Sorting BAM for ST_5
+BWA-MEM completed for XNF_3
+Converting SAM to BAM for XNF_3
+SAM to BAM conversion completed for ST_6
+Sorting BAM for ST_6
+BAM sorting completed for ST_3
+Indexing sorted BAM for ST_3
+Indexing completed for ST_3
+All processing steps completed for ST_3
+Starting BWA-MEM for ZJP_7
+SAM to BAM conversion completed for ST_8
+Sorting BAM for ST_8
+BWA-MEM completed for XNF_4
+Converting SAM to BAM for XNF_4
+SAM to BAM conversion completed for XNF_3
+Sorting BAM for XNF_3
+BWA-MEM completed for XNF_7
+Converting SAM to BAM for XNF_7
+SAM to BAM conversion completed for XNF_4
+Sorting BAM for XNF_4
+BAM sorting completed for ST_5
+Indexing sorted BAM for ST_5
+BWA-MEM completed for XNF_6
+Converting SAM to BAM for XNF_6
+Indexing completed for ST_5
+All processing steps completed for ST_5
+Starting BWA-MEM for ZJP_8
+SAM to BAM conversion completed for XNF_7
+Sorting BAM for XNF_7
+BAM sorting completed for XNF_3
+Indexing sorted BAM for XNF_3
+Indexing completed for XNF_3
+All processing steps completed for XNF_3
+Starting BWA-MEM for ZJS_10
+BAM sorting completed for ST_6
+Indexing sorted BAM for ST_6
+Indexing completed for ST_6
+All processing steps completed for ST_6
+Starting BWA-MEM for ZJS_1
+BAM sorting completed for ST_8
+Indexing sorted BAM for ST_8
+Indexing completed for ST_8
+All processing steps completed for ST_8
+Starting BWA-MEM for ZJS_2
+SAM to BAM conversion completed for XNF_6
+Sorting BAM for XNF_6
+BWA-MEM completed for ST_7
+Converting SAM to BAM for ST_7
+BAM sorting completed for XNF_4
+Indexing sorted BAM for XNF_4
+Indexing completed for XNF_4
+All processing steps completed for XNF_4
+Starting BWA-MEM for ZJS_4
+BAM sorting completed for XNF_7
+Indexing sorted BAM for XNF_7
+Indexing completed for XNF_7
+All processing steps completed for XNF_7
+Starting BWA-MEM for ZJS_8
+BAM sorting completed for XNF_6
+Indexing sorted BAM for XNF_6
+Indexing completed for XNF_6
+All processing steps completed for XNF_6
+Starting BWA-MEM for ZJS_9
+SAM to BAM conversion completed for ST_7
+Sorting BAM for ST_7
+BWA-MEM completed for XNF_5
+Converting SAM to BAM for XNF_5
+SAM to BAM conversion completed for XNF_5
+Sorting BAM for XNF_5
+BAM sorting completed for ST_7
+Indexing sorted BAM for ST_7
+Indexing completed for ST_7
+All processing steps completed for ST_7
+BAM sorting completed for XNF_5
+Indexing sorted BAM for XNF_5
+Indexing completed for XNF_5
+All processing steps completed for XNF_5
+BWA-MEM completed for WYL_1
+Converting SAM to BAM for WYL_1
+SAM to BAM conversion completed for WYL_1
+Sorting BAM for WYL_1
+BWA-MEM completed for SFZ_9
+Converting SAM to BAM for SFZ_9
+BWA-MEM completed for XC_5
+Converting SAM to BAM for XC_5
+BAM sorting completed for WYL_1
+Indexing sorted BAM for WYL_1
+Indexing completed for WYL_1
+All processing steps completed for WYL_1
+SAM to BAM conversion completed for XC_5
+Sorting BAM for XC_5
+BWA-MEM completed for XC_2
+Converting SAM to BAM for XC_2
+SAM to BAM conversion completed for SFZ_9
+Sorting BAM for SFZ_9
+BWA-MEM completed for XC_1
+Converting SAM to BAM for XC_1
+BWA-MEM completed for XC_7
+Converting SAM to BAM for XC_7
+SAM to BAM conversion completed for XC_1
+Sorting BAM for XC_1
+SAM to BAM conversion completed for XC_2
+Sorting BAM for XC_2
+SAM to BAM conversion completed for XC_7
+Sorting BAM for XC_7
+BAM sorting completed for XC_5
+Indexing sorted BAM for XC_5
+Indexing completed for XC_5
+All processing steps completed for XC_5
+BAM sorting completed for SFZ_9
+Indexing sorted BAM for SFZ_9
+Indexing completed for SFZ_9
+All processing steps completed for SFZ_9
+BAM sorting completed for XC_1
+Indexing sorted BAM for XC_1
+Indexing completed for XC_1
+All processing steps completed for XC_1
+BAM sorting completed for XC_2
+Indexing sorted BAM for XC_2
+BWA-MEM completed for YK_8
+Converting SAM to BAM for YK_8
+Indexing completed for XC_2
+All processing steps completed for XC_2
+BAM sorting completed for XC_7
+Indexing sorted BAM for XC_7
+BWA-MEM completed for XC_8
+Converting SAM to BAM for XC_8
+Indexing completed for XC_7
+All processing steps completed for XC_7
+BWA-MEM completed for YK_3
+Converting SAM to BAM for YK_3
+SAM to BAM conversion completed for YK_3
+Sorting BAM for YK_3
+BWA-MEM completed for YK_7
+Converting SAM to BAM for YK_7
+SAM to BAM conversion completed for YK_8
+Sorting BAM for YK_8
+BWA-MEM completed for YK_1
+Converting SAM to BAM for YK_1
+BWA-MEM completed for XC_6
+Converting SAM to BAM for XC_6
+SAM to BAM conversion completed for XC_8
+Sorting BAM for XC_8
+BAM sorting completed for YK_3
+Indexing sorted BAM for YK_3
+Indexing completed for YK_3
+All processing steps completed for YK_3
+SAM to BAM conversion completed for YK_7
+Sorting BAM for YK_7
+SAM to BAM conversion completed for YK_1
+Sorting BAM for YK_1
+SAM to BAM conversion completed for XC_6
+Sorting BAM for XC_6
+BAM sorting completed for YK_8
+Indexing sorted BAM for YK_8
+Indexing completed for YK_8
+All processing steps completed for YK_8
+BWA-MEM completed for YX_1
+Converting SAM to BAM for YX_1
+BAM sorting completed for XC_8
+Indexing sorted BAM for XC_8
+Indexing completed for XC_8
+All processing steps completed for XC_8
+BAM sorting completed for YK_7
+Indexing sorted BAM for YK_7
+Indexing completed for YK_7
+All processing steps completed for YK_7
+BAM sorting completed for YK_1
+Indexing sorted BAM for YK_1
+Indexing completed for YK_1
+All processing steps completed for YK_1
+SAM to BAM conversion completed for YX_1
+Sorting BAM for YX_1
+BAM sorting completed for XC_6
+Indexing sorted BAM for XC_6
+Indexing completed for XC_6
+All processing steps completed for XC_6
+BWA-MEM completed for YK_4
+Converting SAM to BAM for YK_4
+BAM sorting completed for YX_1
+Indexing sorted BAM for YX_1
+SAM to BAM conversion completed for YK_4
+Sorting BAM for YK_4
+Indexing completed for YX_1
+All processing steps completed for YX_1
+BWA-MEM completed for YX_2
+Converting SAM to BAM for YX_2
+BAM sorting completed for YK_4
+Indexing sorted BAM for YK_4
+Indexing completed for YK_4
+All processing steps completed for YK_4
+BWA-MEM completed for YX_3
+Converting SAM to BAM for YX_3
+BWA-MEM completed for ZJP_10
+Converting SAM to BAM for ZJP_10
+BWA-MEM completed for YX_6
+Converting SAM to BAM for YX_6
+SAM to BAM conversion completed for YX_2
+Sorting BAM for YX_2
+SAM to BAM conversion completed for YX_3
+Sorting BAM for YX_3
+BWA-MEM completed for YX_7
+Converting SAM to BAM for YX_7
+SAM to BAM conversion completed for ZJP_10
+Sorting BAM for ZJP_10
+SAM to BAM conversion completed for YX_6
+Sorting BAM for YX_6
+BAM sorting completed for YX_2
+Indexing sorted BAM for YX_2
+Indexing completed for YX_2
+All processing steps completed for YX_2
+SAM to BAM conversion completed for YX_7
+Sorting BAM for YX_7
+BAM sorting completed for YX_3
+Indexing sorted BAM for YX_3
+Indexing completed for YX_3
+All processing steps completed for YX_3
+BWA-MEM completed for YZY_10
+Converting SAM to BAM for YZY_10
+BAM sorting completed for YX_6
+Indexing sorted BAM for YX_6
+Indexing completed for YX_6
+All processing steps completed for YX_6
+BAM sorting completed for ZJP_10
+Indexing sorted BAM for ZJP_10
+Indexing completed for ZJP_10
+All processing steps completed for ZJP_10
+BWA-MEM completed for YZY_11
+Converting SAM to BAM for YZY_11
+BAM sorting completed for YX_7
+Indexing sorted BAM for YX_7
+SAM to BAM conversion completed for YZY_10
+Sorting BAM for YZY_10
+Indexing completed for YX_7
+All processing steps completed for YX_7
+BWA-MEM completed for YZY_8
+Converting SAM to BAM for YZY_8
+SAM to BAM conversion completed for YZY_11
+Sorting BAM for YZY_11
+BWA-MEM completed for YZY_2
+Converting SAM to BAM for YZY_2
+SAM to BAM conversion completed for YZY_8
+Sorting BAM for YZY_8
+BAM sorting completed for YZY_10
+Indexing sorted BAM for YZY_10
+SAM to BAM conversion completed for YZY_2
+Sorting BAM for YZY_2
+Indexing completed for YZY_10
+All processing steps completed for YZY_10
+BWA-MEM completed for YZY_7
+Converting SAM to BAM for YZY_7
+BAM sorting completed for YZY_11
+Indexing sorted BAM for YZY_11
+BWA-MEM completed for ZJS_10
+Converting SAM to BAM for ZJS_10
+Indexing completed for YZY_11
+All processing steps completed for YZY_11
+SAM to BAM conversion completed for YZY_7
+Sorting BAM for YZY_7
+BAM sorting completed for YZY_8
+Indexing sorted BAM for YZY_8
+Indexing completed for YZY_8
+All processing steps completed for YZY_8
+BAM sorting completed for YZY_2
+Indexing sorted BAM for YZY_2
+Indexing completed for YZY_2
+All processing steps completed for YZY_2
+SAM to BAM conversion completed for ZJS_10
+Sorting BAM for ZJS_10
+BWA-MEM completed for ZJP_1
+Converting SAM to BAM for ZJP_1
+SAM to BAM conversion completed for ZJP_1
+Sorting BAM for ZJP_1
+BAM sorting completed for YZY_7
+Indexing sorted BAM for YZY_7
+Indexing completed for YZY_7
+All processing steps completed for YZY_7
+BAM sorting completed for ZJS_10
+Indexing sorted BAM for ZJS_10
+Indexing completed for ZJS_10
+All processing steps completed for ZJS_10
+BWA-MEM completed for YZY_4
+Converting SAM to BAM for YZY_4
+BAM sorting completed for ZJP_1
+Indexing sorted BAM for ZJP_1
+Indexing completed for ZJP_1
+All processing steps completed for ZJP_1
+BWA-MEM completed for ZJP_8
+Converting SAM to BAM for ZJP_8
+SAM to BAM conversion completed for YZY_4
+Sorting BAM for YZY_4
+BWA-MEM completed for ZJP_2
+Converting SAM to BAM for ZJP_2
+SAM to BAM conversion completed for ZJP_8
+Sorting BAM for ZJP_8
+BWA-MEM completed for ZJP_7
+Converting SAM to BAM for ZJP_7
+BWA-MEM completed for ZJP_3
+Converting SAM to BAM for ZJP_3
+BWA-MEM completed for ZJP_4
+Converting SAM to BAM for ZJP_4
+SAM to BAM conversion completed for ZJP_2
+Sorting BAM for ZJP_2
+SAM to BAM conversion completed for ZJP_7
+Sorting BAM for ZJP_7
+BWA-MEM completed for ZJP_5
+Converting SAM to BAM for ZJP_5
+SAM to BAM conversion completed for ZJP_4
+Sorting BAM for ZJP_4
+SAM to BAM conversion completed for ZJP_3
+Sorting BAM for ZJP_3
+BAM sorting completed for YZY_4
+Indexing sorted BAM for YZY_4
+Indexing completed for YZY_4
+All processing steps completed for YZY_4
+BAM sorting completed for ZJP_8
+Indexing sorted BAM for ZJP_8
+Indexing completed for ZJP_8
+All processing steps completed for ZJP_8
+SAM to BAM conversion completed for ZJP_5
+Sorting BAM for ZJP_5
+BWA-MEM completed for ZJS_1
+Converting SAM to BAM for ZJS_1
+BAM sorting completed for ZJP_2
+Indexing sorted BAM for ZJP_2
+Indexing completed for ZJP_2
+All processing steps completed for ZJP_2
+BAM sorting completed for ZJP_7
+Indexing sorted BAM for ZJP_7
+Indexing completed for ZJP_7
+All processing steps completed for ZJP_7
+SAM to BAM conversion completed for ZJS_1
+Sorting BAM for ZJS_1
+BAM sorting completed for ZJP_3
+Indexing sorted BAM for ZJP_3
+BAM sorting completed for ZJP_4
+Indexing sorted BAM for ZJP_4
+Indexing completed for ZJP_4
+All processing steps completed for ZJP_4
+Indexing completed for ZJP_3
+All processing steps completed for ZJP_3
+BAM sorting completed for ZJP_5
+Indexing sorted BAM for ZJP_5
+Indexing completed for ZJP_5
+All processing steps completed for ZJP_5
+BWA-MEM completed for ZJS_4
+Converting SAM to BAM for ZJS_4
+BAM sorting completed for ZJS_1
+Indexing sorted BAM for ZJS_1
+Indexing completed for ZJS_1
+All processing steps completed for ZJS_1
+SAM to BAM conversion completed for ZJS_4
+Sorting BAM for ZJS_4
+BAM sorting completed for ZJS_4
+Indexing sorted BAM for ZJS_4
+Indexing completed for ZJS_4
+All processing steps completed for ZJS_4
+BWA-MEM completed for ZJS_2
+Converting SAM to BAM for ZJS_2
+BWA-MEM completed for ZJS_9
+Converting SAM to BAM for ZJS_9
+SAM to BAM conversion completed for ZJS_2
+Sorting BAM for ZJS_2
+BWA-MEM completed for ZJS_8
+Converting SAM to BAM for ZJS_8
+SAM to BAM conversion completed for ZJS_9
+Sorting BAM for ZJS_9
+SAM to BAM conversion completed for ZJS_8
+Sorting BAM for ZJS_8
+BAM sorting completed for ZJS_2
+Indexing sorted BAM for ZJS_2
+Indexing completed for ZJS_2
+All processing steps completed for ZJS_2
+BAM sorting completed for ZJS_9
+Indexing sorted BAM for ZJS_9
+Indexing completed for ZJS_9
+All processing steps completed for ZJS_9
+BAM sorting completed for ZJS_8
+Indexing sorted BAM for ZJS_8
+Indexing completed for ZJS_8
+All processing steps completed for ZJS_8
+BWA processing completed at 2024年 02月 18日 星期日 18:54:37 CST
