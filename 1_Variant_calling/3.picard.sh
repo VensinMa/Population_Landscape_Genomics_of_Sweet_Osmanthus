@@ -32,7 +32,7 @@ process_picard() {
     java -Xmx32g -jar "$picard_jar_path" MarkDuplicates \
         -I "$sorted_bam_path" \
         -O "$output_dir/markdup/${base_name}.markdup.bam" \
-        -M "$picard_dir/${base_name}.metrics.txt" \
+        -M "/public1/guop/mawx/workspace/wild_snpcalling/3.bwa_sam_bam/picard_metrics/${base_name}.metrics.txt" \
         --MAX_FILE_HANDLES_FOR_READ_ENDS_MAP 1000 \
         --REMOVE_DUPLICATES false \
         --ASSUME_SORTED true \
