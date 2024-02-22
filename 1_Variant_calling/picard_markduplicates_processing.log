@@ -1,0 +1,960 @@
+Script started at 2024年 02月 20日 星期二 12:27:09 CST
+Marking duplicates for BN_2 at 2024年 02月 20日 星期二 12:27:10 CST
+Marking duplicates for BN_4 at 2024年 02月 20日 星期二 12:27:10 CST
+Marking duplicates for BN_9 at 2024年 02月 20日 星期二 12:27:10 CST
+Marking duplicates for BN_3 at 2024年 02月 20日 星期二 12:27:10 CST
+Marking duplicates for BN_7 at 2024年 02月 20日 星期二 12:27:10 CST
+Marking duplicates for BN_5 at 2024年 02月 20日 星期二 12:27:10 CST
+Marking duplicates for CP_1 at 2024年 02月 20日 星期二 12:27:10 CST
+Marking duplicates for CP_4 at 2024年 02月 20日 星期二 12:27:10 CST
+Marking duplicates for CP_2 at 2024年 02月 20日 星期二 12:27:10 CST
+Marking duplicates for CP_5 at 2024年 02月 20日 星期二 12:27:10 CST
+Marking duplicates for CP_3 at 2024年 02月 20日 星期二 12:27:10 CST
+Marking duplicates for CX_10 at 2024年 02月 20日 星期二 12:27:10 CST
+Marking duplicates for CX_2 at 2024年 02月 20日 星期二 12:27:10 CST
+Marking duplicates for CX_3 at 2024年 02月 20日 星期二 12:27:10 CST
+Marking duplicates for CP_6 at 2024年 02月 20日 星期二 12:27:10 CST
+Marking duplicates completed for BN_2 at 2024年 02月 20日 星期二 13:34:41 CST
+Indexing marked duplicates BAM for BN_2 at 2024年 02月 20日 星期二 13:34:42 CST
+Indexing marked duplicates BAM completed for BN_2 at 2024年 02月 20日 星期二 13:36:45 CST
+Marking duplicates for CX_4 at 2024年 02月 20日 星期二 13:36:47 CST
+Marking duplicates completed for BN_7 at 2024年 02月 20日 星期二 13:42:11 CST
+Marking duplicates completed for BN_4 at 2024年 02月 20日 星期二 13:42:11 CST
+Indexing marked duplicates BAM for BN_4 at 2024年 02月 20日 星期二 13:42:12 CST
+Indexing marked duplicates BAM for BN_7 at 2024年 02月 20日 星期二 13:42:12 CST
+Indexing marked duplicates BAM completed for BN_7 at 2024年 02月 20日 星期二 13:44:17 CST
+Indexing marked duplicates BAM completed for BN_4 at 2024年 02月 20日 星期二 13:44:17 CST
+Marking duplicates for CX_5 at 2024年 02月 20日 星期二 13:44:19 CST
+Marking duplicates for CX_7 at 2024年 02月 20日 星期二 13:44:19 CST
+Marking duplicates completed for BN_3 at 2024年 02月 20日 星期二 13:44:52 CST
+Indexing marked duplicates BAM for BN_3 at 2024年 02月 20日 星期二 13:44:52 CST
+Marking duplicates completed for BN_9 at 2024年 02月 20日 星期二 13:46:16 CST
+Indexing marked duplicates BAM for BN_9 at 2024年 02月 20日 星期二 13:46:17 CST
+Indexing marked duplicates BAM completed for BN_3 at 2024年 02月 20日 星期二 13:46:43 CST
+Marking duplicates for CX_9 at 2024年 02月 20日 星期二 13:46:45 CST
+Indexing marked duplicates BAM completed for BN_9 at 2024年 02月 20日 星期二 13:48:08 CST
+Marking duplicates for DA_1 at 2024年 02月 20日 星期二 13:48:08 CST
+Marking duplicates completed for BN_5 at 2024年 02月 20日 星期二 13:48:23 CST
+Indexing marked duplicates BAM for BN_5 at 2024年 02月 20日 星期二 13:48:24 CST
+Indexing marked duplicates BAM completed for BN_5 at 2024年 02月 20日 星期二 13:50:19 CST
+Marking duplicates for DA_2 at 2024年 02月 20日 星期二 13:50:19 CST
+Marking duplicates completed for CP_5 at 2024年 02月 20日 星期二 14:18:38 CST
+Indexing marked duplicates BAM for CP_5 at 2024年 02月 20日 星期二 14:18:39 CST
+Marking duplicates completed for CX_3 at 2024年 02月 20日 星期二 14:22:04 CST
+Indexing marked duplicates BAM for CX_3 at 2024年 02月 20日 星期二 14:22:04 CST
+Indexing marked duplicates BAM completed for CP_5 at 2024年 02月 20日 星期二 14:22:49 CST
+Marking duplicates for DA_4 at 2024年 02月 20日 星期二 14:22:51 CST
+Marking duplicates completed for CX_2 at 2024年 02月 20日 星期二 14:23:40 CST
+Indexing marked duplicates BAM for CX_2 at 2024年 02月 20日 星期二 14:23:41 CST
+Indexing marked duplicates BAM completed for CX_3 at 2024年 02月 20日 星期二 14:25:53 CST
+Marking duplicates for DA_6 at 2024年 02月 20日 星期二 14:25:54 CST
+Marking duplicates completed for CP_4 at 2024年 02月 20日 星期二 14:26:13 CST
+Indexing marked duplicates BAM for CP_4 at 2024年 02月 20日 星期二 14:26:15 CST
+Marking duplicates completed for CP_3 at 2024年 02月 20日 星期二 14:27:17 CST
+Indexing marked duplicates BAM for CP_3 at 2024年 02月 20日 星期二 14:27:18 CST
+Indexing marked duplicates BAM completed for CX_2 at 2024年 02月 20日 星期二 14:27:21 CST
+Marking duplicates for DA_7 at 2024年 02月 20日 星期二 14:27:22 CST
+Indexing marked duplicates BAM completed for CP_4 at 2024年 02月 20日 星期二 14:29:57 CST
+Marking duplicates for DA_8 at 2024年 02月 20日 星期二 14:29:58 CST
+Indexing marked duplicates BAM completed for CP_3 at 2024年 02月 20日 星期二 14:30:47 CST
+Marking duplicates for DRS_1 at 2024年 02月 20日 星期二 14:30:47 CST
+Marking duplicates completed for CP_2 at 2024年 02月 20日 星期二 14:32:11 CST
+Indexing marked duplicates BAM for CP_2 at 2024年 02月 20日 星期二 14:32:12 CST
+Indexing marked duplicates BAM completed for CP_2 at 2024年 02月 20日 星期二 14:36:02 CST
+Marking duplicates for DRS_2 at 2024年 02月 20日 星期二 14:36:03 CST
+Marking duplicates completed for CP_6 at 2024年 02月 20日 星期二 14:36:32 CST
+Indexing marked duplicates BAM for CP_6 at 2024年 02月 20日 星期二 14:36:32 CST
+Marking duplicates completed for CP_1 at 2024年 02月 20日 星期二 14:38:43 CST
+Indexing marked duplicates BAM for CP_1 at 2024年 02月 20日 星期二 14:38:44 CST
+Indexing marked duplicates BAM completed for CP_6 at 2024年 02月 20日 星期二 14:40:22 CST
+Marking duplicates for DRS_4 at 2024年 02月 20日 星期二 14:40:23 CST
+Indexing marked duplicates BAM completed for CP_1 at 2024年 02月 20日 星期二 14:42:20 CST
+Marking duplicates for DRS_5 at 2024年 02月 20日 星期二 14:42:20 CST
+Marking duplicates completed for CX_10 at 2024年 02月 20日 星期二 14:56:25 CST
+Indexing marked duplicates BAM for CX_10 at 2024年 02月 20日 星期二 14:56:26 CST
+Indexing marked duplicates BAM completed for CX_10 at 2024年 02月 20日 星期二 15:00:23 CST
+Marking duplicates for DRS_6 at 2024年 02月 20日 星期二 15:00:24 CST
+Marking duplicates completed for DA_1 at 2024年 02月 20日 星期二 15:09:47 CST
+Indexing marked duplicates BAM for DA_1 at 2024年 02月 20日 星期二 15:09:48 CST
+Marking duplicates completed for DA_2 at 2024年 02月 20日 星期二 15:12:07 CST
+Indexing marked duplicates BAM completed for DA_1 at 2024年 02月 20日 星期二 15:12:07 CST
+Indexing marked duplicates BAM for DA_2 at 2024年 02月 20日 星期二 15:12:07 CST
+Marking duplicates for DRS_7 at 2024年 02月 20日 星期二 15:12:08 CST
+Indexing marked duplicates BAM completed for DA_2 at 2024年 02月 20日 星期二 15:13:57 CST
+Marking duplicates for DST_1 at 2024年 02月 20日 星期二 15:14:00 CST
+Marking duplicates completed for CX_4 at 2024年 02月 20日 星期二 15:49:14 CST
+Indexing marked duplicates BAM for CX_4 at 2024年 02月 20日 星期二 15:49:14 CST
+Indexing marked duplicates BAM completed for CX_4 at 2024年 02月 20日 星期二 15:53:26 CST
+Marking duplicates for DST_2 at 2024年 02月 20日 星期二 15:53:28 CST
+Marking duplicates completed for DA_7 at 2024年 02月 20日 星期二 15:56:37 CST
+Indexing marked duplicates BAM for DA_7 at 2024年 02月 20日 星期二 15:56:37 CST
+Marking duplicates completed for DA_4 at 2024年 02月 20日 星期二 15:57:25 CST
+Indexing marked duplicates BAM for DA_4 at 2024年 02月 20日 星期二 15:57:27 CST
+Marking duplicates completed for DA_6 at 2024年 02月 20日 星期二 15:57:49 CST
+Indexing marked duplicates BAM for DA_6 at 2024年 02月 20日 星期二 15:57:50 CST
+Indexing marked duplicates BAM completed for DA_7 at 2024年 02月 20日 星期二 15:58:19 CST
+Marking duplicates for DST_4 at 2024年 02月 20日 星期二 15:58:21 CST
+Indexing marked duplicates BAM completed for DA_4 at 2024年 02月 20日 星期二 15:59:43 CST
+Indexing marked duplicates BAM completed for DA_6 at 2024年 02月 20日 星期二 15:59:44 CST
+Marking duplicates for DST_5 at 2024年 02月 20日 星期二 15:59:45 CST
+Marking duplicates for DST_7 at 2024年 02月 20日 星期二 15:59:45 CST
+Marking duplicates completed for CX_7 at 2024年 02月 20日 星期二 16:00:55 CST
+Indexing marked duplicates BAM for CX_7 at 2024年 02月 20日 星期二 16:00:56 CST
+Marking duplicates completed for DRS_2 at 2024年 02月 20日 星期二 16:01:48 CST
+Indexing marked duplicates BAM for DRS_2 at 2024年 02月 20日 星期二 16:01:48 CST
+Marking duplicates completed for DA_8 at 2024年 02月 20日 星期二 16:02:49 CST
+Indexing marked duplicates BAM for DA_8 at 2024年 02月 20日 星期二 16:02:50 CST
+Indexing marked duplicates BAM completed for DRS_2 at 2024年 02月 20日 星期二 16:03:34 CST
+Marking duplicates for DST_8 at 2024年 02月 20日 星期二 16:03:35 CST
+Indexing marked duplicates BAM completed for CX_7 at 2024年 02月 20日 星期二 16:03:53 CST
+Marking duplicates for DST_9 at 2024年 02月 20日 星期二 16:03:54 CST
+Indexing marked duplicates BAM completed for DA_8 at 2024年 02月 20日 星期二 16:04:36 CST
+Marking duplicates for DYNC_10 at 2024年 02月 20日 星期二 16:04:37 CST
+Marking duplicates completed for DRS_4 at 2024年 02月 20日 星期二 16:05:35 CST
+Indexing marked duplicates BAM for DRS_4 at 2024年 02月 20日 星期二 16:05:35 CST
+Indexing marked duplicates BAM completed for DRS_4 at 2024年 02月 20日 星期二 16:06:54 CST
+Marking duplicates for DYNC_16 at 2024年 02月 20日 星期二 16:06:55 CST
+Marking duplicates completed for CX_5 at 2024年 02月 20日 星期二 16:09:38 CST
+Indexing marked duplicates BAM for CX_5 at 2024年 02月 20日 星期二 16:09:39 CST
+Marking duplicates completed for DRS_5 at 2024年 02月 20日 星期二 16:09:46 CST
+Indexing marked duplicates BAM for DRS_5 at 2024年 02月 20日 星期二 16:09:47 CST
+Indexing marked duplicates BAM completed for DRS_5 at 2024年 02月 20日 星期二 16:11:19 CST
+Marking duplicates for DYNC_1 at 2024年 02月 20日 星期二 16:11:20 CST
+Indexing marked duplicates BAM completed for CX_5 at 2024年 02月 20日 星期二 16:12:54 CST
+Marking duplicates for DYNC_2 at 2024年 02月 20日 星期二 16:12:55 CST
+Marking duplicates completed for DRS_1 at 2024年 02月 20日 星期二 16:14:05 CST
+Indexing marked duplicates BAM for DRS_1 at 2024年 02月 20日 星期二 16:14:06 CST
+Indexing marked duplicates BAM completed for DRS_1 at 2024年 02月 20日 星期二 16:15:38 CST
+Marking duplicates for DYNC_3 at 2024年 02月 20日 星期二 16:15:39 CST
+Marking duplicates completed for CX_9 at 2024年 02月 20日 星期二 16:15:47 CST
+Indexing marked duplicates BAM for CX_9 at 2024年 02月 20日 星期二 16:15:48 CST
+Marking duplicates completed for DRS_6 at 2024年 02月 20日 星期二 16:16:50 CST
+Indexing marked duplicates BAM for DRS_6 at 2024年 02月 20日 星期二 16:16:50 CST
+Indexing marked duplicates BAM completed for DRS_6 at 2024年 02月 20日 星期二 16:18:09 CST
+Marking duplicates for DYNC_5 at 2024年 02月 20日 星期二 16:18:09 CST
+Indexing marked duplicates BAM completed for CX_9 at 2024年 02月 20日 星期二 16:18:12 CST
+Marking duplicates for DYNC_6 at 2024年 02月 20日 星期二 16:18:13 CST
+Marking duplicates completed for DRS_7 at 2024年 02月 20日 星期二 16:26:17 CST
+Indexing marked duplicates BAM for DRS_7 at 2024年 02月 20日 星期二 16:26:17 CST
+Indexing marked duplicates BAM completed for DRS_7 at 2024年 02月 20日 星期二 16:27:20 CST
+Marking duplicates for DYNC_7 at 2024年 02月 20日 星期二 16:27:22 CST
+Marking duplicates completed for DYNC_10 at 2024年 02月 20日 星期二 17:17:27 CST
+Indexing marked duplicates BAM for DYNC_10 at 2024年 02月 20日 星期二 17:17:28 CST
+Marking duplicates completed for DST_1 at 2024年 02月 20日 星期二 17:18:43 CST
+Indexing marked duplicates BAM for DST_1 at 2024年 02月 20日 星期二 17:18:43 CST
+Indexing marked duplicates BAM completed for DYNC_10 at 2024年 02月 20日 星期二 17:20:36 CST
+Marking duplicates for EJ_1 at 2024年 02月 20日 星期二 17:20:38 CST
+Marking duplicates completed for DYNC_2 at 2024年 02月 20日 星期二 17:20:54 CST
+Indexing marked duplicates BAM for DYNC_2 at 2024年 02月 20日 星期二 17:20:55 CST
+Marking duplicates completed for DYNC_16 at 2024年 02月 20日 星期二 17:20:57 CST
+Indexing marked duplicates BAM for DYNC_16 at 2024年 02月 20日 星期二 17:20:58 CST
+Marking duplicates completed for DYNC_6 at 2024年 02月 20日 星期二 17:22:53 CST
+Indexing marked duplicates BAM for DYNC_6 at 2024年 02月 20日 星期二 17:22:54 CST
+Indexing marked duplicates BAM completed for DST_1 at 2024年 02月 20日 星期二 17:24:27 CST
+Indexing marked duplicates BAM completed for DYNC_2 at 2024年 02月 20日 星期二 17:25:04 CST
+Indexing marked duplicates BAM completed for DYNC_16 at 2024年 02月 20日 星期二 17:25:37 CST
+Indexing marked duplicates BAM completed for DYNC_6 at 2024年 02月 20日 星期二 17:26:07 CST
+Marking duplicates completed for DYNC_1 at 2024年 02月 20日 星期二 17:26:12 CST
+Indexing marked duplicates BAM for DYNC_1 at 2024年 02月 20日 星期二 17:26:12 CST
+Indexing marked duplicates BAM completed for DYNC_1 at 2024年 02月 20日 星期二 17:28:17 CST
+Marking duplicates completed for DYNC_5 at 2024年 02月 20日 星期二 17:33:20 CST
+Indexing marked duplicates BAM for DYNC_5 at 2024年 02月 20日 星期二 17:33:20 CST
+Marking duplicates completed for DYNC_7 at 2024年 02月 20日 星期二 17:33:59 CST
+Indexing marked duplicates BAM for DYNC_7 at 2024年 02月 20日 星期二 17:34:00 CST
+Marking duplicates completed for DYNC_3 at 2024年 02月 20日 星期二 17:34:43 CST
+Indexing marked duplicates BAM for DYNC_3 at 2024年 02月 20日 星期二 17:34:44 CST
+Indexing marked duplicates BAM completed for DYNC_5 at 2024年 02月 20日 星期二 17:35:07 CST
+Indexing marked duplicates BAM completed for DYNC_7 at 2024年 02月 20日 星期二 17:35:47 CST
+Indexing marked duplicates BAM completed for DYNC_3 at 2024年 02月 20日 星期二 17:36:12 CST
+Marking duplicates completed for DST_8 at 2024年 02月 20日 星期二 17:55:57 CST
+Indexing marked duplicates BAM for DST_8 at 2024年 02月 20日 星期二 17:55:57 CST
+Indexing marked duplicates BAM completed for DST_8 at 2024年 02月 20日 星期二 17:59:41 CST
+Marking duplicates completed for DST_5 at 2024年 02月 20日 星期二 18:01:01 CST
+Indexing marked duplicates BAM for DST_5 at 2024年 02月 20日 星期二 18:01:01 CST
+Indexing marked duplicates BAM completed for DST_5 at 2024年 02月 20日 星期二 18:02:50 CST
+Marking duplicates completed for DST_2 at 2024年 02月 20日 星期二 18:14:40 CST
+Indexing marked duplicates BAM for DST_2 at 2024年 02月 20日 星期二 18:14:41 CST
+Indexing marked duplicates BAM completed for DST_2 at 2024年 02月 20日 星期二 18:16:37 CST
+Marking duplicates completed for DST_9 at 2024年 02月 20日 星期二 18:19:13 CST
+Indexing marked duplicates BAM for DST_9 at 2024年 02月 20日 星期二 18:19:13 CST
+Marking duplicates completed for DST_7 at 2024年 02月 20日 星期二 18:19:48 CST
+Indexing marked duplicates BAM for DST_7 at 2024年 02月 20日 星期二 18:19:49 CST
+Indexing marked duplicates BAM completed for DST_9 at 2024年 02月 20日 星期二 18:20:55 CST
+Marking duplicates completed for DST_4 at 2024年 02月 20日 星期二 18:21:15 CST
+Indexing marked duplicates BAM for DST_4 at 2024年 02月 20日 星期二 18:21:15 CST
+Indexing marked duplicates BAM completed for DST_7 at 2024年 02月 20日 星期二 18:21:29 CST
+Indexing marked duplicates BAM completed for DST_4 at 2024年 02月 20日 星期二 18:23:21 CST
+Script started at 2024年 02月 20日 星期二 18:26:27 CST
+Marking duplicates for EJ_1 at 2024年 02月 20日 星期二 18:26:27 CST
+Marking duplicates for EJ_3 at 2024年 02月 20日 星期二 18:26:27 CST
+Marking duplicates for EJ_4 at 2024年 02月 20日 星期二 18:26:27 CST
+Marking duplicates for EJ_6 at 2024年 02月 20日 星期二 18:26:27 CST
+Marking duplicates for EJ_7 at 2024年 02月 20日 星期二 18:26:27 CST
+Marking duplicates for EJ_8 at 2024年 02月 20日 星期二 18:26:27 CST
+Marking duplicates for FZA_4 at 2024年 02月 20日 星期二 18:26:27 CST
+Marking duplicates for FZA_1 at 2024年 02月 20日 星期二 18:26:27 CST
+Marking duplicates for FZA_3 at 2024年 02月 20日 星期二 18:26:27 CST
+Marking duplicates for FZA_5 at 2024年 02月 20日 星期二 18:26:27 CST
+Marking duplicates for FZA_6 at 2024年 02月 20日 星期二 18:26:28 CST
+Marking duplicates for GHX_13 at 2024年 02月 20日 星期二 18:26:28 CST
+Marking duplicates for GHX_10 at 2024年 02月 20日 星期二 18:26:28 CST
+Marking duplicates for GHX_1 at 2024年 02月 20日 星期二 18:26:28 CST
+Marking duplicates for FZA_8 at 2024年 02月 20日 星期二 18:26:28 CST
+Marking duplicates for GHX_2 at 2024年 02月 20日 星期二 19:04:12 CST
+Marking duplicates completed for EJ_1 at 2024年 02月 20日 星期二 19:28:00 CST
+Indexing marked duplicates BAM for EJ_1 at 2024年 02月 20日 星期二 19:28:00 CST
+Marking duplicates completed for GHX_1 at 2024年 02月 20日 星期二 19:32:44 CST
+Indexing marked duplicates BAM for GHX_1 at 2024年 02月 20日 星期二 19:32:45 CST
+Marking duplicates completed for GHX_13 at 2024年 02月 20日 星期二 19:33:46 CST
+Indexing marked duplicates BAM for GHX_13 at 2024年 02月 20日 星期二 19:33:47 CST
+Indexing marked duplicates BAM completed for GHX_1 at 2024年 02月 20日 星期二 19:33:59 CST
+Marking duplicates for GHX_4 at 2024年 02月 20日 星期二 19:34:03 CST
+Indexing marked duplicates BAM completed for GHX_13 at 2024年 02月 20日 星期二 19:35:00 CST
+Marking duplicates for GHX_8 at 2024年 02月 20日 星期二 19:35:01 CST
+Marking duplicates completed for FZA_5 at 2024年 02月 20日 星期二 19:37:17 CST
+Indexing marked duplicates BAM for FZA_5 at 2024年 02月 20日 星期二 19:37:17 CST
+Indexing marked duplicates BAM completed for FZA_5 at 2024年 02月 20日 星期二 19:38:39 CST
+Marking duplicates for GHX_9 at 2024年 02月 20日 星期二 19:38:39 CST
+Marking duplicates completed for FZA_1 at 2024年 02月 20日 星期二 19:39:14 CST
+Indexing marked duplicates BAM for FZA_1 at 2024年 02月 20日 星期二 19:39:15 CST
+Indexing marked duplicates BAM completed for FZA_1 at 2024年 02月 20日 星期二 19:40:29 CST
+Marking duplicates for HJLL_1 at 2024年 02月 20日 星期二 19:40:29 CST
+Marking duplicates completed for GHX_10 at 2024年 02月 20日 星期二 19:42:02 CST
+Indexing marked duplicates BAM for GHX_10 at 2024年 02月 20日 星期二 19:42:03 CST
+Marking duplicates completed for FZA_4 at 2024年 02月 20日 星期二 19:42:45 CST
+Indexing marked duplicates BAM for FZA_4 at 2024年 02月 20日 星期二 19:42:45 CST
+Marking duplicates completed for FZA_3 at 2024年 02月 20日 星期二 19:43:06 CST
+Indexing marked duplicates BAM for FZA_3 at 2024年 02月 20日 星期二 19:43:07 CST
+Indexing marked duplicates BAM completed for GHX_10 at 2024年 02月 20日 星期二 19:43:12 CST
+Marking duplicates for HJLL_2 at 2024年 02月 20日 星期二 19:43:13 CST
+Indexing marked duplicates BAM completed for FZA_4 at 2024年 02月 20日 星期二 19:43:56 CST
+Marking duplicates for HJLL_3 at 2024年 02月 20日 星期二 19:43:56 CST
+Indexing marked duplicates BAM completed for FZA_3 at 2024年 02月 20日 星期二 19:44:15 CST
+Marking duplicates for HJLL_6 at 2024年 02月 20日 星期二 19:44:15 CST
+Marking duplicates completed for FZA_8 at 2024年 02月 20日 星期二 19:47:44 CST
+Indexing marked duplicates BAM for FZA_8 at 2024年 02月 20日 星期二 19:47:44 CST
+Indexing marked duplicates BAM completed for FZA_8 at 2024年 02月 20日 星期二 19:48:45 CST
+Marking duplicates for HJLL_7 at 2024年 02月 20日 星期二 19:48:46 CST
+Marking duplicates completed for FZA_6 at 2024年 02月 20日 星期二 19:49:52 CST
+Indexing marked duplicates BAM for FZA_6 at 2024年 02月 20日 星期二 19:49:53 CST
+Indexing marked duplicates BAM completed for FZA_6 at 2024年 02月 20日 星期二 19:51:08 CST
+Marking duplicates for HYX_1 at 2024年 02月 20日 星期二 19:51:09 CST
+Marking duplicates completed for GHX_2 at 2024年 02月 20日 星期二 20:02:20 CST
+Indexing marked duplicates BAM for GHX_2 at 2024年 02月 20日 星期二 20:02:20 CST
+Indexing marked duplicates BAM completed for GHX_2 at 2024年 02月 20日 星期二 20:02:47 CST
+Marking duplicates for HYX_2 at 2024年 02月 20日 星期二 20:02:47 CST
+Marking duplicates completed for EJ_7 at 2024年 02月 20日 星期二 20:36:14 CST
+Indexing marked duplicates BAM for EJ_7 at 2024年 02月 20日 星期二 20:36:15 CST
+Marking duplicates completed for EJ_6 at 2024年 02月 20日 星期二 20:37:34 CST
+Indexing marked duplicates BAM for EJ_6 at 2024年 02月 20日 星期二 20:37:35 CST
+Marking duplicates completed for EJ_3 at 2024年 02月 20日 星期二 20:37:44 CST
+Indexing marked duplicates BAM for EJ_3 at 2024年 02月 20日 星期二 20:37:44 CST
+Indexing marked duplicates BAM completed for EJ_7 at 2024年 02月 20日 星期二 20:38:52 CST
+Marking duplicates for HYX_3 at 2024年 02月 20日 星期二 20:38:57 CST
+Indexing marked duplicates BAM completed for EJ_6 at 2024年 02月 20日 星期二 20:40:30 CST
+Marking duplicates for HYX_4 at 2024年 02月 20日 星期二 20:40:31 CST
+Marking duplicates completed for GHX_8 at 2024年 02月 20日 星期二 20:41:08 CST
+Indexing marked duplicates BAM for GHX_8 at 2024年 02月 20日 星期二 20:41:09 CST
+Indexing marked duplicates BAM completed for EJ_3 at 2024年 02月 20日 星期二 20:41:17 CST
+Marking duplicates for HYX_5 at 2024年 02月 20日 星期二 20:41:17 CST
+Indexing marked duplicates BAM completed for GHX_8 at 2024年 02月 20日 星期二 20:42:01 CST
+Marking duplicates for HYX_6 at 2024年 02月 20日 星期二 20:42:02 CST
+Marking duplicates completed for GHX_4 at 2024年 02月 20日 星期二 20:42:27 CST
+Indexing marked duplicates BAM for GHX_4 at 2024年 02月 20日 星期二 20:42:28 CST
+Marking duplicates completed for EJ_1 at 2024年 02月 20日 星期二 20:42:48 CST
+Indexing marked duplicates BAM for EJ_1 at 2024年 02月 20日 星期二 20:42:49 CST
+Indexing marked duplicates BAM completed for GHX_4 at 2024年 02月 20日 星期二 20:43:58 CST
+Marking duplicates for JD_1 at 2024年 02月 20日 星期二 20:43:59 CST
+Indexing marked duplicates BAM completed for EJ_1 at 2024年 02月 20日 星期二 20:44:54 CST
+Marking duplicates for JD_3 at 2024年 02月 20日 星期二 20:44:55 CST
+Marking duplicates completed for EJ_4 at 2024年 02月 20日 星期二 20:46:57 CST
+Indexing marked duplicates BAM for EJ_4 at 2024年 02月 20日 星期二 20:46:58 CST
+Indexing marked duplicates BAM completed for EJ_4 at 2024年 02月 20日 星期二 20:49:39 CST
+Marking duplicates for JD_4 at 2024年 02月 20日 星期二 20:49:40 CST
+Marking duplicates completed for GHX_9 at 2024年 02月 20日 星期二 20:52:36 CST
+Indexing marked duplicates BAM for GHX_9 at 2024年 02月 20日 星期二 20:52:36 CST
+Indexing marked duplicates BAM completed for GHX_9 at 2024年 02月 20日 星期二 20:53:56 CST
+Marking duplicates for JD_5 at 2024年 02月 20日 星期二 20:53:57 CST
+Marking duplicates completed for HJLL_1 at 2024年 02月 20日 星期二 21:28:10 CST
+Indexing marked duplicates BAM for HJLL_1 at 2024年 02月 20日 星期二 21:28:10 CST
+Indexing marked duplicates BAM completed for HJLL_1 at 2024年 02月 20日 星期二 21:29:49 CST
+Marking duplicates for JD_6 at 2024年 02月 20日 星期二 21:29:52 CST
+Marking duplicates completed for HYX_1 at 2024年 02月 20日 星期二 21:36:01 CST
+Indexing marked duplicates BAM for HYX_1 at 2024年 02月 20日 星期二 21:36:02 CST
+Marking duplicates completed for HJLL_3 at 2024年 02月 20日 星期二 21:36:10 CST
+Indexing marked duplicates BAM for HJLL_3 at 2024年 02月 20日 星期二 21:36:11 CST
+Marking duplicates completed for HJLL_7 at 2024年 02月 20日 星期二 21:36:17 CST
+Indexing marked duplicates BAM for HJLL_7 at 2024年 02月 20日 星期二 21:36:18 CST
+Indexing marked duplicates BAM completed for HYX_1 at 2024年 02月 20日 星期二 21:38:30 CST
+Indexing marked duplicates BAM completed for HJLL_3 at 2024年 02月 20日 星期二 21:38:30 CST
+Marking duplicates for JD_7 at 2024年 02月 20日 星期二 21:38:31 CST
+Indexing marked duplicates BAM completed for HJLL_7 at 2024年 02月 20日 星期二 21:38:32 CST
+Marking duplicates for JD_9 at 2024年 02月 20日 星期二 21:38:32 CST
+Marking duplicates for JFS_14 at 2024年 02月 20日 星期二 21:38:32 CST
+Marking duplicates completed for HJLL_2 at 2024年 02月 20日 星期二 21:39:51 CST
+Indexing marked duplicates BAM for HJLL_2 at 2024年 02月 20日 星期二 21:39:51 CST
+Marking duplicates completed for HJLL_6 at 2024年 02月 20日 星期二 21:40:18 CST
+Indexing marked duplicates BAM for HJLL_6 at 2024年 02月 20日 星期二 21:40:19 CST
+Indexing marked duplicates BAM completed for HJLL_2 at 2024年 02月 20日 星期二 21:42:12 CST
+Marking duplicates for JFS_15 at 2024年 02月 20日 星期二 21:42:12 CST
+Indexing marked duplicates BAM completed for HJLL_6 at 2024年 02月 20日 星期二 21:42:43 CST
+Marking duplicates for JFS_18 at 2024年 02月 20日 星期二 21:42:43 CST
+Marking duplicates completed for HYX_2 at 2024年 02月 20日 星期二 22:13:34 CST
+Indexing marked duplicates BAM for HYX_2 at 2024年 02月 20日 星期二 22:13:35 CST
+Indexing marked duplicates BAM completed for HYX_2 at 2024年 02月 20日 星期二 22:17:34 CST
+Marking duplicates for JFS_1 at 2024年 02月 20日 星期二 22:17:36 CST
+Marking duplicates completed for JD_3 at 2024年 02月 20日 星期二 22:24:51 CST
+Indexing marked duplicates BAM for JD_3 at 2024年 02月 20日 星期二 22:24:51 CST
+Indexing marked duplicates BAM completed for JD_3 at 2024年 02月 20日 星期二 22:26:35 CST
+Marking duplicates for JFS_24 at 2024年 02月 20日 星期二 22:26:37 CST
+Marking duplicates completed for JD_4 at 2024年 02月 20日 星期二 22:27:29 CST
+Indexing marked duplicates BAM for JD_4 at 2024年 02月 20日 星期二 22:27:29 CST
+Marking duplicates completed for HYX_5 at 2024年 02月 20日 星期二 22:28:07 CST
+Indexing marked duplicates BAM for HYX_5 at 2024年 02月 20日 星期二 22:28:07 CST
+Indexing marked duplicates BAM completed for JD_4 at 2024年 02月 20日 星期二 22:29:05 CST
+Marking duplicates for JFS_4 at 2024年 02月 20日 星期二 22:29:06 CST
+Indexing marked duplicates BAM completed for HYX_5 at 2024年 02月 20日 星期二 22:30:01 CST
+Marking duplicates for JFS_6 at 2024年 02月 20日 星期二 22:30:02 CST
+Marking duplicates completed for HYX_3 at 2024年 02月 20日 星期二 22:30:19 CST
+Indexing marked duplicates BAM for HYX_3 at 2024年 02月 20日 星期二 22:30:19 CST
+Indexing marked duplicates BAM completed for HYX_3 at 2024年 02月 20日 星期二 22:32:00 CST
+Marking duplicates for JFS_9 at 2024年 02月 20日 星期二 22:32:01 CST
+Marking duplicates completed for HYX_6 at 2024年 02月 20日 星期二 22:38:36 CST
+Indexing marked duplicates BAM for HYX_6 at 2024年 02月 20日 星期二 22:38:37 CST
+Marking duplicates completed for JFS_18 at 2024年 02月 20日 星期二 22:39:52 CST
+Indexing marked duplicates BAM for JFS_18 at 2024年 02月 20日 星期二 22:39:54 CST
+Indexing marked duplicates BAM completed for JFS_18 at 2024年 02月 20日 星期二 22:40:45 CST
+Marking duplicates for JMX_13 at 2024年 02月 20日 星期二 22:40:46 CST
+Marking duplicates completed for JD_1 at 2024年 02月 20日 星期二 22:41:03 CST
+Indexing marked duplicates BAM completed for HYX_6 at 2024年 02月 20日 星期二 22:41:03 CST
+Indexing marked duplicates BAM for JD_1 at 2024年 02月 20日 星期二 22:41:04 CST
+Marking duplicates for JMX_1 at 2024年 02月 20日 星期二 22:41:04 CST
+Marking duplicates completed for JD_5 at 2024年 02月 20日 星期二 22:42:05 CST
+Indexing marked duplicates BAM for JD_5 at 2024年 02月 20日 星期二 22:42:06 CST
+Indexing marked duplicates BAM completed for JD_1 at 2024年 02月 20日 星期二 22:43:21 CST
+Marking duplicates for JMX_2 at 2024年 02月 20日 星期二 22:43:22 CST
+Indexing marked duplicates BAM completed for JD_5 at 2024年 02月 20日 星期二 22:44:00 CST
+Marking duplicates for JMX_3 at 2024年 02月 20日 星期二 22:44:01 CST
+Marking duplicates completed for HYX_4 at 2024年 02月 20日 星期二 22:44:43 CST
+Indexing marked duplicates BAM for HYX_4 at 2024年 02月 20日 星期二 22:44:44 CST
+Indexing marked duplicates BAM completed for HYX_4 at 2024年 02月 20日 星期二 22:47:01 CST
+Marking duplicates for JMX_5 at 2024年 02月 20日 星期二 22:47:01 CST
+Marking duplicates completed for JFS_14 at 2024年 02月 20日 星期二 22:48:28 CST
+Indexing marked duplicates BAM for JFS_14 at 2024年 02月 20日 星期二 22:48:28 CST
+Indexing marked duplicates BAM completed for JFS_14 at 2024年 02月 20日 星期二 22:49:33 CST
+Marking duplicates for JMX_6 at 2024年 02月 20日 星期二 22:49:34 CST
+Marking duplicates completed for JFS_15 at 2024年 02月 20日 星期二 22:54:29 CST
+Indexing marked duplicates BAM for JFS_15 at 2024年 02月 20日 星期二 22:54:29 CST
+Indexing marked duplicates BAM completed for JFS_15 at 2024年 02月 20日 星期二 22:55:33 CST
+Marking duplicates for JMX_7 at 2024年 02月 20日 星期二 22:55:35 CST
+Marking duplicates completed for JFS_1 at 2024年 02月 20日 星期二 23:03:25 CST
+Indexing marked duplicates BAM for JFS_1 at 2024年 02月 20日 星期二 23:03:25 CST
+Indexing marked duplicates BAM completed for JFS_1 at 2024年 02月 20日 星期二 23:04:41 CST
+Marking duplicates for JMX_8 at 2024年 02月 20日 星期二 23:04:43 CST
+Marking duplicates completed for JD_6 at 2024年 02月 20日 星期二 23:19:12 CST
+Indexing marked duplicates BAM for JD_6 at 2024年 02月 20日 星期二 23:19:12 CST
+Indexing marked duplicates BAM completed for JD_6 at 2024年 02月 20日 星期二 23:21:15 CST
+Marking duplicates for LCJ_10 at 2024年 02月 20日 星期二 23:21:16 CST
+Marking duplicates completed for JFS_4 at 2024年 02月 20日 星期二 23:30:12 CST
+Indexing marked duplicates BAM for JFS_4 at 2024年 02月 20日 星期二 23:30:13 CST
+Indexing marked duplicates BAM completed for JFS_4 at 2024年 02月 20日 星期二 23:30:56 CST
+Marking duplicates for LCJ_11 at 2024年 02月 20日 星期二 23:30:56 CST
+Marking duplicates completed for JFS_6 at 2024年 02月 20日 星期二 23:32:13 CST
+Indexing marked duplicates BAM for JFS_6 at 2024年 02月 20日 星期二 23:32:14 CST
+Indexing marked duplicates BAM completed for JFS_6 at 2024年 02月 20日 星期二 23:33:06 CST
+Marking duplicates for LCJ_13 at 2024年 02月 20日 星期二 23:33:07 CST
+Marking duplicates completed for JD_7 at 2024年 02月 20日 星期二 23:34:01 CST
+Indexing marked duplicates BAM for JD_7 at 2024年 02月 20日 星期二 23:34:02 CST
+Marking duplicates completed for JFS_24 at 2024年 02月 20日 星期二 23:34:13 CST
+Indexing marked duplicates BAM for JFS_24 at 2024年 02月 20日 星期二 23:34:14 CST
+Marking duplicates completed for JD_9 at 2024年 02月 20日 星期二 23:34:35 CST
+Indexing marked duplicates BAM for JD_9 at 2024年 02月 20日 星期二 23:34:36 CST
+Indexing marked duplicates BAM completed for JFS_24 at 2024年 02月 20日 星期二 23:35:27 CST
+Marking duplicates for LCJ_6 at 2024年 02月 20日 星期二 23:35:27 CST
+Indexing marked duplicates BAM completed for JD_7 at 2024年 02月 20日 星期二 23:36:02 CST
+Marking duplicates for LCJ_7 at 2024年 02月 20日 星期二 23:36:03 CST
+Indexing marked duplicates BAM completed for JD_9 at 2024年 02月 20日 星期二 23:37:00 CST
+Marking duplicates for LCJ_9 at 2024年 02月 20日 星期二 23:37:01 CST
+Marking duplicates completed for JFS_9 at 2024年 02月 20日 星期二 23:39:48 CST
+Indexing marked duplicates BAM for JFS_9 at 2024年 02月 20日 星期二 23:39:48 CST
+Indexing marked duplicates BAM completed for JFS_9 at 2024年 02月 20日 星期二 23:40:42 CST
+Marking duplicates for LQ_13 at 2024年 02月 20日 星期二 23:40:43 CST
+Marking duplicates completed for JMX_2 at 2024年 02月 20日 星期二 23:47:06 CST
+Indexing marked duplicates BAM for JMX_2 at 2024年 02月 20日 星期二 23:47:07 CST
+Indexing marked duplicates BAM completed for JMX_2 at 2024年 02月 20日 星期二 23:47:45 CST
+Marking duplicates for LQ_14 at 2024年 02月 20日 星期二 23:47:46 CST
+Marking duplicates completed for JMX_1 at 2024年 02月 20日 星期二 23:50:21 CST
+Indexing marked duplicates BAM for JMX_1 at 2024年 02月 20日 星期二 23:50:21 CST
+Indexing marked duplicates BAM completed for JMX_1 at 2024年 02月 20日 星期二 23:51:24 CST
+Marking duplicates for LQ_15 at 2024年 02月 20日 星期二 23:51:24 CST
+Marking duplicates completed for JMX_3 at 2024年 02月 20日 星期二 23:53:13 CST
+Indexing marked duplicates BAM for JMX_3 at 2024年 02月 20日 星期二 23:53:14 CST
+Indexing marked duplicates BAM completed for JMX_3 at 2024年 02月 20日 星期二 23:54:04 CST
+Marking duplicates for LQ_16 at 2024年 02月 20日 星期二 23:54:06 CST
+Marking duplicates completed for JMX_13 at 2024年 02月 20日 星期二 23:57:05 CST
+Indexing marked duplicates BAM for JMX_13 at 2024年 02月 20日 星期二 23:57:05 CST
+Indexing marked duplicates BAM completed for JMX_13 at 2024年 02月 20日 星期二 23:57:58 CST
+Marking duplicates for LQ_8 at 2024年 02月 20日 星期二 23:57:59 CST
+Marking duplicates completed for JMX_5 at 2024年 02月 20日 星期二 23:59:47 CST
+Indexing marked duplicates BAM for JMX_5 at 2024年 02月 20日 星期二 23:59:47 CST
+Indexing marked duplicates BAM completed for JMX_5 at 2024年 02月 21日 星期三 00:00:53 CST
+Marking duplicates for LQ_9 at 2024年 02月 21日 星期三 00:00:54 CST
+Marking duplicates completed for JMX_7 at 2024年 02月 21日 星期三 00:06:14 CST
+Indexing marked duplicates BAM for JMX_7 at 2024年 02月 21日 星期三 00:06:15 CST
+Marking duplicates completed for JMX_6 at 2024年 02月 21日 星期三 00:07:23 CST
+Indexing marked duplicates BAM for JMX_6 at 2024年 02月 21日 星期三 00:07:24 CST
+Indexing marked duplicates BAM completed for JMX_7 at 2024年 02月 21日 星期三 00:07:55 CST
+Marking duplicates for LS_10 at 2024年 02月 21日 星期三 00:07:56 CST
+Indexing marked duplicates BAM completed for JMX_6 at 2024年 02月 21日 星期三 00:09:02 CST
+Marking duplicates for LS_12 at 2024年 02月 21日 星期三 00:09:04 CST
+Marking duplicates completed for JMX_8 at 2024年 02月 21日 星期三 00:15:50 CST
+Indexing marked duplicates BAM for JMX_8 at 2024年 02月 21日 星期三 00:15:51 CST
+Indexing marked duplicates BAM completed for JMX_8 at 2024年 02月 21日 星期三 00:17:24 CST
+Marking duplicates for LS_1 at 2024年 02月 21日 星期三 00:17:26 CST
+Marking duplicates completed for LCJ_10 at 2024年 02月 21日 星期三 00:30:15 CST
+Indexing marked duplicates BAM for LCJ_10 at 2024年 02月 21日 星期三 00:30:15 CST
+Indexing marked duplicates BAM completed for LCJ_10 at 2024年 02月 21日 星期三 00:31:33 CST
+Marking duplicates for LS_2 at 2024年 02月 21日 星期三 00:31:35 CST
+Marking duplicates completed for LCJ_11 at 2024年 02月 21日 星期三 00:36:00 CST
+Indexing marked duplicates BAM for LCJ_11 at 2024年 02月 21日 星期三 00:36:01 CST
+Indexing marked duplicates BAM completed for LCJ_11 at 2024年 02月 21日 星期三 00:37:15 CST
+Marking duplicates for LS_5 at 2024年 02月 21日 星期三 00:37:15 CST
+Marking duplicates completed for LCJ_13 at 2024年 02月 21日 星期三 00:47:09 CST
+Indexing marked duplicates BAM for LCJ_13 at 2024年 02月 21日 星期三 00:47:09 CST
+Indexing marked duplicates BAM completed for LCJ_13 at 2024年 02月 21日 星期三 00:48:24 CST
+Marking duplicates for LS_6 at 2024年 02月 21日 星期三 00:48:26 CST
+Marking duplicates completed for LCJ_7 at 2024年 02月 21日 星期三 00:49:34 CST
+Marking duplicates completed for LCJ_9 at 2024年 02月 21日 星期三 00:49:34 CST
+Indexing marked duplicates BAM for LCJ_7 at 2024年 02月 21日 星期三 00:49:34 CST
+Indexing marked duplicates BAM for LCJ_9 at 2024年 02月 21日 星期三 00:49:34 CST
+Indexing marked duplicates BAM completed for LCJ_9 at 2024年 02月 21日 星期三 00:51:15 CST
+Marking duplicates for LS_7 at 2024年 02月 21日 星期三 00:51:16 CST
+Indexing marked duplicates BAM completed for LCJ_7 at 2024年 02月 21日 星期三 00:51:19 CST
+Marking duplicates for LX_2 at 2024年 02月 21日 星期三 00:51:20 CST
+Marking duplicates completed for LCJ_6 at 2024年 02月 21日 星期三 00:52:23 CST
+Indexing marked duplicates BAM for LCJ_6 at 2024年 02月 21日 星期三 00:52:24 CST
+Indexing marked duplicates BAM completed for LCJ_6 at 2024年 02月 21日 星期三 00:53:55 CST
+Marking duplicates for LX_4 at 2024年 02月 21日 星期三 00:53:55 CST
+Marking duplicates completed for LQ_16 at 2024年 02月 21日 星期三 01:04:06 CST
+Indexing marked duplicates BAM for LQ_16 at 2024年 02月 21日 星期三 01:04:06 CST
+Marking duplicates completed for LQ_13 at 2024年 02月 21日 星期三 01:04:42 CST
+Indexing marked duplicates BAM for LQ_13 at 2024年 02月 21日 星期三 01:04:43 CST
+Indexing marked duplicates BAM completed for LQ_16 at 2024年 02月 21日 星期三 01:05:24 CST
+Marking duplicates for LX_5 at 2024年 02月 21日 星期三 01:05:25 CST
+Marking duplicates completed for LQ_14 at 2024年 02月 21日 星期三 01:06:05 CST
+Indexing marked duplicates BAM for LQ_14 at 2024年 02月 21日 星期三 01:06:05 CST
+Indexing marked duplicates BAM completed for LQ_13 at 2024年 02月 21日 星期三 01:06:08 CST
+Marking duplicates for LX_6 at 2024年 02月 21日 星期三 01:06:09 CST
+Indexing marked duplicates BAM completed for LQ_14 at 2024年 02月 21日 星期三 01:07:27 CST
+Marking duplicates for LX_8 at 2024年 02月 21日 星期三 01:07:28 CST
+Marking duplicates completed for LS_10 at 2024年 02月 21日 星期三 01:17:26 CST
+Indexing marked duplicates BAM for LS_10 at 2024年 02月 21日 星期三 01:17:26 CST
+Marking duplicates completed for LQ_8 at 2024年 02月 21日 星期三 01:17:36 CST
+Indexing marked duplicates BAM for LQ_8 at 2024年 02月 21日 星期三 01:17:36 CST
+Indexing marked duplicates BAM completed for LS_10 at 2024年 02月 21日 星期三 01:18:43 CST
+Marking duplicates for LX_9 at 2024年 02月 21日 星期三 01:18:46 CST
+Indexing marked duplicates BAM completed for LQ_8 at 2024年 02月 21日 星期三 01:19:25 CST
+Marking duplicates for NFM_1 at 2024年 02月 21日 星期三 01:19:25 CST
+Marking duplicates completed for LQ_15 at 2024年 02月 21日 星期三 01:20:37 CST
+Indexing marked duplicates BAM for LQ_15 at 2024年 02月 21日 星期三 01:20:37 CST
+Indexing marked duplicates BAM completed for LQ_15 at 2024年 02月 21日 星期三 01:22:04 CST
+Marking duplicates for O_DSMX at 2024年 02月 21日 星期三 01:22:05 CST
+Marking duplicates completed for LQ_9 at 2024年 02月 21日 星期三 01:24:38 CST
+Indexing marked duplicates BAM for LQ_9 at 2024年 02月 21日 星期三 01:24:38 CST
+Indexing marked duplicates BAM completed for LQ_9 at 2024年 02月 21日 星期三 01:25:46 CST
+Marking duplicates for O_MXL at 2024年 02月 21日 星期三 01:25:46 CST
+Marking duplicates completed for LS_1 at 2024年 02月 21日 星期三 01:27:41 CST
+Indexing marked duplicates BAM for LS_1 at 2024年 02月 21日 星期三 01:27:42 CST
+Indexing marked duplicates BAM completed for LS_1 at 2024年 02月 21日 星期三 01:28:31 CST
+Marking duplicates for O_MZGH at 2024年 02月 21日 星期三 01:28:32 CST
+Marking duplicates completed for LS_12 at 2024年 02月 21日 星期三 01:38:50 CST
+Indexing marked duplicates BAM for LS_12 at 2024年 02月 21日 星期三 01:38:51 CST
+Marking duplicates completed for LS_2 at 2024年 02月 21日 星期三 01:39:03 CST
+Indexing marked duplicates BAM for LS_2 at 2024年 02月 21日 星期三 01:39:04 CST
+Indexing marked duplicates BAM completed for LS_12 at 2024年 02月 21日 星期三 01:40:07 CST
+Marking duplicates for O_XYWJM at 2024年 02月 21日 星期三 01:40:08 CST
+Indexing marked duplicates BAM completed for LS_2 at 2024年 02月 21日 星期三 01:40:16 CST
+Marking duplicates for O_ZNMX at 2024年 02月 21日 星期三 01:40:16 CST
+Marking duplicates completed for LS_5 at 2024年 02月 21日 星期三 01:50:50 CST
+Indexing marked duplicates BAM for LS_5 at 2024年 02月 21日 星期三 01:50:51 CST
+Indexing marked duplicates BAM completed for LS_5 at 2024年 02月 21日 星期三 01:51:53 CST
+Marking duplicates for QDH_10 at 2024年 02月 21日 星期三 01:51:54 CST
+Marking duplicates completed for LX_4 at 2024年 02月 21日 星期三 01:54:17 CST
+Indexing marked duplicates BAM for LX_4 at 2024年 02月 21日 星期三 01:54:18 CST
+Marking duplicates completed for LS_7 at 2024年 02月 21日 星期三 01:54:20 CST
+Indexing marked duplicates BAM for LS_7 at 2024年 02月 21日 星期三 01:54:21 CST
+Indexing marked duplicates BAM completed for LX_4 at 2024年 02月 21日 星期三 01:55:04 CST
+Marking duplicates for QDH_11 at 2024年 02月 21日 星期三 01:55:04 CST
+Indexing marked duplicates BAM completed for LS_7 at 2024年 02月 21日 星期三 01:55:09 CST
+Marking duplicates for QDH_12 at 2024年 02月 21日 星期三 01:55:09 CST
+Marking duplicates completed for LX_2 at 2024年 02月 21日 星期三 01:56:57 CST
+Indexing marked duplicates BAM for LX_2 at 2024年 02月 21日 星期三 01:56:57 CST
+Indexing marked duplicates BAM completed for LX_2 at 2024年 02月 21日 星期三 01:57:46 CST
+Marking duplicates for QDH_14 at 2024年 02月 21日 星期三 01:57:47 CST
+Marking duplicates completed for LX_8 at 2024年 02月 21日 星期三 02:08:20 CST
+Indexing marked duplicates BAM for LX_8 at 2024年 02月 21日 星期三 02:08:20 CST
+Marking duplicates completed for LX_6 at 2024年 02月 21日 星期三 02:09:23 CST
+Indexing marked duplicates BAM for LX_6 at 2024年 02月 21日 星期三 02:09:24 CST
+Indexing marked duplicates BAM completed for LX_8 at 2024年 02月 21日 星期三 02:09:29 CST
+Marking duplicates for QDH_1 at 2024年 02月 21日 星期三 02:09:31 CST
+Indexing marked duplicates BAM completed for LX_6 at 2024年 02月 21日 星期三 02:10:20 CST
+Marking duplicates for QDH_2 at 2024年 02月 21日 星期三 02:10:21 CST
+Marking duplicates completed for LX_5 at 2024年 02月 21日 星期三 02:12:16 CST
+Indexing marked duplicates BAM for LX_5 at 2024年 02月 21日 星期三 02:12:16 CST
+Indexing marked duplicates BAM completed for LX_5 at 2024年 02月 21日 星期三 02:13:18 CST
+Marking duplicates for QDH_3 at 2024年 02月 21日 星期三 02:13:19 CST
+Marking duplicates completed for LX_9 at 2024年 02月 21日 星期三 02:20:06 CST
+Indexing marked duplicates BAM for LX_9 at 2024年 02月 21日 星期三 02:20:07 CST
+Indexing marked duplicates BAM completed for LX_9 at 2024年 02月 21日 星期三 02:21:05 CST
+Marking duplicates for QDH_4 at 2024年 02月 21日 星期三 02:21:06 CST
+Marking duplicates completed for NFM_1 at 2024年 02月 21日 星期三 02:25:29 CST
+Indexing marked duplicates BAM for NFM_1 at 2024年 02月 21日 星期三 02:25:30 CST
+Indexing marked duplicates BAM completed for NFM_1 at 2024年 02月 21日 星期三 02:26:35 CST
+Marking duplicates for QDH_6 at 2024年 02月 21日 星期三 02:26:35 CST
+Marking duplicates completed for LS_6 at 2024年 02月 21日 星期三 02:29:11 CST
+Indexing marked duplicates BAM for LS_6 at 2024年 02月 21日 星期三 02:29:11 CST
+Indexing marked duplicates BAM completed for LS_6 at 2024年 02月 21日 星期三 02:30:52 CST
+Marking duplicates for QDH_7 at 2024年 02月 21日 星期三 02:30:55 CST
+Marking duplicates completed for O_DSMX at 2024年 02月 21日 星期三 02:35:26 CST
+Indexing marked duplicates BAM for O_DSMX at 2024年 02月 21日 星期三 02:35:27 CST
+Indexing marked duplicates BAM completed for O_DSMX at 2024年 02月 21日 星期三 02:37:00 CST
+Marking duplicates for QST_1 at 2024年 02月 21日 星期三 02:37:00 CST
+Marking duplicates completed for O_MXL at 2024年 02月 21日 星期三 02:41:05 CST
+Indexing marked duplicates BAM for O_MXL at 2024年 02月 21日 星期三 02:41:05 CST
+Indexing marked duplicates BAM completed for O_MXL at 2024年 02月 21日 星期三 02:42:34 CST
+Marking duplicates completed for O_MZGH at 2024年 02月 21日 星期三 02:42:34 CST
+Indexing marked duplicates BAM for O_MZGH at 2024年 02月 21日 星期三 02:42:35 CST
+Marking duplicates for QST_2 at 2024年 02月 21日 星期三 02:42:35 CST
+Indexing marked duplicates BAM completed for O_MZGH at 2024年 02月 21日 星期三 02:43:56 CST
+Marking duplicates for QST_3 at 2024年 02月 21日 星期三 02:43:56 CST
+Marking duplicates completed for O_ZNMX at 2024年 02月 21日 星期三 02:58:03 CST
+Indexing marked duplicates BAM for O_ZNMX at 2024年 02月 21日 星期三 02:58:04 CST
+Marking duplicates completed for QDH_11 at 2024年 02月 21日 星期三 02:58:39 CST
+Indexing marked duplicates BAM for QDH_11 at 2024年 02月 21日 星期三 02:58:40 CST
+Indexing marked duplicates BAM completed for O_ZNMX at 2024年 02月 21日 星期三 02:59:47 CST
+Marking duplicates for RX_2 at 2024年 02月 21日 星期三 02:59:48 CST
+Indexing marked duplicates BAM completed for QDH_11 at 2024年 02月 21日 星期三 02:59:59 CST
+Marking duplicates for RX_4 at 2024年 02月 21日 星期三 03:00:00 CST
+Marking duplicates completed for QDH_10 at 2024年 02月 21日 星期三 03:08:29 CST
+Indexing marked duplicates BAM for QDH_10 at 2024年 02月 21日 星期三 03:08:30 CST
+Indexing marked duplicates BAM completed for QDH_10 at 2024年 02月 21日 星期三 03:09:48 CST
+Marking duplicates for RX_5 at 2024年 02月 21日 星期三 03:09:49 CST
+Marking duplicates completed for O_XYWJM at 2024年 02月 21日 星期三 03:12:36 CST
+Indexing marked duplicates BAM for O_XYWJM at 2024年 02月 21日 星期三 03:12:36 CST
+Indexing marked duplicates BAM completed for O_XYWJM at 2024年 02月 21日 星期三 03:14:25 CST
+Marking duplicates for RX_7 at 2024年 02月 21日 星期三 03:14:27 CST
+Marking duplicates completed for QDH_14 at 2024年 02月 21日 星期三 03:14:40 CST
+Indexing marked duplicates BAM for QDH_14 at 2024年 02月 21日 星期三 03:14:42 CST
+Marking duplicates completed for QDH_1 at 2024年 02月 21日 星期三 03:14:42 CST
+Indexing marked duplicates BAM for QDH_1 at 2024年 02月 21日 星期三 03:14:42 CST
+Indexing marked duplicates BAM completed for QDH_1 at 2024年 02月 21日 星期三 03:15:45 CST
+Marking duplicates for RX_8 at 2024年 02月 21日 星期三 03:15:45 CST
+Indexing marked duplicates BAM completed for QDH_14 at 2024年 02月 21日 星期三 03:16:09 CST
+Marking duplicates for RX_9 at 2024年 02月 21日 星期三 03:16:10 CST
+Marking duplicates completed for QDH_4 at 2024年 02月 21日 星期三 03:25:24 CST
+Indexing marked duplicates BAM for QDH_4 at 2024年 02月 21日 星期三 03:25:25 CST
+Indexing marked duplicates BAM completed for QDH_4 at 2024年 02月 21日 星期三 03:26:59 CST
+Marking duplicates for SFZ_10 at 2024年 02月 21日 星期三 03:27:01 CST
+Marking duplicates completed for QDH_3 at 2024年 02月 21日 星期三 03:28:20 CST
+Indexing marked duplicates BAM for QDH_3 at 2024年 02月 21日 星期三 03:28:20 CST
+Marking duplicates completed for QDH_2 at 2024年 02月 21日 星期三 03:29:27 CST
+Indexing marked duplicates BAM for QDH_2 at 2024年 02月 21日 星期三 03:29:28 CST
+Indexing marked duplicates BAM completed for QDH_3 at 2024年 02月 21日 星期三 03:29:38 CST
+Marking duplicates for SFZ_1 at 2024年 02月 21日 星期三 03:29:39 CST
+Indexing marked duplicates BAM completed for QDH_2 at 2024年 02月 21日 星期三 03:31:03 CST
+Marking duplicates for SFZ_2 at 2024年 02月 21日 星期三 03:31:04 CST
+Marking duplicates completed for QDH_6 at 2024年 02月 21日 星期三 03:40:27 CST
+Indexing marked duplicates BAM for QDH_6 at 2024年 02月 21日 星期三 03:40:28 CST
+Indexing marked duplicates BAM completed for QDH_6 at 2024年 02月 21日 星期三 03:42:12 CST
+Marking duplicates for SFZ_3 at 2024年 02月 21日 星期三 03:42:14 CST
+Marking duplicates completed for QDH_7 at 2024年 02月 21日 星期三 03:42:27 CST
+Indexing marked duplicates BAM for QDH_7 at 2024年 02月 21日 星期三 03:42:28 CST
+Indexing marked duplicates BAM completed for QDH_7 at 2024年 02月 21日 星期三 03:43:53 CST
+Marking duplicates for SFZ_4 at 2024年 02月 21日 星期三 03:43:53 CST
+Marking duplicates completed for RX_2 at 2024年 02月 21日 星期三 04:10:09 CST
+Indexing marked duplicates BAM for RX_2 at 2024年 02月 21日 星期三 04:10:09 CST
+Indexing marked duplicates BAM completed for RX_2 at 2024年 02月 21日 星期三 04:12:10 CST
+Marking duplicates for SFZ_5 at 2024年 02月 21日 星期三 04:12:11 CST
+Marking duplicates completed for QDH_12 at 2024年 02月 21日 星期三 04:15:43 CST
+Indexing marked duplicates BAM for QDH_12 at 2024年 02月 21日 星期三 04:15:43 CST
+Indexing marked duplicates BAM completed for QDH_12 at 2024年 02月 21日 星期三 04:17:01 CST
+Marking duplicates for SFZ_6 at 2024年 02月 21日 星期三 04:17:01 CST
+Marking duplicates completed for RX_7 at 2024年 02月 21日 星期三 04:21:40 CST
+Indexing marked duplicates BAM for RX_7 at 2024年 02月 21日 星期三 04:21:40 CST
+Indexing marked duplicates BAM completed for RX_7 at 2024年 02月 21日 星期三 04:22:20 CST
+Marking duplicates for SFZ_7 at 2024年 02月 21日 星期三 04:22:22 CST
+Marking duplicates completed for RX_9 at 2024年 02月 21日 星期三 04:25:22 CST
+Indexing marked duplicates BAM for RX_9 at 2024年 02月 21日 星期三 04:25:22 CST
+Indexing marked duplicates BAM completed for RX_9 at 2024年 02月 21日 星期三 04:26:05 CST
+Marking duplicates for SFZ_8 at 2024年 02月 21日 星期三 04:26:06 CST
+Marking duplicates completed for RX_4 at 2024年 02月 21日 星期三 04:29:30 CST
+Indexing marked duplicates BAM for RX_4 at 2024年 02月 21日 星期三 04:29:30 CST
+Indexing marked duplicates BAM completed for RX_4 at 2024年 02月 21日 星期三 04:30:28 CST
+Marking duplicates for SFZ_9 at 2024年 02月 21日 星期三 04:30:28 CST
+Marking duplicates completed for RX_8 at 2024年 02月 21日 星期三 04:31:15 CST
+Indexing marked duplicates BAM for RX_8 at 2024年 02月 21日 星期三 04:31:15 CST
+Indexing marked duplicates BAM completed for RX_8 at 2024年 02月 21日 星期三 04:31:57 CST
+Marking duplicates for SK_10 at 2024年 02月 21日 星期三 04:31:57 CST
+Marking duplicates completed for RX_5 at 2024年 02月 21日 星期三 04:32:01 CST
+Indexing marked duplicates BAM for RX_5 at 2024年 02月 21日 星期三 04:32:01 CST
+Indexing marked duplicates BAM completed for RX_5 at 2024年 02月 21日 星期三 04:33:10 CST
+Marking duplicates for SK_1 at 2024年 02月 21日 星期三 04:33:10 CST
+Marking duplicates completed for QST_2 at 2024年 02月 21日 星期三 04:36:42 CST
+Indexing marked duplicates BAM for QST_2 at 2024年 02月 21日 星期三 04:36:42 CST
+Indexing marked duplicates BAM completed for QST_2 at 2024年 02月 21日 星期三 04:38:01 CST
+Marking duplicates for SK_2 at 2024年 02月 21日 星期三 04:38:02 CST
+Marking duplicates completed for QST_1 at 2024年 02月 21日 星期三 04:51:49 CST
+Indexing marked duplicates BAM for QST_1 at 2024年 02月 21日 星期三 04:51:49 CST
+Indexing marked duplicates BAM completed for QST_1 at 2024年 02月 21日 星期三 04:53:13 CST
+Marking duplicates for SK_4 at 2024年 02月 21日 星期三 04:53:13 CST
+Marking duplicates completed for QST_3 at 2024年 02月 21日 星期三 04:56:15 CST
+Indexing marked duplicates BAM for QST_3 at 2024年 02月 21日 星期三 04:56:15 CST
+Indexing marked duplicates BAM completed for QST_3 at 2024年 02月 21日 星期三 04:57:46 CST
+Marking duplicates for SK_7 at 2024年 02月 21日 星期三 04:57:46 CST
+Marking duplicates completed for SFZ_10 at 2024年 02月 21日 星期三 05:05:21 CST
+Indexing marked duplicates BAM for SFZ_10 at 2024年 02月 21日 星期三 05:05:21 CST
+Indexing marked duplicates BAM completed for SFZ_10 at 2024年 02月 21日 星期三 05:06:59 CST
+Marking duplicates for SK_8 at 2024年 02月 21日 星期三 05:07:00 CST
+Marking duplicates completed for SFZ_1 at 2024年 02月 21日 星期三 05:15:40 CST
+Indexing marked duplicates BAM for SFZ_1 at 2024年 02月 21日 星期三 05:15:40 CST
+Indexing marked duplicates BAM completed for SFZ_1 at 2024年 02月 21日 星期三 05:17:02 CST
+Marking duplicates for SK_9 at 2024年 02月 21日 星期三 05:17:02 CST
+Marking duplicates completed for SFZ_4 at 2024年 02月 21日 星期三 05:22:16 CST
+Indexing marked duplicates BAM for SFZ_4 at 2024年 02月 21日 星期三 05:22:16 CST
+Indexing marked duplicates BAM completed for SFZ_4 at 2024年 02月 21日 星期三 05:23:37 CST
+Marking duplicates for SL_1 at 2024年 02月 21日 星期三 05:23:37 CST
+Marking duplicates completed for SFZ_3 at 2024年 02月 21日 星期三 05:28:43 CST
+Indexing marked duplicates BAM for SFZ_3 at 2024年 02月 21日 星期三 05:28:44 CST
+Indexing marked duplicates BAM completed for SFZ_3 at 2024年 02月 21日 星期三 05:31:27 CST
+Marking duplicates for SL_2 at 2024年 02月 21日 星期三 05:31:28 CST
+Marking duplicates completed for SFZ_2 at 2024年 02月 21日 星期三 05:42:40 CST
+Indexing marked duplicates BAM for SFZ_2 at 2024年 02月 21日 星期三 05:42:40 CST
+Indexing marked duplicates BAM completed for SFZ_2 at 2024年 02月 21日 星期三 05:45:49 CST
+Marking duplicates for SL_3 at 2024年 02月 21日 星期三 05:45:51 CST
+Marking duplicates completed for SFZ_6 at 2024年 02月 21日 星期三 06:11:53 CST
+Indexing marked duplicates BAM for SFZ_6 at 2024年 02月 21日 星期三 06:11:53 CST
+Marking duplicates completed for SFZ_5 at 2024年 02月 21日 星期三 06:14:23 CST
+Indexing marked duplicates BAM for SFZ_5 at 2024年 02月 21日 星期三 06:14:24 CST
+Indexing marked duplicates BAM completed for SFZ_6 at 2024年 02月 21日 星期三 06:14:40 CST
+Marking duplicates for SL_4 at 2024年 02月 21日 星期三 06:14:43 CST
+Indexing marked duplicates BAM completed for SFZ_5 at 2024年 02月 21日 星期三 06:17:37 CST
+Marking duplicates for SL_5 at 2024年 02月 21日 星期三 06:17:38 CST
+Marking duplicates completed for SFZ_7 at 2024年 02月 21日 星期三 06:18:51 CST
+Indexing marked duplicates BAM for SFZ_7 at 2024年 02月 21日 星期三 06:18:51 CST
+Indexing marked duplicates BAM completed for SFZ_7 at 2024年 02月 21日 星期三 06:21:31 CST
+Marking duplicates for SLZ_1 at 2024年 02月 21日 星期三 06:21:32 CST
+Marking duplicates completed for SL_2 at 2024年 02月 21日 星期三 06:28:20 CST
+Indexing marked duplicates BAM for SL_2 at 2024年 02月 21日 星期三 06:28:21 CST
+Marking duplicates completed for SK_4 at 2024年 02月 21日 星期三 06:28:25 CST
+Indexing marked duplicates BAM for SK_4 at 2024年 02月 21日 星期三 06:28:25 CST
+Marking duplicates completed for SK_10 at 2024年 02月 21日 星期三 06:28:52 CST
+Indexing marked duplicates BAM for SK_10 at 2024年 02月 21日 星期三 06:28:53 CST
+Indexing marked duplicates BAM completed for SL_2 at 2024年 02月 21日 星期三 06:29:09 CST
+Marking duplicates for SLZ_3 at 2024年 02月 21日 星期三 06:29:09 CST
+Indexing marked duplicates BAM completed for SK_4 at 2024年 02月 21日 星期三 06:29:47 CST
+Marking duplicates for SLZ_4 at 2024年 02月 21日 星期三 06:29:48 CST
+Indexing marked duplicates BAM completed for SK_10 at 2024年 02月 21日 星期三 06:30:47 CST
+Marking duplicates for SLZ_6 at 2024年 02月 21日 星期三 06:30:48 CST
+Marking duplicates completed for SFZ_8 at 2024年 02月 21日 星期三 06:30:51 CST
+Indexing marked duplicates BAM for SFZ_8 at 2024年 02月 21日 星期三 06:30:52 CST
+Indexing marked duplicates BAM completed for SFZ_8 at 2024年 02月 21日 星期三 06:32:47 CST
+Marking duplicates for SLZ_7 at 2024年 02月 21日 星期三 06:32:48 CST
+Marking duplicates completed for SL_1 at 2024年 02月 21日 星期三 06:32:55 CST
+Indexing marked duplicates BAM for SL_1 at 2024年 02月 21日 星期三 06:32:56 CST
+Indexing marked duplicates BAM completed for SL_1 at 2024年 02月 21日 星期三 06:33:58 CST
+Marking duplicates for SLZ_8 at 2024年 02月 21日 星期三 06:33:59 CST
+Marking duplicates completed for SK_1 at 2024年 02月 21日 星期三 06:44:45 CST
+Indexing marked duplicates BAM for SK_1 at 2024年 02月 21日 星期三 06:44:46 CST
+Marking duplicates completed for SK_2 at 2024年 02月 21日 星期三 06:44:50 CST
+Indexing marked duplicates BAM for SK_2 at 2024年 02月 21日 星期三 06:44:51 CST
+Indexing marked duplicates BAM completed for SK_2 at 2024年 02月 21日 星期三 06:47:02 CST
+Marking duplicates for ST_1 at 2024年 02月 21日 星期三 06:47:03 CST
+Indexing marked duplicates BAM completed for SK_1 at 2024年 02月 21日 星期三 06:47:12 CST
+Marking duplicates for ST_2 at 2024年 02月 21日 星期三 06:47:12 CST
+Marking duplicates completed for SK_8 at 2024年 02月 21日 星期三 06:51:48 CST
+Indexing marked duplicates BAM for SK_8 at 2024年 02月 21日 星期三 06:51:49 CST
+Marking duplicates completed for SL_3 at 2024年 02月 21日 星期三 06:52:50 CST
+Indexing marked duplicates BAM for SL_3 at 2024年 02月 21日 星期三 06:52:51 CST
+Indexing marked duplicates BAM completed for SK_8 at 2024年 02月 21日 星期三 06:54:38 CST
+Marking duplicates for ST_3 at 2024年 02月 21日 星期三 06:54:41 CST
+Indexing marked duplicates BAM completed for SL_3 at 2024年 02月 21日 星期三 06:55:03 CST
+Marking duplicates for ST_4 at 2024年 02月 21日 星期三 06:55:03 CST
+Marking duplicates completed for SK_7 at 2024年 02月 21日 星期三 06:56:44 CST
+Indexing marked duplicates BAM for SK_7 at 2024年 02月 21日 星期三 06:56:45 CST
+Marking duplicates completed for SFZ_9 at 2024年 02月 21日 星期三 06:57:48 CST
+Indexing marked duplicates BAM for SFZ_9 at 2024年 02月 21日 星期三 06:57:49 CST
+Indexing marked duplicates BAM completed for SK_7 at 2024年 02月 21日 星期三 06:59:28 CST
+Marking duplicates for ST_5 at 2024年 02月 21日 星期三 06:59:29 CST
+Indexing marked duplicates BAM completed for SFZ_9 at 2024年 02月 21日 星期三 07:01:10 CST
+Marking duplicates for ST_6 at 2024年 02月 21日 星期三 07:01:10 CST
+Marking duplicates completed for SK_9 at 2024年 02月 21日 星期三 07:13:53 CST
+Indexing marked duplicates BAM for SK_9 at 2024年 02月 21日 星期三 07:13:54 CST
+Indexing marked duplicates BAM completed for SK_9 at 2024年 02月 21日 星期三 07:16:21 CST
+Marking duplicates for ST_7 at 2024年 02月 21日 星期三 07:16:23 CST
+Marking duplicates completed for SLZ_1 at 2024年 02月 21日 星期三 07:16:28 CST
+Indexing marked duplicates BAM for SLZ_1 at 2024年 02月 21日 星期三 07:16:29 CST
+Marking duplicates completed for SL_4 at 2024年 02月 21日 星期三 07:16:36 CST
+Indexing marked duplicates BAM for SL_4 at 2024年 02月 21日 星期三 07:16:37 CST
+Indexing marked duplicates BAM completed for SLZ_1 at 2024年 02月 21日 星期三 07:17:20 CST
+Marking duplicates for ST_8 at 2024年 02月 21日 星期三 07:17:21 CST
+Indexing marked duplicates BAM completed for SL_4 at 2024年 02月 21日 星期三 07:17:38 CST
+Marking duplicates for SXK_1 at 2024年 02月 21日 星期三 07:17:39 CST
+Marking duplicates completed for SL_5 at 2024年 02月 21日 星期三 07:20:26 CST
+Indexing marked duplicates BAM for SL_5 at 2024年 02月 21日 星期三 07:20:27 CST
+Marking duplicates completed for SLZ_6 at 2024年 02月 21日 星期三 07:20:37 CST
+Indexing marked duplicates BAM for SLZ_6 at 2024年 02月 21日 星期三 07:20:39 CST
+Indexing marked duplicates BAM completed for SLZ_6 at 2024年 02月 21日 星期三 07:21:16 CST
+Marking duplicates for SXK_2 at 2024年 02月 21日 星期三 07:21:16 CST
+Indexing marked duplicates BAM completed for SL_5 at 2024年 02月 21日 星期三 07:21:24 CST
+Marking duplicates for SXK_3 at 2024年 02月 21日 星期三 07:21:24 CST
+Marking duplicates completed for SLZ_7 at 2024年 02月 21日 星期三 07:25:04 CST
+Marking duplicates completed for SLZ_8 at 2024年 02月 21日 星期三 07:25:04 CST
+Indexing marked duplicates BAM for SLZ_7 at 2024年 02月 21日 星期三 07:25:05 CST
+Indexing marked duplicates BAM for SLZ_8 at 2024年 02月 21日 星期三 07:25:05 CST
+Indexing marked duplicates BAM completed for SLZ_7 at 2024年 02月 21日 星期三 07:25:40 CST
+Marking duplicates for SXK_4 at 2024年 02月 21日 星期三 07:25:41 CST
+Indexing marked duplicates BAM completed for SLZ_8 at 2024年 02月 21日 星期三 07:25:43 CST
+Marking duplicates for SXK_5 at 2024年 02月 21日 星期三 07:25:43 CST
+Marking duplicates completed for SLZ_4 at 2024年 02月 21日 星期三 07:29:33 CST
+Indexing marked duplicates BAM for SLZ_4 at 2024年 02月 21日 星期三 07:29:33 CST
+Marking duplicates completed for SLZ_3 at 2024年 02月 21日 星期三 07:30:08 CST
+Indexing marked duplicates BAM for SLZ_3 at 2024年 02月 21日 星期三 07:30:09 CST
+Indexing marked duplicates BAM completed for SLZ_4 at 2024年 02月 21日 星期三 07:30:41 CST
+Marking duplicates for SXK_6 at 2024年 02月 21日 星期三 07:30:41 CST
+Indexing marked duplicates BAM completed for SLZ_3 at 2024年 02月 21日 星期三 07:30:53 CST
+Marking duplicates for WYL_1 at 2024年 02月 21日 星期三 07:30:54 CST
+Marking duplicates completed for ST_1 at 2024年 02月 21日 星期三 08:24:13 CST
+Indexing marked duplicates BAM for ST_1 at 2024年 02月 21日 星期三 08:24:14 CST
+Indexing marked duplicates BAM completed for ST_1 at 2024年 02月 21日 星期三 08:26:35 CST
+Marking duplicates for WYL_3 at 2024年 02月 21日 星期三 08:26:38 CST
+Marking duplicates completed for ST_2 at 2024年 02月 21日 星期三 08:27:16 CST
+Indexing marked duplicates BAM for ST_2 at 2024年 02月 21日 星期三 08:27:17 CST
+Indexing marked duplicates BAM completed for ST_2 at 2024年 02月 21日 星期三 08:29:38 CST
+Marking duplicates for WYL_4 at 2024年 02月 21日 星期三 08:29:39 CST
+Marking duplicates completed for SXK_1 at 2024年 02月 21日 星期三 08:30:38 CST
+Indexing marked duplicates BAM for SXK_1 at 2024年 02月 21日 星期三 08:30:39 CST
+Marking duplicates completed for SXK_4 at 2024年 02月 21日 星期三 08:31:05 CST
+Indexing marked duplicates BAM for SXK_4 at 2024年 02月 21日 星期三 08:31:06 CST
+Marking duplicates completed for SXK_6 at 2024年 02月 21日 星期三 08:31:51 CST
+Indexing marked duplicates BAM for SXK_6 at 2024年 02月 21日 星期三 08:31:51 CST
+Indexing marked duplicates BAM completed for SXK_4 at 2024年 02月 21日 星期三 08:32:25 CST
+Marking duplicates for WYL_6 at 2024年 02月 21日 星期三 08:32:26 CST
+Indexing marked duplicates BAM completed for SXK_1 at 2024年 02月 21日 星期三 08:32:32 CST
+Marking duplicates for WYL_8 at 2024年 02月 21日 星期三 08:32:32 CST
+Indexing marked duplicates BAM completed for SXK_6 at 2024年 02月 21日 星期三 08:32:47 CST
+Marking duplicates for XC_1 at 2024年 02月 21日 星期三 08:32:48 CST
+Marking duplicates completed for SXK_5 at 2024年 02月 21日 星期三 08:36:34 CST
+Marking duplicates completed for WYL_1 at 2024年 02月 21日 星期三 08:36:35 CST
+Indexing marked duplicates BAM for SXK_5 at 2024年 02月 21日 星期三 08:36:35 CST
+Indexing marked duplicates BAM for WYL_1 at 2024年 02月 21日 星期三 08:36:35 CST
+Indexing marked duplicates BAM completed for WYL_1 at 2024年 02月 21日 星期三 08:37:41 CST
+Marking duplicates for XC_2 at 2024年 02月 21日 星期三 08:37:42 CST
+Indexing marked duplicates BAM completed for SXK_5 at 2024年 02月 21日 星期三 08:37:56 CST
+Marking duplicates for XC_5 at 2024年 02月 21日 星期三 08:37:57 CST
+Marking duplicates completed for SXK_2 at 2024年 02月 21日 星期三 08:40:06 CST
+Indexing marked duplicates BAM for SXK_2 at 2024年 02月 21日 星期三 08:40:07 CST
+Indexing marked duplicates BAM completed for SXK_2 at 2024年 02月 21日 星期三 08:40:58 CST
+Marking duplicates for XC_6 at 2024年 02月 21日 星期三 08:40:59 CST
+Marking duplicates completed for SXK_3 at 2024年 02月 21日 星期三 08:43:17 CST
+Indexing marked duplicates BAM for SXK_3 at 2024年 02月 21日 星期三 08:43:18 CST
+Indexing marked duplicates BAM completed for SXK_3 at 2024年 02月 21日 星期三 08:44:33 CST
+Marking duplicates for XC_7 at 2024年 02月 21日 星期三 08:44:34 CST
+Marking duplicates completed for ST_3 at 2024年 02月 21日 星期三 08:45:40 CST
+Indexing marked duplicates BAM for ST_3 at 2024年 02月 21日 星期三 08:45:41 CST
+Indexing marked duplicates BAM completed for ST_3 at 2024年 02月 21日 星期三 08:47:01 CST
+Marking duplicates for XC_8 at 2024年 02月 21日 星期三 08:47:02 CST
+Marking duplicates completed for ST_8 at 2024年 02月 21日 星期三 08:55:53 CST
+Indexing marked duplicates BAM for ST_8 at 2024年 02月 21日 星期三 08:55:53 CST
+Indexing marked duplicates BAM completed for ST_8 at 2024年 02月 21日 星期三 08:57:54 CST
+Marking duplicates for XNF_1 at 2024年 02月 21日 星期三 08:57:56 CST
+Marking duplicates completed for ST_6 at 2024年 02月 21日 星期三 08:58:37 CST
+Indexing marked duplicates BAM for ST_6 at 2024年 02月 21日 星期三 08:58:37 CST
+Marking duplicates completed for ST_4 at 2024年 02月 21日 星期三 09:00:00 CST
+Indexing marked duplicates BAM for ST_4 at 2024年 02月 21日 星期三 09:00:00 CST
+Indexing marked duplicates BAM completed for ST_6 at 2024年 02月 21日 星期三 09:00:47 CST
+Marking duplicates for XNF_3 at 2024年 02月 21日 星期三 09:00:49 CST
+Indexing marked duplicates BAM completed for ST_4 at 2024年 02月 21日 星期三 09:01:51 CST
+Marking duplicates for XNF_4 at 2024年 02月 21日 星期三 09:01:52 CST
+Marking duplicates completed for ST_5 at 2024年 02月 21日 星期三 09:02:15 CST
+Indexing marked duplicates BAM for ST_5 at 2024年 02月 21日 星期三 09:02:16 CST
+Indexing marked duplicates BAM completed for ST_5 at 2024年 02月 21日 星期三 09:04:48 CST
+Marking duplicates for XNF_5 at 2024年 02月 21日 星期三 09:04:49 CST
+Marking duplicates completed for ST_7 at 2024年 02月 21日 星期三 09:05:20 CST
+Indexing marked duplicates BAM for ST_7 at 2024年 02月 21日 星期三 09:05:21 CST
+Indexing marked duplicates BAM completed for ST_7 at 2024年 02月 21日 星期三 09:07:27 CST
+Marking duplicates for XNF_6 at 2024年 02月 21日 星期三 09:07:28 CST
+Marking duplicates completed for WYL_3 at 2024年 02月 21日 星期三 09:21:37 CST
+Indexing marked duplicates BAM for WYL_3 at 2024年 02月 21日 星期三 09:21:37 CST
+Indexing marked duplicates BAM completed for WYL_3 at 2024年 02月 21日 星期三 09:22:43 CST
+Marking duplicates for XNF_7 at 2024年 02月 21日 星期三 09:22:44 CST
+Marking duplicates completed for WYL_4 at 2024年 02月 21日 星期三 09:23:12 CST
+Indexing marked duplicates BAM for WYL_4 at 2024年 02月 21日 星期三 09:23:12 CST
+Indexing marked duplicates BAM completed for WYL_4 at 2024年 02月 21日 星期三 09:24:17 CST
+Marking duplicates for YK_1 at 2024年 02月 21日 星期三 09:24:18 CST
+Marking duplicates completed for WYL_6 at 2024年 02月 21日 星期三 09:30:35 CST
+Indexing marked duplicates BAM for WYL_6 at 2024年 02月 21日 星期三 09:30:35 CST
+Indexing marked duplicates BAM completed for WYL_6 at 2024年 02月 21日 星期三 09:31:49 CST
+Marking duplicates for YK_3 at 2024年 02月 21日 星期三 09:31:50 CST
+Marking duplicates completed for WYL_8 at 2024年 02月 21日 星期三 09:32:16 CST
+Indexing marked duplicates BAM for WYL_8 at 2024年 02月 21日 星期三 09:32:17 CST
+Indexing marked duplicates BAM completed for WYL_8 at 2024年 02月 21日 星期三 09:33:10 CST
+Marking duplicates for YK_4 at 2024年 02月 21日 星期三 09:33:11 CST
+Marking duplicates completed for XNF_1 at 2024年 02月 21日 星期三 09:59:28 CST
+Indexing marked duplicates BAM for XNF_1 at 2024年 02月 21日 星期三 09:59:28 CST
+Indexing marked duplicates BAM completed for XNF_1 at 2024年 02月 21日 星期三 10:00:14 CST
+Marking duplicates for YK_7 at 2024年 02月 21日 星期三 10:00:15 CST
+Marking duplicates completed for XNF_6 at 2024年 02月 21日 星期三 10:03:45 CST
+Indexing marked duplicates BAM for XNF_6 at 2024年 02月 21日 星期三 10:03:45 CST
+Indexing marked duplicates BAM completed for XNF_6 at 2024年 02月 21日 星期三 10:04:29 CST
+Marking duplicates for YK_8 at 2024年 02月 21日 星期三 10:04:31 CST
+Marking duplicates completed for XNF_5 at 2024年 02月 21日 星期三 10:10:54 CST
+Indexing marked duplicates BAM for XNF_5 at 2024年 02月 21日 星期三 10:10:54 CST
+Indexing marked duplicates BAM completed for XNF_5 at 2024年 02月 21日 星期三 10:11:47 CST
+Marking duplicates for YX_1 at 2024年 02月 21日 星期三 10:11:48 CST
+Marking duplicates completed for XNF_4 at 2024年 02月 21日 星期三 10:12:35 CST
+Indexing marked duplicates BAM for XNF_4 at 2024年 02月 21日 星期三 10:12:36 CST
+Indexing marked duplicates BAM completed for XNF_4 at 2024年 02月 21日 星期三 10:13:39 CST
+Marking duplicates for YX_2 at 2024年 02月 21日 星期三 10:13:39 CST
+Marking duplicates completed for XNF_3 at 2024年 02月 21日 星期三 10:18:13 CST
+Indexing marked duplicates BAM for XNF_3 at 2024年 02月 21日 星期三 10:18:14 CST
+Indexing marked duplicates BAM completed for XNF_3 at 2024年 02月 21日 星期三 10:19:08 CST
+Marking duplicates for YX_3 at 2024年 02月 21日 星期三 10:19:09 CST
+Marking duplicates completed for XNF_7 at 2024年 02月 21日 星期三 10:19:39 CST
+Indexing marked duplicates BAM for XNF_7 at 2024年 02月 21日 星期三 10:19:40 CST
+Indexing marked duplicates BAM completed for XNF_7 at 2024年 02月 21日 星期三 10:20:17 CST
+Marking duplicates for YX_6 at 2024年 02月 21日 星期三 10:20:18 CST
+Marking duplicates completed for XC_5 at 2024年 02月 21日 星期三 10:34:28 CST
+Indexing marked duplicates BAM for XC_5 at 2024年 02月 21日 星期三 10:34:28 CST
+Marking duplicates completed for XC_1 at 2024年 02月 21日 星期三 10:35:51 CST
+Indexing marked duplicates BAM for XC_1 at 2024年 02月 21日 星期三 10:35:51 CST
+Indexing marked duplicates BAM completed for XC_5 at 2024年 02月 21日 星期三 10:37:12 CST
+Marking duplicates for YX_7 at 2024年 02月 21日 星期三 10:37:14 CST
+Indexing marked duplicates BAM completed for XC_1 at 2024年 02月 21日 星期三 10:38:34 CST
+Marking duplicates for YZY_10 at 2024年 02月 21日 星期三 10:38:36 CST
+Marking duplicates completed for XC_2 at 2024年 02月 21日 星期三 10:39:59 CST
+Indexing marked duplicates BAM for XC_2 at 2024年 02月 21日 星期三 10:39:59 CST
+Marking duplicates completed for XC_8 at 2024年 02月 21日 星期三 10:42:51 CST
+Indexing marked duplicates BAM for XC_8 at 2024年 02月 21日 星期三 10:42:51 CST
+Indexing marked duplicates BAM completed for XC_2 at 2024年 02月 21日 星期三 10:44:07 CST
+Marking duplicates for YZY_11 at 2024年 02月 21日 星期三 10:44:08 CST
+Indexing marked duplicates BAM completed for XC_8 at 2024年 02月 21日 星期三 10:46:11 CST
+Marking duplicates for YZY_2 at 2024年 02月 21日 星期三 10:46:11 CST
+Marking duplicates completed for XC_7 at 2024年 02月 21日 星期三 10:50:27 CST
+Indexing marked duplicates BAM for XC_7 at 2024年 02月 21日 星期三 10:50:28 CST
+Marking duplicates completed for XC_6 at 2024年 02月 21日 星期三 10:52:53 CST
+Indexing marked duplicates BAM for XC_6 at 2024年 02月 21日 星期三 10:52:54 CST
+Indexing marked duplicates BAM completed for XC_7 at 2024年 02月 21日 星期三 10:53:52 CST
+Marking duplicates for YZY_4 at 2024年 02月 21日 星期三 10:53:53 CST
+Indexing marked duplicates BAM completed for XC_6 at 2024年 02月 21日 星期三 10:57:46 CST
+Marking duplicates for YZY_7 at 2024年 02月 21日 星期三 10:57:47 CST
+Marking duplicates completed for YK_1 at 2024年 02月 21日 星期三 11:09:19 CST
+Indexing marked duplicates BAM for YK_1 at 2024年 02月 21日 星期三 11:09:20 CST
+Marking duplicates completed for YK_3 at 2024年 02月 21日 星期三 11:12:29 CST
+Indexing marked duplicates BAM for YK_3 at 2024年 02月 21日 星期三 11:12:29 CST
+Indexing marked duplicates BAM completed for YK_1 at 2024年 02月 21日 星期三 11:13:07 CST
+Marking duplicates for YZY_8 at 2024年 02月 21日 星期三 11:13:09 CST
+Indexing marked duplicates BAM completed for YK_3 at 2024年 02月 21日 星期三 11:14:33 CST
+Marking duplicates for ZJP_10 at 2024年 02月 21日 星期三 11:14:34 CST
+Marking duplicates completed for YK_4 at 2024年 02月 21日 星期三 11:26:18 CST
+Indexing marked duplicates BAM for YK_4 at 2024年 02月 21日 星期三 11:26:19 CST
+Marking duplicates completed for YK_8 at 2024年 02月 21日 星期三 11:29:18 CST
+Indexing marked duplicates BAM for YK_8 at 2024年 02月 21日 星期三 11:29:18 CST
+Indexing marked duplicates BAM completed for YK_4 at 2024年 02月 21日 星期三 11:30:15 CST
+Marking duplicates for ZJP_1 at 2024年 02月 21日 星期三 11:30:17 CST
+Indexing marked duplicates BAM completed for YK_8 at 2024年 02月 21日 星期三 11:30:57 CST
+Marking duplicates for ZJP_2 at 2024年 02月 21日 星期三 11:30:57 CST
+Marking duplicates completed for YX_1 at 2024年 02月 21日 星期三 11:41:59 CST
+Indexing marked duplicates BAM for YX_1 at 2024年 02月 21日 星期三 11:41:59 CST
+Indexing marked duplicates BAM completed for YX_1 at 2024年 02月 21日 星期三 11:43:31 CST
+Marking duplicates for ZJP_3 at 2024年 02月 21日 星期三 11:43:33 CST
+Marking duplicates completed for YK_7 at 2024年 02月 21日 星期三 11:51:22 CST
+Indexing marked duplicates BAM for YK_7 at 2024年 02月 21日 星期三 11:51:22 CST
+Indexing marked duplicates BAM completed for YK_7 at 2024年 02月 21日 星期三 11:53:05 CST
+Marking duplicates for ZJP_4 at 2024年 02月 21日 星期三 11:53:06 CST
+Marking duplicates completed for YX_2 at 2024年 02月 21日 星期三 11:59:14 CST
+Indexing marked duplicates BAM for YX_2 at 2024年 02月 21日 星期三 11:59:15 CST
+Indexing marked duplicates BAM completed for YX_2 at 2024年 02月 21日 星期三 12:01:17 CST
+Marking duplicates for ZJP_5 at 2024年 02月 21日 星期三 12:01:17 CST
+Marking duplicates completed for YX_3 at 2024年 02月 21日 星期三 12:05:38 CST
+Indexing marked duplicates BAM for YX_3 at 2024年 02月 21日 星期三 12:05:38 CST
+Indexing marked duplicates BAM completed for YX_3 at 2024年 02月 21日 星期三 12:08:24 CST
+Marking duplicates for ZJP_7 at 2024年 02月 21日 星期三 12:08:25 CST
+Marking duplicates completed for YX_6 at 2024年 02月 21日 星期三 12:10:33 CST
+Indexing marked duplicates BAM for YX_6 at 2024年 02月 21日 星期三 12:10:33 CST
+Indexing marked duplicates BAM completed for YX_6 at 2024年 02月 21日 星期三 12:12:27 CST
+Marking duplicates for ZJP_8 at 2024年 02月 21日 星期三 12:12:28 CST
+Marking duplicates completed for YX_7 at 2024年 02月 21日 星期三 12:18:25 CST
+Indexing marked duplicates BAM for YX_7 at 2024年 02月 21日 星期三 12:18:25 CST
+Marking duplicates completed for YZY_11 at 2024年 02月 21日 星期三 12:19:52 CST
+Indexing marked duplicates BAM for YZY_11 at 2024年 02月 21日 星期三 12:19:52 CST
+Indexing marked duplicates BAM completed for YX_7 at 2024年 02月 21日 星期三 12:20:55 CST
+Marking duplicates for ZJS_10 at 2024年 02月 21日 星期三 12:20:56 CST
+Indexing marked duplicates BAM completed for YZY_11 at 2024年 02月 21日 星期三 12:21:16 CST
+Marking duplicates for ZJS_1 at 2024年 02月 21日 星期三 12:21:17 CST
+Marking duplicates completed for YZY_10 at 2024年 02月 21日 星期三 12:25:09 CST
+Indexing marked duplicates BAM for YZY_10 at 2024年 02月 21日 星期三 12:25:09 CST
+Marking duplicates completed for YZY_2 at 2024年 02月 21日 星期三 12:26:12 CST
+Indexing marked duplicates BAM for YZY_2 at 2024年 02月 21日 星期三 12:26:13 CST
+Indexing marked duplicates BAM completed for YZY_10 at 2024年 02月 21日 星期三 12:27:43 CST
+Marking duplicates for ZJS_2 at 2024年 02月 21日 星期三 12:27:44 CST
+Indexing marked duplicates BAM completed for YZY_2 at 2024年 02月 21日 星期三 12:27:49 CST
+Marking duplicates for ZJS_4 at 2024年 02月 21日 星期三 12:27:50 CST
+Marking duplicates completed for YZY_7 at 2024年 02月 21日 星期三 12:43:44 CST
+Indexing marked duplicates BAM for YZY_7 at 2024年 02月 21日 星期三 12:43:45 CST
+Marking duplicates completed for YZY_8 at 2024年 02月 21日 星期三 12:46:46 CST
+Indexing marked duplicates BAM for YZY_8 at 2024年 02月 21日 星期三 12:46:47 CST
+Indexing marked duplicates BAM completed for YZY_7 at 2024年 02月 21日 星期三 12:47:11 CST
+Marking duplicates for ZJS_8 at 2024年 02月 21日 星期三 12:47:13 CST
+Indexing marked duplicates BAM completed for YZY_8 at 2024年 02月 21日 星期三 12:48:56 CST
+Marking duplicates for ZJS_9 at 2024年 02月 21日 星期三 12:48:57 CST
+Marking duplicates completed for ZJP_10 at 2024年 02月 21日 星期三 12:51:07 CST
+Indexing marked duplicates BAM for ZJP_10 at 2024年 02月 21日 星期三 12:51:08 CST
+Indexing marked duplicates BAM completed for ZJP_10 at 2024年 02月 21日 星期三 12:53:13 CST
+Marking duplicates completed for YZY_4 at 2024年 02月 21日 星期三 13:01:25 CST
+Indexing marked duplicates BAM for YZY_4 at 2024年 02月 21日 星期三 13:01:25 CST
+Indexing marked duplicates BAM completed for YZY_4 at 2024年 02月 21日 星期三 13:02:41 CST
+Marking duplicates completed for ZJP_2 at 2024年 02月 21日 星期三 13:24:48 CST
+Indexing marked duplicates BAM for ZJP_2 at 2024年 02月 21日 星期三 13:24:48 CST
+Indexing marked duplicates BAM completed for ZJP_2 at 2024年 02月 21日 星期三 13:26:25 CST
+Marking duplicates completed for ZJP_1 at 2024年 02月 21日 星期三 13:27:28 CST
+Indexing marked duplicates BAM for ZJP_1 at 2024年 02月 21日 星期三 13:27:28 CST
+Indexing marked duplicates BAM completed for ZJP_1 at 2024年 02月 21日 星期三 13:28:57 CST
+Marking duplicates completed for ZJP_3 at 2024年 02月 21日 星期三 13:36:12 CST
+Indexing marked duplicates BAM for ZJP_3 at 2024年 02月 21日 星期三 13:36:13 CST
+Indexing marked duplicates BAM completed for ZJP_3 at 2024年 02月 21日 星期三 13:37:57 CST
+Marking duplicates completed for ZJS_10 at 2024年 02月 21日 星期三 13:58:15 CST
+Indexing marked duplicates BAM for ZJS_10 at 2024年 02月 21日 星期三 13:58:15 CST
+Indexing marked duplicates BAM completed for ZJS_10 at 2024年 02月 21日 星期三 13:59:32 CST
+Marking duplicates completed for ZJP_4 at 2024年 02月 21日 星期三 14:00:06 CST
+Indexing marked duplicates BAM for ZJP_4 at 2024年 02月 21日 星期三 14:00:06 CST
+Indexing marked duplicates BAM completed for ZJP_4 at 2024年 02月 21日 星期三 14:01:44 CST
+Marking duplicates completed for ZJP_5 at 2024年 02月 21日 星期三 14:03:10 CST
+Indexing marked duplicates BAM for ZJP_5 at 2024年 02月 21日 星期三 14:03:11 CST
+Indexing marked duplicates BAM completed for ZJP_5 at 2024年 02月 21日 星期三 14:04:39 CST
+Marking duplicates completed for ZJS_4 at 2024年 02月 21日 星期三 14:05:31 CST
+Indexing marked duplicates BAM for ZJS_4 at 2024年 02月 21日 星期三 14:05:32 CST
+Indexing marked duplicates BAM completed for ZJS_4 at 2024年 02月 21日 星期三 14:06:39 CST
+Marking duplicates completed for ZJS_2 at 2024年 02月 21日 星期三 14:08:24 CST
+Indexing marked duplicates BAM for ZJS_2 at 2024年 02月 21日 星期三 14:08:25 CST
+Marking duplicates completed for ZJS_1 at 2024年 02月 21日 星期三 14:08:42 CST
+Indexing marked duplicates BAM for ZJS_1 at 2024年 02月 21日 星期三 14:08:43 CST
+Indexing marked duplicates BAM completed for ZJS_2 at 2024年 02月 21日 星期三 14:09:28 CST
+Indexing marked duplicates BAM completed for ZJS_1 at 2024年 02月 21日 星期三 14:09:52 CST
+Marking duplicates completed for ZJP_8 at 2024年 02月 21日 星期三 14:12:12 CST
+Indexing marked duplicates BAM for ZJP_8 at 2024年 02月 21日 星期三 14:12:12 CST
+Indexing marked duplicates BAM completed for ZJP_8 at 2024年 02月 21日 星期三 14:13:43 CST
+Marking duplicates completed for ZJP_7 at 2024年 02月 21日 星期三 14:17:07 CST
+Indexing marked duplicates BAM for ZJP_7 at 2024年 02月 21日 星期三 14:17:07 CST
+Indexing marked duplicates BAM completed for ZJP_7 at 2024年 02月 21日 星期三 14:18:17 CST
+Marking duplicates completed for ZJS_9 at 2024年 02月 21日 星期三 14:26:34 CST
+Indexing marked duplicates BAM for ZJS_9 at 2024年 02月 21日 星期三 14:26:35 CST
+Indexing marked duplicates BAM completed for ZJS_9 at 2024年 02月 21日 星期三 14:27:32 CST
+Marking duplicates completed for ZJS_8 at 2024年 02月 21日 星期三 14:44:13 CST
+Indexing marked duplicates BAM for ZJS_8 at 2024年 02月 21日 星期三 14:44:13 CST
+Indexing marked duplicates BAM completed for ZJS_8 at 2024年 02月 21日 星期三 14:45:06 CST
+Script completed at 2024年 02月 21日 星期三 14:45:07 CST
+Script started at 2024年 02月 21日 星期三 19:24:44 CST
+Marking duplicates for EJ_8 at 2024年 02月 21日 星期三 19:24:47 CST
+Marking duplicates completed for EJ_8 at 2024年 02月 21日 星期三 20:55:51 CST
+Indexing marked duplicates BAM for EJ_8 at 2024年 02月 21日 星期三 20:55:51 CST
+Indexing marked duplicates BAM completed for EJ_8 at 2024年 02月 21日 星期三 20:57:17 CST
