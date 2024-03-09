@@ -9,3 +9,10 @@ vcftools --gzvcf  224_filtered_snp.vcf.gz  --min-alleles 2 --max-alleles 2 --min
 
 # LD 过滤 生成保留和剔除位点的ID
 plink --vcf 224_filtered_vcftools.vcf.gz.recode.vcf --indep-pairwise 50 5 0.2 --out LD  --allow-extra-chr  --set-missing-var-ids @:#  
+##  wc -l  LD.prune.in
+## 1822433 LD.prune.in
+
+# 去除 Contig位点 未定位到染色体上的位点
+grep -v "Contig" LD.prune.in > LD.prune.noContig.in
+##  wc -l  LD.prune.noContig.in
+## 1821208 LD.prune.noContig.in 去除Contig位点后的数量
