@@ -16,3 +16,14 @@ plink --vcf 224_filtered_vcftools.vcf.gz.recode.vcf --indep-pairwise 50 5 0.2 --
 grep -v "Contig" LD.prune.in > LD.prune.noContig.in
 ##  wc -l  LD.prune.noContig.in
 ## 1821208 LD.prune.noContig.in 去除Contig位点后的数量
+
+## 根据LD.prune.noContig.in 要保留位点ID文件 提取 生成plink格式的vcf文件
+plink --vcf 224_filtered_vcftools.vcf.gz.recode.vcf --out LD.prune.noContig --extract LD.prune.in --recode vcf-iid  --allow-extra-chr  --keep-allele-order  --set-missing-var-ids @:#  
+
+# vcftools_specific_position.txt 使用vcftools 要保留位点ID文件提取vcftools格式的vcf文件 
+sed 's/:/ /g' LD.prune.noContig.in > vcftools_specific_noContig_position.txt
+vcftools --vcf 224_filtered_vcftools.vcf.gz.recode.vcf  --positions vcftools_specific_noContig_position.txt --recode --out 224_filtered.LD.pruned.noContig
+##  保留下来的SNP数量 1821208 224_filtered.LD.pruned.noContig.recode.vcf
+
+
+
