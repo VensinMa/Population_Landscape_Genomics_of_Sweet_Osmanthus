@@ -7,8 +7,10 @@ gcta64 --bfile 224_filtered.LD.pruned.noContig  --autosome  --make-grm  --out GA
 ## 进行PCA分析
 gcta64 --grm GA --pca 130  --out PCA_out
 
-## 一键绘图脚本
+## 一键绘图脚本 draw_PCA.R 可在2_Population_genetics目录获得
 Rscript ./draw_PCA.R  PCA_out.eigenvec 1 2  sample.pop  PCA_out_figure
+## "Usage: Rscript draw_PCA.R <PCA_out.eigenvec> <PC1_index> <PC2_index> <sample.pop> <output_prefix>"
+## "Example: Rscript draw_PCA.R PCA_out.eigenvec 1 2 sample.pop PCA_out_figure"
 
 #########  或选择本地Rstudio绘制 ############### 以下为完整代码
 #############################################################
