@@ -7,6 +7,7 @@ vcftools --gzvcf  224_filtered_snp.vcf.gz  --min-alleles 2 --max-alleles 2 --min
 ## After filtering, kept 13215558 out of a possible 172544728 Sites
 ## Run Time = 70892.00 seconds
 
+sed '/^#CHROM/ s/_/-/g' 229_filtered_vcftools.vcf.gz.recode.vcf > modified_229_filtered_vcftools.vcf.gz.recode.vcf
 
 # LD 过滤 生成保留和剔除位点的ID
 plink --vcf 229_filtered_vcftools.vcf.gz.recode.vcf --indep-pairwise 50 5 0.2 --out LD  --allow-extra-chr  --set-missing-var-ids @:#  
