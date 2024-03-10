@@ -6,3 +6,10 @@ seq 2 20 | parallel -j 20 "admixture --cv  224_filtered.LD.pruned.noContig.bed {
 
 # 确定具有最小CV值的K值为最佳分群数
 cat *.log | grep "CV"
+
+mkdir result
+cp  ./*.Q result/
+
+Rscript  draw_admixture.R  result  224.filtered.LD.pruned.noContig.nosex   224.filtered.LD.pruned.noContig.admixture
+
+Rscript.exe  draw_admixture.R result 224.filtered.LD.pruned.noContig.nosex  224.filtered.LD.pruned.noContig.admixture
