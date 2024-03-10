@@ -24,19 +24,20 @@ library(pophelper)
 library(argparser)
 library(cols4all)
 
-# 定义颜色调色板
-c4a_gui()
-set.seed(12)
-mycol = c4a("vivid", 12)
-# 随机打乱颜色向量
-mycol1 <- sample(mycol)
-mycol1
-
-# 设置输入文件路径
+# 设置工作路径 输入文件路径
 setwd("C:/RStudio/RStudio/Workspace/Resequence/admixture/")
 dir <- "result" # Q矩阵文件所在的目录
 sample_file <- "224.filtered.LD.pruned.noContig.nosex" # 样本顺序文件路径
-output_prefix <- "224.filtered" # 输出文件前缀
+output_prefix <- "224.filtered.LD.pruned.noContig" # 输出文件前缀
+
+# 定义颜色调色板
+c4a_gui()
+set.seed(12)
+mycol = c4a("classic_green_orange12", 12)
+# 随机打乱颜色向量
+mycol1 <- sample(mycol)
+mycol1 = c("#55ACD9","#D4994D","#DC5166","#F2B8E8","#86DCD3","#6C559D",
+           "#B7CE76","#FFE7A9","#F0AF75","#B1D5BA","#E68A8B","#D6CDE0")
 
 # 读取Q矩阵文件
 Qfiles <- list.files(dir, pattern="Q", full.names=TRUE)
@@ -48,7 +49,7 @@ for (i in 1:length(qlist)) {
   rownames(qlist[[i]]) <- sample_labels$V1
 }
 
-# 绘制结构图
+# 绘制所有k值结构
 plotQ(qlist,
       sortind="all", # 对所有个体进行排序
       imgtype="pdf", # 图像类型，可以是"pdf", "png"等
@@ -57,7 +58,7 @@ plotQ(qlist,
       width=40, # 图像宽度
       height=8, # 图像高度
       titlecol = "black",
-      clustercol=mycol,
+      clustercol=mycol1,
       exportpath=getwd(), # 图像导出路径，这里设置为当前工作目录
       outputfilename=output_prefix, # 输出文件名前缀
       useindlab=TRUE, # 是否使用个体标签
@@ -66,7 +67,18 @@ plotQ(qlist,
 
 
 
-
-
-
+# 单独绘制某一k值
+plotQ(qlist["224.filtered.LD.pruned.noContig.6.Q"],
+      sortind="all", # 对所有个体进行排序
+      imgtype="pdf", # 图像类型，可以是"pdf", "png"等
+      ordergrp=FALSE, # 是否按群组排序
+      width=40, # 图像宽度
+      height=8, # 图像高度
+      titlecol = "black",
+      clustercol=mycol1,
+      exportpath=getwd(), # 图像导出路径，这里设置为当前工作目录
+      outputfilename=output_prefix, # 输出文件名前缀
+      useindlab=TRUE, # 是否使用个体标签
+      sharedindlab=FALSE, # 标签是否共享
+      showindlab=TRUE) # 是否显示个体标签
 
