@@ -19,7 +19,7 @@ awk '{print $1 > $2".ids"}' $pop_info_file
 for pop in $(cut -f 2 -d ' ' $pop_info_file | sort | uniq)
 do
     echo "Processing population: $pop"
-    vcftools --vcf $vcf_file --keep ${pop}.ids --maf --out "${output_dir}/${pop}_freq" &
+    vcftools --vcf $vcf_file --keep ${pop}.ids --maf --out "${output_dir}/${pop}_maf" &
 done
 
 # 等待所有后台任务完成
