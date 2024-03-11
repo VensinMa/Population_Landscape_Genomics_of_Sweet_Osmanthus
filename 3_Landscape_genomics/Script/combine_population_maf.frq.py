@@ -17,7 +17,7 @@ for frq_file in frq_files:
     population_name = frq_file.split('_population_maf.frq')[0]
     
     # 读取.frq文件
-    df = pd.read_csv(os.path.join(input_dir, frq_file), delim_whitespace=True)
+    df = pd.read_csv(os.path.join(input_dir, frq_file), sep='\s+')
     
     # 仅保留 SNP 和 MAF 列
     df = df[['SNP', 'MAF']]
