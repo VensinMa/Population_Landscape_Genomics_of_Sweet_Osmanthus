@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # 输入的VCF文件
-vcf_file="your_input.vcf"
+vcf_file="224.filtered.LD.pruned.noContig.recode.vcf"
 # 群体信息文件
-pop_info_file="population_info.txt"
+pop_info_file="224sample.pop"
 # 输出目录
 output_dir="output"
 
@@ -25,13 +25,10 @@ export -f process_population
 export vcf_file
 export output_dir
 
-# 使用parallel并行执行process_population函数
-parallel process_population ::: $(awk '{print $2}' $pop_info_file | sort | uniq)
+# 使用parallel并行执行process_population函数，限制同时运行的作业数为16
+parallel -j 16 process_population ::: $(awk '{print $2}' $pop_info_file | sort | uniq)
 
 echo "Parallel processing done. Now merging allele frequencies."
-
-# 合并等位基因频率部分
-# 合并的脚本保持不变
 
 # 初始化合并文件
 merged_file="$output_dir/merged_allele_frequencies.csv"
