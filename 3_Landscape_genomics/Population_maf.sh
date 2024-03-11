@@ -15,7 +15,7 @@ fi
 # 为每个群体创建个体ID文件
 awk '{print $1 > $2".ids"}' $pop_info_file
 
-# 对每个群体计算等位基因频率，并在后台执行
+# 对每个群体计算次等位基因频率，并在后台执行
 for pop in $(cut -f 2 -d ' ' $pop_info_file | sort | uniq)
 do
     echo "Processing population: $pop"
