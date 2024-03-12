@@ -2,7 +2,7 @@
 
 cd /public1/guop/mawx/workspace/pop_genetic/faststructure
 mkdir fast_result
-seq 2 30 | parallel -j 30 "structure.py -K {} --input=/public1/guop/mawx/workspace/pop_genetic/224.filtered.LD.pruned.noContig --output=fast_result/224.filtered.LD.pruned.noContig_{} --cv=5 --prior=logistic --seed=100 > log.{}.txt 2>&1" &
+seq 2 30 | parallel -j 30 "structure.py -K {} --input=/public1/guop/mawx/workspace/pop_genetic/224.filtered.LD.pruned.noContig --output=/public1/guop/mawx/workspace/pop_genetic/2_30_faststructure_res/2_30_faststructure_{} --cv=5 --prior=logistic --seed=123 > faststructure.{}.log 2>&1" &
 
 ###################################### 本地绘图 ######################################
 # 安装需要的包并加载
