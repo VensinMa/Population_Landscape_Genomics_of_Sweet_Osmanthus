@@ -21,11 +21,9 @@ gatk --java-options "-Xmx30g -Xms30g -XX:ParallelGCThreads=16 -Djava.io.tmpdir=.
 gatk --java-options "-Xmx30g -Xms30g -XX:ParallelGCThreads=16 -Djava.io.tmpdir=./tmp"  SelectVariants  -R /mnt/e/mwx/workspace/pop/genome/Osmanthus.genomic.fasta -V 186_filter.vcf.gz --exclude-filtered  -O 186_filtered.vcf.gz
 
 #########################################  vcftools 过滤  #####################################################
-vcftools --gzvcf 186_filtered.vcf.gz --min-alleles 2  --max-alleles 2  --minDP 5  --minGQ 10  --minQ 30 --min-meanDP 6  --max-missing 0.8  --maf 0.05  --recode  --recode-INFO-all  --out 186_filtered_vcftools
 
-
-
-vcftools --gzvcf 224_filtered_rename.vcf.gz --recode --recode-INFO-all --stdout --remove remove.id | bgzip > 186_raw.vcf.gz
 vcftools --gzvcf 224_filtered_rename.vcf.gz --remove remove.id --min-alleles 2  --max-alleles 2  --minDP 5  --minGQ 10  --minQ 30 --min-meanDP 6  --max-missing 0.8  --maf 0.05 --recode --recode-INFO-all --out 186_filtered_vcftools
-gatk --java-options "-Xmx30g -Xms30g -XX:ParallelGCThreads=16 -Djava.io.tmpdir=./tmp" SelectVariants  -R /mnt/e/mwx/workspace/pop/genome/Osmanthus.genomic.fasta  -V 224_filtered_rename.vcf.gz  --exclude-sample-name remove.id.args  -O 186_raw.vcf.gz
-
+## After filtering, kept 186 out of 224 Individuals
+## Outputting VCF file...
+## After filtering, kept 12557928 out of a possible 172544728 Sites
+## Run Time = 15319.00 seconds
