@@ -27,3 +27,6 @@ vcftools --gzvcf 224_filtered_rename.vcf.gz --remove remove.id --min-alleles 2  
 ## Outputting VCF file...
 ## After filtering, kept 12557928 out of a possible 172544728 Sites
 ## Run Time = 15319.00 seconds
+
+
+grep -v "^Contig" 186_filtered_vcftools.recode.vcf > 186_filtered_vcftools.noContig.recode.vcf
