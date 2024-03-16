@@ -1,9 +1,13 @@
-cd /mnt/e/mwx/workspace/pop/
-grep -v "^Contig" 186_filtered_vcftools.recode.vcf
+cd /root/workspace/186sample
 
-plink --vcf /mnt/e/mwx/workspace/pop/186_filtered_vcftools.recode.vcf --indep-pairwise 50 5 0.2 --out LD  --allow-extra-chr  --set-missing-var-ids @:#  
+plink --vcf 186_filtered_vcftools.noContig.recode.vcf --indep-pairwise 50 5 0.2 --out LD  --allow-extra-chr  --set-missing-var-ids @:#  
 ##  wc -l  LD.prune.in
-##  
-grep -v "Contig" LD.prune.in > LD.prune.noContig.in
-## wc -l LD.prune.noContig.in
-## 1727654 LD.prune.noContig.in
+##  LD.prune.in
+
+sed 's/:/ /g' LD.prune.in > LD.prune.in.VCFTOOLS.txt
+
+vcftools --vcf 186_filtered_vcftools.noContig.recode.vcf  --positions LD.prune.in.VCFTOOLS.txt --recode --recode-INFO-all --out 186_filtered.LD.pruned.noContig
+##  After filtering, kept 186 out of 186 Individuals
+##  Outputting VCF file...
+##  After filtering, kept 1789805 out of a possible 12551267 Sites
+##  Run Time = 331.00 seconds
