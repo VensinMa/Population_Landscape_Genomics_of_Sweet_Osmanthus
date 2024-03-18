@@ -36,3 +36,5 @@ grep -cv "#" 186_filtered_vcftools.noContig.recode.vcf
 
 
 
+
+
