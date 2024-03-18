@@ -1,8 +1,9 @@
 
 ##  计算100K窗口内SNP数量
 vcftools --gzvcf 224_filtered_snp.vcf.gz --SNPdensity 100000 --out 100K.SNP.density
-#  After filtering, kept 172544728 out of a possible 172544728 Sites
-#  Run Time = 5679.00 seconds
+#  After filtering, kept 12551267 out of a possible 12551267 Sites
+#  Run Time = 41.00 seconds
+
 
 
 # 计算100K窗口内INDEL数量
