@@ -1,0 +1,1 @@
+seq 2 30 | parallel -j 30 "structure.py -K {} --input=/public1/guop/mawx/workspace/186sample/186_filtered.LD.pruned.4DTV.noContig --output=/public1/guop/mawx/workspace/186sample/fastastructure/fast_result/4DTV_faststructure_{} --cv=5 --prior=logistic --seed=123 > faststructure.{}.log 2>&1" &
