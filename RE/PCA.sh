@@ -1,12 +1,12 @@
 ## vcf转bed格式
 plink --vcf 186_filtered.LD.pruned.noContig.recode.vcf  --make-bed   --out 186_filtered.LD.pruned.noContig  --keep-allele-order  --allow-extra-chr  
-
+plink --vcf 186.snpEffAnno.4dtv.LD.vcf  --make-bed   --out 186_filtered.LD.pruned.4DTV.noContig  --keep-allele-order  --allow-extra-chr 
 ## 生成grm文件
 gcta64 --bfile 186_filtered.LD.pruned.noContig  --autosome  --make-grm  --out GA
-
+gcta64 --bfile 186_filtered.LD.pruned.4DTV.noContig --autosome  --make-grm  --out GA_4D
 ## 进行PCA分析
 gcta64 --grm GA --pca 30  --out 186_filtered.LD.pruned.noContig.PCA_out
-
+gcta64 --grm GA_4D --pca 30  --out 186_filtered.LD.pruned.4DTV.noContig.PCA_out
 ## 一键绘图脚本 draw_PCA.R 可在2_Population_genetics目录获得
 ## "Usage: Rscript draw_PCA.R <PCA_out.eigenvec> <PC1_index> <PC2_index> <sample.pop> <output_prefix>"
 ## "Example: Rscript draw_PCA.R PCA_out.eigenvec 1 2 sample.pop PCA_out_figure"
