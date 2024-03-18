@@ -2,6 +2,14 @@
 library(gradientForest)
 library(MaizePal)
 library(data.table)
+library(dplyr)
+
+# 设置工作目录
+setwd("/public1/guop/mawx/workspace/186sample/gradientForest")
+
+# 检查输出目录是否存在，如果不存在，则创建
+if (!dir.exists("result")) dir.create("result")
+if (!dir.exists("picture")) dir.create("picture")
 
 # 从 gfData 中提取包含"candSNPs"的列，这些列包含等位基因频率的数据
 all_SNP <- fread("/public1/guop/mawx/workspace/186sample/gradientForest/32pop_maf.csv")
@@ -11,32 +19,32 @@ setDF(all_SNP) # 将data.table转换为data.frame，因为行名是data.frame的
 rownames(all_SNP) <- all_SNP[[1]] # 假设我们想要将第一列作为行名
 all_SNP <- all_SNP[,-1] # 移除已经设置为行名的列
 all_SNP <- all_SNP[order(rownames(all_SNP)), ]
+all_SNP <- all_SNP %>%
+  select(where(~ !any(is.na(.))))
 
 # 环境数据
 presClim <- fread('/public1/guop/mawx/workspace/186sample/gradientForest/32pop_means_env_vars.csv')
 # 将第一列设置为行名，并从数据中移除该列
 setDF(presClim) # 将data.table转换为data.frame，因为行名是data.frame的特性
-rownames(presClim) <- presClim[[1]] # 假设我们想要将第一列作为行名
+rownames(presClim) <- presClim[[1]] # 将第一列作为行名
 presClim <- presClim[,-1] # 移除已经设置为行名的列
 presClim <- presClim[order(rownames(presClim)), ]
 presClim <- presClim[, 3:ncol(presClim)]
+
 bioclimatic = colnames(presClim)
 print(bioclimatic)
-
 # 计算maxLevel，用于树的最大深度
 maxLevel <- log2(0.368 * nrow(all_SNP) / 2)
+cbind_data = cbind(presClim[, bioclimatic], all_SNP)
 
-
-# 再次尝试运行gradientForest
-gf_all_SNP <- gradientForest(cbind(presClim[, bioclimatic], all_SNP),
-                             predictor.vars = colnames(presClim[, bioclimatic]),
-                             response.vars = colnames(all_SNP),
-                             ntree = 500, maxLevel = maxLevel, trace = T, corr.threshold = 0.50)
 # 构建梯度森林模型，将环境数据和等位基因频率合并在一起
-gf_all_SNP <- gradientForest(cbind(presClim[, bioclimatic], all_SNP),
-                               predictor.vars = colnames(presClim[, bioclimatic]),# 指定了用作预测变量的列名，即环境数据的列名
-                               response.vars = colnames(all_SNP),# 指定了用作响应变量的列名，即等位基因频率数据的列名
-                               ntree = 1000, maxLevel = maxLevel, trace = T, corr.threshold = 0.50)
+gf_all_SNP <- gradientForest(cbind_data,
+                             predictor.vars = colnames(presClim),# 指定了用作预测变量的列名，即环境数据的列名
+                             response.vars = colnames(all_SNP),# 指定了用作响应变量的列名，即等位基因频率数据的列名
+                             ntree = 500, maxLevel = maxLevel, trace = T,
+                             corr.threshold = 0.50,  nbin =1001, check.names = FALSE)
+# 保存 gf_all_SNP 对象到当前工作目录
+save(gf_all_SNP, file = "gf_all_SNP.RData")
 
 # 绘制特征重要性图，不同颜色表示特征的整体重要性
 #生成空的PDF文件 #生成重要值排序 #保存生成的结果
