@@ -11,3 +11,10 @@ vcftools --vcf 186_filtered_vcftools.noContig.recode.vcf  --positions LD.prune.i
 ##  Outputting VCF file...
 ##  After filtering, kept 1789805 out of a possible 12551267 Sites
 ##  Run Time = 331.00 seconds
+
+
+
+
+
+plink --vcf 186_filtered.LD.pruned.noContig.recode.vcf --recode --out 186_filtered.LD.pruned.noContig.ped --allow-extra-chr  --set-missing-var-ids @:#  
+plink --file 186_filtered.LD.pruned.noContig.ped --recodeA --out 186_filtered.LD.pruned.noContig.raw --allow-extra-chr  --set-missing-var-ids @:#  
