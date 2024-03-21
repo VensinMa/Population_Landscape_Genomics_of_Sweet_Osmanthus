@@ -54,7 +54,7 @@ mycol
 plot(x, option = "scores", pop = poplist.names)
 #plot(x, option = "scores", pop = poplist.names, col = mycol)
 ## 最佳K值计算分组
-x <- pcadapt(filename, K = 5)
+x <- pcadapt(filename, K = 2)
 summary(x)
 
 ## 曼哈顿图显示了 p 值的 -log10
@@ -83,7 +83,9 @@ length(outliers)
 padj <- p.adjust(x$pvalues, method = "bonferroni")
 alpha <- 0.05
 outliers <- which(padj < alpha)
-length(outliers)
+length(outliers)  
+# > length(outliers)
+# [1]  30289
 ##  > length(outliers)
 ##  [1] 27412
 hist(padj, xlab = "p-values", main = NULL, breaks = 50, col = "orange") # p 值的直方图
