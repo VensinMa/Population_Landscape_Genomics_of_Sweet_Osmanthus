@@ -1,12 +1,12 @@
 
 ##  计算100K窗口内SNP数量
-vcftools --gzvcf 186_filtered_vcftools.noContig.recode.vcf --SNPdensity 100000 --out 100K.SNP.density
+vcftools --vcf ../186_filtered.LD.pruned.noContig.recode.vcf --SNPdensity 100000 --out 100K.SNP.density
 #  After filtering, kept 12551267 out of a possible 12551267 Sites
 #  Run Time = 41.00 seconds
 
 
 # 计算100K窗口内INDEL数量
-vcftools --gzvcf filtered_indel.vcf.gz --SNPdensity 100000 --out 100K.indel.density
+vcftools --vcf ../186_filtered.LD.pruned.noContig.recode.vcf --SNPdensity 100000 --out 100K.indel.density
 #  After filtering, kept 22595531 out of a possible 22595531 Sites
 #  Run Time = 719.00 seconds
 
