@@ -21,7 +21,9 @@ ascp -i /root/anaconda3/envs/aspera/etc/asperaweb_id_dsa.openssh -l 1000M -k 1 -
 ascp -i /root/anaconda3/envs/aspera/etc/asperaweb_id_dsa.openssh -l 1000M -k 1 -T anonftp@ftp.ncbi.nlm.nih.gov:/blast/db/FASTA/nr.gz.md5 ./ &
 # wget https://ftp.ncbi.nih.gov/blast/db/FASTA/nr.gz.md5
 md5sum -c nr.gz.md5
-gunzip -c nr.gz > nr.fasta
+# gunzip -c nr.gz > nr.fasta
+unpigz -c -p 16 nr.gz > nr.fasta
+
 
 
     
