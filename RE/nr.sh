@@ -36,14 +36,24 @@ unpigz -c -p 16 nr.gz > nr.fasta
 # wget ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdmp.zip
 
 
+gffread  /root/workspace/genome/guihua.genomic.gff3   -g  /root/workspace/genome/Osmanthus.genomic.fasta  -y   Osmanthus.genomic.pep.fasta 
 ### 2、使用 Blast/Diamond 进行 NR 注释
 
 
 # 使用diamond  软件的子命令 makedb 将 fasta 格式的蛋白序列创建成后缀为 dmnd 的数据库文件：
 diamond makedb --in nr.fasta --db nr.db
-     
+# Writing trailer...  [108.497s]
+# Closing the input file...  [0.786s]
+# Closing the database file...  [0.361s]
+
+# Database sequences  707028945
+#   Database letters  272881947790
+#      Database hash  3cfcab0838efcbd44c935e5519724c33
+#         Total time  8928s
+
+
 # 将物种全基因组核酸/蛋白序列 blastx / blastp 到构建好的数据库：
-diamond blastx --db nr.db.dmnd --query Of.cds.fasta --out Of.cds.Nr.annotations --outfmt 6 qseqid sseqid pident evalue bitscore qlen slen length mismatch gapopen qstart qend sstart send stitle --sensitive --max-target-seqs 1 --evalue 1e-5 --index-chunks 1
+diamond blastp --db nr.db.dmnd --query Osmanthus.genomic.pep.fasta --out Osmanthus.genomic.pep.Nr.annotations --outfmt 6 qseqid sseqid pident evalue bitscore qlen slen length mismatch gapopen qstart qend sstart send stitle --sensitive --max-target-seqs 1 --evalue 1e-5 --index-chunks 1
     
 # diamond 默认设置下输出表格格式的结果。结果分12列，其结果信息和 BLAST 默认设置-outfmt 6输出的格式完全一致。
 #  1. qseqid     query序列ID 
