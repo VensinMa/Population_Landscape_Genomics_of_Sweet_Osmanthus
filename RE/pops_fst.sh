@@ -34,7 +34,7 @@ calculate_fst() {
     echo "Calculating FST for $base_name1 and $base_name2..."
 
     # 第二步：计算FST
-    vcftools --vcf "$VCF_FILE" --weir-fst-pop "$group1" --weir-fst-pop "$group2" --fst-window-size 500000 --fst-window-step 50000 --out "log_files/$output_file" >& "log_files/$output_file.log"
+    vcftools --vcf "$VCF_FILE" --weir-fst-pop "$group1" --weir-fst-pop "$group2" --fst-window-size 100000 --fst-window-step 10000 --out "log_files/$output_file" >& "log_files/$output_file.log"
     OUTPUT=$(cat "log_files/$output_file.log")
 
     # 第三步：从屏幕输出提取FST估计值
