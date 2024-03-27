@@ -34,9 +34,11 @@ grep -v "^Contig" 186_filtered_vcftools.recode.vcf > 186_filtered_vcftools.noCon
 grep -cv "#" 186_filtered_vcftools.noContig.recode.vcf
 ## 12551267
 
+cd /root/workspace/186sample/1861snps
+ vcftools --vcf ../186_filtered.LD.pruned.noContig.recode.vcf  --positions 1861_snp_sorted_tab.ID --recode --recode-INFO-all   --out 1861_snp_186sample_LD.pruned.noContig
 
-
-
+cd /root/workspace/186sample/680snps
+vcftools --vcf ../186_filtered.LD.pruned.noContig.recode.vcf  --positions 680_snp_sorted_tab.ID --recode --recode-INFO-all   --out 680_snp_186sample_LD.pruned.noContig
 
 
 
