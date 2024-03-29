@@ -13,16 +13,8 @@ library(adespatial)
 
 
 ###########################  设置工作目录  ####################################
-getwd()
-# 目标目录
-dir_name <- "RDA&pRDA"
-# 检查目录是否存在
-if (!file.exists(dir_name)) {
-  # 如果目录不存在，则创建目录
-  dir.create(dir_name)
-}
-# 改变工作目录到目标目录
-setwd(dir_name)
+
+setwd("/public1/guop/mawx/R/workspace/RDA_pRDA")
 getwd()
 
 # 读取文件
