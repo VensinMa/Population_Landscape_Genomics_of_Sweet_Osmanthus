@@ -15,6 +15,14 @@ vcftools --vcf 186_filtered_vcftools.noContig.recode.vcf  --positions LD.prune.i
 
 
 
-
+cd /root/workspace/186sample/
 plink --vcf 186_filtered.LD.pruned.noContig.recode.vcf --recode --out 186_filtered.LD.pruned.noContig.ped --allow-extra-chr  --set-missing-var-ids @:#  
 plink --file 186_filtered.LD.pruned.noContig.ped --recodeA --out 186_filtered.LD.pruned.noContig.raw --allow-extra-chr  --set-missing-var-ids @:#  
+
+cd /root/workspace/186sample/1861snps
+plink --vcf 1861_snp_186sample_LD.pruned.noContig.recode.vcf --recode --out 1861_snp_186sample_LD.pruned.noContig.ped --allow-extra-chr  --set-missing-var-ids @:#  
+plink --file 1861_snp_186sample_LD.pruned.noContig.ped --recodeA --out 1861_snp_186sample_LD.pruned.noContig.raw --allow-extra-chr  --set-missing-var-ids @:#  
+## 1861_snp_186sample_LD.pruned.noContig.raw.raw
+
+
+
