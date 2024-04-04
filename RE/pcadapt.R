@@ -3,6 +3,7 @@ library(pcadapt)
 library(LEA)
 library(cols4all)
 
+
 getwd()
 # 目标目录
 dir_name <- "pcadapt"
@@ -51,7 +52,7 @@ print(poplist.names)
 mycol = c4a("palette36", 32)
 mycol
 
-plot(x, option = "scores", pop = poplist.names)
+plot(x, option = "scores", pop = poplist.names, )
 #plot(x, option = "scores", pop = poplist.names, col = mycol)
 ## 最佳K值计算分组
 x <- pcadapt(filename, K = 2)
@@ -64,6 +65,7 @@ plot(x, option = "qqplot")      ## QQ图
 ## 测试统计量和 p 值的直方图
 hist(x$pvalues, xlab = "p-values", main = NULL, breaks = 50, col = "orange") # p 值的直方图
 plot(x, option = "stat.distribution") # 测试统计量的直方图
+hist(padj, xlab = "p-values", main = NULL, breaks = 50, col = "orange") # p 值的直方图
 
 ##################  选择异常检测的截止值  三种方法 ##############################
 # q-values 方法
@@ -73,6 +75,8 @@ alpha <- 0.05
 outliers <- which(qval < alpha)
 length(outliers)
 hist(qval, xlab = "p-values", main = NULL, breaks = 50, col = "orange") # p 值的直方图
+write.csv(outliers, file = "pcadapt_fdr0.05_17woutliers.csv")
+
 
 # Benjamini-Hochberg 程序  保守
 padj <- p.adjust(x$pvalues, method = "BH",)
@@ -83,15 +87,27 @@ length(outliers)
 padj <- p.adjust(x$pvalues, method = "bonferroni")
 alpha <- 0.05
 outliers <- which(padj < alpha)
-length(outliers)  
-# > length(outliers)
-# [1]  30289
-##  > length(outliers)
-##  [1] 27412
+length(outliers)
 hist(padj, xlab = "p-values", main = NULL, breaks = 50, col = "orange") # p 值的直方图
 outliers
-write.csv(outliers, file = "pcadapt_fdr0.05_outliers.csv")
+write.csv(outliers, file = "pcadapt_fdr0.05_bonferroni_outliers.csv")
 
+############################  提取位点名称  ####################################
+SNPID = read.csv("C:/RStudio/RStudio/Workspace/GEA/186_filtered.LD.pruned.noContig.snp.id",
+                 header = F)
+dim(SNPID)
+str(SNPID)
 
+SNPID_vector <- SNPID[[1]]
+SNPID_vector
 
+# 提取对应的SNP ID
+pcadapt_outliers <- SNPID_vector[outliers]
+
+# 查看提取的SNP ID
+head(pcadapt_outliers)
+pcadapt_outliers = as.matrix(pcadapt_outliers)
+head(pcadapt_outliers)
+
+write.csv(pcadapt_outliers, "C:/RStudio/RStudio/Workspace/GEA/pcadapt_outliers.csv", row.names = FALSE, col.names = FALSE, quote = FALSE)
 
