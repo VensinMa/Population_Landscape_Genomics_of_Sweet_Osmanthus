@@ -14,7 +14,7 @@ cd /mnt/e/mwx/workspace/pop/
 bcftools reheader -s rename.id 224_filtered_snp.vcf.gz -o 224_filtered_rename.vcf.gz 
 
 ###  剔除不确定样本
-vcftools --gzvcf 224_filtered_rename.vcf.gz --recode --recode-INFO-all  --remove-indv remove.id --out 186_raw
+vcftools --gzvcf 224_filtered_rename.vcf.gz --recode --recode-INFO-all  --remove remove.id --out 186_raw
 
 #########################################  GATK 粗过滤  ######################################################
 mkdir tmp
