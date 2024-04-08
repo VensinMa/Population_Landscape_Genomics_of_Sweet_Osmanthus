@@ -1,22 +1,78 @@
 cd /mnt/e/mwx/workspace/pop/xpclr
 
-vcftools --vcf   ../186_filtered_vcftools.noContig.recode.vcf  --recode --recode-INFO-all --keep east.pop --out east.pop
-vcftools --vcf   ../186_filtered_vcftools.noContig.recode.vcf  --recode --recode-INFO-all --keep west.pop --out west.pop
+mkdir Chr01_23
+######################### 提取单条染色体 ###################################
+## 全部单条循环
+seq -w 1 23 | parallel -j 30 vcftools --vcf ../186_filtered_vcftools.noContig.recode.vcf \
+                                       --recode \
+                                       --recode-INFO-all \
+                                       --chr Chr{} \
+                                       --out ./Chr01_23/186_filtered_vcftools.noContig.Chr{}
+## 单条                                      
+echo 12 | parallel -j 20 vcftools --vcf ../186_filtered_vcftools.noContig.recode.vcf \
+                                  --recode \
+                                  --recode-INFO-all \
+                                  --chr Chr{} \
+                                  --out ./Chr01_23/186_filtered_vcftools.noContig.Chr{}
 
-XPCLR -xpclr  -w1 0.0005 250 2500 $chr -p1 0.95
-
-xpclr -xpclr  --format vcf west.pop.recode.vcf east.pop.recode.vcf   output.xpclr  -w1 0.005 200 2000 Chr01 -p0 0.95
 
 
-for chr in {1..23}
+#################################### 
+for k in $(seq -w 1 23)
 do
-  xpclr --format vcf west.pop.recode.vcf east.pop.recode.vcf output_chr${chr}.xpclr -w1 0.005 200 2000 ${chr} -p0 0.95
+    awk -v chr="Chr$k" '$1==chr {print " "$1":"$2 "\t1\t" $2/100000000 "\t" $2 "\t" $4 "\t" $5 }' ./Chr01_23/186_filtered_vcftools.noContig.Chr${k}.recode.vcf > ./Chr01_23/Chr${k}.snp &
 done
 
-parallel -j 8 'xpclr -xpclr --format vcf --popA west.pop.recode.vcf --popB east.pop.recode.vcf --out output_Chr{}.xpclr --chr Chr{}  -w1 0.005 200 2000 -p0 0.95' ::: {01..23}
---chr 1 --maxsnps 600 --size 1000 --step 1000 --out
 
-parallel -j 8 'python xpclr  --format vcf --popA west.pop.recode.vcf --popB east.pop.recode.vcf --out /root/workspace/186sample/xpclr/output_Chr{}.xpclr --chr Chr{}  --maxsnps 200 --size 2000 --step 2000 ' ::: {01..23}
---maxsnps 600 --size 1000 --step 1000 --out
+for k in  $(seq -w 1 23)
+do xpclr --out Chr${k} \
+         --format vcf \
+         --input ./Chr01_23/186_filtered_vcftools.noContig.Chr${k}.recode.vcf \
+         --samplesA west_samples.txt \
+         --samplesB east_samples.txt \
+         --map ./Chr01_23/Chr${k}.snp \
+         --chr Chr${k} \
+         --ld 0.95 \
+         --maxsnps 200 \
+         --size 2000 \
+         --step 2000;
+done
 
-parallel -j 25 'python /root/anaconda3/envs/xpclr/bin/xpclr  --format vcf --input ../186_filtered_vcftools.noContig.recode.vcf --samplesA  samplesA.id --samplesB  samplesB.id --out /root/workspace/186sample/xpclr/output_Chr{}.xpclr --chr Chr{}  --maxsnps 600 --size 1000 --step 1000 ' ::: {01..23}
+seq -w 1 23 | parallel -j [N] xpclr --out Chr{} \
+                                 --format vcf \
+                                 --input ./Chr01_23/186_filtered_vcftools.noContig.Chr{}.recode.vcf \
+                                 --samplesA west_samples.txt \
+                                 --samplesB east_samples.txt \
+                                 --map ./Chr01_23/Chr{}.snp \
+                                 --chr Chr{} \
+                                 --ld 0.95 \
+                                 --maxsnps 200 \
+                                 --size 2000 \
+                                 --step 2000
+
+mkdir xpclr_res
+seq -w 1 23 | parallel -j 30 xpclr --out xpclr_res/xpclr_Chr{}.out \
+                                 --format vcf \
+                                 --input ./Chr01_23/186_filtered_vcftools.noContig.Chr{}.recode.vcf \
+                                 --samplesA west_samples.txt \
+                                 --samplesB east_samples.txt \
+                                 --chr Chr{} \
+                                 --ld 0.95 \
+                                 --maxsnps 200 \
+                                 --size 2000 \
+                                 --step 2000
+
+186_filtered_vcftools.noContig.Chr01.recode.vcf
+xpclr --out xpclr_Chr01 \
+--format vcf \
+--input ./Chr01_23/186_filtered_vcftools.noContig.Chr01.recode.vcf \
+--samplesA west_samples.txt \
+--samplesB east_samples.txt \
+--chr Chr01 \
+--ld 0.95 \
+--maxsnps 200 \
+--size 2000 \
+--step 2000
+
+
+                                 
