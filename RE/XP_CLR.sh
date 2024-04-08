@@ -62,17 +62,6 @@ seq -w 1 23 | parallel -j 30 xpclr --out xpclr_res/xpclr_Chr{}.out \
                                  --size 2000 \
                                  --step 2000
 
-186_filtered_vcftools.noContig.Chr01.recode.vcf
-xpclr --out xpclr_Chr01 \
---format vcf \
---input ./Chr01_23/186_filtered_vcftools.noContig.Chr01.recode.vcf \
---samplesA west_samples.txt \
---samplesB east_samples.txt \
---chr Chr01 \
---ld 0.95 \
---maxsnps 200 \
---size 2000 \
---step 2000
 
 
                                  
