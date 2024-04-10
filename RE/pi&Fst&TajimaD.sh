@@ -21,5 +21,50 @@ awk '{$4=""; print $0}' LD.pruned.noContig_pi_100kb_nostep.windowed.pi >  LD.pru
 
 
 
+###############################   LD位点 计算pi   #######################################################
+vcftools --vcf /root/workspace/186sample/186_filtered.LD.pruned.noContig.recode.vcf --keep Central-East_samples.txt --window-pi 100000 --out Central-East_samples_pi
+vcftools --vcf /root/workspace/186sample/186_filtered.LD.pruned.noContig.recode.vcf --keep West_samples.txt --window-pi 100000 --out West_samples_pi
+vcftools --vcf /root/workspace/186sample/186_filtered.LD.pruned.noContig.recode.vcf --keep Central_samples.txt --window-pi 100000 --out Central_samples_pi
+vcftools --vcf /root/workspace/186sample/186_filtered.LD.pruned.noContig.recode.vcf --keep East_samples.txt --window-pi 100000 --out East_samples_pi
+
+
+(bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' Central-East_samples_pi.windowed.pi
+0.000527711
+(bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' West_samples_pi.windowed.pi
+0.000353991
+(bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' Central_samples_pi.windowed.pi
+0.000484129
+(bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' East_samples_pi.windowed.pi
+0.000529708
+
+
+
+##############################  all 高质量SNP 计算pi ###########################################################
+(bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' Central-East_samples_allsnp_pi.windowed.pi
+0.00388759
+(bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' West_samples_allsnp_pi.windowed.pi
+0.00268107
+
+
+
+vcftools --vcf  /mnt/e/mwx/workspace/pop/186_filtered_vcftools.noContig.recode.vcf --keep Central-East_samples.txt --window-pi 100000 --out Central-East_samples_allsnp_pi
+vcftools --vcf  /mnt/e/mwx/workspace/pop/186_filtered_vcftools.noContig.recode.vcf --keep West_samples.txt --window-pi 100000 --out West_samples_allsnp_pi
+vcftools --vcf  /mnt/e/mwx/workspace/pop/186_filtered_vcftools.noContig.recode.vcf --keep Central_samples.txt --window-pi 100000 --out Central_samples_allsnp_pi 
+vcftools --vcf  /mnt/e/mwx/workspace/pop/186_filtered_vcftools.noContig.recode.vcf --keep East_samples.txt --window-pi 100000 --out East_samples_allsnp_pi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
