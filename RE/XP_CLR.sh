@@ -51,7 +51,7 @@ seq -w 1 23 | parallel -j [N] xpclr --out Chr{} \
                                  --step 2000
 
 mkdir xpclr_res
-seq -w 1 23 | parallel -j 23 xpclr --out xpclr_res/xpclr_Chr{}.out \
+seq -w 1 23 | parallel -j 23 --tmpdir /public1/liuyp/mwx/xpclr/tmp xpclr --out xpclr_res/xpclr_Chr{}.out \
                                  --format vcf \
                                  --input ./Chr01_23/186_filtered_vcftools.noContig.Chr{}.recode.vcf \
                                  --samplesA west_samples.txt \
@@ -62,6 +62,6 @@ seq -w 1 23 | parallel -j 23 xpclr --out xpclr_res/xpclr_Chr{}.out \
                                  --size 10000 \
                                  --step 10000
 
-
+--tmpdir /path/to/tmpdir
 
                                  
