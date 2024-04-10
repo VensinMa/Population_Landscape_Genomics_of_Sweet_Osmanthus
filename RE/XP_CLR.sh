@@ -51,16 +51,16 @@ seq -w 1 23 | parallel -j [N] xpclr --out Chr{} \
                                  --step 2000
 
 mkdir xpclr_res
-seq -w 1 23 | parallel -j 30 xpclr --out xpclr_res/xpclr_Chr{}.out \
+seq -w 1 23 | parallel -j 2 xpclr --out xpclr_res/xpclr_Chr{}.out \
                                  --format vcf \
                                  --input ./Chr01_23/186_filtered_vcftools.noContig.Chr{}.recode.vcf \
                                  --samplesA west_samples.txt \
                                  --samplesB east_samples.txt \
                                  --chr Chr{} \
                                  --ld 0.95 \
-                                 --maxsnps 200 \
-                                 --size 2000 \
-                                 --step 2000
+                                 --maxsnps 600 \
+                                 --size 10000 \
+                                 --step 10000
 
 
 
