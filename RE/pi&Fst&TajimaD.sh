@@ -27,11 +27,10 @@ vcftools --vcf /root/workspace/186sample/186_filtered.LD.pruned.noContig.recode.
 vcftools --vcf /root/workspace/186sample/186_filtered.LD.pruned.noContig.recode.vcf --keep Central_samples.txt --window-pi 100000 --out Central_samples_pi
 vcftools --vcf /root/workspace/186sample/186_filtered.LD.pruned.noContig.recode.vcf --keep East_samples.txt --window-pi 100000 --out East_samples_pi
 
-
-(bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' Central-East_samples_pi.windowed.pi
-0.000527711
 (bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' West_samples_pi.windowed.pi
 0.000353991
+(bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' Central-East_samples_pi.windowed.pi
+0.000527711
 (bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' Central_samples_pi.windowed.pi
 0.000484129
 (bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' East_samples_pi.windowed.pi
