@@ -35,14 +35,20 @@ vcftools --vcf /root/workspace/186sample/186_filtered.LD.pruned.noContig.recode.
 0.000484129
 (bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' East_samples_pi.windowed.pi
 0.000529708
-
-
+(bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' LD.pruned.noContig_pi_100kb.windowed.pi
+0.000519577
+(bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' LD.pruned.noContig_pi_100kb_nostep.windowed.pi
+0.000519501
 
 ##############################  all 高质量SNP 计算pi ###########################################################
 (bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' Central-East_samples_allsnp_pi.windowed.pi
 0.00388759
 (bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' West_samples_allsnp_pi.windowed.pi
 0.00268107
+(bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }' Central_samples_allsnp_pi.windowed.pi
+0.00355378
+(bio-env) root@DESKTOP-O94TLKA:~/workspace/186sample/stat# awk 'NR>1 { total += $5; count++ } END { print total/count }'  East_samples_allsnp_pi.windowed.pi
+0.00388855
 
 
 
@@ -50,7 +56,7 @@ vcftools --vcf  /mnt/e/mwx/workspace/pop/186_filtered_vcftools.noContig.recode.v
 vcftools --vcf  /mnt/e/mwx/workspace/pop/186_filtered_vcftools.noContig.recode.vcf --keep West_samples.txt --window-pi 100000 --out West_samples_allsnp_pi
 vcftools --vcf  /mnt/e/mwx/workspace/pop/186_filtered_vcftools.noContig.recode.vcf --keep Central_samples.txt --window-pi 100000 --out Central_samples_allsnp_pi 
 vcftools --vcf  /mnt/e/mwx/workspace/pop/186_filtered_vcftools.noContig.recode.vcf --keep East_samples.txt --window-pi 100000 --out East_samples_allsnp_pi
-
+vcftools --vcf /mnt/e/mwx/workspace/pop/186_filtered_vcftools.noContig.recode.vcf --window-pi 100000 --out 186_filtered_vcftools.noContig_pi_100kb_nostep_allsnp_pi
 
 
 
