@@ -5,7 +5,8 @@ library(data.table)
 library(dplyr)
 library(tidyverse)
 
-
+getwd()
+setwd("/public1/guop/mawx/workspace/R/gradientForest")
 # 设置导出结果目录和图片目录
 result_dir <- "final_result"
 picture_dir <- "final_picture"
@@ -51,7 +52,7 @@ gf.mod <- gradientForest(Envs_Maf,
                          corr.threshold = 0.50,  nbin = 1001, check.names = FALSE)
 
 # 保存gf_all_SNP到一个文件
-# save(gf.mod, file = "gf.mod.RData")
+#save(gf.mod, file = "gf.mod.RData")
 
 ############################## 绘图 #########################################
 
@@ -358,8 +359,9 @@ popDatGF <- data.frame(All_Current_XY_Envs[, c("lon", "lat")], predict(gf.mod, A
 popDatGF <- split(popDatGF, seq(nrow(popDatGF)))
 dim(popDatGF)
 
-# 正向向遗传偏移计算
-cl <- makeCluster(10)
+####################### 计算正向遗传偏移 ForwardOffset  ######################## 
+
+cl <- makeCluster(40)
 registerDoParallel(cl)
 forwardOffsetGF <- foreach(i=1:length(popDatGF), .packages=c("fields", "gdm", "geosphere")) %dopar%{
   onePopGF <- popDatGF[[i]]
@@ -370,7 +372,7 @@ forwardOffsetGF <- foreach(i=1:length(popDatGF), .packages=c("fields", "gdm", "g
   minCoordsGF["dists"] <- distGeo(p1=coordGF, p2=minCoordsGF[, 1:2])
   minCoordsGF <- minCoordsGF[which(minCoordsGF$dist == min(minCoordsGF$dists)),]
   minCoordsGF <- minCoordsGF[sample(1:nrow(minCoordsGF), 1),]
-  offsetGF <- combinedDatGF[which(combinedDatGF$x == coordGF$x & combinedDatGF$y == coordGF$y), "gfOffset"]
+  offsetGF <- combinedDatGF[which(combinedDatGF$lon == coordGF$lon & combinedDatGF$lat == coordGF$lat), "gfOffset"]
   minValGF <- minCoordsGF$gfOffset
   toGoGF <- minCoordsGF$dists
   minPtGF <- minCoordsGF[, c("lon", "lat")]
@@ -380,7 +382,7 @@ forwardOffsetGF <- foreach(i=1:length(popDatGF), .packages=c("fields", "gdm", "g
 stopCluster(cl)
 
 # 保存前向遗传偏移结果
-write.csv(forwardOffsetGF, paste0("./future_GISS-E2-1-G_126_2080_forwardOffsetGF_bio19.csv"), row.names=FALSE)
+write.csv(forwardOffsetGF, paste0("./future_GF_ForwardOffsetGF_PredictEnvs.csv"), row.names=FALSE)
 
 
 ####################### 计算反向遗传偏移 ReverseOffset  ######################## 
@@ -433,6 +435,91 @@ stopCluster(cl) # 停止并行集群
 # bearing: 到逆向偏移地点的方位角
 # x2/y2: 逆向偏移地点的坐标
 reverseOffsetGF <- do.call(rbind, reverseOffsetGF) # 合并结果
-write.csv(reverseOffsetGF, paste0("./future_GISS-E2-1-G_126_2080_reverseOffsetGF_19bio.csv"), row.names=FALSE) # 保存结果为CSV文件
+write.csv(reverseOffsetGF, paste0("./future_GF_ReverseOffsetGF_PredictEnvs.csv"), row.names=FALSE) # 保存结果为CSV文件
 
+
+
+# 加载必需的库
+library(raster)
+library(geosphere)
+library(gdm)
+library(foreach)
+library(doParallel)
+library(fields)
+
+# 定义环境变量
+PredictEnvs <- c("BIO2", "BIO8", "BIO9", "BIO10", "BIO12", 
+                 "BIO15", "BIO17", "BIO18", "SRAD", "SOC", "PHH2O")
+
+# 假设gf.mod是已经训练好的梯度森林模型，加载模型
+# load("gf_mod.rda")  # 如果模型已保存在文件中
+
+# 设置并行计算
+cl <- makeCluster(detectCores() - 1)
+registerDoParallel(cl)
+
+# 定义文件列表和其它参数
+file_list <- list.files(path = "/public1/guop/mawx/workspace/R/gradientForest/extracted_future_data",
+                        pattern = "future_climate_.*_O.fragrans.csv", full.names = TRUE)
+
+# 循环遍历每个文件
+for (file_path in file_list) {
+  print(paste("Processing:", file_path))
+  
+  # 读取未来气候数据
+  FutureEnvData <- read.csv(file_path)
+  FutureEnvData <- FutureEnvData[complete.cases(FutureEnvData[, c("lon", "lat", PredictEnvs)]), 
+                                 c("lon", "lat", PredictEnvs)]
+  
+  # 应用梯度森林模型转换未来气候数据
+  FutureEnvDataGF <- data.frame(FutureEnvData[, c("lon", "lat")], predict(gf.mod, FutureEnvData[, PredictEnvs]))
+  
+  # 计算正向遗传偏移
+  forwardOffsetGF <- foreach(i=1:length(popDatGF), .packages=c("fields", "gdm", "geosphere")) %dopar% {
+    onePopGF <- popDatGF[[i]]
+    combinedDatGF <- FutureEnvDataGF[, c("lon", "lat")]
+    combinedDatGF["gfOffset"] <- c(rdist(onePopGF[, PredictEnvs], FutureEnvDataGF[, PredictEnvs]))
+    coordGF <- onePopGF[, c("lon", "lat")]
+    minCoordsGF <- combinedDatGF[which(combinedDatGF$gfOffset == min(combinedDatGF$gfOffset)),]
+    minCoordsGF["dists"] <- distGeo(p1=coordGF, p2=minCoordsGF[, 1:2])
+    minCoordsGF <- minCoordsGF[which(minCoordsGF$dists == min(minCoordsGF$dists)),]
+    minCoordsGF <- minCoordsGF[sample(1:nrow(minCoordsGF), 1),]
+    offsetGF <- combinedDatGF[which(combinedDatGF$lon == coordGF$lon & combinedDatGF$lat == coordGF$lat), "gfOffset"]
+    minValGF <- minCoordsGF$gfOffset
+    toGoGF <- minCoordsGF$dists
+    minPtGF <- minCoordsGF[, c("lon", "lat")]
+    bearGF <- bearing(coordGF, minPtGF)
+    outGF <- c(x1=coordGF[[1]], y1=coordGF[[2]], local=offsetGF, forwardOffset=minValGF, predDist=toGoGF, bearing=bearGF, x2=minPtGF[[1]], y2=minPtGF[[2]])
+  }
+  
+  # 保存正向遗传偏移结果
+  write.csv(forwardOffsetGF, paste0(dirname(file_path), "/ForwardOffset_", basename(file_path)), row.names=FALSE)
+
+  # 计算反向遗传偏移
+  reverseOffsetGF <- foreach(i=1:nrow(FutureEnvDataGF), .packages=c("fields", "gdm", "geosphere")) %dopar% {
+    onePopGF <- FutureEnvDataGF[i,]
+    combinedDatGF <- popDatGF[, c("lon", "lat")]
+    combinedDatGF["gfOffset"] <- c(rdist(onePopGF[, PredictEnvs], popDatGF[, PredictEnvs]))
+    coordGF <- onePopGF[, c("lon", "lat")]
+    minCoordsGF <- combinedDatGF[which(combinedDatGF$gfOffset == min(combinedDatGF$gfOffset)),]
+    minCoordsGF["dists"] <- distGeo(p1=coordGF, p2=minCoordsGF[, 1:2])
+    minCoordsGF <- minCoordsGF[which(minCoordsGF$dists == min(minCoordsGF$dists)),]
+    minCoordsGF <- minCoordsGF[sample(1:nrow(minCoordsGF), 1),]
+    offsetGF <- combinedDatGF[which(combinedDatGF$lon == coordGF$lon & combinedDatGF$lat == coordGF$lat), "gfOffset"]
+    minValGF <- minCoordsGF$gfOffset
+    toGoGF <- minCoordsGF$dists
+    minPtGF <- minCoordsGF[, c("lon", "lat")]
+    bearGF <- bearing(coordGF, minPtGF)
+    outGF <- c(x1=coordGF[[1]], y1=coordGF[[2]], local=offsetGF, reverseOffset=minValGF, predDist=toGoGF, bearing=bearGF, x2=minPtGF[[1]], y2=minPtGF[[2]])
+  }
+
+  # 保存反向遗传偏移结果
+  write.csv(reverseOffsetGF, paste0(dirname(file_path), "/ReverseOffset_", basename(file_path)), row.names=FALSE)
+}
+
+# 停止并行集群
+stopCluster(cl)
+
+# 结束消息
+print("All files processed successfully.")
 
