@@ -15,7 +15,7 @@ require(fields)
 library(sf)
 
 getwd()
-setwd("/public1/liuyp/mwx/workspace/gradientForest")
+setwd("/public1/guop/mawx/workspace/R/gradientForest")
 # 设置导出结果目录和图片目录
 result_dir <- "final_result"
 picture_dir <- "final_picture"
