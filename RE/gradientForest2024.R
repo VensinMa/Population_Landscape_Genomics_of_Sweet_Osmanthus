@@ -362,11 +362,12 @@ All_Current_XY_Envs = All_Current_XY_Envs[complete.cases(All_Current_XY_Envs[, c
 n <- sum(is.na(All_Current_XY_Envs))
 n
 dim(All_Current_XY_Envs)
+head(All_Current_XY_Envs)
 
-popDatGF <- data.frame(All_Current_XY_Envs, xy=TRUE, na.rm=TRUE)
+# popDatGF <- data.frame(All_Current_XY_Envs, xy=TRUE, na.rm=TRUE)
 popDatGF <- data.frame(All_Current_XY_Envs[, c("lon", "lat")], predict(gf.mod, All_Current_XY_Envs[, PredictEnvs]))
 popDatGF <- split(popDatGF, seq(nrow(popDatGF)))
-dim(popDatGF)
+length(popDatGF)
 
 ####################### 计算正向遗传偏移 ForwardOffset  ######################## 
 # 正向向遗传偏移计算
@@ -374,7 +375,6 @@ cl <- makeCluster(60)
 registerDoParallel(cl)
 
 forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","geosphere")) %dopar%{
-  print(i)
   onePopGF <- popDatGF[[i]]
   combinedDatGF <- FutureEnvDataGF[,c("lon","lat")]
   combinedDatGF["gfOffset"] <- c(rdist(onePopGF[,PredictEnvs], FutureEnvDataGF[,PredictEnvs]))
@@ -397,28 +397,29 @@ write.csv(forwardOffsetGF, paste0("./future_GF_ssp245_2041-2060_ForwardOffsetGF.
 
 ####################### 计算反向遗传偏移 ReverseOffset  ######################## 
 # 反向遗传偏移计算
-cl <- makeCluster(60) 
-registerDoParallel(cl) 
-reverseOffsetGF <- foreach(i=1:nrow(FutureEnvDataGF), .packages=c("fields", "gdm", "geosphere")) %dopar%{
-  print(i)
+cl <- makeCluster(60)
+registerDoParallel(cl)
+reverseOffsetGF <- foreach(i = 1:nrow(FutureEnvDataGF), .packages=c("fields","gdm","geosphere")) %dopar%{
   onePopGF <- FutureEnvDataGF[i,]
-  combinedDatGF <- popDatGF[, c("lon","lat")]
-  combinedDatGF["gfOffset"] <- c(rdist(onePopGF[, PredictEnvs], popDatGF[, PredictEnvs]))
-  coordGF <- onePopGF[, c("lon","lat")]
+  combinedDatGF <- popDatGF[,c("lon","lat")]
+  combinedDatGF["gfOffset"] <- c(rdist(onePopGF[,PredictEnvs], popDatGF[,PredictEnvs]))
+  coordGF <- onePopGF[,c("lon","lat")]
   minCoordsGF <- combinedDatGF[which(combinedDatGF$gfOffset == min(combinedDatGF$gfOffset)),]
-  minCoordsGF["dists"] <- distGeo(p1=coordGF, p2=minCoordsGF[, 1:2])
+  minCoordsGF["dists"] <- distGeo(p1=coordGF, p2=minCoordsGF[,1:2])
   minCoordsGF <- minCoordsGF[which(minCoordsGF$dists == min(minCoordsGF$dists)),]
-  minCoordsGF <- minCoordsGF[sample(1:nrow(minCoordsGF), 1),]
-  offsetGF <- combinedDatGF[which(combinedDatGF$x == coordGF$x & combinedDatGF$y == coordGF$y), "gfOffset"]
+  minCoordsGF <- minCoordsGF[sample(1:nrow(minCoordsGF),1),]
+  offsetGF <- combinedDatGF[which(combinedDatGF$x == coordGF$x & combinedDatGF$y == coordGF$y),"gfOffset"]
   minValGF <- minCoordsGF$gfOffset
   toGoGF <- minCoordsGF$dists
-  minPtGF <- minCoordsGF[, c("lon","lat")]
+  minPtGF <- minCoordsGF[,c("lon","lat")]
   bearGF <- bearing(coordGF, minPtGF)
-  outGF <- c(x1=coordGF[[1]], y1=coordGF[[2]], local=offsetGF, reverseOffset=minValGF, predDist=toGoGF, bearing=bearGF, x2=minPtGF[[1]], y2=minPtGF[[2]])
+  outGF <- c(x1=coordGF[[1]], y1=coordGF[[2]],local=offsetGF, reverseOffset=minValGF, predDist=toGoGF, bearing=bearGF, x2=minPtGF[[1]],y2=minPtGF[[2]])
 }
 
 stopCluster(cl) # 停止并行集群
+
 reverseOffsetGF <- do.call(rbind, reverseOffsetGF) # 合并结果
+
 write.csv(reverseOffsetGF, paste0("./future_GF_ssp245_2041-2060_ReverseOffsetGF.csv"), row.names=FALSE) # 保存结果为CSV文件
 
 # 结果数据框包含的列：
@@ -428,6 +429,64 @@ write.csv(reverseOffsetGF, paste0("./future_GF_ssp245_2041-2060_ReverseOffsetGF.
 # predDist: 到逆向偏移地点的距离
 # bearing: 到逆向偏移地点的方位角
 # x2/y2: 逆向偏移地点的坐标
+
+
+
+
+
+cl <- makeCluster(60)
+registerDoParallel(cl)
+reverseOffsetGF <- foreach(i = 1:nrow(FutureEnvDataGF), .packages=c("fields","gdm","geosphere")) %dopar%{
+  #get the focal population in future climate
+  onePopGF <- FutureEnvDataGF[i,]
+  #make prediction between focal population and current climate
+  combinedDatGF <- popDatGF[,c("lon","lat")]
+  combinedDatGF["gfOffset"] <- c(rdist(onePopGF[,PredictEnvs], popDatGF[,PredictEnvs]))
+  ##Get metrics for the focal population
+  #coordinate of focal population
+  coordGF <- onePopGF[,c("lon","lat")]
+  #choose the pixels with the minimum offset
+  minCoordsGF <- combinedDatGF[which(combinedDatGF$gfOffset == min(combinedDatGF$gfOffset)),]
+  #calculate the distance to the sites with minimum fst, and selct the one with the shortest distance
+  minCoordsGF["dists"] <- distGeo(p1=coordGF, p2=minCoordsGF[,1:2])
+  minCoordsGF <- minCoordsGF[which(minCoordsGF$dists == min(minCoordsGF$dists)),]
+  #if multiple sites have the same fst, and same distance, one is randomly chosen
+  minCoordsGF <- minCoordsGF[sample(1:nrow(minCoordsGF),1),]
+  #get local offset
+  offsetGF <- combinedDatGF[which(combinedDatGF$x == coordGF$x & combinedDatGF$y == coordGF$y),"gfOffset"]
+  #get the minimum predicted offset - reverse offset in this case
+  minValGF <- minCoordsGF$gfOffset
+  #get distance and coordinates of site that minimizes fst
+  toGoGF <- minCoordsGF$dists
+  minPtGF <- minCoordsGF[,c("lon","lat")]
+  #get bearing to the site that minimizes fst
+  bearGF <- bearing(coordGF, minPtGF)
+  #write out
+  outGF <- c(x1=coordGF[[1]], y1=coordGF[[2]],local=offsetGF, reverseOffset=minValGF, predDist=toGoGF, bearing=bearGF, x2=minPtGF[[1]],y2=minPtGF[[2]])
+}
+
+stopCluster(cl)
+
+reverseOffsetGF <- do.call(rbind, reverseOffsetGF)
+
+write.csv(reverseOffsetGF,paste0("./future_GF_ssp245_2041-2060_ReverseOffsetGF.csv"), row.names=FALSE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ##########################################################################################################################################################################################################################
 # 选择预测所用的环境因子
@@ -468,7 +527,6 @@ cl <- makeCluster(60)
 registerDoParallel(cl)
 
 forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","geosphere")) %dopar%{
-  print(i)
   onePopGF <- popDatGF[[i]]
   combinedDatGF <- FutureEnvDataGF[,c("lon","lat")]
   combinedDatGF["gfOffset"] <- c(rdist(onePopGF[,PredictEnvs], FutureEnvDataGF[,PredictEnvs]))
@@ -496,7 +554,6 @@ write.csv(forwardOffsetGF, paste0("./future_GF_ssp245_2041-2060_ForwardOffsetGF.
 cl <- makeCluster(60) 
 registerDoParallel(cl) 
 reverseOffsetGF <- foreach(i=1:nrow(FutureEnvDataGF), .packages=c("fields", "gdm", "geosphere")) %dopar%{
-  print(i)
   onePopGF <- FutureEnvDataGF[i,]
   combinedDatGF <- popDatGF[, c("lon","lat")]
   combinedDatGF["gfOffset"] <- c(rdist(onePopGF[, PredictEnvs], popDatGF[, PredictEnvs]))
