@@ -6,7 +6,7 @@ library(dplyr)
 library(tidyverse)
 
 getwd()
-setwd("/public1/guop/mawx/workspace/R/gradientForest")
+setwd("/public1/liuyp/mwx/workspace/gradientForest")
 # 设置导出结果目录和图片目录
 result_dir <- "final_result"
 picture_dir <- "final_picture"
