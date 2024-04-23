@@ -382,105 +382,11 @@ stopCluster(cl)
 forwardOffsetGF <- do.call(rbind, forwardOffsetGF)
 write.csv(forwardOffsetGF, paste0("./future_GF_ssp245_2041-2060_ForwardOffsetGF.csv"), row.names=FALSE)
 
+
 ####################### 计算反向遗传偏移 ReverseOffset  ######################## 
 # 反向遗传偏移计算
-cl <- makeCluster(60) 
-registerDoParallel(cl) 
-reverseOffsetGF <- foreach(i=1:nrow(FutureEnvDataGF), .packages=c("fields", "gdm", "geosphere")) %dopar%{
-  print(i)
-  onePopGF <- FutureEnvDataGF[i,]
-  combinedDatGF <- popDatGF[, c("lon","lat")]
-  combinedDatGF["gfOffset"] <- c(rdist(onePopGF[, PredictEnvs], popDatGF[, PredictEnvs]))
-  coordGF <- onePopGF[, c("lon","lat")]
-  minCoordsGF <- combinedDatGF[which(combinedDatGF$gfOffset == min(combinedDatGF$gfOffset)),]
-  minCoordsGF["dists"] <- distGeo(p1=coordGF, p2=minCoordsGF[, 1:2])
-  minCoordsGF <- minCoordsGF[which(minCoordsGF$dists == min(minCoordsGF$dists)),]
-  minCoordsGF <- minCoordsGF[sample(1:nrow(minCoordsGF), 1),]
-  offsetGF <- combinedDatGF[which(combinedDatGF$x == coordGF$x & combinedDatGF$y == coordGF$y), "gfOffset"]
-  minValGF <- minCoordsGF$gfOffset
-  toGoGF <- minCoordsGF$dists
-  minPtGF <- minCoordsGF[, c("lon","lat")]
-  bearGF <- bearing(coordGF, minPtGF)
-  outGF <- c(x1=coordGF[[1]], y1=coordGF[[2]], local=offsetGF, reverseOffset=minValGF, predDist=toGoGF, bearing=bearGF, x2=minPtGF[[1]], y2=minPtGF[[2]])
-}
-
-stopCluster(cl) # 停止并行集群
-reverseOffsetGF <- do.call(rbind, reverseOffsetGF) # 合并结果
-write.csv(reverseOffsetGF, paste0("./future_GF_ssp245_2041-2060_ReverseOffsetGF.csv"), row.names=FALSE) # 保存结果为CSV文件
-
-# 结果数据框包含的列：
-# x1/y1: 焦点坐标
-# local: 局部偏移
-# reverseOffset: 逆向偏移
-# predDist: 到逆向偏移地点的距离
-# bearing: 到逆向偏移地点的方位角
-# x2/y2: 逆向偏移地点的坐标
-
-##########################################################################################################################################################################################################################
-# 选择预测所用的环境因子
-PredictEnvs = c("BIO2", "BIO8", "BIO9", "BIO10", "BIO12", 
-                "BIO15", "BIO17", "BIO18", "SRAD", "SOC", "PHH2O")
 # 读取未来气候数据
-FutureEnvData <- read.csv("extracted_future_data/future_climate_ssp585_2041-2060_O.fragrans.csv")
-dim(FutureEnvData)
-n <- sum(is.na(FutureEnvData))
-n
-# 直接使用逻辑向量来筛选数据，并删除包含NA的行
-FutureEnvData <- FutureEnvData[complete.cases(FutureEnvData[, c("lon", "lat", PredictEnvs)]), 
-                               c("lon", "lat", PredictEnvs)]
-dim(FutureEnvData)
-n <- sum(is.na(FutureEnvData))
-n
-
-# 使用梯度森林模型转换未来气候数据
-FutureEnvDataGF <- data.frame(FutureEnvData[, c("lon", "lat")], predict(gf.mod, FutureEnvData[, PredictEnvs]))
-
-# 使用梯度森林模型转换当前气候数据
-# 从 CSV 文件中读取数据，该文件包含了研究区域的坐标点和气候数据
-All_Current_XY_Envs = read.csv("extracted_future_data/future_climate_current_O.fragrans.csv")
-All_Current_XY_Envs = All_Current_XY_Envs[complete.cases(All_Current_XY_Envs[, c("lon", "lat", PredictEnvs)]), 
-                                          c("lon", "lat", PredictEnvs)]
-n <- sum(is.na(All_Current_XY_Envs))
-n
-dim(All_Current_XY_Envs)
-
-popDatGF <- data.frame(All_Current_XY_Envs, xy=TRUE, na.rm=TRUE)
-popDatGF <- data.frame(All_Current_XY_Envs[, c("lon", "lat")], predict(gf.mod, All_Current_XY_Envs[, PredictEnvs]))
-popDatGF <- split(popDatGF, seq(nrow(popDatGF)))
-length(popDatGF)
-
-####################### 计算正向遗传偏移 ForwardOffset  ######################## 
-# 正向向遗传偏移计算
-cl <- makeCluster(60)
-registerDoParallel(cl)
-
-forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","geosphere")) %dopar%{
-  print(i)
-  onePopGF <- popDatGF[[i]]
-  combinedDatGF <- FutureEnvDataGF[,c("lon","lat")]
-  combinedDatGF["gfOffset"] <- c(rdist(onePopGF[,PredictEnvs], FutureEnvDataGF[,PredictEnvs]))
-  coordGF <- onePopGF[,c("lon","lat")]
-  minCoordsGF <- combinedDatGF[which(combinedDatGF$gfOffset == min(combinedDatGF$gfOffset)),]
-  minCoordsGF["dists"] <- distGeo(p1=coordGF, p2=minCoordsGF[,1:2])
-  minCoordsGF <- minCoordsGF[which(minCoordsGF$dist == min(minCoordsGF$dists)),]
-  minCoordsGF <- minCoordsGF[sample(1:nrow(minCoordsGF),1),]
-  offsetGF <- combinedDatGF[which(combinedDatGF$x == coordGF$x & combinedDatGF$y ==coordGF$y),"gfOffset"]
-  minValGF <- minCoordsGF$gfOffset
-  toGoGF <- minCoordsGF$dists
-  minPtGF <- minCoordsGF[,c("lon","lat")]
-  bearGF <- bearing(coordGF, minPtGF)
-  outGF <- c(x1=coordGF[[1]], y1=coordGF[[2]], local=offsetGF, forwardOffset=minValGF, predDist=toGoGF, bearing=bearGF, x2=minPtGF[[1]], y2=minPtGF[[2]])
-}
-
-stopCluster(cl)
-
-forwardOffsetGF <- do.call(rbind, forwardOffsetGF)
-
-write.csv(forwardOffsetGF, paste0("./future_GF_ssp245_2041-2060_ForwardOffsetGF.csv"), row.names=FALSE)
-
-####################### 计算反向遗传偏移 ReverseOffset  ######################## 
-# 读取未来气候数据
-FutureEnvData <- read.csv("extracted_future_data/future_climate_ssp245_2041-2060_O.fragrans.csv")
+FutureEnvData <- read.csv("extracted_future_data/future_climate_ssp585_2081-2100_O.fragrans.csv")
 dim(FutureEnvData)
 n <- sum(is.na(FutureEnvData))
 n
@@ -508,9 +414,6 @@ popDatGF <- data.frame(All_Current_XY_Envs[, c("lon", "lat")], predict(gf.mod, A
 ###  popDatGF <- split(popDatGF, seq(nrow(popDatGF)))   # 注意这里反向遗传偏移计算 不需要split
 dim(popDatGF)
 
-
-
-# 反向遗传偏移计算
 cl <- makeCluster(60) 
 registerDoParallel(cl) 
 reverseOffsetGF <- foreach(i=1:nrow(FutureEnvDataGF), .packages=c("fields", "gdm", "geosphere")) %dopar%{
@@ -530,10 +433,11 @@ reverseOffsetGF <- foreach(i=1:nrow(FutureEnvDataGF), .packages=c("fields", "gdm
   bearGF <- bearing(coordGF, minPtGF)
   outGF <- c(x1=coordGF[[1]], y1=coordGF[[2]], local=offsetGF, reverseOffset=minValGF, predDist=toGoGF, bearing=bearGF, x2=minPtGF[[1]], y2=minPtGF[[2]])
 }
-stopCluster(cl) # 停止并行集群
 
+stopCluster(cl) # 停止并行集群
 reverseOffsetGF <- do.call(rbind, reverseOffsetGF) # 合并结果
-write.csv(reverseOffsetGF, paste0("./future_GF_ssp245_2041-2060_ReverseOffsetGF.csv"), row.names=FALSE) # 保存结果为CSV文件
+write.csv(reverseOffsetGF, paste0("./future_GF_ssp585_2081-2100_ReverseOffsetGF.csv"), row.names=FALSE) # 保存结果为CSV文件
+
 
 # 结果数据框包含的列：
 # x1/y1: 焦点坐标
@@ -542,3 +446,5 @@ write.csv(reverseOffsetGF, paste0("./future_GF_ssp245_2041-2060_ReverseOffsetGF.
 # predDist: 到逆向偏移地点的距离
 # bearing: 到逆向偏移地点的方位角
 # x2/y2: 逆向偏移地点的坐标
+
+
