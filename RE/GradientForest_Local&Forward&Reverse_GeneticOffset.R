@@ -386,7 +386,7 @@ write.csv(forwardOffsetGF, paste0("./future_GF_ssp245_2041-2060_ForwardOffsetGF.
 ####################### 计算反向遗传偏移 ReverseOffset  ######################## 
 # 反向遗传偏移计算
 # 读取未来气候数据
-FutureEnvData <- read.csv("extracted_future_data/future_climate_ssp585_2061-2080_O.fragrans.csv")
+FutureEnvData <- read.csv("extracted_future_data/future_climate_ssp245_2061-2080_O.fragrans.csv")
 dim(FutureEnvData)
 n <- sum(is.na(FutureEnvData))
 n
@@ -436,7 +436,7 @@ reverseOffsetGF <- foreach(i=1:nrow(FutureEnvDataGF), .packages=c("fields", "gdm
 
 stopCluster(cl) # 停止并行集群
 reverseOffsetGF <- do.call(rbind, reverseOffsetGF) # 合并结果
-write.csv(reverseOffsetGF, paste0("./future_GF_ssp585_2061-2080_ReverseOffsetGF.csv"), row.names=FALSE) # 保存结果为CSV文件
+write.csv(reverseOffsetGF, paste0("./future_GF_ssp245_2061-2080_ReverseOffsetGF.csv"), row.names=FALSE) # 保存结果为CSV文件
 
 
 # 结果数据框包含的列：
