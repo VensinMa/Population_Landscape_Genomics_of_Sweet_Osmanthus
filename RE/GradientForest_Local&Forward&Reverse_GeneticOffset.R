@@ -417,7 +417,7 @@ registerDoParallel(cl)
 forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","geosphere")) %dopar%{
   onePopGF <- popDatGF[[i]]
   combinedDatGF <- FutureEnvDataGF[,c("lon","lat")]
-  combinedDatGF["gfOffset"] <- c(rdist(onePopGF[,PredictEnvs], futClimDatGF[,PredictEnvs]))
+  combinedDatGF["gfOffset"] <- c(rdist(onePopGF[,PredictEnvs], FutureEnvDataGF[,PredictEnvs]))
   coordGF <- onePopGF[,c("lon","lat")]
   combinedDatGF['dists']=distGeo(p1=coordGF, p2=combinedDatGF[,1:2])
   combinedDatGF<-combinedDatGF[combinedDatGF['dists']<100000,]
