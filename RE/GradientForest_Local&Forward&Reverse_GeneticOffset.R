@@ -382,6 +382,59 @@ stopCluster(cl)
 forwardOffsetGF <- do.call(rbind, forwardOffsetGF)
 write.csv(forwardOffsetGF, paste0("./future_GF_ssp245_2041-2060_ForwardOffsetGF.csv"), row.names=FALSE)
 
+######################### 计算正向遗传偏移 ForwardOffset  限制距离 100KM ######################## 
+# 读取未来气候数据
+FutureEnvData <- read.csv("extracted_future_data/future_climate_ssp585_2081-2100_O.fragrans.csv")
+dim(FutureEnvData)
+n <- sum(is.na(FutureEnvData))
+n
+# 直接使用逻辑向量来筛选数据，并删除包含NA的行
+FutureEnvData <- FutureEnvData[complete.cases(FutureEnvData[, c("lon", "lat", PredictEnvs)]), 
+                               c("lon", "lat", PredictEnvs)]
+dim(FutureEnvData)
+n <- sum(is.na(FutureEnvData))
+n
+
+# 使用梯度森林模型转换未来气候数据
+FutureEnvDataGF <- data.frame(FutureEnvData[, c("lon", "lat")], predict(gf.mod, FutureEnvData[, PredictEnvs]))
+
+# 使用梯度森林模型转换当前气候数据
+# 从 CSV 文件中读取数据，该文件包含了研究区域的坐标点和气候数据
+All_Current_XY_Envs = read.csv("extracted_future_data/future_climate_current_O.fragrans.csv")
+All_Current_XY_Envs = All_Current_XY_Envs[complete.cases(All_Current_XY_Envs[, c("lon", "lat", PredictEnvs)]), 
+                                          c("lon", "lat", PredictEnvs)]
+n <- sum(is.na(All_Current_XY_Envs))
+n
+dim(All_Current_XY_Envs)
+
+popDatGF <- data.frame(All_Current_XY_Envs, xy=TRUE, na.rm=TRUE)
+popDatGF <- data.frame(All_Current_XY_Envs[, c("lon", "lat")], predict(gf.mod, All_Current_XY_Envs[, PredictEnvs]))
+popDatGF <- split(popDatGF, seq(nrow(popDatGF)))
+length(popDatGF)
+
+cl <- makeCluster(60)
+registerDoParallel(cl)
+forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","geosphere")) %dopar%{
+  onePopGF <- popDatGF[[i]]
+  combinedDatGF <- FutureEnvDataGF[,c("lon","lat")]
+  combinedDatGF["gfOffset"] <- c(rdist(onePopGF[,PredictEnvs], futClimDatGF[,PredictEnvs]))
+  coordGF <- onePopGF[,c("lon","lat")]
+  combinedDatGF['dists']=distGeo(p1=coordGF, p2=combinedDatGF[,1:2])
+  combinedDatGF<-combinedDatGF[combinedDatGF['dists']<100000,]
+  minCoordsGF <- combinedDatGF[which(combinedDatGF$gfOffset == min(combinedDatGF$gfOffset)),]
+  minCoordsGF["dists"] <- distGeo(p1=coordGF, p2=minCoordsGF[,1:2])
+  minCoordsGF <- minCoordsGF[which(minCoordsGF$dist == min(minCoordsGF$dists)),]
+  minCoordsGF <- minCoordsGF[sample(1:nrow(minCoordsGF),1),]
+  offsetGF <- combinedDatGF[which(combinedDatGF$x == coordGF$x & combinedDatGF$y ==coordGF$y),"gfOffset"]
+  minValGF <- minCoordsGF$gfOffset
+  toGoGF <- minCoordsGF$dists
+  minPtGF <- minCoordsGF[,c("lon","lat")]
+  bearGF <- bearing(coordGF, minPtGF)
+  outGF <- c(x1=coordGF[[1]], y1=coordGF[[2]], local=offsetGF, forwardOffset=minValGF, predDist=toGoGF, bearing=bearGF,x2=minPtGF[[1]],y2=minPtGF[[2]])
+}
+stopCluster(cl)
+write.csv( do.call(rbind, forwardOffsetGF),paste0("./future_ssp585_2081-2100_100km_ForwardOffsetGF.csv"), row.names=FALSE)
+
 
 ####################### 计算反向遗传偏移 ReverseOffset  ######################## 
 # 反向遗传偏移计算
