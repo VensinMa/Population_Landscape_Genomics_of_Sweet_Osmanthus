@@ -46,7 +46,7 @@ export raw_gvcf_dir
 export log_file
 
 # 使用find命令和parallel并行处理markdup目录中的以下BAM文件
-find "$markdup_bam_dir" -name '*.markdup.bam' | sort | grep -E "SFZ_7|SFZ_9" | parallel -j 15 process_HaplotypeCaller {}
+find "$markdup_bam_dir" -name '*.markdup.bam' | sort | grep -E "DST_2|SFZ_9|DYNC_6|DST_5|DYNC_2|DYNC_5|DYNC_3|DYNC_16|SFZ_7|DST_4|DST_9|DYNC_1|DST_8|DST_1|DST_7|DYNC_7|DYNC_10" | parallel -j 15 process_HaplotypeCaller {}
 
 # 记录脚本完成时间
 echo "GATK HaplotypeCaller Script completed at $(date)" >> "$log_file"
