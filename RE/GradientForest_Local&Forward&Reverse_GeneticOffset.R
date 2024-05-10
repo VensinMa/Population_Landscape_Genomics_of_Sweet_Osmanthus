@@ -384,7 +384,7 @@ write.csv(forwardOffsetGF, paste0("./future_GF_ssp245_2041-2060_ForwardOffsetGF.
 
 ######################### 计算正向遗传偏移 ForwardOffset  限制距离 100KM ######################## 
 # 读取未来气候数据
-FutureEnvData <- read.csv("extracted_future_data/future_climate_ssp585_2081-2100_O.fragrans.csv")
+FutureEnvData <- read.csv("extracted_future_data/future_climate_ssp245_2061-2080_O.fragrans.csv")
 dim(FutureEnvData)
 n <- sum(is.na(FutureEnvData))
 n
@@ -433,7 +433,7 @@ forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","g
   outGF <- c(x1=coordGF[[1]], y1=coordGF[[2]], local=offsetGF, forwardOffset=minValGF, predDist=toGoGF, bearing=bearGF,x2=minPtGF[[1]],y2=minPtGF[[2]])
 }
 stopCluster(cl)
-write.csv( do.call(rbind, forwardOffsetGF),paste0("./future_ssp585_2081-2100_100km_ForwardOffsetGF.csv"), row.names=FALSE)
+write.csv( do.call(rbind, forwardOffsetGF),paste0("./future_ssp245_2061-2080_100km_ForwardOffsetGF.csv"), row.names=FALSE)
 
 
 ####################### 计算反向遗传偏移 ReverseOffset  ######################## 
