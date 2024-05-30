@@ -2,11 +2,12 @@
 library(gradientForest)
 library(MaizePal)
 library(data.table)
+library(gdm)
 library(dplyr)
 library(tidyverse)
+
 setwd("/public1/guop/mawx/workspace/R/gradientForest")
 getwd()
-
 # 设置输出结果和图片的目录，即文件夹名
 result_dir <- "final_result"
 picture_dir <- "final_picture"
