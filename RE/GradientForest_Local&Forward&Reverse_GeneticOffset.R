@@ -382,7 +382,7 @@ stopCluster(cl)
 forwardOffsetGF <- do.call(rbind, forwardOffsetGF)
 write.csv(forwardOffsetGF, paste0("./future_GF_ssp245_2041-2060_ForwardOffsetGF.csv"), row.names=FALSE)
 
-######################### 计算正向遗传偏移 ForwardOffset  限制距离 100KM ######################## 
+######################### 计算正向遗传偏移 ForwardOffset  限制距离 50KM ######################## 
 # 读取未来气候数据
 FutureEnvData <- read.csv("extracted_future_data/future_climate_ssp245_2061-2080_O.fragrans.csv")
 dim(FutureEnvData)
@@ -420,7 +420,7 @@ forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","g
   combinedDatGF["gfOffset"] <- c(rdist(onePopGF[,PredictEnvs], FutureEnvDataGF[,PredictEnvs]))
   coordGF <- onePopGF[,c("lon","lat")]
   combinedDatGF['dists']=distGeo(p1=coordGF, p2=combinedDatGF[,1:2])
-  combinedDatGF<-combinedDatGF[combinedDatGF['dists']<100000,]
+  combinedDatGF<-combinedDatGF[combinedDatGF['dists']<50000,]
   minCoordsGF <- combinedDatGF[which(combinedDatGF$gfOffset == min(combinedDatGF$gfOffset)),]
   minCoordsGF["dists"] <- distGeo(p1=coordGF, p2=minCoordsGF[,1:2])
   minCoordsGF <- minCoordsGF[which(minCoordsGF$dist == min(minCoordsGF$dists)),]
@@ -433,7 +433,7 @@ forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","g
   outGF <- c(x1=coordGF[[1]], y1=coordGF[[2]], local=offsetGF, forwardOffset=minValGF, predDist=toGoGF, bearing=bearGF,x2=minPtGF[[1]],y2=minPtGF[[2]])
 }
 stopCluster(cl)
-write.csv( do.call(rbind, forwardOffsetGF),paste0("./future_ssp245_2061-2080_100km_ForwardOffsetGF.csv"), row.names=FALSE)
+write.csv( do.call(rbind, forwardOffsetGF),paste0("./future_ssp245_2061-2080_50km_ForwardOffsetGF.csv"), row.names=FALSE)
 
 
 ####################### 计算反向遗传偏移 ReverseOffset  ######################## 
