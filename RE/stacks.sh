@@ -14,7 +14,8 @@ cd  /public1/guop/mawx/workspace/186sample
 mkdir populations_output
 populations -V 186_filtered.LD.pruned.noContig.recode.vcf -M 186sample_32pop.txt  --smooth -t 40  -O ./populations_output
 
-
-
+cd  /public1/guop/mawx/workspace/186sample
+mkdir populations_k2_output
+populations -V 186_filtered.LD.pruned.noContig.recode.vcf -M 186sample_K2.txt  --smooth -t 40  -O ./populations_k2_output
 
 
