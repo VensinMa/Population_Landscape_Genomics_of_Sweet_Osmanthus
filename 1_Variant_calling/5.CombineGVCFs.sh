@@ -16,7 +16,7 @@ combined_gvcf_path="$gatk_dir/combined_raw.gvcf"
 log_file="$gatk_dir/gatk_CombineGVCFs_processing.log"
 
 # 创建输出目录（如果不存在）
-mkdir -p "$combined_gvcf_path"
+mkdir -p "$(dirname "$combined_gvcf_path")"
 
 # 记录脚本开始时间
 echo "CombineGVCFs Script started at $(date)" >> "$log_file"
@@ -24,14 +24,19 @@ echo "CombineGVCFs Script started at $(date)" >> "$log_file"
 # 获取所有GVCF文件路径
 gvcf_files=$(find "$raw_gvcf_dir" -name '*.gvcf' | sort)
 
+# 准备--variant参数
+variant_args=()
+for gvcf in $gvcf_files; do
+    variant_args+=(--variant "$gvcf")
+done
+
 # 运行GATK CombineGVCFs
 echo "Running GATK CombineGVCFs at $(date)" >> "$log_file"
 gatk --java-options "-Xms200G -Xmx200G -XX:ParallelGCThreads=20 -Djava.io.tmpdir=${gatk_dir}/tmp" CombineGVCFs \
     -R "$reference_genome" \
-    --variant $gvcf_files \
+    "${variant_args[@]}" \
     -O "$combined_gvcf_path"
 echo "GATK CombineGVCFs completed at $(date)" >> "$log_file"
 
 # 记录脚本完成时间
 echo "CombineGVCFs Script completed at $(date)" >> "$log_file"
-
