@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 设置输入raw_gvcf文件目录
-raw_gvcf_dir="/public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/raw_gvcf2"
+raw_gvcf_dir="/public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/raw_gvcf"
 
 # 定义参考基因组文件
 reference_genome="/public1/guop/mawx/workspace/wild_snpcalling/0.genome/LYG.hic.fasta"
@@ -40,4 +40,3 @@ echo "GATK CombineGVCFs completed at $(date)" | tee -a "$log_file"
 
 # 记录脚本完成时间
 echo "CombineGVCFs Script completed at $(date)" | tee -a "$log_file"
-
