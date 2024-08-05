@@ -23,7 +23,7 @@ echo "GenotypeGVCFs Script started at $(date)" | tee -a "$log_file"
 # 对每个染色体进行 GenotypeGVCFs 并行处理
 for scaffold in Superscaffold{1..23}; do
     echo "Running GATK GenotypeGVCFs for $scaffold at $(date)" | tee -a "$log_file"
-    gatk --java-options "-Xms200G -Xmx200G -XX:ParallelGCThreads=20 -Djava.io.tmpdir=$tmp_dir" GenotypeGVCFs \
+    gatk --java-options "-Xms20G -Xmx20G -XX:ParallelGCThreads=20 -Djava.io.tmpdir=$tmp_dir" GenotypeGVCFs \
         -L $scaffold \
         -R "$reference_genome" \
         -O "$output_dir/${scaffold}.raw.vcf.gz" \
