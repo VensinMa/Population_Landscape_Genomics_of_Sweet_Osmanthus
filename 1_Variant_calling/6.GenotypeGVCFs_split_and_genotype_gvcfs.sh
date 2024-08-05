@@ -36,7 +36,7 @@ wait
 # 合并所有 VCF 文件
 echo "Merging VCF files at $(date)" | tee -a "$log_file"
 ls $output_dir/Superscaffold*.raw.vcf.gz > "$output_dir/all_genotype.list"
-gatk --java-options "-Xms200G -Xmx200G -XX:ParallelGCThreads=20 -Djava.io.tmpdir=$tmp_dir" MergeVcfs \
+gatk --java-options "-Xms20G -Xmx20G -XX:ParallelGCThreads=20 -Djava.io.tmpdir=$tmp_dir" MergeVcfs \
     -I "$output_dir/all_genotype.list" \
     -O "$output_dir/final_combined.vcf.gz" 2>&1 | tee -a "$log_file"
 
