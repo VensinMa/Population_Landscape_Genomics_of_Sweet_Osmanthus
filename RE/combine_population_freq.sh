@@ -2,7 +2,7 @@
 
 # 输入目录和输出文件
 input_dir="/mnt/e/mwx/workspace/186sample/population_freq_results"
-output_file="combined_population_maf.csv"
+output_file="combined_population_freq.csv"
 
 # 初始化输出文件，添加表头行
 echo -n "SNP" > $output_file
