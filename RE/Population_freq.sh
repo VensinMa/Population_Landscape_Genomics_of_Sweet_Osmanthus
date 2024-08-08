@@ -5,7 +5,7 @@ vcf_file="186_filtered.LD.pruned.noContig.recode.vcf"
 pop_file="186sample.pop"
 
 # 输出目录
-output_dir="population_maf_results"
+output_dir="population_freq_results"
 temp_dir="${output_dir}/temp_ids"
 
 # 确保输出和临时目录存在
