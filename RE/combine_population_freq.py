@@ -15,8 +15,8 @@ snp_data = {}
 for frq_file in frq_files:
     file_path = os.path.join(input_dir, frq_file)
     
-    # 从文件名获取群体名称，并去掉 "_population_maf" 部分
-    group_name = os.path.splitext(frq_file)[0].replace('_population_maf', '')
+    # 从文件名获取群体名称，并去掉 "_population_freq" 部分
+    group_name = os.path.splitext(frq_file)[0].replace('_population_freq', '')
     
     with open(file_path, 'r') as f:
         lines = f.readlines()
@@ -38,7 +38,7 @@ for frq_file in frq_files:
         snp_data[snp][group_name] = first_freq
 
 # 初始化 DataFrame 并写入表头
-columns = ["SNP", "FREQ"] + [os.path.splitext(f)[0].replace('_population_maf', '') for f in frq_files]
+columns = ["SNP", "FREQ"] + [os.path.splitext(f)[0].replace('_population_freq', '') for f in frq_files]
 df_list = []
 
 # 填充 DataFrame
