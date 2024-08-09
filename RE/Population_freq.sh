@@ -25,7 +25,7 @@ while read group; do
     (
         echo "处理群体：$group"
         # 使用vcftools计算等位基因频率
-        vcftools --vcf $vcf_file --keep "${temp_dir}/${group}.ids" --freq --out "${output_dir}/${group}_population_maf"
+        vcftools --vcf $vcf_file --keep "${temp_dir}/${group}.ids" --freq --out "${output_dir}/${group}_population_freq"
         if [ $? -eq 0 ]; then
             echo "完成群体：$group"
         else
