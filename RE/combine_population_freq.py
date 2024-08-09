@@ -3,7 +3,8 @@ import pandas as pd
 
 # 输入目录和输出文件
 input_dir = "/mnt/e/mwx/workspace/186sample/population_freq_results"
-output_file = "combined_population_freq.csv"
+output_csv_file = "combined_population_freq.csv"
+output_txt_file = "combined_population_freq.txt"
 
 # 获取所有 .frq 文件的列表
 frq_files = [f for f in os.listdir(input_dir) if f.endswith('.frq')]
@@ -51,6 +52,9 @@ for snp, freqs in snp_data.items():
 df = pd.DataFrame(df_list, columns=columns)
 
 # 保存结果到 CSV 文件
-df.to_csv(output_file, index=False)
+df.to_csv(output_csv_file, index=False)
 
-print(f"合并完成，结果保存在 {output_file}")
+# 保存结果到制表符分隔的 TXT 文件
+df.to_csv(output_txt_file, sep='\t', index=False)
+
+print(f"合并完成，结果保存在 {output_csv_file} 和 {output_txt_file}")
