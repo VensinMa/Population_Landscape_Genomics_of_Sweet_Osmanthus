@@ -1,33 +1,56 @@
-#!/bin/bash
+import os
+import pandas as pd
 
 # 输入目录和输出文件
-input_dir="/mnt/e/mwx/workspace/186sample/population_freq_results"
-output_file="combined_population_freq.csv"
+input_dir = "/mnt/e/mwx/workspace/186sample/population_freq_results"
+output_file = "combined_population_freq.csv"
 
-# 初始化输出文件，添加表头行
-echo -n "SNP" > $output_file
+# 获取所有 .frq 文件的列表
+frq_files = [f for f in os.listdir(input_dir) if f.endswith('.frq')]
 
-# 添加基因型列标题 (FREQ1/FREQ2, ALLELE1/ALLELE2)
-first_file=$(ls ${input_dir}/*.frq | head -n 1)
-genotype_line=$(awk 'NR==2 {print $5}' $first_file | sed 's/:/\//')
-echo -n ",${genotype_line}" >> $output_file
+# 初始化字典来存储所有SNP信息
+snp_data = {}
 
-# 添加群体名称（文件前缀）作为列标题
-for file in ${input_dir}/*.frq; do
-    group_name=$(basename $file .frq)
-    echo -n ",${group_name}" >> $output_file
-done
-echo "" >> $output_file
+# 处理每个 .frq 文件
+for frq_file in frq_files:
+    file_path = os.path.join(input_dir, frq_file)
+    
+    # 从文件名获取群体名称，并去掉 "_population_maf" 部分
+    group_name = os.path.splitext(frq_file)[0].replace('_population_maf', '')
+    
+    with open(file_path, 'r') as f:
+        lines = f.readlines()
+    
+    # 遍历文件中的每一行数据
+    for line in lines[1:]:  # 跳过标题行
+        parts = line.strip().split()
+        snp = f"{parts[0]}:{parts[1]}"
+        allele_freqs = parts[4:]  # 提取所有等位基因频率对
+        
+        # 提取第一个等位基因频率
+        first_allele, first_freq = allele_freqs[0].split(':')
+        
+        if snp not in snp_data:
+            # 初始化FREQ列为 "allele1/allele2" 的形式
+            snp_data[snp] = {"FREQ": f"{first_allele}/{allele_freqs[1].split(':')[0]}"}
+        
+        # 存储每个群体的第一个等位基因频率
+        snp_data[snp][group_name] = first_freq
 
-# 处理每个SNP并将信息添加到输出文件
-awk 'NR > 1' $first_file | while read line; do
-    snp=$(echo $line | awk '{print $1 ":" $2}')
-    echo -n "$snp" >> $output_file
-    echo -n ",$genotype_line" >> $output_file
+# 初始化 DataFrame 并写入表头
+columns = ["SNP", "FREQ"] + [os.path.splitext(f)[0].replace('_population_maf', '') for f in frq_files]
+df_list = []
 
-    for file in ${input_dir}/*.frq; do
-        freq1=$(awk -v snp="$snp" '$1 ":" $2 == snp {print $6}' $file)
-        echo -n ",$freq1" >> $output_file
-    done
-    echo "" >> $output_file
-done
+# 填充 DataFrame
+for snp, freqs in snp_data.items():
+    row = {"SNP": snp, "FREQ": freqs["FREQ"]}
+    for group_name in columns[2:]:
+        row[group_name] = freqs.get(group_name, "NA")
+    df_list.append(row)
+
+df = pd.DataFrame(df_list, columns=columns)
+
+# 保存结果到 CSV 文件
+df.to_csv(output_file, index=False)
+
+print(f"合并完成，结果保存在 {output_file}")
