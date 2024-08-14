@@ -15,7 +15,8 @@ mkdir -p "$output_dir" "$log_dir" "$output_dir/tmp"
 echo "GenotypeGVCFs per chromosome script started at $(date)" | tee -a "$log_dir/gatk_GenotypeGVCFs_processing.log"
 
 # 定义染色体名称列表 (根据你的染色体命名方式)
-chromosomes=("Superscaffold1" "Superscaffold2" "Superscaffold3" ... "Superscaffold23")
+# chromosomes=("Superscaffold1" "Superscaffold2" "Superscaffold3" ... "Superscaffold23")
+chromosomes=($(seq -f "Superscaffold%g" 1 23))
 
 # 遍历每个染色体并行运行
 for chrom in "${chromosomes[@]}"; do
