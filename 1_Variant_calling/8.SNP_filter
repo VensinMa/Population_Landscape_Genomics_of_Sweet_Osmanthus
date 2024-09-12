@@ -14,7 +14,7 @@ echo "SNP extraction, filtration, and final SNP extraction started at $(date)" |
 
 ### 步骤 1：提取 SNP
 echo "Step 1: Extracting SNP from $merged_vcf" | tee -a "$log_dir/gatk_snp_processing.log"
-gatk --java-options "-Xmx4g -Djava.io.tmpdir=./tmp" SelectVariants \
+gatk --java-options "-Xms50G -Xmx500G -XX:ParallelGCThreads=32 -Djava.io.tmpdir=./tmp" SelectVariants \
     -R "$reference_genome" \
     -V "$merged_vcf" \
     --select-type-to-include SNP \
@@ -30,7 +30,7 @@ fi
 
 ### 步骤 2：过滤 SNP（添加过滤标记）
 echo "Step 2: Filtering SNP with quality filters" | tee -a "$log_dir/gatk_snp_processing.log"
-gatk --java-options "-Xmx4g -Djava.io.tmpdir=./tmp" VariantFiltration \
+gatk --java-options "-Xms50G -Xmx500G -XX:ParallelGCThreads=32 -Djava.io.tmpdir=./tmp" VariantFiltration \
     -R "$reference_genome" \
     -V "$raw_snp_vcf" \
     --filter-expression "QD < 2.0 || MQ < 40.0 || FS > 60.0 || SOR > 3.0 || MQRankSum < -12.5 || ReadPosRankSum < -8.0" \
@@ -47,7 +47,7 @@ fi
 
 ### 步骤 3：提取过滤通过的 SNP
 echo "Step 3: Extracting filtered SNP" | tee -a "$log_dir/gatk_snp_processing.log"
-gatk --java-options "-Xmx4g -Djava.io.tmpdir=./tmp" SelectVariants \
+gatk --java-options "-Xms50G -Xmx500G -Djava.io.tmpdir=./tmp" SelectVariants \
     -R "$reference_genome" \
     -V "$filtered_snp_vcf" \
     --exclude-filtered \
