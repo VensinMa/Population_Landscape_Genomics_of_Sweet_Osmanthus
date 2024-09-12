@@ -23,7 +23,7 @@ fi
 merged_vcf="$merged_vcf_dir/all.merge_raw.vcf"
 
 # 运行 GATK MergeVcfs
-gatk --java-options "-Xmx10g -Djava.io.tmpdir=${merged_vcf_dir}/tmp" MergeVcfs \
+gatk --java-options "-Xms400G -Xmx600G -XX:ParallelGCThreads=16 -Djava.io.tmpdir=${merged_vcf_dir}/tmp" MergeVcfs \
     -I "$vcf_list_file" \
     -O "$merged_vcf" 2>&1 | tee -a "$log_dir/gatk_MergeVcfs.log"
 
