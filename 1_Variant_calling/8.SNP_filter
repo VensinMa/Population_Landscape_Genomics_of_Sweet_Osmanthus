@@ -2,10 +2,10 @@
 
 # 设置参考基因组和输入/输出文件路径
 reference_genome="/public1/guop/mawx/workspace/wild_snpcalling/0.genome/LYG.hic.fasta"
-merged_vcf="all.merge_raw.vcf"
-raw_snp_vcf="all.raw.snp.vcf"
-filtered_snp_vcf="all.filter.snp.vcf"
-final_snp_vcf="all.filtered.snp.vcf"
+merged_vcf="/public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/all.merge_raw.vcf"
+raw_snp_vcf="/public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/all.raw.snp.vcf"
+filtered_snp_vcf="/public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/all.filter.snp.vcf"
+final_snp_vcf="/public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/all.filtered.snp.vcf"
 log_dir="./logs"
 mkdir -p "$log_dir" "./tmp"
 
