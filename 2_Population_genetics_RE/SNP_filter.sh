@@ -16,5 +16,8 @@ gatk --java-options "-Xms200G -Xmx500G -XX:ParallelGCThreads=32 -Djava.io.tmpdir
     --exclude-filtered \
     -O "200samples_filtered_renamed.snp.unanchor.final.recode.vcf"
 
+vcftools --vcf 200samples_filtered_renamed.snp.unanchor.final.recode.vcf  --min-alleles 2  --max-alleles 2  --minDP 5  --minGQ 10  --minQ 30 --min-meanDP 6  --max-missing 0.8  --maf 0.05 --recode --recode-INFO-all --out 200samples_filtered_renamed.snp.unanchor.final.vcftools.recode.vcf
+
+
 
 
