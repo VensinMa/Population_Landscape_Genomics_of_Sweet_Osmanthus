@@ -6,11 +6,11 @@ bcftools reheader -s 200sample_rename.id  200samples_filtered.snp.unanchor.recod
 gatk --java-options "-Xms200G -Xmx500G -XX:ParallelGCThreads=32 -Djava.io.tmpdir=./tmp" VariantFiltration \
     -R "/public1/guop/mawx/workspace/wild_snpcalling/0.genome/LYG.hic.fasta" \
     -V "200samples_filtered_renamed.snp.unanchor.recode.vcf" \
-    --filter-expression "QD < 2.0 || MQ < 40.0 || FS > 60.0 || SOR > 3.0 || MQRankSum < -12.5 || ReadPosRankSum < -8.0" \
+    --filter-expression "QUAL < 30.0 || QD < 2.0 || MQ < 40.0 || FS > 60.0 || SOR > 3.0 || MQRankSum < -12.5 || ReadPosRankSum < -8.0" \
     --filter-name "SNP_filter" \
     -O "200samples_filtered.vcf"
 
-gatk --java-options "-Xms200G -Xmx500G -Djava.io.tmpdir=./tmp" SelectVariants \
+gatk --java-options "-Xms200G -Xmx500G -XX:ParallelGCThreads=32 -Djava.io.tmpdir=./tmp" SelectVariants \
     -R "/public1/guop/mawx/workspace/wild_snpcalling/0.genome/LYG.hic.fasta" \
     -V "200samples_filtered.vcf" \
     --exclude-filtered \
