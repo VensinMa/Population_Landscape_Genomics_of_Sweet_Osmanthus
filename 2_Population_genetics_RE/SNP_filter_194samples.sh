@@ -2,7 +2,7 @@
 cd /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/ && mkdir 194sample
 vcftools --vcf /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/all.filtered.snp.unanchor.vcf --keep /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/keep_194sample.id --recode --recode-INFO-all --out /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/194sample/194samples_filtered.snp.unanchor
 
-bcftools reheader -s /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/194sample_rename.id  /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/194samples_filtered.snp.unanchor.recode.vcf  -o /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/194samples_filtered_renamed.snp.unanchor.recode.vcf 
+bcftools reheader -s /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/194sample_rename.id  /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/194sample/194samples_filtered.snp.unanchor.recode.vcf  -o /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/194sample/194samples_filtered_renamed.snp.unanchor.recode.vcf 
 
 
 cd /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/194sample
