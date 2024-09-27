@@ -37,6 +37,13 @@ vcftools --vcf 200samples_filtered_renamed.snp.unanchor.final.gatk.vcf \
     --recode-INFO-all \
     --out 200samples_filtered_renamed.snp.unanchor.final.vcftools
 
+vcftools --vcf 200samples_filtered_renamed.snp.unanchor.final.vcftools.recode.vcf \
+    --max-missing 0.8 \
+    --recode \
+    --recode-INFO-all \
+    --out 200samples_filtered_renamed.snp.unanchor.final.vcftools.nomissing
+
+
 ###  LD.prue
 plink --vcf /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/200samples_filtered_renamed.snp.unanchor.final.vcftools.recode.vcf  \
     --indep-pairwise 50 5 0.2 \
@@ -77,5 +84,8 @@ and
 .
 '''
 
+vcftools --vcf /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/200samples_filtered_renamed.snp.unanchor.final.vcftools.LD.pruned.recode.vcf \
+    --recode-INFO-all --recode --max-missing 1 \
+    --out /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/200samples_filtered_renamed.snp.unanchor.final.vcftools.LD.pruned.nomissing
 
 
