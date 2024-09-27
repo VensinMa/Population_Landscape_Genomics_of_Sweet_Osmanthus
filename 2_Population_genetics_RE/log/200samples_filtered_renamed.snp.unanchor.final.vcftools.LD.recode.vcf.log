@@ -1,0 +1,64 @@
+PLINK v1.90b6.21 64-bit (19 Oct 2020)
+Options in effect:
+  --allow-extra-chr
+  --indep-pairwise 50 5 0.2
+  --out /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/200samples_filtered_renamed.snp.unanchor.final.vcftools.LD.recode.vcf
+  --set-missing-var-ids @:#
+  --vcf /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/200samples_filtered_renamed.snp.unanchor.final.vcftools.recode.vcf
+
+Hostname: node01
+Working directory: /public1/guop
+Start time: Thu Sep 26 22:35:13 2024
+
+Random number seed: 1727361313
+838227 MB RAM detected; reserving 419113 MB for main workspace.
+--vcf:
+/public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/200samples_filtered_renamed.snp.unanchor.final.vcftools.LD.recode.vcf-temporary.bed
++
+/public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/200samples_filtered_renamed.snp.unanchor.final.vcftools.LD.recode.vcf-temporary.bim
++
+/public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/200samples_filtered_renamed.snp.unanchor.final.vcftools.LD.recode.vcf-temporary.fam
+written.
+11384901 variants loaded from .bim file.
+11384901 missing IDs set.
+200 people (0 males, 0 females, 200 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to
+/public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/200samples_filtered_renamed.snp.unanchor.final.vcftools.LD.recode.vcf.nosex
+.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 200 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.940935.
+11384901 variants and 200 people pass filters and QC.
+Note: No phenotypes present.
+Pruned 738495 variants from chromosome 27, leaving 109481.
+Pruned 571440 variants from chromosome 28, leaving 85097.
+Pruned 525337 variants from chromosome 29, leaving 78108.
+Pruned 480921 variants from chromosome 30, leaving 71670.
+Pruned 503252 variants from chromosome 31, leaving 75535.
+Pruned 425157 variants from chromosome 32, leaving 66066.
+Pruned 454359 variants from chromosome 33, leaving 70580.
+Pruned 368305 variants from chromosome 34, leaving 57779.
+Pruned 436567 variants from chromosome 35, leaving 67840.
+Pruned 383854 variants from chromosome 36, leaving 60503.
+Pruned 407635 variants from chromosome 37, leaving 64727.
+Pruned 425639 variants from chromosome 38, leaving 62004.
+Pruned 418648 variants from chromosome 39, leaving 64718.
+Pruned 446051 variants from chromosome 40, leaving 67186.
+Pruned 422543 variants from chromosome 41, leaving 65162.
+Pruned 415039 variants from chromosome 42, leaving 64115.
+Pruned 409556 variants from chromosome 43, leaving 65293.
+Pruned 336186 variants from chromosome 44, leaving 54861.
+Pruned 339825 variants from chromosome 45, leaving 51842.
+Pruned 346383 variants from chromosome 46, leaving 53334.
+Pruned 355035 variants from chromosome 47, leaving 56429.
+Pruned 335785 variants from chromosome 48, leaving 54130.
+Pruned 324289 variants from chromosome 49, leaving 48140.
+Pruning complete.  9870301 of 11384901 variants removed.
+Marker lists written to
+/public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/200samples_filtered_renamed.snp.unanchor.final.vcftools.LD.recode.vcf.prune.in
+and
+/public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/200samples_filtered_renamed.snp.unanchor.final.vcftools.LD.recode.vcf.prune.out
+.
+
+End time: Thu Sep 26 22:49:50 2024
