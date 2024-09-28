@@ -88,4 +88,41 @@ vcftools --vcf /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_v
     --recode-INFO-all --recode --max-missing 1 \
     --out /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/200samples_filtered_renamed.snp.unanchor.final.vcftools.LD.pruned.nomissing
 
+###  剔除外类群样本 NFM_1   O_DSMX  O_MXL   O_MZGH  O_XYWJM  只保留了浙南木犀
+vcftools --vcf /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/200samples_filtered_renamed.snp.unanchor.final.vcftools.LD.pruned.nomissing.recode.vcf \
+    --recode --recode-INFO-all  --remove /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/removed_5_outgroup.id \
+    --out /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/195samples_filtered_renamed.snp.unanchor.final.vcftools.LD.pruned.nomissing
 
+vcftools --vcf /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/195samples_filtered_renamed.snp.unanchor.final.vcftools.LD.pruned.nomissing.recode.vcf \
+    --min-alleles 2 \
+    --max-alleles 2 \
+    --minDP 5 \
+    --minGQ 10 \
+    --minQ 30 \
+    --min-meanDP 6 \
+    --max-missing 1 \
+    --maf 0.05 \
+    --recode \
+    --recode-INFO-all \
+    --out /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/195samples_filtered_renamed.snp.unanchor.final.vcftools.LD.pruned.nomissing.final
+
+
+###  剔除外类群样本 NFM_1   O_DSMX  O_MXL   O_MZGH  O_XYWJM  只保留了浙南木犀
+vcftools --vcf /root/workspace/njtree/200samples_filtered_renamed.snp.unanchor.final.vcftools.LD.pruned.nomissing.recode.vcf \
+    --recode --recode-INFO-all  --remove /root/workspace/njtree/removed_6_outgroup.id \
+    --out /root/workspace/njtree/194samples_filtered_renamed.snp.unanchor.final.vcftools.LD.pruned.nomissing
+
+vcftools --vcf /root/workspace/njtree/194samples_filtered_renamed.snp.unanchor.final.vcftools.LD.pruned.nomissing.recode.vcf \
+    --min-alleles 2 \
+    --max-alleles 2 \
+    --minDP 5 \
+    --minGQ 10 \
+    --minQ 30 \
+    --min-meanDP 6 \
+    --max-missing 1 \
+    --maf 0.05 \
+    --recode \
+    --recode-INFO-all \
+    --out /root/workspace/njtree/194samples_filtered_renamed.snp.unanchor.final.vcftools.LD.pruned.nomissing.final
+
+    
