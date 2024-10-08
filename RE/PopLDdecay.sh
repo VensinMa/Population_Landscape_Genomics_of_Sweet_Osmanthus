@@ -48,3 +48,29 @@ East.PopLDdecay_10K.stat.gz East
 
 Plot_MultiPop.pl -inList K2_multi_10K.list --output K2_West2CentralEast.PopLDdecay_10K -bin1 10 -bin2 100
 Plot_MultiPop.pl -inList K3_multi_10K.list --output K3_West2Central2East.PopLDdecay_10K -bin1 10 -bin2 100
+
+
+
+####################################################################################################################################
+
+cd  /public1/guop/mawx/workspace/186sample
+
+PopLDdecay  -InVCF /public1/guop/mawx/workspace/186sample/186_filtered_vcftools.noContig.recode.vcf -SubPop /public1/guop/mawx/workspace/186sample/186SAM.POP -OutStat All.PopLDdecay &
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
