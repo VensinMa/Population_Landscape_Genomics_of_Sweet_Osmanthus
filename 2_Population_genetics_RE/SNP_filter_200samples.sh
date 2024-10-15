@@ -125,4 +125,26 @@ vcftools --vcf /root/workspace/njtree/194samples_filtered_renamed.snp.unanchor.f
     --recode-INFO-all \
     --out /root/workspace/njtree/194samples_filtered_renamed.snp.unanchor.final.vcftools.LD.pruned.nomissing.final
 
+
+cd /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/
+plink --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
+    --indep-pairwise 50 5 0.2 \
+    --out LD  \
+    --allow-extra-chr  \
+    --set-missing-var-ids @:#  
+##  wc -l  LD.prune.in
+##  LD.prune.in
+
+sed 's/:/ /g' LD.prune.in > LD.prune.in.VCFTOOLS.txt
+
+vcftools --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
+    --positions LD.prune.in.VCFTOOLS.txt \
+    --recode --recode-INFO-all \
+    --out 194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned
+##  After filtering, kept 186 out of 186 Individuals
+##  Outputting VCF file...
+##  After filtering, kept 1789805 out of a possible 12551267 Sites
+##  Run Time = 331.00 seconds
+    
+
     
