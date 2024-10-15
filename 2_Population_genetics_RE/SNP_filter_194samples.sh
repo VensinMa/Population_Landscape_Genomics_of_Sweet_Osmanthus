@@ -59,6 +59,17 @@ vcftools --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
 ##  Run Time = 3462.00 seconds
 
 
+## 转bed与ped格式
+plink --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned.recode.vcf \
+    --make-bed --allow-extra-chr \
+    --out 194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned.plink
+
+plink --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned.recode.vcf \
+      --recode --allow-extra-chr \
+      --out 194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned.plink
+plink --file 194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned.plink \
+    --recodeA --allow-extra-chr  \
+    --out 194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned.plink
 
 
 
