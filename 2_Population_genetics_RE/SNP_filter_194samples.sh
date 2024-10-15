@@ -32,6 +32,35 @@ vcftools --vcf /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_v
     --min-alleles 2  --max-alleles 2  --minDP 5  --minGQ 10  --minQ 30 --min-meanDP 6 \
     --max-missing 0.8  --maf 0.05 --recode --recode-INFO-all \
     --out 194samples_snp.nounanchor.renamed.filtered.vcftools
+## After filtering, kept 194 out of 194 Individuals
+## Outputting VCF file...
+## After filtering, kept 11452745 out of a possible 141490137 Sites
+## Run Time = 30470.00 seconds
+
+
+cd /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/194sample
+plink --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
+    --indep-pairwise 50 5 0.2 \
+    --out LD  \
+    --allow-extra-chr  \
+    --set-missing-var-ids @:#  
+##  wc -l  LD.prune.in
+##  LD.prune.in
+
+sed 's/:/ /g' LD.prune.in > LD.prune.in.VCFTOOLS.txt
+
+vcftools --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
+    --positions LD.prune.in.VCFTOOLS.txt \
+    --recode --recode-INFO-all \
+    --out 194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned
+##  After filtering, kept 194 out of 194 Individuals
+##  Outputting VCF file...
+##  After filtering, kept 1497179 out of a possible 11452745 Sites
+##  Run Time = 3462.00 seconds
+
+
+
+
 
 
 
