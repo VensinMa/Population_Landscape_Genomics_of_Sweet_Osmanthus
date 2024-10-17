@@ -45,6 +45,8 @@ python /public1/guop/mawx/software/vcf2phylip-2.8/vcf2phylip.py --input 195sampl
 
 python /public1/guop/mawx/software/vcf2phylip-2.8/vcf2phylip.py --input /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/200samples_filtered_renamed.snp.unanchor.final.vcftools.LD.pruned.recode.vcf \
     --fasta --output-prefix /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/NJtree/200samples_filtered.LD.pruned
+treebest nj -b 1000 200samples_filtered.LD.pruned.min4.fasta > 200samples_filtered.LD.pruned.treebest.out
+sed 's/:\([0-9.]\+\)\[&&NHX:B=\([0-9]\+\)\]/\2:\1/' 200samples_filtered.LD.pruned.treebest.out | awk '{printf $0}' > 200samples_filtered.LD.pruned.treebest.nwk
 
 
 
