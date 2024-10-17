@@ -57,4 +57,3 @@ sed 's/:\([0-9.]\+\)\[&&NHX:B=\([0-9]\+\)\]/\2:\1/' 200samples_filtered.LD.prune
 
 
 
-
