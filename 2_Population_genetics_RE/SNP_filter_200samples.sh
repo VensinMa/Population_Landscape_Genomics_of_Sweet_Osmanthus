@@ -38,7 +38,7 @@ vcftools --vcf 200samples_filtered_renamed.snp.unanchor.final.gatk.vcf \
     --out 200samples_filtered_renamed.snp.unanchor.final.vcftools
 
 vcftools --vcf 200samples_filtered_renamed.snp.unanchor.final.vcftools.recode.vcf \
-    --max-missing 0.8 \
+    --max-missing 1 \
     --recode \
     --recode-INFO-all \
     --out 200samples_filtered_renamed.snp.unanchor.final.vcftools.nomissing
