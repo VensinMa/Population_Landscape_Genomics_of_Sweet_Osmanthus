@@ -14,8 +14,9 @@ seq 2 20 | parallel -j 8 "structure.py -K {} \
 
 
 ###  2、admixture
-
-
+mkdir -p /home/vensin/workspace/population_structure/admixture/result
+cd /home/vensin/workspace/population_structure/admixture
+seq 2 20 | parallel -j 8 "admixture --cv  /home/vensin/workspace/population_structure/194samples_filtered.LD.pruned.bed {} 1>admixture.{}.log 2>&1" &
 
 
 
