@@ -27,6 +27,8 @@ plink --vcf /home/vensin/workspace/population_structure/admixture/194samples_fil
     
 seq 2 20 | parallel -j 8 'admixture /home/vensin/workspace/population_structure/admixture/194samples_filtered.LD.pruned.Superscaffold2Chr.bed {} --cv | tee ./result/admixture_K{}.log' &
 
+seq 20 -1 8 | parallel -j 8 'admixture /home/vensin/workspace/population_structure/admixture/194samples_filtered.LD.pruned.Superscaffold2Chr.bed {} --cv | tee ./result/admixture_K{}.log' &
+
 
 
 
