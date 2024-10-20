@@ -16,7 +16,17 @@ seq 2 20 | parallel -j 8 "structure.py -K {} \
 ###  2、admixture
 mkdir -p /home/vensin/workspace/population_structure/admixture/result
 cd /home/vensin/workspace/population_structure/admixture
+sed -E 's/Superscaffold([0-9]{1})\b/Chr0\1/; s/Superscaffold([1-9][0-9]*)/Chr\1/' \
+    /home/vensin/workspace/population_structure/194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned.recode.vcf \
+    > /home/vensin/workspace/population_structure/admixture/194samples_filtered..LD.pruned.Superscaffold2Chr.recode.vcf
+
+
 seq 2 20 | parallel -j 8 "admixture --cv  /home/vensin/workspace/population_structure/194samples_filtered.LD.pruned.bed {} 1>admixture.{}.log 2>&1" &
+
+for i in $(seq 2 20); do
+    admixture --cv /home/vensin/workspace/population_structure/194samples_filtered.LD.pruned.bed $i | tee admixture.$i.log &
+done
+wait
 
 
 
