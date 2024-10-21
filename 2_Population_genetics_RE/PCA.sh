@@ -9,7 +9,17 @@ plink --vcf /home/vensin/workspace/population_structure/admixture/194samples_fil
 gcta64 --bfile 194samples_filtered.LD.pruned.Superscaffold2Chr  --autosome  --make-grm  --out GA
 
 ## 进行PCA分析
-gcta64 --grm GA --pca 130  --out PCA_out
+gcta64 --grm GA --pca 20  --out PCA_out
+
+
+cd /home/vensin/workspace/PCA
+
+## 生成grm文件
+gcta64 --bfile /home/vensin/workspace/population_structure/admixture/194samples_filtered.LD.pruned.nomissing.Superscaffold2Chr  --autosome  --make-grm  --out GA_nomissing
+
+## 进行PCA分析
+gcta64 --grm GA_nomissing --pca 20  --out PCA_nomissing_out
+
 
 ## 一键绘图脚本 draw_PCA.R 可在2_Population_genetics目录获得
 Rscript ./draw_PCA.R  PCA_out.eigenvec 1 2  sample.pop  PCA_out_figure
