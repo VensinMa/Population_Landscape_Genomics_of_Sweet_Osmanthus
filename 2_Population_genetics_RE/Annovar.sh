@@ -71,7 +71,6 @@ cat LYG.hic.snp.annovar.variant_function | cut -f 1 | sort | uniq -c
    3022 splicing
 1398247 upstream
 
-
  910824 downstream
  533562 exonic
     156 exonic;splicing
