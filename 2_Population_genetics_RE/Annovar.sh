@@ -32,11 +32,11 @@ retrieve_seq_from_fasta.pl --format refGene --seqfile /home/vensin/workspace/Ann
 
 #############################  生成表格格式输入文件  ###################################################################
 convert2annovar.pl -format vcf4 -allsample -withfreq \
-  /home/vensin/workspace/population_structure/194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned.recode.vcf \
-  > 194samples_filtered.LD.pruned.annovar.input
+  /home/vensin/workspace/Annovar/194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
+  > 194samples_filtered.annovar.input
 
 ## 进行变异注释 (如果需要所有信息，添加-separate) -separate 将每种类型的变异分开注释到不同的文件中
-annotate_variation.pl -geneanno --neargene 2000 -buildver  LYG.hic -dbtype refGene -outfile LYG.hic.snp.annovar -exonsort 194samples_filtered.LD.pruned.annovar.input  ./
+annotate_variation.pl -geneanno --neargene 2000 -buildver  LYG.hic -dbtype refGene -outfile LYG.hic.snp.annovar -exonsort 194samples_filtered.annovar.input  ./
 
 ##  NOTICE: Finished reading 12551354 lines from VCF file
 ##  NOTICE: A total of 12551267 locus in VCF file passed QC threshold, representing 12551267 SNPs (9218405 transitions and 3332862 transversions) and 0 indels/substitutions
