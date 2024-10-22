@@ -35,15 +35,35 @@ convert2annovar.pl -format vcf4 -allsample -withfreq \
   /home/vensin/workspace/Annovar/194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
   > 194samples_filtered.annovar.input
 
+  ### NOTICE: Finished reading 11452900 lines from VCF file
+  ### NOTICE: A total of 11452745 locus in VCF file passed QC threshold, representing 11452745 SNPs (8458075 transitions and 2994670 transversions) and 0 indels/substitutions
+  ### NOTICE: Finished writing allele frequencies based on 2221832530 SNP genotypes (1640866550 transitions and 580965980 transversions) and 0 indels/substitutions for 194 samples
+
 ## 进行变异注释 (如果需要所有信息，添加-separate) -separate 将每种类型的变异分开注释到不同的文件中
 annotate_variation.pl -geneanno --neargene 2000 -buildver  LYG.hic -dbtype refGene -outfile LYG.hic.snp.annovar -exonsort 194samples_filtered.annovar.input  ./result
+  ### NOTICE: Output files are written to LYG.hic.snp.annovar.variant_function, LYG.hic.snp.annovar.exonic_variant_function
+  ### NOTICE: Reading gene annotation from ./LYG.hic_refGene.txt ... Done with 56392 transcripts (including 0 without coding sequence annotation) for 41252 unique genes
+  ### NOTICE: Processing next batch with 5000000 unique variants in 5000000 input lines
+  ### NOTICE: Finished analyzing 1000000 query variants
+  ### NOTICE: Finished analyzing 2000000 query variants
+  ### NOTICE: Finished analyzing 3000000 query variants
+  ### NOTICE: Finished analyzing 4000000 query variants
+  ### NOTICE: Reading FASTA sequences from ./LYG.hic_refGeneMrna.fa ... Done with 22635 sequences
+  ### NOTICE: Processing next batch with 5000000 unique variants in 5000000 input lines
+  ### NOTICE: Finished analyzing 1000000 query variants
+  ### NOTICE: Finished analyzing 2000000 query variants
+  ### NOTICE: Finished analyzing 3000000 query variants
+  ### NOTICE: Finished analyzing 4000000 query variants
+  ### NOTICE: Reading FASTA sequences from ./LYG.hic_refGeneMrna.fa ... Done with 21094 sequences
+  ### NOTICE: Processing next batch with 1452745 unique variants in 1452745 input lines
+  ### NOTICE: Finished analyzing 1000000 query variants
+  ### NOTICE: Reading FASTA sequences from ./LYG.hic_refGeneMrna.fa ... Done with 5413 sequences
+  
 
-##  NOTICE: Finished reading 12551354 lines from VCF file
-##  NOTICE: A total of 12551267 locus in VCF file passed QC threshold, representing 12551267 SNPs (9218405 transitions and 3332862 transversions) and 0 indels/substitutions
-##  NOTICE: Finished writing allele frequencies based on 2334535662 SNP genotypes (1714623330 transitions and 619912332 transversions) and 0 indels/substitutions for 186 samples
 
 ####################################   统计每种类型（突变位置）SNP的数量  ###############################################
-cat AllSNP.annovar.variant_function | cut -f 1 | sed 's/;/\n/g' | sort | uniq -c
+# cat LYG.hic.snp.annovar.variant_function | cut -f 1 | sed 's/;/\n/g' | sort | uniq -c
+cat LYG.hic.snp.annovar.variant_function | cut -f 1 | sort | uniq -c
 1253953 downstream
  592470 exonic
 7548615 intergenic
@@ -51,10 +71,29 @@ cat AllSNP.annovar.variant_function | cut -f 1 | sed 's/;/\n/g' | sort | uniq -c
    3022 splicing
 1398247 upstream
 
+
+ 910824 downstream
+ 533562 exonic
+    156 exonic;splicing
+6075980 intergenic
+2529888 intronic
+   3436 splicing
+1086201 upstream
+ 137378 upstream;downstream
+ 100575 UTR3
+  74075 UTR5
+    670 UTR5;UTR3
+
 #######################################   统计外显子区域不同突变类型SNP的数量  #############################################
-cat AllSNP.annovar.exonic_variant_function | awk '{print $2}' | sort | uniq -c
+cat LYG.hic.snp.annovar.exonic_variant_function | awk '{print $2}' | sort | uniq -c
  322622 nonsynonymous
    6955 stopgain
     769 stoploss
  261796 synonymous
     328 unknown
+
+ 290892 nonsynonymous
+   6097 stopgain
+    806 stoploss
+ 235923 synonymous
+ 
