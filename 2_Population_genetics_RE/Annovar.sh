@@ -2,7 +2,7 @@
 # https://www.openbioinformatics.org/annovar/annovar_download_form.php
 
 ################################# annovar 安装 ##############################################
-mkdir -p /home/vensin/workspace/Annovar && cd /home/vensin/workspace/Annovar
+mkdir -p /home/vensin/workspace/Annovar/result && cd /home/vensin/workspace/Annovar
 wget http://www.openbioinformatics.org/annovar/download/0wgxR2rIVP/annovar.latest.tar.gz   # wget https://mawenxin.cn/annovar.latest.tar.gz
 
 tar -zxvf annovar.latest.tar.gz
@@ -36,7 +36,7 @@ convert2annovar.pl -format vcf4 -allsample -withfreq \
   > 194samples_filtered.annovar.input
 
 ## 进行变异注释 (如果需要所有信息，添加-separate) -separate 将每种类型的变异分开注释到不同的文件中
-annotate_variation.pl -geneanno --neargene 2000 -buildver  LYG.hic -dbtype refGene -outfile LYG.hic.snp.annovar -exonsort 194samples_filtered.annovar.input  ./
+annotate_variation.pl -geneanno --neargene 2000 -buildver  LYG.hic -dbtype refGene -outfile LYG.hic.snp.annovar -exonsort 194samples_filtered.annovar.input  ./result
 
 ##  NOTICE: Finished reading 12551354 lines from VCF file
 ##  NOTICE: A total of 12551267 locus in VCF file passed QC threshold, representing 12551267 SNPs (9218405 transitions and 3332862 transversions) and 0 indels/substitutions
