@@ -74,8 +74,10 @@ plink --vcf /home/vensin/workspace/population_structure/194samples_filtered.LD.p
 cd /home/vensin/workspace/population_structure/faststructure/nomissing_result
 seq 2 10 | parallel -j 10 "structure.py -K {} \
     --input=/home/vensin/workspace/population_structure/194samples_filtered.LD.pruned.nomissing  \
-    --output=/home/vensin/workspace/population_structure/faststructure/result/LD_nomissing_faststructure_K \
+    --output=/home/vensin/workspace/population_structure/faststructure/nomissing_result/LD_nomissing_faststructure_K \
     --cv=5 --prior=simple --seed=1234 > LD_nomissing_faststructure_K_{}.log 2>&1" &
+cd /home/vensin/workspace/population_structure/faststructure/nomissing_result
+chooseK.py --input LD_nomissing_faststructure_K
 
 
 ###  4、admixture             0缺失
