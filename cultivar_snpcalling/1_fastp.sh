@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # 设置原始数据目录
-raw_data_dir="/public1/guop/mawx/workspace/cultivar_snpcalling/fastq.gz/raw_data"
+raw_data_dir="/public1/guop/mawx/workspace/cultivar_snpcalling/1.raw_fastq"
 
 # 设置输出目录
-clean_data_dir="/public1/guop/mawx/workspace/wild_snpcalling/2.cleaned_data"  # 确保这是您的目标输出目录
+clean_data_dir="/public1/guop/mawx/workspace/cultivar_snpcalling/2.cleaned_data"  # 确保这是您的目标输出目录
 
 # 设置质量报告输出目录
 report_dir="$clean_data_dir/reports"
