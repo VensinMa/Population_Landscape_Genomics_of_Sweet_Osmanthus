@@ -36,9 +36,9 @@ cd /home/vensin/workspace/intergenic_up_downstream_faststructure/result/
 seq 2 10 | parallel -j 10 "structure.py -K {} \
     --input=/home/vensin/workspace/intergenic_up_downstream_faststructure/194samples_filtered.intergenic_up_downstream.LD.prune  \
     --output=/home/vensin/workspace/population_structure/faststructure/result/LD_faststructure_K \
-    --cv=5 --prior=simple --seed=123 > LD_faststructure_K_{}.log 2>&1" &
+    --cv=5 --prior=simple --seed=123 > intergenic_up_downstream_LD_faststructure_K_{}.log 2>&1" &
 
-chooseK.py --input LD_nomissing_faststructure_K
+chooseK.py --input intergenic_up_downstream_LD_faststructure_K
 
 ## Model complexity that maximizes marginal likelihood = 
 ## Model components used to explain structure in data = 
