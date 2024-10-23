@@ -32,7 +32,7 @@ plink --vcf /home/vensin/workspace/Annovar/194samples_filtered.intergenic_up_dow
     --make-bed   --keep-allele-order  --allow-extra-chr \
     --out /home/vensin/workspace/intergenic_up_downstream_faststructure/194samples_filtered.intergenic_up_downstream.LD.prune 
 
-cd /home/vensin/workspace/population_structure/faststructure/result/
+cd /home/vensin/workspace/intergenic_up_downstream_faststructure/result/
 seq 2 10 | parallel -j 10 "structure.py -K {} \
     --input=/home/vensin/workspace/intergenic_up_downstream_faststructure/194samples_filtered.intergenic_up_downstream.LD.prune  \
     --output=/home/vensin/workspace/population_structure/faststructure/result/LD_faststructure_K \
