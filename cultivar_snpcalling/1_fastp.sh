@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # 设置原始数据目录
-raw_data_dir="/public1/guop/mawx/workspace/wild_snpcalling/1.rawdata"
+raw_data_dir="/public1/guop/mawx/workspace/cultivar_snpcalling/1.raw_fastq"
 
 # 设置输出目录
-output_dir="/public1/guop/mawx/workspace/wild_snpcalling/2.cleaned_data"  # 确保这是您的目标输出目录
+output_dir="/public1/guop/mawx/workspace/cultivar_snpcalling/2.cleaned_data"  # 确保这是您的目标输出目录
 
 # 设置质量报告输出目录
 report_dir="$output_dir/reports"
@@ -43,7 +43,7 @@ export -f process_fastp  # 导出函数以供 parallel 使用
 export output_dir report_dir log_file  # 导出变量以供 parallel 使用
 
 # 使用find查找所有的fastq文件并使用parallel并行处理
-find "$raw_data_dir" -name '*_1.fq.gz' | sort | parallel -j 40 process_fastp
+find "$raw_data_dir" -name '*_1.fq.gz' | sort | parallel -j 10 process_fastp
 
 # 等待所有并行任务完成
 echo "All fastp processes completed at $(date)" | tee -a "$log_file"
