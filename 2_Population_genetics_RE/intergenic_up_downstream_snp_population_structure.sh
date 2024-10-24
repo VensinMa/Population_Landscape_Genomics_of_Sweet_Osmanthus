@@ -3,8 +3,9 @@ cd /home/vensin/workspace/Annovar
 ##  awk '$1 == "intergenic" {print $3 " " $4}' LYG.hic.snp.annovar.variant_function > intergenic.snp.id
 ##  6075980 intergenic.snp.id
 
-awk '$1 == "intergenic" || $1 == "upstream" || $1 == "downstream" {print $3 " " $4}' LYG.hic.snp.annovar.variant_function > intergenic_up_downstream.snp.id
-##  8073005 intergenic_up_downstream.snp.id
+awk '$1 == "intergenic" || $1 == "upstream" || $1 == "downstream" || $1 == "upstream;downstream" {print $3 " " $4}' LYG.hic.snp.annovar.variant_function > intergenic_up_downstream.snp.id
+##  wc -l intergenic_up_downstream.snp.id
+##  8210383 intergenic_up_downstream.snp.id
 
 vcftools --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
     --positions intergenic_up_downstream.snp.id \
@@ -15,13 +16,13 @@ vcftools --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
 
 plink --vcf 194samples_filtered.intergenic_up_downstream.snp.recode.vcf \
     --indep-pairwise 50 5 0.2 \
-    --out LD  \
+    --out intergenic_up_downstream.LD  \
     --allow-extra-chr  \
     --set-missing-var-ids @:# 
 ## Pruning complete.  6958009 of 8073005 variants removed.
 ## 1114996
 
-sed 's/:/ /g' LD.prune.in > intergenic_up_downstream.LD.prune.in.snp.id
+sed 's/:/ /g' intergenic_up_downstream.LD.prune.in > intergenic_up_downstream.LD.prune.in.snp.id
 
 vcftools --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
     --positions intergenic_up_downstream.LD.prune.in.snp.id \
