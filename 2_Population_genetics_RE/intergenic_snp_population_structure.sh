@@ -3,11 +3,11 @@ cd /home/vensin/workspace/Annovar
 awk '$1 == "intergenic" {print $3 " " $4}' LYG.hic.snp.annovar.variant_function > intergenic.snp.id
 ##  6075980 intergenic.snp.id
 
-
+mkdir -p /home/vensin/workspace/intergenic_faststructure/result
 vcftools --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
     --positions intergenic.snp.id \
     --recode --recode-INFO-all \
-    --out 194samples_filtered.intergenic.snp
+    --out /home/vensin/workspace/intergenic_faststructure/194samples_filtered.intergenic.snp
 
 plink --vcf 194samples_filtered.intergenic.snp.recode.vcf \
     --indep-pairwise 50 5 0.2 \
