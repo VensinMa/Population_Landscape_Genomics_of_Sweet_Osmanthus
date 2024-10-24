@@ -38,40 +38,30 @@ fi
 # 定义处理函数
 process_sample() {
     fq1=$1
-    sample_name="${fq1%%_*}"  # 提取样品名称（下划线前的部分）
-    fq2="${cleaned_fastq_dir}/${sample_name}_2.clean.fq.gz"  # 构造fq2的文件名
-
-    # 如果fq2文件不存在，尝试找到它
-    if [ ! -f "$fq2" ]; then
-        fq2=$(ls "${cleaned_fastq_dir}/${sample_name}*_2.clean.fq.gz" 2>/dev/null)
-    fi
-
-    if [ ! -f "$fq2" ]; then
-        echo "Pair file not found for $fq1" >> "$log_file"
-        return 1
-    fi
+    fq2="${fq1/_1.clean.fq.gz/_2.clean.fq.gz}"  # 根据fq1构造fq2的文件名
+    base_name=$(basename "$fq1" "_1.clean.fq.gz")  # 提取基本文件名，用于输出文件命名
 
     # 执行BWA-MEM比对
-    echo "Starting BWA-MEM for $sample_name" >> "$log_file"
-    bwa mem -t 4 -M -R "@RG\tID:$sample_name\tSM:$sample_name\tLB:$sample_name" "$reference_genome" "$fq1" "$fq2" > "$output_dir/sam/${sample_name}.sam"
-    echo "BWA-MEM completed for $sample_name" >> "$log_file"
+    echo "Starting BWA-MEM for $base_name" >> "$log_file"
+    bwa mem -t 4 -M -R "@RG\tID:$base_name\tSM:$base_name\tLB:$base_name" "$reference_genome" "$fq1" "$fq2" > "$output_dir/sam/${base_name}.sam"
+    echo "BWA-MEM completed for $base_name" >> "$log_file"
 
     # 转换SAM为BAM
-    echo "Converting SAM to BAM for $sample_name" >> "$log_file"
-    samtools view -bS "$output_dir/sam/${sample_name}.sam" -o "$output_dir/bam/${sample_name}.bam"
-    echo "SAM to BAM conversion completed for $sample_name" >> "$log_file"
+    echo "Converting SAM to BAM for $base_name" >> "$log_file"
+    samtools view -bS "$output_dir/sam/${base_name}.sam" -o "$output_dir/bam/${base_name}.bam"
+    echo "SAM to BAM conversion completed for $base_name" >> "$log_file"
 
     # 排序BAM文件
-    echo "Sorting BAM for $sample_name" >> "$log_file"
-    samtools sort "$output_dir/bam/${sample_name}.bam" -o "$output_dir/sorted_bam/${sample_name}.sorted.bam"
-    echo "BAM sorting completed for $sample_name" >> "$log_file"
+    echo "Sorting BAM for $base_name" >> "$log_file"
+    samtools sort "$output_dir/bam/${base_name}.bam" -o "$output_dir/sorted_bam/${base_name}.sorted.bam"
+    echo "BAM sorting completed for $base_name" >> "$log_file"
 
     # 为排序后的BAM文件创建索引
-    echo "Indexing sorted BAM for $sample_name" >> "$log_file"
-    samtools index "$output_dir/sorted_bam/${sample_name}.sorted.bam"
-    echo "Indexing completed for $sample_name" >> "$log_file"
+    echo "Indexing sorted BAM for $base_name" >> "$log_file"
+    samtools index "$output_dir/sorted_bam/${base_name}.sorted.bam"
+    echo "Indexing completed for $base_name" >> "$log_file"
 
-    echo "All processing steps completed for $sample_name" >> "$log_file"
+    echo "All processing steps completed for $base_name" >> "$log_file"
 }
 
 export -f process_sample
