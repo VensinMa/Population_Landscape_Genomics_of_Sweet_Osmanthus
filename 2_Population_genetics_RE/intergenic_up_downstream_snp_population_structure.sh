@@ -46,5 +46,5 @@ seq 2 10 | parallel -j 10 "structure.py -K {} \
 
 chooseK.py --input intergenic_up_downstream_LD_faststructure_K
 
-## Model complexity that maximizes marginal likelihood = 
-## Model components used to explain structure in data = 
+## Model complexity that maximizes marginal likelihood = 3
+## Model components used to explain structure in data = 5
