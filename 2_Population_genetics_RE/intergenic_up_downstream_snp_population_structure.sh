@@ -50,7 +50,28 @@ chooseK.py --input intergenic_up_downstream_LD_faststructure_K
 ## Model complexity that maximizes marginal likelihood = 3
 ## Model components used to explain structure in data = 5
 
-################################## /home/vensin/workspace/intergenic_up_downstream_faststructure/result
+
+############################ admixture ##################################
+
+mkdir -p /home/vensin/workspace/intergenic_up_downstream_admixture/result
+
+##  更改染色体名称
+cd /home/vensin/workspace/intergenic_up_downstream_admixture/
+sed -E 's/Superscaffold([0-9]{1})\b/Chr0\1/; s/Superscaffold([1-9][0-9]*)/Chr\1/' \
+    /home/vensin/workspace/Annovar/194samples_filtered.intergenic_up_downstream.LD.prune.recode.vcf \
+    > /home/vensin/workspace/intergenic_up_downstream_admixture/194samples_filtered.intergenic_up_downstream.LD.prune.Superscaffold2Chr.recode.vcf
+    
+## vcf转bed格式
+plink --vcf /home/vensin/workspace/intergenic_up_downstream_admixture/194samples_filtered.intergenic_up_downstream.LD.prune.Superscaffold2Chr.recode.vcf \
+    --make-bed   --out /home/vensin/workspace/intergenic_up_downstream_admixture/194samples_filtered.intergenic_up_downstream.LD.prune.Superscaffold2Chr  --keep-allele-order  --allow-extra-chr  
+
+cd /home/vensin/workspace/intergenic_up_downstream_admixture/
+seq 2 10 | parallel -j 10 'admixture /home/vensin/workspace/intergenic_up_downstream_admixture/194samples_filtered.intergenic_up_downstream.LD.prune.Superscaffold2Chr.bed {} --cv | tee ./result/admixture_K{}.log' &
+cd /home/vensin/workspace/intergenic_up_downstream_admixture/result
+# 确定具有最小CV值的K值为最佳分群数
+cat *.log | grep "CV"
+
+
 
 
 
