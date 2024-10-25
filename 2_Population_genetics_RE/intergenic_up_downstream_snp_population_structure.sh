@@ -49,3 +49,9 @@ chooseK.py --input intergenic_up_downstream_LD_faststructure_K
 
 ## Model complexity that maximizes marginal likelihood = 3
 ## Model components used to explain structure in data = 5
+
+################################## /home/vensin/workspace/intergenic_up_downstream_faststructure/result
+
+
+
+
