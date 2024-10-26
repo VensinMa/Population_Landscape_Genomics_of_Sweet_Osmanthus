@@ -53,7 +53,7 @@ process_sample() {
 
     # 排序BAM文件
     echo "Sorting BAM for $base_name" >> "$log_file"
-    samtools sort "$output_dir/bam/${base_name}.bam" -o "$output_dir/sorted_bam/${base_name}.sorted.bam"
+    samtools sort -@ 10 "$output_dir/bam/${base_name}.bam" -o "$output_dir/sorted_bam/${base_name}.sorted.bam"
     echo "BAM sorting completed for $base_name" >> "$log_file"
 
     # 为排序后的BAM文件创建索引
