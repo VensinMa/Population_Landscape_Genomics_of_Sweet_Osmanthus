@@ -58,7 +58,7 @@ export reference_genome
 export log_file
 
 # 使用find命令和parallel并行处理输入目录中的所有BAM文件
-find "$input_sorted_bam_dir" -name '*.sorted.bam' | sort | parallel -j 15 process_picard {}
+find "$input_sorted_bam_dir" -name '*.sorted.bam' | sort | parallel -j 20 process_picard {}
 
 # 记录脚本完成时间
 echo "Script completed at $(date)" >> "$log_file"
