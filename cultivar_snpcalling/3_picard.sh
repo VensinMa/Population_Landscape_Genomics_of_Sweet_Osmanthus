@@ -34,7 +34,7 @@ process_picard() {
 
     # Picard MarkDuplicates去重
     echo "Marking duplicates for $base_name at $(date)" >> "$log_file"
-    java -Xmx32g -jar "$picard_jar_path" MarkDuplicates \
+    java -Xms20G -Xmx30G -jar "$picard_jar_path" MarkDuplicates \
         -I "$sorted_bam_path" \
         -O "$output_picard_dir/markdup/${base_name}.markdup.bam" \
         -M "$output_picard_dir/picard_metrics/${base_name}.metrics.txt" \
