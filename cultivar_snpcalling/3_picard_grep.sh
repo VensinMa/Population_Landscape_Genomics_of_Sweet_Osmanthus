@@ -59,7 +59,7 @@ export reference_genome
 export log_file
 
 # 使用find命令和parallel并行处理输入目录中选择的BAM文件
-find "$input_sorted_bam_dir" -name '*.sorted.bam' |  sort | grep -E "D-HLJD-L|D-LZDG-L|D-MHDG-L|Y-CYYG-D|Y-SSYG-L|Y-WYYG-L|Y-XLYG-L|Y-XY-L|Y-XYSG-L|Y-XYWYG-L|Y-YLBZ-L|Y-YLL-L|Y-YLYS-L|Y-YMYYG-L|Y-YuLYS-L|Y-YX-L|Y-YYBYG-D|Y-YYG-S|Y-YZBZ-L|Y-YZ-L|Y-ZHLG-L|Y-ZiYG-L|Y-ZYG-L|ZS-L" | parallel -j 20 process_picard {}
+find "$input_sorted_bam_dir" -name '*.sorted.bam' |  sort | grep -E "D-HLJD-L|D-LZDG-L|D-MHDG-L|Y-CYYG-D|Y-SSYG-L|Y-WYYG-L|Y-XLYG-L|Y-XY-L|Y-XYSG-L|Y-XYWYG-L|Y-YLBZ-L|Y-YLL-L|Y-YLYS-L|Y-YMYYG-L|Y-YuLYS-L|Y-YX-L|Y-YYBYG-D|Y-YYG-S|Y-YZBZ-L|Y-YZ-L|Y-ZHLG-L|Y-ZiYG-L|Y-ZYG-L|ZS-L" | parallel -j 24 process_picard {}
 
 # 记录脚本完成时间
 echo "Script completed at $(date)" >> "$log_file"
