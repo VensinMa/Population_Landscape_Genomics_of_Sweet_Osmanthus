@@ -1,4 +1,4 @@
- #!/bin/bash
+#!/bin/bash
 
 # 设置Picard软件的路径
 picard_jar_path="/public1/guop/mawx/software/picard/picard.jar"
@@ -15,9 +15,8 @@ reference_genome="/public1/guop/mawx/workspace/wild_snpcalling/0.genome/LYG.hic.
 # 在output_picard_dir中创建必要的子目录
 mkdir -p "$output_picard_dir/markdup" "$output_picard_dir/tmp" "$output_picard_dir/picard_metrics"
 
-# 设置带时间戳的日志文件
-log_file="$output_picard_dir/picard_markduplicates_processing_$(date +"%Y%m%d_%H%M%S").log"
-
+# 设置日志文件
+log_file="$output_picard_dir/picard_markduplicates_processing.log"
 
 # 记录脚本开始时间
 echo "Script started at $(date)" >> "$log_file"
@@ -63,4 +62,5 @@ find "$input_sorted_bam_dir" -name '*.sorted.bam' |  sort | grep -E "D-HLJD-L|D-
 
 # 记录脚本完成时间
 echo "Script completed at $(date)" >> "$log_file"
+
 
