@@ -1,0 +1,15 @@
+mkdir -p /home/vensin/workspace/intergenic_up_downstream_snp_PCA
+cd /home/vensin/workspace/intergenic_up_downstream_snp_PCA
+
+## vcf转bed格式
+plink --vcf /home/vensin/workspace/intergenic_up_downstream_admixture/194samples_filtered.intergenic_up_downstream.LD.prune.Superscaffold2Chr.recode.vcf \
+    --make-bed   --out /home/vensin/workspace/intergenic_up_downstream_snp_PCA/194samples_filtered.intergenic_up_downstream.LD.prune.Superscaffold2Chr \
+    --keep-allele-order  --allow-extra-chr  
+
+## 生成grm文件
+gcta64 --bfile 194samples_filtered.intergenic_up_downstream.LD.prune.Superscaffold2Chr  --autosome  --make-grm  --out intergenic_up_downstream.LD.prune
+
+## 进行PCA分析
+gcta64 --grm intergenic_up_downstream.LD.prune --pca 20  --out intergenic_up_downstream.LD.prune_PCA_out
+
+
