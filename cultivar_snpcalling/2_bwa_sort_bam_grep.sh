@@ -71,7 +71,7 @@ export reference_genome
 export log_file
 
 # 根据服务器性能 使用parallel 指定并行任务数量
-find "$cleaned_fastq_dir" -name '*_1.clean.fq.gz' | grep -E "D-YHG-L" | sort | parallel -j 10 process_sample {}
+find "$cleaned_fastq_dir" -name '*_1.clean.fq.gz' | grep -E "J-HCJG-H|J-LaYJG-L|Y-CG-L|Y-YLYS-L" | sort | parallel -j 10 process_sample {}
 
 
 echo "BWA processing completed at $(date)" >> "$log_file"
