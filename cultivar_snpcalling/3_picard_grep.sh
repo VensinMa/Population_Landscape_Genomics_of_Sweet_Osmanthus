@@ -16,7 +16,7 @@ reference_genome="/public1/guop/mawx/workspace/wild_snpcalling/0.genome/LYG.hic.
 mkdir -p "$output_picard_dir/markdup" "$output_picard_dir/tmp" "$output_picard_dir/picard_metrics"
 
 # 设置日志文件
-log_file="$output_picard_dir/picard_markduplicates_processing.log"
+log_file="$output_picard_dir/picard_markduplicates_processing_$(date +"%Y%m%d_%H%M%S").log"
 
 # 记录脚本开始时间
 echo "Script started at $(date)" >> "$log_file"
@@ -58,7 +58,8 @@ export reference_genome
 export log_file
 
 # 使用find命令和parallel并行处理输入目录中选择的BAM文件
-find "$input_sorted_bam_dir" -name '*.sorted.bam' |  sort | grep -E "D-HLJD-L|D-LZDG-L|D-MHDG-L|Y-CYYG-D|Y-SSYG-L|Y-WYYG-L|Y-XLYG-L|Y-XY-L|Y-XYSG-L|Y-XYWYG-L|Y-YLBZ-L|Y-YLL-L|Y-YLYS-L|Y-YMYYG-L|Y-YuLYS-L|Y-YX-L|Y-YYBYG-D|Y-YYG-S|Y-YZBZ-L|Y-YZ-L|Y-ZHLG-L|Y-ZiYG-L|Y-ZYG-L|ZS-L" | parallel -j 24 process_picard {}
+# find "$input_sorted_bam_dir" -name '*.sorted.bam' |  sort | grep -E "D-HLJD-L|D-LZDG-L|D-MHDG-L|Y-CYYG-D|Y-SSYG-L|Y-WYYG-L|Y-XLYG-L|Y-XY-L|Y-XYSG-L|Y-XYWYG-L|Y-YLBZ-L|Y-YLL-L|Y-YLYS-L|Y-YMYYG-L|Y-YuLYS-L|Y-YX-L|Y-YYBYG-D|Y-YYG-S|Y-YZBZ-L|Y-YZ-L|Y-ZHLG-L|Y-ZiYG-L|Y-ZYG-L|ZS-L" | parallel -j 24 process_picard {}
+find "$input_sorted_bam_dir" -name '*.sorted.bam' |  sort | grep -E "J-HCJG-H|J-LaYJG-L|Y-CG-L|Y-YLYS-L" | parallel -j 24 process_picard {}
 
 # 记录脚本完成时间
 echo "Script completed at $(date)" >> "$log_file"
