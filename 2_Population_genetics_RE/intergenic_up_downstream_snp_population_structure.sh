@@ -70,8 +70,17 @@ seq 2 10 | parallel -j 10 'admixture /home/vensin/workspace/intergenic_up_downst
 cd /home/vensin/workspace/intergenic_up_downstream_admixture/result
 # 确定具有最小CV值的K值为最佳分群数
 cat *.log | grep "CV"
-
-
+'''
+CV error (K=10): 0.47199
+CV error (K=2): 0.45122
+CV error (K=3): 0.44651
+CV error (K=4): 0.44386  
+CV error (K=5): 0.44250  BEST K
+CV error (K=6): 0.44589
+CV error (K=7): 0.44707
+CV error (K=8): 0.44800
+CV error (K=9): 0.46593
+'''
 
 
 
