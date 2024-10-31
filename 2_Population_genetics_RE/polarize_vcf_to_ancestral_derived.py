@@ -11,10 +11,6 @@ if not sys.argv[1].endswith('.vcf'):
     print("错误: 输入文件必须是 .vcf 格式")
     sys.exit(1)
 
-if not sys.argv[2].endswith('.txt'):
-    print("错误: 输出文件必须是 .txt 格式")
-    sys.exit(1)
-
 # 文件操作
 try:
     in_vcf = open(sys.argv[1], "r")
@@ -27,8 +23,8 @@ except FileNotFoundError as e:
 # 读取祖先等位基因概率
 ancestral_pval = []
 for line in estsfs_out:
-    if line[0] != "0":
-        ancestral_pval.append(float(line.strip().split(" ")[2]))  # 转换为浮点数以便比较
+    if not line.startswith("0"):  # 跳过以0开头的行
+        ancestral_pval.append(float(line.strip().split()[2]))  # 转换为浮点数以便比较
 estsfs_out.close()
 
 # 处理 VCF 文件逻辑
