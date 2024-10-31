@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
-# Usage: python get_ancestral_allele.py input.vcf outgroupname1 [outgroupname2] [outgroupname3]
+# Usage: python vcf_to_estsfs.py input.vcf outgroupname1 [outgroupname2] [outgroupname3]
 
 import sys
 
 # 检查输入参数是否满足至少指定了1个外类群样本的要求
 if len(sys.argv) < 3:
-    print("Usage: python get_ancestral_allele.py input.vcf outgroupname1 [outgroupname2] [outgroupname3]")
+    print("Usage: python vcf_to_estsfs.py input.vcf outgroupname1 [outgroupname2] [outgroupname3]")
     sys.exit(1)
 
 # 读取输入参数
