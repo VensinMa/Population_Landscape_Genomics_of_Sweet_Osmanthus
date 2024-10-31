@@ -28,22 +28,20 @@ with open(input_vcf, "r") as vcf, \
      open(log_file, "w") as log_out:
 
     for line in vcf:
-        total_sites += 1  # 每读取一行就增加总计数
+        if line.startswith("#"):  # 跳过注释行
+            if line.startswith("#CHROM"):  # 找到样本头部
+                samples = line.strip().split()
+                # 获取所有外类群样本的索引位置
+                outgroup_indices = []
+                for name in outgroup_names:
+                    try:
+                        outgroup_indices.append(samples.index(name))
+                    except ValueError:
+                        print(f"Error: Outgroup name '{name}' not found in VCF header.")
+                        sys.exit(1)
+            continue  # 处理下一行
 
-        if line.startswith("#CHROM"):
-            samples = line.strip().split()
-            # 获取所有外类群样本的索引位置
-            outgroup_indices = []
-            for name in outgroup_names:
-                try:
-                    outgroup_indices.append(samples.index(name))
-                except ValueError:
-                    print(f"Error: Outgroup name '{name}' not found in VCF header.")
-                    sys.exit(1)
-            continue  # 跳过表头行，处理下一个行
-
-        elif line.startswith("#"):
-            continue  # 忽略其他头部信息
+        total_sites += 1  # 每读取一行非注释行就增加总计数
 
         # 处理变异位点
         fields = line.strip().split("\t")
@@ -102,9 +100,10 @@ with open(input_vcf, "r") as vcf, \
             skipped_sites.append(f"Warning: Skipping site at {site_info} due to non-biallelic variant.")
 
     # 写入日志文件
+    log_out.write("Skipped sites:\n")
     log_out.write(f"Total sites processed: {total_sites}\n")
     log_out.write(f"Successfully kept sites: {kept_sites}\n")
-    log_out.write("Skipped sites:\n")
+
     for warning in skipped_sites:
         log_out.write(f"{warning}\n")
 
