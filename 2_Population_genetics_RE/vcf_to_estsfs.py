@@ -93,7 +93,7 @@ with open(input_vcf, "r") as vcf, \
                 outgroups.append(outgroup_str)
 
             # 写入文件，确保输出格式为“内群\t外群1 外群2 ... 外群N”
-            estsfs_out.write(f"{ingroup}\t" + "\t".join(outgroups) + "\n")
+            estsfs_out.write(f"{ingroup}\t" + " ".join(outgroups) + "\n")
             positions_out.write(f"{CHROM}\t{POS}\n")
             kept_sites += 1  # 成功保留位点计数
         else:
