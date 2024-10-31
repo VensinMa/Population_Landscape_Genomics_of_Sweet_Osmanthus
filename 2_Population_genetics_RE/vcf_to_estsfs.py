@@ -89,4 +89,4 @@ with open(input_vcf, "r") as vcf, \
             estsfs_out.write(f"{ingroup}\t" + " ".join(outgroups) + "\n")
             positions_out.write(f"{CHROM}\t{POS}\n")
 
-print("VCF file has been successfully converted to the est-sfs input file")
+print("Successfully! VCF file has been converted to the est-sfs input file.")
