@@ -61,9 +61,9 @@ with open(input_vcf, "r") as vcf, \
             genotypes = [fields[idx].split(":")[0].replace("|", "/") for idx in outgroup_indices]
 
             # 跳过任何外类群样本中存在杂合基因型的位点 如果你只想保留纯合位点
-            # if any(gt[0] != gt[2] for gt in genotypes):
-            #     skipped_sites.append(f"Warning: Skipping site at {site_info} due to heterozygous genotype in outgroup sample.")
-            #     continue
+            if any(gt[0] != gt[2] for gt in genotypes):
+                skipped_sites.append(f"Warning: Skipping site at {site_info} due to heterozygous genotype in outgroup sample.")
+                continue
 
             # 确保所有外类群样本的基因型一致 如果你只想保留在指定外类群基因型相同位点
             # if len(set(genotypes)) > 1:
@@ -82,13 +82,13 @@ with open(input_vcf, "r") as vcf, \
             for genotype in genotypes:
                 allele_dic = {allele: 0 for allele in allele_dic}  # 重置字典
                 if genotype == "0/0":
-                    allele_dic[ref_allele] = 2
+                    allele_dic[ref_allele] = 1
                 elif genotype == "1/1":
-                    allele_dic[alt_allele] = 2
+                    allele_dic[alt_allele] = 1
                 else:
                     # 处理杂合基因型（如 "0/1" 或 "1/0"）
-                    allele_dic[ref_allele] = 1
-                    allele_dic[alt_allele] = 1
+                    allele_dic[ref_allele] = 0
+                    allele_dic[alt_allele] = 0
                 outgroup_str = ",".join(str(allele_dic[allele]) for allele in ["A", "C", "G", "T"])
                 outgroups.append(outgroup_str)
 
