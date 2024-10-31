@@ -71,8 +71,8 @@ with open(input_vcf, "r") as vcf, \
             #     continue
 
             # 统计内群样本的等位基因频率
-            ingroup_GT = "".join([i.split(":")[0] for i in fields[9:]])
-            allele_dic = {allele: 0 for allele in allele_dic}  # 重置字典
+            ingroup_GT = "".join([fields[i].split(":")[0] for i in range(9, len(fields)) if i not in outgroup_indices])
+            allele_dic = {allele: 0 for allele in ["A", "C", "G", "T"]}  # 重置字典
             allele_dic[ref_allele] = ingroup_GT.count("0")
             allele_dic[alt_allele] = ingroup_GT.count("1")
             ingroup = ",".join(str(allele_dic[allele]) for allele in ["A", "C", "G", "T"])
