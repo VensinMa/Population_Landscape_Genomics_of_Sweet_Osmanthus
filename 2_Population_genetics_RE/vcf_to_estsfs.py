@@ -14,13 +14,21 @@ input_vcf = sys.argv[1]
 outgroup_names = sys.argv[2:]  # 支持1到3个外群名称
 output_file_estsfs = input_vcf.replace(".vcf", "_estsfs_input.txt")
 output_file_positions = input_vcf.replace(".vcf", "_estsfs.positions.txt")
+log_file = input_vcf.replace(".vcf", "_processing.log")
+
+# 初始化计数器
+total_sites = 0
+kept_sites = 0
 
 # 打开输入和输出文件
 with open(input_vcf, "r") as vcf, \
      open(output_file_estsfs, "w") as estsfs_out, \
-     open(output_file_positions, "w") as positions_out:
+     open(output_file_positions, "w") as positions_out, \
+     open(log_file, "w") as log_out:
 
     for line in vcf:
+        total_sites += 1  # 每读取一行就增加总计数
+
         if line.startswith("#CHROM"):
             samples = line.strip().split()
             # 获取所有外类群样本的索引位置
@@ -56,8 +64,8 @@ with open(input_vcf, "r") as vcf, \
             #     continue
 
             # 确保所有外类群样本的基因型一致 如果你只想保留在指定外类群基因型相同位点
-            #if len(set(genotypes)) > 1:
-            #    continue
+            # if len(set(genotypes)) > 1:
+            #     continue
 
             # 统计内群样本的等位基因频率
             ingroup_GT = "".join([i.split(":")[0] for i in fields[9:]])
@@ -88,5 +96,11 @@ with open(input_vcf, "r") as vcf, \
             # 写入文件，确保输出格式为“内群\t外群1 外群2 ... 外群N”
             estsfs_out.write(f"{ingroup}\t" + " ".join(outgroups) + "\n")
             positions_out.write(f"{CHROM}\t{POS}\n")
+            kept_sites += 1  # 成功保留位点计数
 
-print("Successfully! VCF file has been converted to the est-sfs input file.")
+# 写入日志文件
+log_out.write(f"Total sites processed: {total_sites}\n")
+log_out.write(f"Successfully kept sites: {kept_sites}\n")
+
+# 输出最终统计信息
+print(f"VCF file has been converted to est-sfs input file.\nTotal sites processed: {total_sites}\nSuccessfully kept sites: {kept_sites}")
