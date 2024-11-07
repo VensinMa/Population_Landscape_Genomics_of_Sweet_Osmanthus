@@ -23,9 +23,9 @@ Example:
 """
 
 import sys
-import vcf
-from collections import defaultdict
+import pandas as pd
 import argparse
+from collections import defaultdict
 
 # Command-line argument parsing
 def parse_args():
@@ -38,28 +38,34 @@ def parse_args():
 def main():
     # Parse command-line arguments
     args = parse_args()
-
-    # Read VCF file using vcf.Reader
     vcf_file = args.input_vcf
-    Type = args.Type  # Optional filter for variant type
-
-    # Open the VCF file using the vcf module
-    vcf_reader = vcf.Reader(open(vcf_file, "r"))
-    sample_list = vcf_reader.samples
+    variant_type = args.Type  # Optional filter for variant type
 
     # Initialize dictionaries for genotype counts
     GTdict = defaultdict(list)
+    sample_list = []
 
-    # Parse VCF file and store genotype data
-    for record in vcf_reader:
-        for sample in sample_list:
-            GT = record.genotype(sample)["GT"]  # Get genotype for the sample
-            GTdict[sample].append(GT)
+    # Read VCF file using pandas
+    with open(vcf_file, "r") as file:
+        lines = [line.strip() for line in file if not line.startswith("##")]
+    header = lines[0].split("\t")
+    df = pd.DataFrame([line.split("\t") for line in lines[1:]], columns=header)
+
+    # Filter variants by type if specified
+    if variant_type:
+        df = df[df['INFO'].str.contains(variant_type, na=False)]
+
+    # Extract sample names
+    sample_list = header[9:]  # 从第10列开始就是样本数据
+
+    # Parse genotype data for each sample
+    for sample in sample_list:
+        GTdict[sample] = df[sample].str.split(":", expand=True)[0].tolist()  # 仅提取基因型（GT字段）
 
     # Print header
     print("indv\thom0\thom1\thet\tmissing\ttotal\tcount_1")
 
-    # Calculate statistics for each sample
+    # Calculate and print statistics for each sample
     for sample in sample_list:
         hom0 = 0  # 0/0
         hom1 = 0  # 1/1
@@ -67,7 +73,7 @@ def main():
         missing = 0  # ./.
         count_1 = 0   # Count of 1 alleles
 
-        # Iterate through genotypes to count occurrences
+        # Count genotype occurrences
         for GT in GTdict[sample]:
             if GT == "0/0":
                 hom0 += 1
@@ -75,14 +81,14 @@ def main():
                 hom1 += 1
             elif GT in ("0/1", "1/0"):
                 het += 1
-                count_1 += 1  # Count 1 alleles in heterozygous
+                count_1 += 1  # Count 1 alleles in heterozygous genotypes
             elif GT == "./.":
                 missing += 1
         
         total = hom0 + hom1 + het + missing
-        count_1 += hom1 * 2  # Add 2 for each "1/1" (homozygous) genotype
+        count_1 += hom1 * 2  # Each "1/1" genotype contributes 2 to count_1
         
-        # Print the statistics for the current sample
+        # Print statistics for the sample
         print(f"{sample}\t{hom0}\t{hom1}\t{het}\t{missing}\t{total}\t{count_1}")
 
 if __name__ == "__main__":
