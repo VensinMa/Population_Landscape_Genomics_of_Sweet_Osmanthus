@@ -8,7 +8,12 @@ vcftools --vcf /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_v
     --recode --recode-INFO-all  --remove /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/removed_3_outgroup.id \
     --out /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/197samples_filtered_renamed.snp.unanchor.final.gatk.vcf &
 
-vcftools --vcf 197samples_filtered_renamed.snp.unanchor.final.gatk.vcf \
+## After filtering, kept 197 out of 200 Individuals
+## Outputting VCF file...
+## After filtering, kept 141490137 out of a possible 141490137 Sites
+## Run Time = 384836.00 seconds
+
+vcftools --vcf 197samples_filtered_renamed.snp.unanchor.final.gatk.vcf.recode.vcf \
     --min-alleles 2 \
     --max-alleles 2 \
     --minDP 5 \
@@ -26,7 +31,12 @@ vcftools --vcf /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_v
     --recode --recode-INFO-all  --remove /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/removed_4_outgroup.id \
     --out /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/vcftools/196samples_filtered_renamed.snp.unanchor.final.gatk.vcf &
 
-vcftools --vcf 196samples_filtered_renamed.snp.unanchor.final.gatk.vcf \
+## After filtering, kept 196 out of 200 Individuals
+## Outputting VCF file...
+## After filtering, kept 141490137 out of a possible 141490137 Sites
+## Run Time = 384708.00 seconds
+
+vcftools --vcf 196samples_filtered_renamed.snp.unanchor.final.gatk.vcf.recode.vcf \
     --min-alleles 2 \
     --max-alleles 2 \
     --minDP 5 \
