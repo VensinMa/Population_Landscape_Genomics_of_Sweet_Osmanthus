@@ -7,7 +7,7 @@ import argparse
 # 创建解析器
 def create_parser():
     parser = argparse.ArgumentParser(
-        description="This script polarizes a VCF file based on ancestral allele probabilities from estsfs output."
+        description="This script polarizes a VCF file based on ancestral allele probabilities from EstSFS output."
     )
     parser.add_argument('input_vcf', type=str, help="Input VCF file to be polarized")
     parser.add_argument('estsfs_output', type=str, help="EstSFS output file containing ancestral allele probabilities")
