@@ -51,7 +51,7 @@ vcftools --vcf 196samples_filtered_renamed.snp.unanchor.final.gatk.vcf.recode.vc
 
 # 1、将vcf文件转换为est-sfs软件所需的输入文件格式
 cd /home/vensin/workspace/est-sfs/prepare_est-sfs
-python vcf_to_estsfs.py  194samples_filtered.intergenic_up_downstream.LD.prune.nomissing.plink.vcf  DRS-7 LCJ-7
+python vcf_to_estsfs.py  196samples_filtered.snp.nomissing.recode.vcf  DRS-7 LCJ-7
 ## 194samples_filtered.intergenic_up_downstream.LD.prune.nomissing.recode_estsfs_input.txt
 
 # 2、运行 est-sfs
