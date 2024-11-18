@@ -1,14 +1,35 @@
 #!/usr/bin/env python3
-#usage python vcf_polarize.py Dis.estsfs.recode.vcf Dis_MLP05_DYD_estsfs_nomissing_out_pvalues.txt positions.txt
+# usage: python vcf_polarize.py <input_vcf> <estsfs_output> <positions_file>
 
 import sys
+import argparse
+
+# 创建解析器
+def create_parser():
+    parser = argparse.ArgumentParser(
+        description="This script polarizes a VCF file based on ancestral allele probabilities from estsfs output."
+    )
+    parser.add_argument('input_vcf', type=str, help="Input VCF file to be polarized")
+    parser.add_argument('estsfs_output', type=str, help="EstSFS output file containing ancestral allele probabilities")
+    parser.add_argument('positions_file', type=str, help="File containing the positions of sites to be polarized from vcf_to_estsfs.py output")
+
+    return parser
+
+# 解析命令行参数
+parser = create_parser()
+args = parser.parse_args()
 
 # 获取输入文件
-in_vcf = open(sys.argv[1], "r")
-out_vcf = open(sys.argv[1].replace("vcf", "polarized.vcf"), "w")
-estsfs_out = open(sys.argv[2], "r")
-positions_file = open(sys.argv[3], "r")  # 读取 positions 文件
-ancestral_out = open(sys.argv[1].replace("vcf", "ancestral.txt"), "w")
+try:
+    in_vcf = open(args.input_vcf, "r")
+    out_vcf = open(args.input_vcf.replace("vcf", "polarized.vcf"), "w")
+    estsfs_out = open(args.estsfs_output, "r")
+    positions_file = open(args.positions_file, "r")  # 读取 positions 文件
+    ancestral_out = open(args.input_vcf.replace("vcf", "ancestral.txt"), "w")
+except FileNotFoundError as e:
+    print(f"Error: {e.strerror}: {e.filename}")
+    sys.exit(1)
+
 ancestral_out.write("CHROM\tPOS\tref_allele\tancestral_allele\n")
 
 # 读取 positions 文件，获取需要处理的位点（染色体位置对）
