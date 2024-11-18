@@ -61,14 +61,14 @@ with open(input_vcf, "r") as vcf, \
             genotypes = [fields[idx].split(":")[0].replace("|", "/") for idx in outgroup_indices]
 
             # 跳过任何外类群样本中存在杂合基因型的位点 如果你只想保留纯合位点
-            #if any(gt[0] != gt[2] for gt in genotypes):
-            #    skipped_sites.append(f"Warning: Skipping site at {site_info} due to heterozygous genotype in outgroup sample.")
-            #    continue
+            if any(gt[0] != gt[2] for gt in genotypes):
+                skipped_sites.append(f"Warning: Skipping site at {site_info} due to heterozygous genotype in outgroup sample.")
+                continue
 
             # 确保所有外类群样本的基因型一致 如果你只想保留在指定外类群基因型相同位点
-            # if len(set(genotypes)) > 1:
-            #     skipped_sites.append(f"Warning: Skipping site at {site_info} due to inconsistent genotypes in outgroup samples.")
-            #     continue
+            if len(set(genotypes)) > 1:
+                skipped_sites.append(f"Warning: Skipping site at {site_info} due to inconsistent genotypes in outgroup samples.")
+                continue
 
             # 统计内群样本的等位基因频率
             ingroup_GT = "".join([fields[i].split(":")[0] for i in range(9, len(fields)) if i not in outgroup_indices])
