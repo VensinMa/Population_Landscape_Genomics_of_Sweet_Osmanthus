@@ -51,6 +51,9 @@ estsfs_out.close()
 # 创建一个字典来记录 positions 中的位点位置及其索引
 positions_dict = {f"{pos[0]}_{pos[1]}": idx for idx, pos in enumerate(positions)}
 
+# 计数器，统计极化的位点数量
+polarized_sites = 0
+
 # 处理 VCF 文件，只处理 positions 文件中的位点
 i = -1
 for line in in_vcf:
@@ -109,7 +112,13 @@ for line in in_vcf:
         # 写入祖先等位基因信息
         ancestral_out.write(f"{CHROM}\t{POS}\t{ref_allele}\t{ancestral_allele}\n")
 
+        # 增加极化位点计数器
+        polarized_sites += 1
+
 # 关闭文件
 in_vcf.close()
 out_vcf.close()
 ancestral_out.close()
+
+# 输出被极化的位点数量
+print(f"Total polarized sites: {polarized_sites}")
