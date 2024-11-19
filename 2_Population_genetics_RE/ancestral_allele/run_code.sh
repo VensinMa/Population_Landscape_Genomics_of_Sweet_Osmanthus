@@ -113,7 +113,8 @@ python vcf_polarize.py /home/vensin/workspace/est-sfs/prepare_est-sfs/197samples
 # Total polarized sites: 808574
 
 # 4、计算内类群个体突变的基因型数量 （相对于新的参考基因型 —— 祖先等位基因）
-python indv_GT_stats.py 197samples_filtered_3_outgroup.snp.nomissing.rename.plink.polarized.vcf 
+python indv_GT_stats.py 196samples_filtered_2_outgroup.snp.nomissing.rename.plink.polarized.vcf  --output  196samples_filtered_2_outgroup_indv_GT_stats_res.txt
+python indv_GT_stats.py 197samples_filtered_3_outgroup.snp.nomissing.rename.plink.polarized.vcf  --output  197samples_filtered_3_outgroup_indv_GT_stats_res.txt
 
 
 
