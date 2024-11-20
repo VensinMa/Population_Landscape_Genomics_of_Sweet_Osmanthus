@@ -30,3 +30,5 @@ grep '^#' /home/vensin/workspace/est-sfs/197samples_filtered_3_outgroup.polarize
   grep 'LOF' /home/vensin/workspace/est-sfs/197samples_filtered_3_outgroup.polarized.snpeff.vcf >> /home/vensin/workspace/est-sfs/197samples_filtered_3_outgroup.polarized.snpeff_LOF.vcf
 
 python /home/vensin/workspace/est-sfs/prepare_est-sfs/indv_GT_stats.py /home/vensin/workspace/est-sfs/197samples_filtered_3_outgroup.polarized.snpeff_LOF.vcf --output /home/vensin/workspace/est-sfs/indv_GT_stats_res.197samples_filtered_3_outgroup.polarized.snpeff_LOF.txt
+
+python /home/vensin/workspace/est-sfs/prepare_est-sfs/indv_GT_stats.py /home/vensin/workspace/sift-lyjg/deleterious_197.vcf --output /home/vensin/workspace/sift-lyjg/indv_GT_stats_res.deleterious_197.txt
