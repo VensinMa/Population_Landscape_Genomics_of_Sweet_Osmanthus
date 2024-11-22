@@ -13,22 +13,29 @@ cd /home/vensin/software/snpEff_latest_core/snpEff/data/
 ## java -jar snpEff.jar build -gff3 -v XXX
 
 ### 1.建库
+cd /home/vensin/software/snpEff_latest_core/snpEff/data/
 java -jar /home/vensin/software/snpEff_latest_core/snpEff/snpEff.jar build -gff3 -v guihua -noCheckProtein -noCheckCds
 
 
-### 2.注释  
-java -jar /home/vensin/software/snpEff_latest_core/snpEff/snpEff.jar -c  /home/vensin/software/snpEff_latest_core/snpEff/snpEff.config \
-  -ud 2000 -csvStats guihua.csv -htmlStats guihua.html -o vcf  guihua \
+### 2.snpeff 注释  
+cd /home/vensin/software/snpEff_latest_core/snpEff/data/
+java -Xmx16g -jar /home/vensin/software/snpEff_latest_core/snpEff/snpEff.jar -c  /home/vensin/software/snpEff_latest_core/snpEff/snpEff.config \
+  -ud 2000 -csvStats guihua.snpeff.197.csv -htmlStats guihua.snpeff.197.html -o vcf  -lof guihua \
   /home/vensin/workspace/est-sfs/prepare_est-sfs/197samples_filtered_3_outgroup.snp.nomissing.rename.plink.polarized.vcf > /home/vensin/workspace/est-sfs/197samples_filtered_3_outgroup.polarized.snpeff.vcf
 
-java -jar /home/vensin/software/snpEff_latest_core/snpEff/snpEff.jar -c  /home/vensin/software/snpEff_latest_core/snpEff/snpEff.config \
-  -ud 2000 -csvStats guihua.lof.csv -htmlStats guihua.lof.html -o vcf  -lof guihua \
-  /home/vensin/workspace/est-sfs/prepare_est-sfs/197samples_filtered_3_outgroup.snp.nomissing.rename.plink.polarized.vcf > /home/vensin/workspace/est-sfs/197samples_filtered_3_outgroup.polarized.snpeff.vcf
+cd /home/vensin/software/snpEff_latest_core/snpEff/data/
+java -Xmx16g -jar /home/vensin/software/snpEff_latest_core/snpEff/snpEff.jar -c  /home/vensin/software/snpEff_latest_core/snpEff/snpEff.config \
+  -ud 2000 -csvStats guihua.snpeff.196.csv -htmlStats guihua.snpeff.196.html -o vcf  -lof guihua \
+  /home/vensin/workspace/est-sfs/prepare_est-sfs/196samples_filtered_2_outgroup.snp.nomissing.rename.plink.polarized.vcf > /home/vensin/workspace/est-sfs/196samples_filtered_2_outgroup.polarized.snpeff.vcf
 
-### 
+### 3.提取注释结果中的 LOF 位点
 grep '^#' /home/vensin/workspace/est-sfs/197samples_filtered_3_outgroup.polarized.snpeff.vcf  > /home/vensin/workspace/est-sfs/197samples_filtered_3_outgroup.polarized.snpeff_LOF.vcf && \
   grep 'LOF' /home/vensin/workspace/est-sfs/197samples_filtered_3_outgroup.polarized.snpeff.vcf >> /home/vensin/workspace/est-sfs/197samples_filtered_3_outgroup.polarized.snpeff_LOF.vcf
 
+grep '^#' /home/vensin/workspace/est-sfs/196samples_filtered_2_outgroup.polarized.snpeff.vcf  > /home/vensin/workspace/est-sfs/196samples_filtered_2_outgroup.polarized.snpeff_LOF.vcf && \
+  grep 'LOF' /home/vensin/workspace/est-sfs/196samples_filtered_2_outgroup.polarized.snpeff.vcf >> /home/vensin/workspace/est-sfs/196samples_filtered_2_outgroup.polarized.snpeff_LOF.vcf
+
 python /home/vensin/workspace/est-sfs/prepare_est-sfs/indv_GT_stats.py /home/vensin/workspace/est-sfs/197samples_filtered_3_outgroup.polarized.snpeff_LOF.vcf --output /home/vensin/workspace/est-sfs/indv_GT_stats_res.197samples_filtered_3_outgroup.polarized.snpeff_LOF.txt
+python /home/vensin/workspace/est-sfs/prepare_est-sfs/indv_GT_stats.py /home/vensin/workspace/est-sfs/196samples_filtered_2_outgroup.polarized.snpeff_LOF.vcf --output /home/vensin/workspace/est-sfs/indv_GT_stats_res.196samples_filtered_2_outgroup.polarized.snpeff_LOF.txt
 
 python /home/vensin/workspace/est-sfs/prepare_est-sfs/indv_GT_stats.py /home/vensin/workspace/sift-lyjg/deleterious_197.vcf --output /home/vensin/workspace/sift-lyjg/indv_GT_stats_res.deleterious_197.txt
