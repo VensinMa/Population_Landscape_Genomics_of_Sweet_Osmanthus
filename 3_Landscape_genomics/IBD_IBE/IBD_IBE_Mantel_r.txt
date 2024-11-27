@@ -82,3 +82,29 @@ Upper quantiles of permutations (null model):
 0.111 0.136 0.160 0.185 
 Permutation: free
 Number of permutations: 999
+
+> anova_res_terms <- anova.cca(of_partial_rda, by = "terms", permutations = 99)
+> # 查看每个变量的显著性结果
+> print(anova_res_terms)
+Permutation test for rda under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 99
+
+Model: rda(formula = gen.imp ~ BIO2 + BIO8 + BIO9 + BIO10 + BIO12 + BIO15 + BIO17 + BIO18 + SRAD + SOC + PHH2O + Condition(dbmen.fwd.sign), data = env_data)
+          Df Variance      F Pr(>F)   
+BIO2       1     4879 3.1138   0.01 **
+BIO8       1     2899 1.8502   0.01 **
+BIO9       1     3468 2.2134   0.01 **
+BIO10      1     3490 2.2269   0.01 **
+BIO12      1     3437 2.1937   0.01 **
+BIO15      1     3342 2.1329   0.01 **
+BIO17      1     3653 2.3313   0.01 **
+BIO18      1     3794 2.4209   0.01 **
+SRAD       1     2638 1.6836   0.01 **
+SOC        1     3056 1.9501   0.01 **
+PHH2O      1     4056 2.5882   0.01 **
+Residual 172   269522                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
