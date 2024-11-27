@@ -1,8 +1,8 @@
 # 加载所需的R包
-library(vegan)  # 用于计算生态学距离
-library(geosphere)  # 用于地理距离计算
-library(ggplot2)  # 用于绘图
-library(cowplot)  # 用于绘制多图
+library(vegan)
+library(geosphere)
+library(ggplot2)
+library(cowplot)
 
 getwd()
 # 设置工作目录
@@ -23,7 +23,6 @@ if(all(row.names(fst) %in% row.names(env))) {
 # 检查重新排序后的env
 head(env_reordered)
 env = env_reordered
-
 
 # 提取环境数据的子集并进行标准化
 ENV <- as.data.frame(env[, c(3:ncol(env))])
