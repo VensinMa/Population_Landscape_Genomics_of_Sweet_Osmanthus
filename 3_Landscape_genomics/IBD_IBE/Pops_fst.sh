@@ -3,8 +3,8 @@
 source $(which env_parallel.bash)
 
 # 输入文件路径
-VCF_FILE="/root/workspace/186sample/186_filtered.LD.pruned.noContig.recode.vcf"
-POP_INFO_FILE="/root/workspace/186sample/186sample.pop"
+VCF_FILE="/home/vensin/workspace/fst/194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned.recode.vcf"
+POP_INFO_FILE="/home/vensin/workspace/fst/194sample.pop"
 
 # 创建群体文件夹和日志文件夹
 mkdir -p pop_files
