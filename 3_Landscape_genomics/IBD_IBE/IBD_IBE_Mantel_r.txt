@@ -1,0 +1,84 @@
+> mantel(muer.dists, env_dist, method = "pearson", permutations = 999)  # 全部数据
+
+Mantel statistic based on Pearson's product-moment correlation 
+
+Call:
+mantel(xdis = muer.dists, ydis = env_dist, method = "pearson",      permutations = 999) 
+
+Mantel statistic r: 0.7797 
+      Significance: 0.001 
+
+Upper quantiles of permutations (null model):
+  90%   95% 97.5%   99% 
+0.162 0.215 0.272 0.316 
+Permutation: free
+Number of permutations: 999
+
+> # 计算Fst和地理距离之间的相关性  IBD
+> mantel(fst, muer.dists, method = "pearson", permutations = 999)  # 全部数据
+
+Mantel statistic based on Pearson's product-moment correlation 
+
+Call:
+mantel(xdis = fst, ydis = muer.dists, method = "pearson", permutations = 999) 
+
+Mantel statistic r: 0.5899 
+      Significance: 0.001 
+
+Upper quantiles of permutations (null model):
+  90%   95% 97.5%   99% 
+0.172 0.210 0.259 0.312 
+Permutation: free
+Number of permutations: 999
+
+> # 计算Fst和环境距离之间的相关性  IBE
+> #fst <- read.csv("input/1861_fst_matrix.csv", head = TRUE, row.names = 1)
+> mantel(fst, env_dist, method = "pearson", permutations = 999)  # 全部数据
+
+Mantel statistic based on Pearson's product-moment correlation 
+
+Call:
+mantel(xdis = fst, ydis = env_dist, method = "pearson", permutations = 999) 
+
+Mantel statistic r: 0.652 
+      Significance: 0.001 
+
+Upper quantiles of permutations (null model):
+  90%   95% 97.5%   99% 
+0.186 0.245 0.282 0.338 
+Permutation: free
+Number of permutations: 999
+
+> # 计算Fst、环境距离和地理距离之间的相关性（部分相关性） IBE partial
+> mantel.partial(fst, env_dist, muer.dists, method = "pearson", permutations = 999)  # 全部数据
+
+Partial Mantel statistic based on Pearson's product-moment correlation 
+
+Call:
+mantel.partial(xdis = fst, ydis = env_dist, zdis = muer.dists,      method = "pearson", permutations = 999) 
+
+Mantel statistic r: 0.3797 
+      Significance: 0.001 
+
+Upper quantiles of permutations (null model):
+  90%   95% 97.5%   99% 
+0.130 0.162 0.192 0.233 
+Permutation: free
+Number of permutations: 999
+
+> # 计算Fst、地理距离和环境距离之间的相关性（部分相关性） IBD partial
+> mantel.partial(fst,muer.dists,env_dist,method="pearson",permutations=999)
+
+Partial Mantel statistic based on Pearson's product-moment correlation 
+
+Call:
+mantel.partial(xdis = fst, ydis = muer.dists, zdis = env_dist,      method = "pearson", permutations = 999) 
+
+Mantel statistic r: 0.1718 
+      Significance: 0.021 
+
+Upper quantiles of permutations (null model):
+  90%   95% 97.5%   99% 
+0.111 0.136 0.160 0.185 
+Permutation: free
+Number of permutations: 999
