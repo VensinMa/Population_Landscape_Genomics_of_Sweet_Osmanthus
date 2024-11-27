@@ -42,14 +42,14 @@ calculate_fst() {
     WEIGHTED_FST=$(echo "$OUTPUT" | grep "Weir and Cockerham weighted Fst estimate" | awk '{print $NF}')
 
     # 输出结果到CSV文件，格式化为四列
-    echo "${base_name1},${base_name2},${MEAN_FST},${WEIGHTED_FST}" >> fst_results.csv
+    echo "${base_name1},${base_name2},${MEAN_FST},${WEIGHTED_FST}" >> Pops_fst_results.csv
 }
 
 export -f calculate_fst
 export VCF_FILE
 
 # 创建或清空结果文件，并添加标题行
-echo "Group1,Group2,Mean_FST,Weighted_FST" > fst_results.csv
+echo "Group1,Group2,Mean_FST,Weighted_FST" > Pops_fst_results.csv
 
 # 使用GNU Parallel并行计算FST
 env_parallel -j 20 calculate_fst ::: "${combinations[@]}"
