@@ -1,4 +1,4 @@
-## Rscript generate_fst_matrix.R
+## Rscript Pops_fst_results2fst_matrix.R
 
 # 输入文件和输出文件路径
 input_file  <- "/home/vensin/workspace/fst/Pops_fst_results.csv"  # 输入文件路径
