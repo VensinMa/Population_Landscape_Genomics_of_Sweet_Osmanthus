@@ -1,3 +1,7 @@
+# 输入文件和输出文件路径
+input_file <- "Pops_fst_results.csv"  # 输入文件路径
+output_file <- "Pops_fst_matrix.csv"  # 输出文件路径
+
 # 读取 CSV 文件并生成 FST 矩阵
 generate_fst_matrix <- function(input_file, output_file) {
   # 读取数据
@@ -21,5 +25,8 @@ generate_fst_matrix <- function(input_file, output_file) {
   write.csv(matrix, output_file)
 }
 
-# 使用示例
-generate_fst_matrix("Pops_fst_results.csv", "Pops_fst_matrix.csv")
+# 调用函数生成 FST 矩阵
+generate_fst_matrix(input_file, output_file)
+
+# 提示完成
+cat("FST 矩阵已生成并保存到文件：", output_file, "\n")
