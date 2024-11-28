@@ -72,6 +72,21 @@ plink --file 194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned.plink
     --out 194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned.plink
 
 
+####################################  提取基因型环境关联分析中的适应性位点  ########################################
+cd /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/194sample
+
+sed 's/:/ /g' 1766_adaptive_snps.id > 1766_adaptive_snps_vcftools.id
+
+vcftools --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned.recode.vcf  \
+    --positions 1766_adaptive_snps_vcftools.id \
+    --recode --recode-INFO-all \
+    --out 194samples_1766_adaptive_snps
+##  After filtering, kept 194 out of 194 Individuals
+##  Outputting VCF file...
+##  After filtering, kept 1766 out of a possible 1497179 Sites
+##  Run Time = 61.00 seconds
+
+
 
 
 
