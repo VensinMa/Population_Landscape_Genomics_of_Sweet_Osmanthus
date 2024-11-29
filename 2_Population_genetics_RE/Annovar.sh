@@ -1,3 +1,5 @@
+### 以下分析在 ubuntu24 系统进行
+
 ##  annovar官方网站的的下载需要使用邮箱注册后才可下载
 # https://www.openbioinformatics.org/annovar/annovar_download_form.php
 
