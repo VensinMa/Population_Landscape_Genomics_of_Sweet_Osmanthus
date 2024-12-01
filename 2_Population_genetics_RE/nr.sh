@@ -6,19 +6,19 @@ conda create -n aspera
 conda activate aspera
 conda install -c hcc aspera-cli -y
 
+# 添加并立即生效环境变量
+echo 'export PATH="/home/vensin/anaconda3/envs/aspera/bin/:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
 #检查是否安装成功，有东西出来就行
 ascp -h
 
-# 添加并立即生效环境变量
-echo 'export PATH="/root/anaconda3/envs/aspera/bin/:$PATH"' >> ~/.bashrc
-source ~/.bashrc
-    
 # 切换到工作目录 workspace 
-cd /mnt/e/mwx/workspace/nr.annotations
+mkdir /home/vensin/workspace/nr.annotations && cd /home/vensin/workspace/nr.annotations
     
 # 下载 nr 蛋白库
-ascp -i /root/anaconda3/envs/aspera/etc/asperaweb_id_dsa.openssh -l 1000M -k 1 -T anonftp@ftp.ncbi.nlm.nih.gov:/blast/db/FASTA/nr.gz ./ &
-ascp -i /root/anaconda3/envs/aspera/etc/asperaweb_id_dsa.openssh -l 1000M -k 1 -T anonftp@ftp.ncbi.nlm.nih.gov:/blast/db/FASTA/nr.gz.md5 ./ &
+ascp -i /home/vensin/anaconda3/envs/aspera/etc/asperaweb_id_dsa.openssh -l 1000M -k 1 -T anonftp@ftp.ncbi.nlm.nih.gov:/blast/db/FASTA/nr.gz ./ &
+ascp -i /home/vensin/anaconda3/envs/aspera/etc/asperaweb_id_dsa.openssh -l 1000M -k 1 -T anonftp@ftp.ncbi.nlm.nih.gov:/blast/db/FASTA/nr.gz.md5 ./ &
 # wget https://ftp.ncbi.nih.gov/blast/db/FASTA/nr.gz.md5
 md5sum -c nr.gz.md5
 # gunzip -c nr.gz > nr.fasta
@@ -28,15 +28,15 @@ unpigz -c -p 16 nr.gz > nr.fasta
 
     
 # 下载 Nr 数据库中蛋白编号 mprot.accession 和物种编号 taxid 的对应关系信息 
-# ascp -i /root/anaconda3/envs/aspera/etc/asperaweb_id_dsa.openssh -l 1000M -k 1 -T anonftp@ftp.ncbi.nlm.nih.gov:/pub/taxonomy/accession2taxid/prot.accession2taxid.gz ./ &
+# ascp -i /home/vensin/anaconda3/envs/aspera/etc/asperaweb_id_dsa.openssh -l 1000M -k 1 -T anonftp@ftp.ncbi.nlm.nih.gov:/pub/taxonomy/accession2taxid/prot.accession2taxid.gz ./ &
 # wget ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/prot.accession2taxid.gz
 
 # 下载 Nr 数据库中物种编号 taxdmp 的层次信息 
-# ascp -i /root/anaconda3/envs/aspera/etc/asperaweb_id_dsa.openssh -l 1000M -k 1 -T anonftp@ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdmp.zip
+# ascp -i /home/vensin/anaconda3/envs/aspera/etc/asperaweb_id_dsa.openssh -l 1000M -k 1 -T anonftp@ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdmp.zip
 # wget ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdmp.zip
 
 
-gffread  /root/workspace/genome/guihua.genomic.gff3   -g  /root/workspace/genome/Osmanthus.genomic.fasta  -y   Osmanthus.genomic.pep.fasta 
+gffread  /home/vensin/workspace/genome/   -g  /root/workspace/genome/Osmanthus.genomic.fasta  -y   Osmanthus.genomic.pep.fasta 
 ### 2、使用 Blast/Diamond 进行 NR 注释
 
 
