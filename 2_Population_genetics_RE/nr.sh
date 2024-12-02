@@ -10,7 +10,7 @@ conda install -c hcc aspera-cli -y
 echo 'export PATH="/home/vensin/anaconda3/envs/aspera/bin/:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 
-#检查是否安装成功，有东西出来就行
+# 检查是否安装成功
 ascp -h
 
 # 切换到工作目录 workspace 
@@ -73,17 +73,23 @@ diamond makedb --in nr.fasta --db nr.db
 ## sudo swapon /swapfile
 
 # 将物种全基因组核酸/蛋白序列 blastx / blastp 到构建好的数据库：
-diamond blastp --db /home/vensin/workspace/nr.annotations/nr.db.dmnd --query /home/vensin/data/genome/LYG.longest.pep.fasta \
+diamond blastp --db /mnt/e/mwx/workspace/nr.annotations/nr.db.dmnd --query /home/vensin/data/genome/LYG.longest.pep.fasta \
     --out /home/vensin/workspace/nr.annotations/LYG.longest.pep.Nr.annotations \
     --outfmt 6 qseqid sseqid pident evalue bitscore qlen slen length mismatch gapopen qstart qend sstart send stitle \
     --sensitive --max-target-seqs 5 --evalue 1e-5 --index-chunks 1 
     # --index-chunks 1 
     
-diamond blastp --db /home/vensin/workspace/nr.annotations/nr.db.dmnd \
-    --query /home/vensin/data/genome/LYG.longest.pep.fasta \
-    --out /home/vensin/workspace/nr.annotations/LYG.longest.pep.Nr.annotations \
+diamond blastp --db /public1/guop/liujj/liujj/workspace/Annovar/nr/nr.db.dmnd \
+    --query /public1/guop/liujj/liujj/workspace/Annovar/nr/genome/LYG.longest.pep.fasta \
+    --out /public1/guop/liujj/liujj/workspace/Annovar/nr/genome/LYG.longest.pep.Nr.annotations \
     --outfmt 6 qseqid sseqid pident evalue bitscore qlen slen length mismatch gapopen qstart qend sstart send stitle \
-    --sensitive --max-target-seqs 5 --evalue 1e-5 --index-chunks 2
+    --sensitive --max-target-seqs 5 --evalue 1e-5 --index-chunks 1 --threads 64
+
+diamond blastp --db /public1/guop/liujj/liujj/workspace/Annovar/nr/nr.db.dmnd \
+    --query /public1/guop/liujj/liujj/workspace/Annovar/nr/genome/LYG.longest.pep.fasta \
+    --out /public1/guop/liujj/liujj/workspace/Annovar/nr/genome/LYG.longest.pep.Nr.annotations \
+    --outfmt 6 qseqid sseqid pident evalue bitscore qlen slen length mismatch gapopen qstart qend sstart send stitle \
+    --sensitive --max-target-seqs 5 --evalue 1e-5 --index-chunks 1 --threads 64
     
 # diamond 默认设置下输出表格格式的结果。结果分12列，其结果信息和 BLAST 默认设置-outfmt 6输出的格式完全一致。
 #  1. qseqid     query序列ID 
