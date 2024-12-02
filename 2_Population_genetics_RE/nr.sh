@@ -14,7 +14,7 @@ source ~/.bashrc
 ascp -h
 
 # 切换到工作目录 workspace 
-mkdir /home/vensin/workspace/nr.annotations && cd /home/vensin/workspace/nr.annotations
+cd /home/vensin/workspace/nr.annotations || mkdir -p /home/vensin/workspace/nr.annotations && cd /home/vensin/workspace/nr.annotations
     
 # 下载 nr 蛋白库
 ascp -i /home/vensin/anaconda3/envs/aspera/etc/asperaweb_id_dsa.openssh -l 1000M -k 1 -T anonftp@ftp.ncbi.nlm.nih.gov:/blast/db/FASTA/nr.gz ./ &
@@ -35,11 +35,27 @@ unpigz -c -p 16 nr.gz > nr.fasta
 # ascp -i /home/vensin/anaconda3/envs/aspera/etc/asperaweb_id_dsa.openssh -l 1000M -k 1 -T anonftp@ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdmp.zip
 # wget ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdmp.zip
 
+cd /home/vensin/data/genome
+perl gff_filter_longest.pl LYG.hic.gff longest.cds.ids LYG.longest.cds.gff
+gffread  LYG.hic.gff -g LYG.hic.fasta -w LYG.gene.fasta
+gffread  LYG.hic.gff  -g  LYG.hic.fasta  -y  LYG.pep.fasta 
+gffread  LYG.longest.cds.gff  -g  LYG.hic.fasta  -x  LYG.longest.cds.fasta 
+gffread  LYG.longest.cds.gff  -g  LYG.hic.fasta  -y  LYG.longest.pep.fasta 
 
-gffread  /home/vensin/workspace/genome/   -g  /root/workspace/genome/Osmanthus.genomic.fasta  -y   Osmanthus.genomic.pep.fasta 
+## (base) vensin@ubuntu24-04:~/data/genome$ awk '{print $3}' LYG.hic.gff | grep -c "gene"
+## 41252
+## (base) vensin@ubuntu24-04:~/data/genome$ grep -c ">" LYG.gene.fasta
+## 56392
+## (base) vensin@ubuntu24-04:~/data/genome$ grep -c ">" LYG.pep.fasta
+## 56392
+## (base) vensin@ubuntu24-04:~/data/genome$ grep -c ">" LYG.longest.pep.fasta
+## 41252
+## (base) vensin@ubuntu24-04:~/data/genome$ grep -c ">" LYG.longest.cds.fasta
+## 41252
+
 ### 2、使用 Blast/Diamond 进行 NR 注释
 
-
+cd /home/vensin/workspace/nr.annotations || mkdir -p /home/vensin/workspace/nr.annotations && cd /home/vensin/workspace/nr.annotations
 # 使用diamond  软件的子命令 makedb 将 fasta 格式的蛋白序列创建成后缀为 dmnd 的数据库文件：
 diamond makedb --in nr.fasta --db nr.db
 # Writing trailer...  [108.497s]
@@ -53,7 +69,10 @@ diamond makedb --in nr.fasta --db nr.db
 
 
 # 将物种全基因组核酸/蛋白序列 blastx / blastp 到构建好的数据库：
-diamond blastp --db nr.db.dmnd --query Osmanthus.genomic.pep.fasta --out Osmanthus.genomic.pep.Nr.annotations --outfmt 6 qseqid sseqid pident evalue bitscore qlen slen length mismatch gapopen qstart qend sstart send stitle --sensitive --max-target-seqs 1 --evalue 1e-5 --index-chunks 1
+diamond blastp --db /home/vensin/workspace/nr.annotations/nr.db.dmnd --query /home/vensin/data/genome/LYG.longest.pep.fasta \
+    --out /home/vensin/workspace/nr.annotations/LYG.longest.pep.Nr.annotations \
+    --outfmt 6 qseqid sseqid pident evalue bitscore qlen slen length mismatch gapopen qstart qend sstart send stitle \
+    --sensitive --max-target-seqs 5 --evalue 1e-5 --index-chunks 1
     
 # diamond 默认设置下输出表格格式的结果。结果分12列，其结果信息和 BLAST 默认设置-outfmt 6输出的格式完全一致。
 #  1. qseqid     query序列ID 
@@ -69,7 +88,7 @@ diamond blastp --db nr.db.dmnd --query Osmanthus.genomic.pep.fasta --out Osmanth
 # 11. evalue     E-vaule值
 # 12. bitscore   bitscore得分
     
-    
+'''    
 # 使用 blast 软件的命令 makeblastdb 将 fasta 格式的蛋白序列创建成后缀为.psp .pin .phr 的数据库文件：
 makeblastdb -in nr.test.fasta -dbtype prot -out nr.test
     
@@ -81,6 +100,6 @@ blastx -query Of.tps.test.fasta -db nr.test -evalue 1e-5 -max_target_seqs 1 -out
 # -evalue 1e-5 设置e值。
 # -max_target_seqs 1 设置最多的目标序列匹配数，相当于可视化blast比对结果中，红色的序列个数。
 # -outfmt format 6  5代表xml格式，这个格式的信息最全，6代表table格式，该格式的结果以table的形式给出，清晰易懂，7代表有注释行的table格式，比6多了一些#开头的注释行。还有一种可以自己定义输出内容，例如：在输出6格式的前提下，输出一列为物种名字： -outfmt "6 std ssciname"。
-    
+ '''   
     
     
