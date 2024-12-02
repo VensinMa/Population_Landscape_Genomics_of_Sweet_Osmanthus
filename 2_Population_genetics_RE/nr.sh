@@ -73,7 +73,7 @@ diamond makedb --in nr.fasta --db nr.db
 ## sudo swapon /swapfile
 
 # 将物种全基因组核酸/蛋白序列 blastx / blastp 到构建好的数据库：
-diamond blastp --db /mnt/e/mwx/workspace/nr.annotations/nr.db.dmnd --query /home/vensin/data/genome/LYG.longest.pep.fasta \
+diamond blastp --db /home/vensin/workspace/nr.annotations/nr.db.dmnd --query /home/vensin/data/genome/LYG.longest.pep.fasta \
     --out /home/vensin/workspace/nr.annotations/LYG.longest.pep.Nr.annotations \
     --outfmt 6 qseqid sseqid pident evalue bitscore qlen slen length mismatch gapopen qstart qend sstart send stitle \
     --sensitive --max-target-seqs 5 --evalue 1e-5 --index-chunks 1 
