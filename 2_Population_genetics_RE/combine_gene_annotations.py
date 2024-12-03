@@ -5,7 +5,7 @@ import csv
 # 读取nr注释和annovar注释文件
 nr_annotations_file = "/home/vensin/workspace/nr.annotations/LYG.longest.pep.uniq.Nr.modified.annotations"
 annovar_annotations_file = "/home/vensin/workspace/Annovar/LYG.hic.snp.annovar.variant_function"
-output_file = "/home/vensin/workspace/Annovar/result/merged_output.txt"
+output_file = "/home/vensin/workspace/Annovar/result/LYG.hic.snp.nr_annovar.ann"
 
 # 存储第一个文件数据，按基因ID索引
 annotations_data = {}
