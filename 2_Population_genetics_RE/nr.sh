@@ -97,7 +97,19 @@ diamond blastp --db /public1/guop/liujj/liujj/workspace/Annovar/nr/nr.db.dmnd \
 python unique_gene_annotations.py
 ## awk '{print $1}'  LYG.longest.pep.uniq.Nr.annotations   | sort | uniq | wc -l
 ## 40044
-awk '{gsub(/^rna-/, "", $1); gsub(/\..*/, "", $1); print $0}' LYG.longest.pep.uniq.Nr.annotations > LYG.longest.pep.uniq.Nr.modified.annotations
+awk -F'\t' '{
+    # 修改第一列：去掉rna-前缀和.数字后缀
+    new_id = $1;
+    gsub(/^rna-/, "", new_id);    # 去掉rna-前缀
+    sub(/\.[0-9]+$/, "", new_id); # 去掉.数字后缀
+    
+    # 将修改后的第一列赋值回 $1
+    $1 = new_id;
+    
+    # 打印整行，分隔符仍然是制表符
+    OFS="\t"; 
+    print $0;
+}' /home/vensin/workspace/nr.annotations/LYG.longest.pep.uniq.Nr.annotations > /home/vensin/workspace/nr.annotations/LYG.longest.pep.uniq.Nr.modified.annotations
 
 
 # diamond 默认设置下输出表格格式的结果。结果分12列，其结果信息和 BLAST 默认设置-outfmt 6输出的格式完全一致。
