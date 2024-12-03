@@ -1,15 +1,25 @@
 # -*- coding: utf-8 -*-
 
 import csv
+import time
 
 # SNP ID 文件和目标文件路径
 snpid_file = "/home/vensin/workspace/Annovar/result/1766snps.id"
 annovar_file = "/home/vensin/workspace/Annovar/result/LYG.hic.snp.nr_annovar.ann"
 output_file = "/home/vensin/workspace/Annovar/result/1766_Adaptive_SNP_nr_annovar.ann"
 
+# 记录开始时间
+start_time = time.time()
+
 # 读取 SNP IDs 到一个集合中，并且转换为类似 'Superscaffold1:514882' 格式
 with open(snpid_file, "r") as snp_file:
     snp_ids = set(line.strip() for line in snp_file)
+
+# 获取总 SNP 数量
+total_snp_count = len(snp_ids)
+
+# 统计成功提取的 SNP 注释行数
+extracted_count = 0
 
 # 打开目标文件并进行过滤
 with open(annovar_file, "r") as ann_file, open(output_file, "w") as out_file:
@@ -25,5 +35,13 @@ with open(annovar_file, "r") as ann_file, open(output_file, "w") as out_file:
         # 如果拼接后的 SNP ID 在 SNP ID 列表中，写入该行
         if snp_id_combined in snp_ids:
             writer.writerow(row)
+            extracted_count += 1  # 成功提取的行数增加
 
+# 记录结束时间
+end_time = time.time()
+elapsed_time = end_time - start_time  # 计算用时
+
+# 输出统计信息
+print(f"Extracted {extracted_count} SNPs from {total_snp_count} total SNPs.")
+print(f"Processing time: {elapsed_time:.2f} seconds.")
 print(f"Extracted lines saved to {output_file}")
