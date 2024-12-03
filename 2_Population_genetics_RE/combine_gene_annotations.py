@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import csv
 
 # 读取nr注释和annovar注释文件
