@@ -94,6 +94,13 @@ diamond blastp --db /public1/guop/liujj/liujj/workspace/Annovar/nr/nr.db.dmnd \
 ## Reported 198346 pairwise alignments, 198346 HSPs.
 ## 40044 queries aligned.
 
+python unique_gene_annotations.py
+## awk '{print $1}'  LYG.longest.pep.uniq.Nr.annotations   | sort | uniq | wc -l
+## 40044
+awk 'BEGIN {OFS="\t"} {gsub(/^rna-/, "", $1); gsub(/\..*/, "", $1); print $0}' LYG.longest.pep.uniq.Nr.annotations > LYG.longest.pep.uniq.Nr.modified.annotations
+
+
+
 # diamond 默认设置下输出表格格式的结果。结果分12列，其结果信息和 BLAST 默认设置-outfmt 6输出的格式完全一致。
 #  1. qseqid     query序列ID 
 #  2. sseqid     subject序列ID
