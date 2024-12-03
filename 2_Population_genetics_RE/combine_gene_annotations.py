@@ -3,7 +3,7 @@
 import csv
 
 # 读取nr注释和annovar注释文件
-nr_annotations_file = "LYG.longest.pep.uniq.Nr.modified.annotations/LYG.longest.pep.uniq.Nr.modified.annotations"
+nr_annotations_file = "/home/vensin/workspace/nr.annotations/LYG.longest.pep.uniq.Nr.modified.annotations"
 annovar_annotations_file = "/home/vensin/workspace/Annovar/LYG.hic.snp.annovar.variant_function"
 output_file = "/home/vensin/workspace/Annovar/result/merged_output.txt"
 
