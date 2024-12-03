@@ -47,8 +47,8 @@ def filter_annotations(file_path, output_path):
         f.writelines(result)
 
 # 调用函数，传入输入文件路径和输出文件路径
-input_file = 'LYG.genomic.pep.Nr5.annotations'  # 输入文件路径
-output_file = 'LYG.genomic.pep.Nr5.uniq.annotations'  # 输出文件路径
+input_file = '/home/vensin/workspace/nr.annotations/LYG.longest.pep.Nr.annotations'  # 输入文件路径
+output_file = '/home/vensin/workspace/nr.annotations/LYG.longest.pep.uniq.Nr.annotations'  # 输出文件路径
 
 filter_annotations(input_file, output_file)
 
