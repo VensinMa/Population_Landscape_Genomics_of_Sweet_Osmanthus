@@ -81,7 +81,7 @@ diamond blastp --db /home/vensin/workspace/nr.annotations/nr.db.dmnd --query /ho
     
 diamond blastp --db /public1/guop/liujj/liujj/workspace/Annovar/nr/nr.db.dmnd \
     --query /public1/guop/liujj/liujj/workspace/Annovar/nr/genome/LYG.longest.pep.fasta \
-    --out /public1/guop/liujj/liujj/workspace/Annovar/nr/genome/LYG.longest.pep.Nr.annotations \
+    --out   \
     --outfmt 6 qseqid sseqid pident evalue bitscore qlen slen length mismatch gapopen qstart qend sstart send stitle \
     --sensitive --max-target-seqs 5 --evalue 1e-5 --index-chunks 1 --threads 64
 
@@ -90,7 +90,10 @@ diamond blastp --db /public1/guop/liujj/liujj/workspace/Annovar/nr/nr.db.dmnd \
     --out /public1/guop/liujj/liujj/workspace/Annovar/nr/genome/LYG.longest.pep.Nr.annotations \
     --outfmt 6 qseqid sseqid pident evalue bitscore qlen slen length mismatch gapopen qstart qend sstart send stitle \
     --sensitive --max-target-seqs 5 --evalue 1e-5 --index-chunks 1 --threads 64
-    
+## Total time = 69305.8s
+## Reported 198346 pairwise alignments, 198346 HSPs.
+## 40044 queries aligned.
+
 # diamond 默认设置下输出表格格式的结果。结果分12列，其结果信息和 BLAST 默认设置-outfmt 6输出的格式完全一致。
 #  1. qseqid     query序列ID 
 #  2. sseqid     subject序列ID
