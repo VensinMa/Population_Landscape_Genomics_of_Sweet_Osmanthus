@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import csv
+import time
+
+# 记录脚本开始时间
+start_time = time.time()
 
 # 读取nr注释和annovar注释文件
 nr_annotations_file = "/home/vensin/workspace/nr.annotations/LYG.longest.pep.uniq.Nr.modified.annotations"
@@ -15,23 +19,30 @@ with open(nr_annotations_file, "r") as af:
         gene_id = row[0]  # 基因ID在第一列
         annotations_data[gene_id] = row
 
-# 读取第二个文件并提取基因ID，合并相关信息
-with open(annovar_annotations_file, "r") as vf, open(output_file, "w") as out:
-    reader = csv.reader(vf, delimiter='\t')
+# 使用生成器来按行处理文件，避免一次性加载整个文件
+def process_variant_file(file_path):
+    with open(file_path, "r") as vf:
+        reader = csv.reader(vf, delimiter='\t')
+        for row in reader:
+            description = row[1]  # 基因ID在第二列的描述字段
+            if "gene-" in description:
+                gene_id = description.split("gene-")[1].split("(")[0]  # 提取基因ID
+                yield gene_id, row
+
+# 打开输出文件
+with open(output_file, "w") as out:
     writer = csv.writer(out, delimiter='\t')
     
-    for row in reader:
-        # 假设基因ID嵌入在描述字段中，如 gene-LYG000001，位于第二列
-        description = row[1]  
-        # 提取基因ID
-        if "gene-" in description:
-            gene_id = description.split("gene-")[1].split("(")[0]  # 提取基因ID
-        else:
-            continue
-        
-        # 如果基因ID在第一个文件中，进行合并
+    # 处理annovar注释文件，查找匹配的基因ID并合并数据
+    for gene_id, row in process_variant_file(annovar_annotations_file):
         if gene_id in annotations_data:
             merged_row = annotations_data[gene_id] + row
             writer.writerow(merged_row)
 
-print(f"合并完成，结果保存到 {output_file}")
+# 记录脚本结束时间
+end_time = time.time()
+
+# 计算脚本运行的总时间
+elapsed_time = end_time - start_time
+print(f"Merge completed, results saved to {output_file}")
+print(f"Script execution time: {elapsed_time:.2f} seconds")
