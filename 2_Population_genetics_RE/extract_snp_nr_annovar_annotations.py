@@ -5,7 +5,7 @@ import csv
 # SNP ID 文件和目标文件路径
 snpid_file = "/home/vensin/workspace/Annovar/result/1766snps.id"
 annovar_file = "/home/vensin/workspace/Annovar/result/LYG.hic.snp.nr_annovar.ann"
-output_file = "/home/vensin/workspace/Annovar/result/extracted_snp_lines.txt"
+output_file = "/home/vensin/workspace/Annovar/result/1766_Adaptive_SNP_nr_annovar.ann"
 
 # 读取 SNP IDs 到一个集合中，并且转换为类似 'Superscaffold1:514882' 格式
 with open(snpid_file, "r") as snp_file:
