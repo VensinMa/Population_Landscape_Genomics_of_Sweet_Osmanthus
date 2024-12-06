@@ -71,6 +71,15 @@ plink --file 194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned.plink
     --recodeA --allow-extra-chr  \
     --out 194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned.plink
 
+## 使用plink将vcf转为raw
+plink --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
+      --recode --allow-extra-chr \
+      --out  194samples_snp.nounanchor.renamed.filtered.vcftools.plink
+plink --file 194samples_snp.nounanchor.renamed.filtered.vcftools.plink \
+    --recodeA --allow-extra-chr  \
+    --out 194samples_snp.nounanchor.renamed.filtered.vcftools.plink.recodeA
+
+
 
 ####################################  提取基因型环境关联分析中的适应性位点  ########################################
 cd /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/194sample
