@@ -22,18 +22,18 @@ getwd()
 setwd("C:/Rstudio/RStudio/Workspace/GEA_2024/lfmm")
 getwd()
 
-ped2lfmm("194samples_snp.nounanchor.renamed.filtered.vcftools.plink.ped", 
-         "194samples_filtered.nounanchor.lfmm", force = TRUE)
+#ped2lfmm("194samples_snp.nounanchor.renamed.filtered.vcftools.plink.ped", 
+ #        "194samples_filtered.nounanchor.lfmm", force = TRUE)
 ######################  读入解释变量与响应变量  ###############################
 ## X Y 数据中样品顺序（行）要一致
 ## 读取环境数据 （解释变量）
-X = read.csv("C:/Rstudio/RStudio/Workspace/GEA_2024/extracted_data/Climate_current_194samples.csv", 
+X = read.csv("/public1/guop/mawx/R/workspace/GEA_2024/lfmm/Climate_current_194samples.csv", 
              header = T, row.names = 1)
 X = X[,3:25]
 str(X)
 ## 读取基因型数据（响应变量）
-Y = fread("C:/Rstudio/RStudio/Workspace/GEA_2024/lfmm/194samples_filtered.nounanchor.lfmm")
-K = 2  # admixture确定的最佳分群数
+Y = fread("C:/Rstudio/RStudio/Workspace/GEA_2024/lfmm/194samples_snp.nounanchor.renamed.filtered.vcftools.plink.lfmm")
+K = 4  # admixture确定的最佳分群数
 
 mod.lfmm <- lfmm::lfmm_ridge(Y = Y,
                              X = X,
@@ -50,8 +50,8 @@ calibrated_pvalues <- pv$calibrated.pvalue
 
 pv$gif
 
-# 读取 SNP 标识符文件
-snp_ids <- fread("C:/Users/mawenxin/Downloads/Linux_down/194samples_snp.nounanchor.renamed.filtered.vcftools.LD.pruned.plink.snp.id", 
+# 读取 SNP 标识符文件   awk '{print $1":"$4}' 194samples_snp.nounanchor.renamed.filtered.vcftools.plink.map > 194samples_snp.nounanchor.renamed.filtered.vcftools.plink.ID
+snp_ids <- fread("/public1/guop/mawx/R/workspace/GEA_2024/lfmm/194samples_snp.nounanchor.renamed.filtered.vcftools.plink.ID", 
                  header = FALSE)
 
 # 检查 p 值矩阵的维度是否与 SNPid 文件一致
