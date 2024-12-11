@@ -43,6 +43,9 @@ pv <- lfmm::lfmm_test(Y = Y, X = X,
                       lfmm = mod.lfmm,
                       calibrate = "gif")
 
+# 保存与加载 pv
+saveRDS(pv, file = "pv_results.rds")
+pv <- readRDS("pv_results.rds")
 ##################### 原始p/校正p 值 的提取与保存 ##############################
 # 读取校正后的pv$calibrated.pvalue 作为p值
 raw_pvalues <- pv$pvalue
