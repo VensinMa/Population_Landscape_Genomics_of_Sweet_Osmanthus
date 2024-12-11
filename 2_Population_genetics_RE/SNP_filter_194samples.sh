@@ -78,7 +78,7 @@ plink --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
 plink --file 194samples_snp.nounanchor.renamed.filtered.vcftools.plink \
     --recodeA --allow-extra-chr  \
     --out 194samples_snp.nounanchor.renamed.filtered.vcftools.plink.recodeA
-
+sed '1d; s/NA/9/g' 194samples_snp.nounanchor.renamed.filtered.vcftools.plink.recodeA.raw | awk '{$1=$2=$3=$4=$5=$6=""; print $0}' > 194samples_snp.nounanchor.renamed.filtered.vcftools.plink.lfmm
 
 
 ####################################  提取基因型环境关联分析中的适应性位点  ########################################
