@@ -31,8 +31,8 @@ X = read.csv("/public1/guop/mawx/R/workspace/GEA_2024/lfmm/Climate_current_194sa
              header = T, row.names = 1)
 X = X[,3:25]
 str(X)
-## 读取基因型数据（响应变量）
-Y = fread("C:/Rstudio/RStudio/Workspace/GEA_2024/lfmm/194samples_snp.nounanchor.renamed.filtered.vcftools.plink.lfmm")
+## 读取基因型数据（响应变量）sed '1d; s/NA/9/g' 194samples_snp.nounanchor.renamed.filtered.vcftools.plink.recodeA.raw | awk '{ $1=$2=$3=$4=$5=$6=""; print substr($0, index($0,$7)) }' > 194samples_snp.nounanchor.renamed.filtered.vcftools.plink.lfmm
+Y = fread("/public1/guop/mawx/R/workspace/GEA_2024/lfmm/194samples_snp.nounanchor.renamed.filtered.vcftools.plink.lfmm")
 K = 4  # admixture确定的最佳分群数
 
 mod.lfmm <- lfmm::lfmm_ridge(Y = Y,
