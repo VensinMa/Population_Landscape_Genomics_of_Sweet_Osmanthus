@@ -37,6 +37,10 @@ vcftools --vcf /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_v
 ## After filtering, kept 11452745 out of a possible 141490137 Sites
 ## Run Time = 30470.00 seconds
 
+vcftools --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
+    --max-missing 0.8 --recode --recode-INFO-all \
+    --out 194samples_snp.nounanchor.renamed.filtered.nomissing.vcftools
+
 ####################################  LD 过滤 --indep-pairwise 50 5 0.2  ########################################
 cd /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/194sample
 plink --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
