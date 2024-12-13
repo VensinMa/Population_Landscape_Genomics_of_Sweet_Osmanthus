@@ -40,6 +40,17 @@ vcftools --vcf /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_v
 vcftools --vcf 194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf \
     --max-missing 0.8 --recode --recode-INFO-all \
     --out 194samples_snp.nounanchor.renamed.filtered.nomissing.vcftools
+plink --vcf 194samples_snp.nounanchor.renamed.filtered.missing0.05.vcftools.recode.vcf \ 
+        --recode --allow-extra-chr \ 
+        --out  194samples.filtered.missing0.05.plink
+
+plink --file 194samples.filtered.missing0.05.plink \
+        --recodeA --allow-extra-chr  \ 
+        --out 194samples.filtered.missing0.05.plink.recodeA
+
+sed '1d; s/NA/9/g' 194samples.filtered.missing0.05.plink.recodeA.raw | \
+awk '{ $1=$2=$3=$4=$5=$6=""; print substr($0, index($0,$7)) }' > 194samples.filtered.missing0.05.plink.recodeA.lfmm
+
 
 ####################################  LD 过滤 --indep-pairwise 50 5 0.2  ########################################
 cd /public1/guop/mawx/workspace/wild_snpcalling/4.gatk_gvcf/merged_vcf/194sample
