@@ -124,5 +124,13 @@ vcftools --vcf /home/vensin/workspace/194samples/194samples_snp.nounanchor.renam
 ## After filtering, kept 9674 out of a possible 11452745 Sites
 ## Run Time = 105.00 seconds
 
+vcftools --vcf /home/vensin/workspace/194samples/194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf  \
+    --positions /home/vensin/workspace/adaptive_core_snps/350125_adaptive_snps.id \
+    --recode --recode-INFO-all \
+    --out 194samples_350125_adaptive_snps
+## After filtering, kept 194 out of 194 Individuals
+## Outputting VCF file...
+## After filtering, kept 350125 out of a possible 11452745 Sites
+## Run Time = 147.00 seconds
 
 
