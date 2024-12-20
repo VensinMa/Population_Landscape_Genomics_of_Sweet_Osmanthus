@@ -124,6 +124,19 @@ vcftools --vcf /home/vensin/workspace/194samples/194samples_snp.nounanchor.renam
 ## After filtering, kept 9674 out of a possible 11452745 Sites
 ## Run Time = 105.00 seconds
 
+plink --vcf /home/vensin/workspace/adaptive_core_snps/194samples_9674_adaptive_snps.recode.vcf \
+      --recode --allow-extra-chr \
+      --out  194samples_9674_adaptive_snps.plink
+plink --file 194samples_9674_adaptive_snps.plink \
+    --recodeA --allow-extra-chr  \
+    --out 194samples_9674_adaptive_snps.plink.recodeA
+    
+sed '1d; s/NA/9/g' 194samples_9674_adaptive_snps.plink.recodeA.raw | \
+awk '{ $1=$2=$3=$4=$5=$6=""; print substr($0, index($0,$7)) }' > 194samples_9674_adaptive_snps.plink.recodeA.lfmm
+
+
+
+
 vcftools --vcf /home/vensin/workspace/194samples/194samples_snp.nounanchor.renamed.filtered.vcftools.recode.vcf  \
     --positions /home/vensin/workspace/adaptive_core_snps/350125_adaptive_snps.id \
     --recode --recode-INFO-all \
