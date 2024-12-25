@@ -29,7 +29,7 @@ while read group; do
         # 确认BED文件已生成
         if [ $? -eq 0 ]; then
             # 计算频率
-            plink --bfile "${output_dir}/${group}_maf" --freq --out "${output_dir}/${group}_population_maf"
+            plink --bfile "${output_dir}/${group}_maf" --allow-extra-chr --freq --out "${output_dir}/${group}_population_maf"
         else
             echo "生成BED文件失败：$group"
         fi
