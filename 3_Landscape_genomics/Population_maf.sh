@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 输入文件和目录
-vcf_file="224.filtered.LD.pruned.noContig.recode.vcf"
-pop_file="224sample.pop"
+vcf_file="/home/vensin/workspace/Population_maf/194samples_9674_adaptive_snps.recode.vcf"
+pop_file="/home/vensin/workspace/Population_maf/194sample.pop"
 
 # 输出目录
 output_dir="population_maf_results"
@@ -40,4 +40,3 @@ done < "${temp_dir}/unique_groups.txt"
 wait
 
 echo "所有群体处理完毕。"
-
