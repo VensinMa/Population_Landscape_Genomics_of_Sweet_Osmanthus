@@ -11,12 +11,19 @@ library(dplyr)
 library(tidyverse)
 
 setwd("C:/Rstudio/RStudio/Workspace/gradientForest_2024")
+#setwd("/public1/guop/mawx/workspace/R/gradientForest_2024")
 getwd() # [1] "C:/Rstudio/RStudio/Workspace/gradientForest_2024"
 # 设置输入文件、输出结果和图片路径
 result_dir <- "final_result"
 picture_dir <- "final_picture"
+Local_GO_dir <- "Local_Genetic_Offset"
+Forward_GO_dir <- "Forward_Genetic_Offset"
+Reverse_GO_dir <- "Reverse_Genetic_Offset"
 if (!dir.exists(result_dir)) dir.create(result_dir)
 if (!dir.exists(picture_dir)) dir.create(picture_dir)
+if (!dir.exists(Local_GO_dir)) dir.create(Local_GO_dir)
+if (!dir.exists(Forward_GO_dir)) dir.create(Forward_GO_dir)
+if (!dir.exists(Reverse_GO_dir)) dir.create(Reverse_GO_dir)
 
 #############################  GradientForest 模型的构建 #########################################
 
@@ -55,7 +62,7 @@ gf.mod <- gradientForest(Envs_Maf,
 
 # 可以将保存 GF模型结果 gf.mod 保存到到一个文件 便于后续直接加载使用
 # save(gf.mod, file = "gf.mod.9674.RData")
-# load(file = "gf.mod.RData")
+# load(file = "gf.mod.9674.RData")
 
 ########################################### 绘图 ###################################################
 
@@ -284,13 +291,13 @@ Offset=cbind(All_future_xy_envs_cbind[, c("lon","lat")], genOffsetAll)
 # 修改列名为“offset”
 colnames(Offset)[3] <-"offset"
 
-if (!dir.exists("Genetic_Offset")) dir.create("Genetic_Offset")
+if (!dir.exists("Local_Genetic_Offset")) dir.create("Local_Genetic_Offset")
 
 # 保存遗传偏移结果为CSV文件，以便在ArcGIS中使用
-write.csv(Offset, "Genetic_Offset/ssp245_2041_2060_genetic_offset111111.csv", quote=F, row.names=F)
+write.csv(Offset, file = paste0(Local_GO_dir, "/Local_Genetic_Offset_ssp245_2041_2060.csv"), quote = FALSE, row.names = FALSE)
 
 
-#################  循环计算多个未来场景Genetic Offset 遗传偏移 #################   
+#################  循环计算多个未来场景 Local Genetic Offset 遗传偏移 #################   
 # 定义时期列表
 periods <- c("ssp245_2041-2060", "ssp245_2061-2080", "ssp245_2081-2100",
              "ssp585_2041-2060", "ssp585_2061-2080", "ssp585_2081-2100")
@@ -299,8 +306,8 @@ PredictEnvs = c("BIO2", "BIO8", "BIO9", "BIO10", "BIO12",
                 "BIO15", "BIO17", "BIO18", "SRAD", "SOC", "PHH2O")
 
 # 确保存放结果的目录存在
-if (!dir.exists("Final_Genetic_Offset")) {
-  dir.create("Final_Genetic_Offset")
+if (!dir.exists("Local_Genetic_Offset")) {
+  dir.create("Local_Genetic_Offset")
 }
 
 # 循环遍历每个时期
@@ -311,17 +318,16 @@ for (period in periods) {
   # 筛选数据，并删除包含NA的行
   future_data <- future_data[complete.cases(future_data[, PredictEnvs]), c("lon", "lat", PredictEnvs)]
   # 使用梯度森林模型进行环境梯度预测
-  future_data_pred <- cbind(future_data[,c("lon","lat")], 
+  future_data_pred <- cbind(future_data[,c("lon", "lat")], 
                             predict(gf.mod, future_data[, PredictEnvs]))
   # 计算遗传偏移
   genOffsetAll <- sqrt(rowSums((future_data_pred[, 3:ncol(future_data_pred)] - 
                                   All_grids[, 3:ncol(All_grids)])^2))
   # 合并遗传偏移值到坐标数据中
-  Offset <- cbind(future_data_pred[,c("lon","lat")], genOffsetAll)
-  colnames(Offset)[3] <-"offset"
-  # 保存遗传偏移结果为CSV文件
-  output_file_name <- paste0("Local_Genetic_Offset/", period, "_PredictEnvs.csv")
-  write.csv(Offset, output_file_name, quote=FALSE, row.names=FALSE)
+  Offset <- cbind(future_data[, c("lon", "lat")], genOffset = genOffsetAll)
+  # 将结果写入 CSV 文件
+  output_file <- paste0("Local_Genetic_Offset/Local_Genetic_Offset_", period, ".csv")
+  write.csv(Offset, file = output_file, quote = FALSE, row.names = FALSE)
 }
 
 ##############################################  FORWARD & REVERSE GENETIC OFFSET ##########################################
@@ -397,7 +403,8 @@ forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","g
 
 stopCluster(cl)
 forwardOffsetGF <- do.call(rbind, forwardOffsetGF)
-write.csv(forwardOffsetGF, paste0("./future_GF_ssp245_2041-2060_ForwardOffsetGF.csv"), row.names=FALSE)
+write.csv(forwardOffsetGF, "Forward_Genetic_Offset/Forward_Genetic_Offset_ssp245_2041_2060.csv", row.names = FALSE)
+
 
 ######################### 计算正向遗传偏移 ForwardOffset  限制距离 50KM ######################## 
 # 读取未来气候数据
