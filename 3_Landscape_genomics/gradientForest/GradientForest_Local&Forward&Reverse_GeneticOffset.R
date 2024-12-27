@@ -9,6 +9,17 @@ library(data.table)
 library(gdm)
 library(dplyr)
 library(tidyverse)
+require(raster)
+library(fields)
+require(geosphere)
+require(gdm)
+require(foreach)
+require(parallel)
+require(doParallel)
+require(gradientForest)
+require(fields)
+library(sf)
+library(ggplot2)
 
 setwd("C:/Rstudio/RStudio/Workspace/gradientForest_2024")
 #setwd("/public1/guop/mawx/workspace/R/gradientForest_2024")
@@ -223,32 +234,86 @@ scal <- 60
 xrng <- range(All_PCs$x[, 1], All_PCs$rotation[, 1]/scal) * 1.1
 yrng <- range(All_PCs$x[, 2], All_PCs$rotation[, 2]/scal) * 1.1
 
-# 设置绘图输出到文件，创建空的PDF文件
-pdf(file = paste0(picture_dir, "/All_PCplot02.pdf"), width = 8, height = 7)
-# 绘制主成分分析的PC1和PC2
-plot((All_PCs$x[, 1:2]), xlim = xrng, ylim = yrng, pch = ".", cex = 7, 
-     col = rgb(r, g, b, max = 255), asp = 1)
-# 添加主成分分析的方向向量
-arrows(rep(0, lv), rep(0, lv), All_PCs$rotation[, 1]/scal, All_PCs$rotation[, 2]/scal, 
-       length = 0.1)
-# 在图中添加环境因子的标签
-jit <- 0.0015
-text(All_PCs$rotation[, 1]/scal + jit*sign(All_PCs$rotation[, 1]), 
-     All_PCs$rotation[, 2]/scal + jit*sign(All_PCs$rotation[, 2]), 
-     labels = vec)
-# 结束并保存绘图
+############################  PC散点图  #################################
+library(ggplot2)
+
+# 准备主成分得分数据 (PC1 和 PC2)
+pc_scores <- as.data.frame(All_PCs$x[, 1:2])
+colnames(pc_scores) <- c("PC1", "PC2")
+
+# 添加颜色数据 (RGB)
+pc_scores$R <- r
+pc_scores$G <- g
+pc_scores$B <- b
+pc_scores$Color <- rgb(pc_scores$R, pc_scores$G, pc_scores$B, maxColorValue = 255)
+
+# 准备方向向量数据
+arrows_data <- as.data.frame(All_PCs$rotation[, 1:2])
+colnames(arrows_data) <- c("ArrowX", "ArrowY")
+arrows_data$Var <- vec  # 添加环境因子名称
+arrows_data[, c("ArrowX", "ArrowY")] <- arrows_data[, c("ArrowX", "ArrowY")] / scal # 对数据框的数值列进行缩放
+
+# 绘制主成分得分散点图
+pdf(file = paste0(picture_dir, "/PCplot_PC1_PC2.pdf"), width = 7.5, height = 5.5)
+ggplot() +
+  # 绘制散点图
+  geom_point(data = pc_scores, aes(x = PC1, y = PC2, color = Color), size = 1.2, shape = 16) +
+  scale_color_identity() +  # 直接使用提供的颜色
+  # 添加方向向量
+  geom_segment(data = arrows_data, aes(x = 0, y = 0, xend = ArrowX, yend = ArrowY),
+               arrow = arrow(length = unit(0.2, "cm")), color = "black", linewidth = 0.4) +  # 使用 linewidth 替换 size
+  # 添加环境因子标签
+  geom_text(data = arrows_data, aes(x = ArrowX + jit * sign(ArrowX), 
+                                    y = ArrowY + jit * sign(ArrowY), 
+                                    label = Var),
+            size = 4, color = "black") +
+  coord_fixed(ratio = 1) +  # 确保 x 和 y 轴比例一致
+  theme_bw() + # 简洁的主题
+  # 调整轴标签字体和颜色
+  theme(
+    axis.title.x = element_text(size = 16, color = "black"),  # x轴标签字体大小和颜色
+    axis.title.y = element_text(size = 16, color = "black"), # y轴标签字体大小和颜色
+    axis.text = element_text(size = 14, color = "black"),    # x和y轴刻度文字大小
+    panel.grid.major = element_blank(),  # 去掉主网格线
+    panel.grid.minor = element_blank()) +  # 去掉次网格线
+  labs(x = "Principal Component 1 (PC1)", 
+       y = "Principal Component 2 (PC2)", 
+       title = NULL) 
 dev.off()
 
-# 设置绘图输出到文件，创建空的PDF文件
-pdf(file = paste0(picture_dir, "All_PCplot_Map2.pdf"), width = 8, height = 7)
-# 使用梯度森林模型进行预测
-green.pred <- predict(gf.mod, All_current_xy_envs[, PredictEnvs])
-# 绘制地图
-plot(Trns_grid[, c("lon", "lat")], pch = 15, cex = 1, asp = 1, 
-     col = rgb(r, g, b, max = 255), main = "SNP turnover in O. fragrans")
-# 结束并保存绘图
+############################  PC地图   #################################
+library(ggplot2)
+
+# 创建包含经纬度和颜色的绘图数据框
+map_data <- as.data.frame(Trns_grid[, c("lon", "lat")])  # 提取经纬度数据
+colnames(map_data) <- c("Longitude", "Latitude")
+map_data$Color <- rgb(r, g, b, max = 255)  # 将颜色信息加入数据框
+
+# 绘制主成分地图
+pdf(file = paste0(picture_dir, "/PCplot_MAP.pdf"), width = 7.5, height = 5.5)
+ggplot(map_data, aes(x = Longitude, y = Latitude)) +
+  # 绘制点图
+  geom_point(aes(color = Color), size = 1e-10) +  # size 控制点的大小
+  scale_color_identity() +  # 直接使用 RGB 颜色
+  coord_fixed(ratio = 1) +  # 确保经纬度比例一致
+  scale_y_continuous(limits = c(19, 35)) +  # 设置 Y 轴范围，
+  theme_bw() +  # 使用简洁的主题
+  # 设置标题和轴标签
+  labs(
+    title = NULL,  # 添加主标题
+    x = "Longitude", 
+    y = "Latitude") +
+  # 调整主题样式
+  theme(
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),  # 标题居中加粗
+    axis.title = element_text(size = 16, color = "black"),  # 坐标轴 标签字体大小颜色
+    axis.text = element_text(size = 14, color = "black"),  # 坐标轴 刻度字体大小颜色
+    panel.grid.major = element_blank(),  # 去掉主网格线
+    panel.grid.minor = element_blank(),  # 去掉次网格线
+    panel.background = element_blank())  # 移除背景填充
 dev.off()
 
+##########################  保存PC颜色信息 ####################################
 
 # 将RGB颜色转换为ArcGIS使用的格式
 greencols=rgb(r,g,b, max=255)
@@ -298,6 +363,19 @@ write.csv(Offset, file = paste0(Local_GO_dir, "/Local_Genetic_Offset_ssp245_2041
 
 
 #################  循环计算多个未来场景 Local Genetic Offset 遗传偏移 #################   
+# 从 CSV 文件中读取数据，该文件包含了研究区域的坐标点和气候数据
+All_current_xy_envs = fread("extracted_future_data/future_climate_current_O.fragrans.csv")
+All_current_xy_envs = as.data.frame(All_current_xy_envs)
+# 从 All_current_xy_envs 数据框中筛选出指定列和第一列、第二列，并且只保留这些列中不包含缺失值的行
+All_current_xy_envs = All_current_xy_envs[complete.cases(All_current_xy_envs[, c("lon", "lat", PredictEnvs)]), 
+                                          c("lon", "lat", PredictEnvs)]
+head(All_current_xy_envs)
+dim(All_current_xy_envs)
+
+# 将 All_current_xy_envs 数据与梯度森林模型 gf.mod 计算，量化环境梯度
+All_grids = cbind(All_current_xy_envs[, c("lon", "lat")], 
+                  predict(gf.mod, All_current_xy_envs[, PredictEnvs]))
+
 # 定义时期列表
 periods <- c("ssp245_2041-2060", "ssp245_2061-2080", "ssp245_2081-2100",
              "ssp585_2041-2060", "ssp585_2061-2080", "ssp585_2081-2100")
@@ -403,8 +481,7 @@ forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","g
 
 stopCluster(cl)
 forwardOffsetGF <- do.call(rbind, forwardOffsetGF)
-write.csv(forwardOffsetGF, "Forward_Genetic_Offset/Forward_Genetic_Offset_ssp245_2041_2060.csv", row.names = FALSE)
-
+write.csv(forwardOffsetGF, file = paste0(Forward_GO_dir, "/Forward_Genetic_Offset_ssp245_2041_2060.csv"), row.names = FALSE)
 
 ######################### 计算正向遗传偏移 ForwardOffset  限制距离 50KM ######################## 
 # 读取未来气候数据
