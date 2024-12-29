@@ -21,15 +21,14 @@ library(fields)
 library(ggplot2)
 library(sf)
 
-setwd("C:/Rstudio/RStudio/Workspace/gradientForest_2024")
-#setwd("/public1/guop/mawx/workspace/R/gradientForest_2024")
+setwd("/home/vensin/Rstudio/RStudio/Workspace/gradientForest_2024_2.5m")
 getwd() # [1] "C:/Rstudio/RStudio/Workspace/gradientForest_2024"
 # 设置输入文件、输出结果和图片路径
 result_dir <- "final_result"
 picture_dir <- "final_picture"
-Local_GO_dir <- "Local_Genetic_Offset"
-Forward_GO_dir <- "Forward_Genetic_Offset"
-Reverse_GO_dir <- "Reverse_Genetic_Offset"
+Local_GO_dir <- "Local_Genetic_Offset_2.5m"
+Forward_GO_dir <- "Forward_Genetic_Offset_2.5m"
+Reverse_GO_dir <- "Reverse_Genetic_Offset_2.5m"
 if (!dir.exists(result_dir)) dir.create(result_dir)
 if (!dir.exists(picture_dir)) dir.create(picture_dir)
 if (!dir.exists(Local_GO_dir)) dir.create(Local_GO_dir)
@@ -46,7 +45,7 @@ rownames(PopsMaf) <- PopsMaf[[1]] # 将第一列作为行名
 PopsMaf <- PopsMaf[,-1] # 移除已经设置为行名的列
 PopsMaf <- PopsMaf[order(rownames(PopsMaf)), ]
 PopsMaf <- PopsMaf %>%
-  select(where(~ !any(is.na(.))))  # 去除缺失位点
+  dplyr::select(where(~ !any(is.na(.))))  # 去除缺失位点
 dim(PopsMaf)
 
 # 选择最终保留的用于构建GF模型的预测环境因子
@@ -72,14 +71,14 @@ gf.mod <- gradientForest(Envs_Maf,
                          corr.threshold = 0.50,  nbin = 1001, check.names = FALSE)
 
 # 可以将保存 GF模型结果 gf.mod 保存到到一个文件 便于后续直接加载使用
-# save(gf.mod, file = "gf.mod.9674.RData")
-# load(file = "gf.mod.9674.RData")
+# save(gf.mod, file = "gf.mod.9538.RData")
+# load(file = "gf.mod.9538.RData")
 
 ########################################### 绘图 ###################################################
 
 # 绘制预测变量重要性排序图
 #生成空的PDF文件 #生成重要值排序 #保存生成的结果
-pdf(file = paste0(picture_dir, "/gf.mod.Importance.pdf"), width = 8, height = 8) 
+pdf(file = paste0(picture_dir, "/gf.mod.Importance.pdf"), width = 8, height = 4) 
 plot(gf.mod, plot.type = "Overall.Importance", 
      col = c(rep("grey",8), MaizePal::maize_pal("HighlandMAGIC", 3)),
      las = 2, cex.names = 0.8) 
@@ -96,20 +95,18 @@ write.table(gf.mod$res, file = paste0(result_dir, "/gf.mod.res.txt"))
 
 # splits density plots 分割密度图plot.gradientForest
 PredictEnvs # [1] "BIO2"  "BIO8"  "BIO9"  "BIO10" "BIO12" "BIO15" "BIO17" "BIO18" "SRAD"  "SOC"   "PHH2O"
-pdf(file = paste0(picture_dir, "/splits.density.plots_BIO17.pdf"), 
-    width = 10, height = 7)
-plot(gf.mod, plot.type= "S", imp.vars = "BIO18", leg.posn = "topright", 
+pdf(file = paste0(picture_dir, "/splits.density.plots_PHH2O.pdf"), 
+    width = 8, height = 6)
+plot(gf.mod, plot.type= "S", imp.vars = "PHH2O", leg.posn = "topleft", 
      cex.legend = 1.5, cex.axis = 1.2, cex.lab = 1.5, line.ylab = 0.2, 
      par.args = list(mgp = c(2, 0.5, 0), mar = c(3,2,0.1,0.5)))
 dev.off()
-summary(gf.mod$X$BIO17)
-sum(is.na(gf.mod$X$BIO17))
 
 hist(gf.mod$X$BIO17, main="Histogram of BIO17", xlab="BIO17", breaks=20)
 # 循环遍历 PredictEnvs 中的每个变量
 for (env_var in PredictEnvs) {
   pdf(file = paste0(picture_dir, "/splits.density.plots_", env_var, ".pdf"), 
-      width = 10, height = 7)
+      width = 8, height = 6)
   plot(gf.mod, plot.type = "S", imp.vars = env_var, leg.posn = "topright", 
        cex.legend = 1.5, cex.axis = 1.2, cex.lab = 1.5, line.ylab = 0.2, 
        par.args = list(mgp = c(2, 0.5, 0), mar = c(3, 2, 0.1, 0.5)))
@@ -171,10 +168,8 @@ plot(gf.mod, plot.type = "Performance", show.names = T, horizontal = T,
                      mar = c(4, 7, 2, 0.5), omi = c(0, 0, 0.1, 0.1)))
 dev.off()
 
-###########################################################################
-
 # 从 CSV 文件中读取数据，该文件包含了研究区域的坐标点和气候数据
-All_current_xy_envs = fread("extracted_future_data/future_climate_current_O.fragrans.csv")
+All_current_xy_envs = fread("extracted_future_data_2.5m/future_climate_current_O.fragrans.csv")
 All_current_xy_envs = as.data.frame(All_current_xy_envs)
 # 从 All_current_xy_envs 数据框中筛选出指定列和第一列、第二列，并且只保留这些列中不包含缺失值的行
 All_current_xy_envs = All_current_xy_envs[complete.cases(All_current_xy_envs[, c("lon", "lat", PredictEnvs)]), 
@@ -252,6 +247,7 @@ arrows_data <- as.data.frame(All_PCs$rotation[, 1:2])
 colnames(arrows_data) <- c("ArrowX", "ArrowY")
 arrows_data$Var <- vec  # 添加环境因子名称
 arrows_data[, c("ArrowX", "ArrowY")] <- arrows_data[, c("ArrowX", "ArrowY")] / scal # 对数据框的数值列进行缩放
+jit = 0.002
 
 # 绘制主成分得分散点图
 pdf(file = paste0(picture_dir, "/PCplot_PC1_PC2.pdf"), width = 7.5, height = 5.5)
@@ -293,7 +289,7 @@ map_data$Color <- rgb(r, g, b, max = 255)  # 将颜色信息加入数据框
 pdf(file = paste0(picture_dir, "/PCplot_MAP.pdf"), width = 7.5, height = 5.5)
 ggplot(map_data, aes(x = Longitude, y = Latitude)) +
   # 绘制点图
-  geom_point(aes(color = Color), size = 1e-10) +  # size 控制点的大小
+  geom_point(aes(color = Color), size = 0.0001) +  # size 控制点的大小
   scale_color_identity() +  # 直接使用 RGB 颜色
   coord_fixed(ratio = 1) +  # 确保经纬度比例一致
   scale_y_continuous(limits = c(19, 35)) +  # 设置 Y 轴范围，
@@ -335,7 +331,7 @@ All_grids = cbind(All_current_xy_envs[, c("lon", "lat")],
 ##################### 计算未来场景遗传偏移 LOCAL GENETIC OFFSET #####################
 
 # 读取未来气候数据
-All_future_xy_envs <- read.csv("extracted_future_data/future_climate_ssp245_2041-2060_O.fragrans.csv")
+All_future_xy_envs <- read.csv("extracted_future_data_2.5m/future_climate_ssp245_2041-2060_O.fragrans.csv")
 
 # 直接使用逻辑向量来筛选数据，并删除包含NA的行
 All_future_xy_envs <- All_future_xy_envs[complete.cases(All_future_xy_envs[, PredictEnvs]), 
@@ -364,7 +360,7 @@ write.csv(Offset, file = paste0(Local_GO_dir, "/Local_Genetic_Offset_ssp245_2041
 
 #################  循环计算多个未来场景 Local Genetic Offset 遗传偏移 #################   
 # 从 CSV 文件中读取数据，该文件包含了研究区域的坐标点和气候数据
-All_current_xy_envs = fread("extracted_future_data/future_climate_current_O.fragrans.csv")
+All_current_xy_envs = fread("extracted_future_data_2.5m/future_climate_current_O.fragrans.csv")
 All_current_xy_envs = as.data.frame(All_current_xy_envs)
 # 从 All_current_xy_envs 数据框中筛选出指定列和第一列、第二列，并且只保留这些列中不包含缺失值的行
 All_current_xy_envs = All_current_xy_envs[complete.cases(All_current_xy_envs[, c("lon", "lat", PredictEnvs)]), 
@@ -384,14 +380,14 @@ PredictEnvs = c("BIO2", "BIO8", "BIO9", "BIO10", "BIO12",
                 "BIO15", "BIO17", "BIO18", "SRAD", "SOC", "PHH2O")
 
 # 确保存放结果的目录存在
-if (!dir.exists("Local_Genetic_Offset")) {
-  dir.create("Local_Genetic_Offset")
+if (!dir.exists("Local_Genetic_Offset_2.5m")) {
+  dir.create("Local_Genetic_Offset_2.5m")
 }
 
 # 循环遍历每个时期
 for (period in periods) {
   # 读取未来气候数据
-  file_name <- paste0("extracted_future_data/future_climate_", period, "_O.fragrans.csv")
+  file_name <- paste0("extracted_future_data_2.5m/future_climate_", period, "_O.fragrans.csv")
   future_data <- read.csv(file_name)
   # 筛选数据，并删除包含NA的行
   future_data <- future_data[complete.cases(future_data[, PredictEnvs]), c("lon", "lat", PredictEnvs)]
@@ -404,32 +400,34 @@ for (period in periods) {
   # 合并遗传偏移值到坐标数据中
   Offset <- cbind(future_data[, c("lon", "lat")], genOffset = genOffsetAll)
   # 将结果写入 CSV 文件
-  output_file <- paste0("Local_Genetic_Offset/Local_Genetic_Offset_", period, ".csv")
+  output_file <- paste0("Local_Genetic_Offset_2.5m/Local_Genetic_Offset_2.5m_", period, ".csv")
   write.csv(Offset, file = output_file, quote = FALSE, row.names = FALSE)
 }
 
-##############################################  FORWARD & REVERSE GENETIC OFFSET ##########################################
+##################### FORWARD & REVERSE GENETIC OFFSET ########################
 # 加载必需的包
-require(raster)
-require(geosphere)
-require(gdm)
-require(foreach)
-require(parallel)
-require(doParallel)
-require(gradientForest)
-require(fields)
+library(raster)
+library(geosphere)
+library(gdm)
+library(foreach)
+library(parallel)
+library(doParallel)
+library(gradientForest)
+library(fields)
 library(sf)
 
 # 选择预测所用的环境因子
 PredictEnvs = c("BIO2", "BIO8", "BIO9", "BIO10", "BIO12", 
                 "BIO15", "BIO17", "BIO18", "SRAD", "SOC", "PHH2O")
 
-
-######################### 计算正向遗传偏移 ForwardOffset  ######################## 
+################  多个未来场景 Forward Genetic Offset 遗传偏移  ################
 ###  FORWARD GENETIC OFFSET 
-
+# 定义时期列表
+periods <- c("ssp245_2041-2060", "ssp245_2061-2080", "ssp245_2081-2100",
+             "ssp585_2041-2060", "ssp585_2061-2080", "ssp585_2081-2100")
+period <- "ssp585_2081-2100"
 # 读取未来气候数据
-FutureEnvData <- read.csv("extracted_future_data/future_climate_ssp245_2041-2060_O.fragrans.csv")
+FutureEnvData <- read.csv(paste0("extracted_future_data_2.5m/future_climate_", period, "_O.fragrans.csv"))
 dim(FutureEnvData)
 n <- sum(is.na(FutureEnvData))
 n
@@ -445,7 +443,7 @@ FutureEnvDataGF <- data.frame(FutureEnvData[, c("lon", "lat")], predict(gf.mod, 
 
 # 使用梯度森林模型转换当前气候数据
 # 从 CSV 文件中读取数据，该文件包含了研究区域的坐标点和气候数据
-All_Current_XY_Envs = read.csv("extracted_future_data/future_climate_current_O.fragrans.csv")
+All_Current_XY_Envs = read.csv("extracted_future_data_2.5m/future_climate_current_O.fragrans.csv")
 All_Current_XY_Envs = All_Current_XY_Envs[complete.cases(All_Current_XY_Envs[, c("lon", "lat", PredictEnvs)]), 
                                           c("lon", "lat", PredictEnvs)]
 n <- sum(is.na(All_Current_XY_Envs))
@@ -458,7 +456,7 @@ popDatGF <- split(popDatGF, seq(nrow(popDatGF)))
 length(popDatGF)
 
 # 正向向遗传偏移计算
-cl <- makeCluster(60)
+cl <- makeCluster(18)
 registerDoParallel(cl)
 
 forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","geosphere")) %dopar%{
@@ -481,11 +479,16 @@ forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","g
 
 stopCluster(cl)
 forwardOffsetGF <- do.call(rbind, forwardOffsetGF)
-write.csv(forwardOffsetGF, file = paste0(Forward_GO_dir, "/Forward_Genetic_Offset_ssp245_2041_2060.csv"), row.names = FALSE)
+write.csv(forwardOffsetGF, file = paste0(Forward_GO_dir, "/Forward_Genetic_Offset_2.5m_", period, ".csv"), row.names = FALSE)
 
-######################### 计算正向遗传偏移 ForwardOffset  限制距离 50KM ######################## 
+
+############# 计算正向遗传偏移 ForwardOffset  限制距离 50KM ################ ##
+# 定义时期列表
+periods <- c("ssp245_2041-2060", "ssp245_2061-2080", "ssp245_2081-2100",
+             "ssp585_2041-2060", "ssp585_2061-2080", "ssp585_2081-2100")
+period <- "ssp245_2041-2060"
 # 读取未来气候数据
-FutureEnvData <- read.csv("extracted_future_data/future_climate_ssp245_2061-2080_O.fragrans.csv")
+FutureEnvData <- read.csv(paste0("extracted_future_data_2.5m/future_climate_", period, "_O.fragrans.csv"))
 dim(FutureEnvData)
 n <- sum(is.na(FutureEnvData))
 n
@@ -501,7 +504,7 @@ FutureEnvDataGF <- data.frame(FutureEnvData[, c("lon", "lat")], predict(gf.mod, 
 
 # 使用梯度森林模型转换当前气候数据
 # 从 CSV 文件中读取数据，该文件包含了研究区域的坐标点和气候数据
-All_Current_XY_Envs = read.csv("extracted_future_data/future_climate_current_O.fragrans.csv")
+All_Current_XY_Envs = read.csv("extracted_future_data_2.5m/future_climate_current_O.fragrans.csv")
 All_Current_XY_Envs = All_Current_XY_Envs[complete.cases(All_Current_XY_Envs[, c("lon", "lat", PredictEnvs)]), 
                                           c("lon", "lat", PredictEnvs)]
 n <- sum(is.na(All_Current_XY_Envs))
@@ -513,7 +516,7 @@ popDatGF <- data.frame(All_Current_XY_Envs[, c("lon", "lat")], predict(gf.mod, A
 popDatGF <- split(popDatGF, seq(nrow(popDatGF)))
 length(popDatGF)
 
-cl <- makeCluster(60)
+cl <- makeCluster(18)
 registerDoParallel(cl)
 forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","geosphere")) %dopar%{
   onePopGF <- popDatGF[[i]]
@@ -521,7 +524,7 @@ forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","g
   combinedDatGF["gfOffset"] <- c(rdist(onePopGF[,PredictEnvs], FutureEnvDataGF[,PredictEnvs]))
   coordGF <- onePopGF[,c("lon","lat")]
   combinedDatGF['dists']=distGeo(p1=coordGF, p2=combinedDatGF[,1:2])
-  combinedDatGF<-combinedDatGF[combinedDatGF['dists']<50000,]
+  combinedDatGF<-combinedDatGF[combinedDatGF['dists']<10000,]
   minCoordsGF <- combinedDatGF[which(combinedDatGF$gfOffset == min(combinedDatGF$gfOffset)),]
   minCoordsGF["dists"] <- distGeo(p1=coordGF, p2=minCoordsGF[,1:2])
   minCoordsGF <- minCoordsGF[which(minCoordsGF$dist == min(minCoordsGF$dists)),]
@@ -534,13 +537,17 @@ forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","g
   outGF <- c(x1=coordGF[[1]], y1=coordGF[[2]], local=offsetGF, forwardOffset=minValGF, predDist=toGoGF, bearing=bearGF,x2=minPtGF[[1]],y2=minPtGF[[2]])
 }
 stopCluster(cl)
-write.csv( do.call(rbind, forwardOffsetGF),paste0("./future_ssp245_2061-2080_50km_ForwardOffsetGF.csv"), row.names=FALSE)
-
+forwardOffsetGF <- do.call(rbind, forwardOffsetGF)
+write.csv(forwardOffsetGF, row.names = FALSE, 
+          paste0(Forward_GO_dir, "/Forward_Genetic_Offset_2.5m_10km_", period, ".csv"))
 
 ####################### 计算反向遗传偏移 ReverseOffset  ######################## 
-# 反向遗传偏移计算
+# 定义时期列表
+periods <- c("ssp245_2041-2060", "ssp245_2061-2080", "ssp245_2081-2100",
+             "ssp585_2041-2060", "ssp585_2061-2080", "ssp585_2081-2100")
+period <- "ssp245_2061-2080"
 # 读取未来气候数据
-FutureEnvData <- read.csv("extracted_future_data/future_climate_ssp245_2061-2080_O.fragrans.csv")
+FutureEnvData <- read.csv(paste0("extracted_future_data_2.5m/future_climate_", period, "_O.fragrans.csv"))
 dim(FutureEnvData)
 n <- sum(is.na(FutureEnvData))
 n
@@ -568,7 +575,7 @@ popDatGF <- data.frame(All_Current_XY_Envs[, c("lon", "lat")], predict(gf.mod, A
 ###  popDatGF <- split(popDatGF, seq(nrow(popDatGF)))   # 注意这里反向遗传偏移计算 不需要split
 dim(popDatGF)
 
-cl <- makeCluster(60) 
+cl <- makeCluster(18) 
 registerDoParallel(cl) 
 reverseOffsetGF <- foreach(i=1:nrow(FutureEnvDataGF), .packages=c("fields", "gdm", "geosphere")) %dopar%{
   print(i)
@@ -590,7 +597,8 @@ reverseOffsetGF <- foreach(i=1:nrow(FutureEnvDataGF), .packages=c("fields", "gdm
 
 stopCluster(cl) # 停止并行集群
 reverseOffsetGF <- do.call(rbind, reverseOffsetGF) # 合并结果
-write.csv(reverseOffsetGF, paste0("./future_GF_ssp245_2061-2080_ReverseOffsetGF.csv"), row.names=FALSE) # 保存结果为CSV文件
+write.csv(reverseOffsetGF, row.names = FALSE, 
+          paste0(Reverse_GO_dir, "/Reverse_Genetic_Offset_2.5m_", period, ".csv"))
 
 
 # 结果数据框包含的列：
@@ -600,3 +608,4 @@ write.csv(reverseOffsetGF, paste0("./future_GF_ssp245_2061-2080_ReverseOffsetGF.
 # predDist: 到逆向偏移地点的距离
 # bearing: 到逆向偏移地点的方位角
 # x2/y2: 逆向偏移地点的坐标
+###########################      THE END     ###############################
