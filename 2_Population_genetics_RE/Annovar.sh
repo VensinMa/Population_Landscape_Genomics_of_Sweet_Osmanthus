@@ -42,7 +42,7 @@ convert2annovar.pl -format vcf4 -allsample -withfreq \
   ### NOTICE: Finished writing allele frequencies based on 2221832530 SNP genotypes (1640866550 transitions and 580965980 transversions) and 0 indels/substitutions for 194 samples
 
 ## 进行变异注释 (如果需要所有信息，添加-separate) -separate 将每种类型的变异分开注释到不同的文件中
-annotate_variation.pl -geneanno --neargene 2000 -buildver  LYG.hic -dbtype refGene -outfile LYG.hic.snp.annovar -exonsort 194samples_filtered.annovar.input  ./result
+annotate_variation.pl -geneanno --neargene 2000 -buildver  LYG.hic -dbtype refGene -outfile LYG.hic.snp.annovar -exonsort 194samples_filtered.annovar.input  ./
   ### NOTICE: Output files are written to LYG.hic.snp.annovar.variant_function, LYG.hic.snp.annovar.exonic_variant_function
   ### NOTICE: Reading gene annotation from ./LYG.hic_refGene.txt ... Done with 56392 transcripts (including 0 without coding sequence annotation) for 41252 unique genes
   ### NOTICE: Processing next batch with 5000000 unique variants in 5000000 input lines
@@ -66,12 +66,6 @@ annotate_variation.pl -geneanno --neargene 2000 -buildver  LYG.hic -dbtype refGe
 ####################################   统计每种类型（突变位置）SNP的数量  ###############################################
 # cat LYG.hic.snp.annovar.variant_function | cut -f 1 | sed 's/;/\n/g' | sort | uniq -c
 cat LYG.hic.snp.annovar.variant_function | cut -f 1 | sort | uniq -c
-1253953 downstream
- 592470 exonic
-7548615 intergenic
-1906150 intronic
-   3022 splicing
-1398247 upstream
 
  910824 downstream
  533562 exonic
@@ -87,11 +81,6 @@ cat LYG.hic.snp.annovar.variant_function | cut -f 1 | sort | uniq -c
 
 #######################################   统计外显子区域不同突变类型SNP的数量  #############################################
 cat LYG.hic.snp.annovar.exonic_variant_function | awk '{print $2}' | sort | uniq -c
- 322622 nonsynonymous
-   6955 stopgain
-    769 stoploss
- 261796 synonymous
-    328 unknown
 
  290892 nonsynonymous
    6097 stopgain
