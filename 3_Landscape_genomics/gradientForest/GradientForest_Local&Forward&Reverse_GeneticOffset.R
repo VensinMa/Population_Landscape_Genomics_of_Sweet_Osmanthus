@@ -289,7 +289,7 @@ map_data$Color <- rgb(r, g, b, max = 255)  # 将颜色信息加入数据框
 pdf(file = paste0(picture_dir, "/PCplot_MAP.pdf"), width = 7.5, height = 5.5)
 ggplot(map_data, aes(x = Longitude, y = Latitude)) +
   # 绘制点图
-  geom_point(aes(color = Color), size = 0.0001) +  # size 控制点的大小
+  geom_point(aes(color = Color), shape = 17,size = 0.2) +  # size 控制点的大小
   scale_color_identity() +  # 直接使用 RGB 颜色
   coord_fixed(ratio = 1) +  # 确保经纬度比例一致
   scale_y_continuous(limits = c(19, 35)) +  # 设置 Y 轴范围，
@@ -482,11 +482,11 @@ forwardOffsetGF <- do.call(rbind, forwardOffsetGF)
 write.csv(forwardOffsetGF, file = paste0(Forward_GO_dir, "/Forward_Genetic_Offset_2.5m_", period, ".csv"), row.names = FALSE)
 
 
-############# 计算正向遗传偏移 ForwardOffset  限制距离 50KM ################ ##
+############# 计算正向遗传偏移 ForwardOffset  限制距离 10 20 50 100 200 500 1000KM ################ ##
 # 定义时期列表
 periods <- c("ssp245_2041-2060", "ssp245_2061-2080", "ssp245_2081-2100",
              "ssp585_2041-2060", "ssp585_2061-2080", "ssp585_2081-2100")
-period <- "ssp245_2041-2060"
+period <- "ssp245_2081-2100"
 # 读取未来气候数据
 FutureEnvData <- read.csv(paste0("extracted_future_data_2.5m/future_climate_", period, "_O.fragrans.csv"))
 dim(FutureEnvData)
@@ -524,7 +524,7 @@ forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","g
   combinedDatGF["gfOffset"] <- c(rdist(onePopGF[,PredictEnvs], FutureEnvDataGF[,PredictEnvs]))
   coordGF <- onePopGF[,c("lon","lat")]
   combinedDatGF['dists']=distGeo(p1=coordGF, p2=combinedDatGF[,1:2])
-  combinedDatGF<-combinedDatGF[combinedDatGF['dists']<10000,]
+  combinedDatGF<-combinedDatGF[combinedDatGF['dists']<20000,]
   minCoordsGF <- combinedDatGF[which(combinedDatGF$gfOffset == min(combinedDatGF$gfOffset)),]
   minCoordsGF["dists"] <- distGeo(p1=coordGF, p2=minCoordsGF[,1:2])
   minCoordsGF <- minCoordsGF[which(minCoordsGF$dist == min(minCoordsGF$dists)),]
@@ -539,13 +539,13 @@ forwardOffsetGF <- foreach(i = 1:length(popDatGF), .packages=c("fields","gdm","g
 stopCluster(cl)
 forwardOffsetGF <- do.call(rbind, forwardOffsetGF)
 write.csv(forwardOffsetGF, row.names = FALSE, 
-          paste0(Forward_GO_dir, "/Forward_Genetic_Offset_2.5m_10km_", period, ".csv"))
+          paste0(Forward_GO_dir, "/Forward_Genetic_Offset_2.5m_20km_", period, ".csv"))
 
 ####################### 计算反向遗传偏移 ReverseOffset  ######################## 
 # 定义时期列表
 periods <- c("ssp245_2041-2060", "ssp245_2061-2080", "ssp245_2081-2100",
              "ssp585_2041-2060", "ssp585_2061-2080", "ssp585_2081-2100")
-period <- "ssp245_2061-2080"
+period <- "ssp585_2081-2100"
 # 读取未来气候数据
 FutureEnvData <- read.csv(paste0("extracted_future_data_2.5m/future_climate_", period, "_O.fragrans.csv"))
 dim(FutureEnvData)
