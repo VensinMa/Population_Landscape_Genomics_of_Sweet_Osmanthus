@@ -79,6 +79,15 @@ cat LYG.hic.snp.annovar.variant_function | cut -f 1 | sort | uniq -c
   74075 UTR5
     670 UTR5;UTR3
 
+    781 downstream
+    970 exonic
+   3793 intergenic
+   3120 intronic
+      2 splicing
+    625 upstream
+     72 upstream;downstream
+    193 UTR3
+    118 UTR5
 #######################################   统计外显子区域不同突变类型SNP的数量  #############################################
 cat LYG.hic.snp.annovar.exonic_variant_function | awk '{print $2}' | sort | uniq -c
 
