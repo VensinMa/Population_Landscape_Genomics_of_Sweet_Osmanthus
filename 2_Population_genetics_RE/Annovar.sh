@@ -95,4 +95,11 @@ cat LYG.hic.snp.annovar.exonic_variant_function | awk '{print $2}' | sort | uniq
    6097 stopgain
     806 stoploss
  235923 synonymous
+
+
+  290892 nonsynonymous
+   6097 stopgain
+    806 stoploss
+ 235923 synonymous
+
  
