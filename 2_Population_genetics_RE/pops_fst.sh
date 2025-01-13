@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# 输入文件路径
+VCF_FILE="/root/workspace/186sample/186_filtered.LD.pruned.noContig.recode.vcf"
+POP_INFO_FILE="/root/workspace/186sample/186sample.pop"
+OUTPUT_MATRIX="fst_matrix.csv"
+
 # 检查是否安装必要的工具
 tools=(vcftools R awk)
 for tool in "${tools[@]}"; do
@@ -8,11 +13,6 @@ for tool in "${tools[@]}"; do
     exit 1
   fi
 done
-
-# 输入文件路径
-VCF_FILE="/root/workspace/186sample/186_filtered.LD.pruned.noContig.recode.vcf"
-POP_INFO_FILE="/root/workspace/186sample/186sample.pop"
-OUTPUT_MATRIX="fst_matrix.csv"
 
 # 创建必要的文件夹
 mkdir -p pop_files log_files
