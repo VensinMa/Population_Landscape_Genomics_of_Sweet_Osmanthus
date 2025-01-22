@@ -5,7 +5,7 @@ library(LEA)
 library(data.table)
 library(parallel)
 library(sp) # 用于空间点数据处理
-library(caret)
+library(caret) # install.packages("caret", dependencies = c("Depends", "Suggests"))
 library(lavaan)
 library(ggpubr)
 library(adespatial)
@@ -13,7 +13,8 @@ library(adespatial)
 
 ###########################  设置工作目录  ####################################
 getwd()
-setwd("C:/Rstudio/gc/GEA")
+setwd("/public1/guop/mawx/gc/R/GEA")
+getwd()
 #可直接加载已插补好的基因型数据  
 # load("gen.imp.RData")
 
