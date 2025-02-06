@@ -11,7 +11,14 @@ sed '1d; s/NA/9/g' /home/vensin/gc/311_filtered.maf0.1.miss0.99.plink.recodeA.ra
 awk '{ $1=$2=$3=$4=$5=$6=""; print substr($0, index($0,$7)) }' > /home/vensin/gc/311_filtered.maf0.1.miss0.99.plink.recodeA.lfmm
 awk '{print "Chr"$1":"$4}' 311_filtered.maf0.1.miss0.99.plink.map > 311_filtered.maf0.1.miss0.99.plink.ID
 
-
+## 提取核心适应性位点
+sed 's/:/ /g' /home/vensin/gc/lfmm_rda_intersection.csv > /home/vensin/gc/1002.coreSNP.id
+vcftools --vcf /home/vensin/gc/311_filtered.maf0.1.miss0.99_noscaffold.recode.vcf \
+    --positions 1002.coreSNP.id \
+    --recode --recode-INFO-all \
+    --out 311_filtered.maf0.1.miss0.99_noscaffold_1002coreSNP
+##  After filtering, kept 1002 out of a possible 6071370 Sites
+##  Run Time = 79.00 seconds
 
 
 
