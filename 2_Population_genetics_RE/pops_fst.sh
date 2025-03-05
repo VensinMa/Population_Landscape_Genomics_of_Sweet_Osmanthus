@@ -25,7 +25,7 @@ for (( i=0; i<${#pop_files[@]}; i++ )); do
 done
 
 ## 第二步：计算两两群体间FST
-# 一：定义计算 FST 的函数
+# 2.1：定义计算 FST 的函数
 calculate_fst() {
     pair=$1
     IFS=":" read -r group1 group2 <<< "$pair"
@@ -35,10 +35,10 @@ calculate_fst() {
     output_file="log_files/${output_base}"
     echo "Calculating FST for $base_name1 and $base_name2..."
 
-    # 二：计算 FST
+    # 2.2：计算 FST
     vcftools --vcf "$VCF_FILE" --weir-fst-pop "$group1" --weir-fst-pop "$group2" --fst-window-size 100000 --fst-window-step 10000 --out "$output_file" >& "${output_file}.log"
 
-    # 三：从日志文件提取 FST 估计值
+    # 2.3：从日志文件提取 FST
     MEAN_FST=$(grep "Weir and Cockerham mean Fst estimate" "${output_file}.log" | awk '{print $NF}')
     WEIGHTED_FST=$(grep "Weir and Cockerham weighted Fst estimate" "${output_file}.log" | awk '{print $NF}')
 
