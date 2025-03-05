@@ -42,7 +42,7 @@ calculate_fst() {
     MEAN_FST=$(grep "Weir and Cockerham mean Fst estimate" "${output_file}.log" | awk '{print $NF}')
     WEIGHTED_FST=$(grep "Weir and Cockerham weighted Fst estimate" "${output_file}.log" | awk '{print $NF}')
 
-    # 输出结果到 CSV 文件
+    # 2.4：输出结果到 CSV 文件
     echo "${base_name1},${base_name2},${MEAN_FST},${WEIGHTED_FST}" >> fst_results.csv
 }
 
