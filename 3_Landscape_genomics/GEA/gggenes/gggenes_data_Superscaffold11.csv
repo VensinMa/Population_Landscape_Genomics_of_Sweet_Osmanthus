@@ -1,0 +1,7 @@
+﻿molecule,gene,start,end,strand,orientation
+Superscaffold11,Exon1,5330407,5331033,forward,1
+Superscaffold11,Exon2,5331145,5332564,forward,1
+Superscaffold11,Exon3,5338373,5338481,forward,1
+Superscaffold11,Exon4,5338575,5338604,forward,1
+Superscaffold11,Exon5,5341220,5341645,forward,1
+Superscaffold11,SNP,5332072,5332072,forward,1
