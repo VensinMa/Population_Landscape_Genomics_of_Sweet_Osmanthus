@@ -12,6 +12,7 @@ softwares=(
     fastqc bowtie2 multiqc fastp bwa samtools picard bedtools snpeff bcftools gatk
     vcftools blast mafft seqtk diamond hmmer meme iqtree phylip fasttree treebest
     trimal seqkit emboss gffread plink faststructure muscle PopLDdecay xpclr aspera
+    parallel
 )
 
 # 获取 Conda 基础路径
