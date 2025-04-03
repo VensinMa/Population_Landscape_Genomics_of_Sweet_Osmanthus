@@ -1,13 +1,13 @@
-cd  /root/workspace/186sample/PopLDdecay
+cd  /home/vensin/workspace/PopLDdecay_dist300
 
 ### Step1: 计算 LD decay
-PopLDdecay  -InVCF /home/vensin/workspace/PopLDdecay/194_vcftools.recode.vcf -MaxDist 300 -SubPop East.pop -OutStat East.PopLDdecay
-PopLDdecay  -InVCF /home/vensin/workspace/PopLDdecay/194_vcftools.recode.vcf -MaxDist 300 -SubPop Central.pop -OutStat Central.PopLDdecay
-PopLDdecay  -InVCF /home/vensin/workspace/PopLDdecay/194_vcftools.recode.vcf -MaxDist 300 -SubPop West-GZ.pop -OutStat West-GZ.PopLDdecay
-PopLDdecay  -InVCF /home/vensin/workspace/PopLDdecay/194_vcftools.recode.vcf -MaxDist 300 -SubPop West-YN.pop -OutStat West-YN.PopLDdecay
+PopLDdecay  -InVCF /home/vensin/workspace/PopLDdecay/194_vcftools.recode.vcf -MaxDist 300 -SubPop /home/vensin/workspace/PopLDdecay/East.pop -OutStat East.PopLDdecay
+PopLDdecay  -InVCF /home/vensin/workspace/PopLDdecay/194_vcftools.recode.vcf -MaxDist 300 -SubPop /home/vensin/workspace/PopLDdecay/Central.pop -OutStat Central.PopLDdecay
+PopLDdecay  -InVCF /home/vensin/workspace/PopLDdecay/194_vcftools.recode.vcf -MaxDist 300 -SubPop /home/vensin/workspace/PopLDdecay/West-GZ.pop -OutStat West-GZ.PopLDdecay
+PopLDdecay  -InVCF /home/vensin/workspace/PopLDdecay/194_vcftools.recode.vcf -MaxDist 300 -SubPop /home/vensin/workspace/PopLDdecay/West-YN.pop -OutStat West-YN.PopLDdecay
 
-PopLDdecay  -InVCF /home/vensin/workspace/PopLDdecay/194_vcftools.recode.vcf -MaxDist 300 -SubPop Central-East.pop -OutStat Central-East.PopLDdecay
-PopLDdecay  -InVCF /home/vensin/workspace/PopLDdecay/194_vcftools.recode.vcf -MaxDist 300 -SubPop West.pop -OutStat West.PopLDdecay
+PopLDdecay  -InVCF /home/vensin/workspace/PopLDdecay/194_vcftools.recode.vcf -MaxDist 300 -SubPop /home/vensin/workspace/PopLDdecay/Central-East.pop -OutStat Central-East.PopLDdecay
+PopLDdecay  -InVCF /home/vensin/workspace/PopLDdecay/194_vcftools.recode.vcf -MaxDist 300 -SubPop /home/vensin/workspace/PopLDdecay/West.pop -OutStat West.PopLDdecay
 
 ### Step2: 绘图
 ## 单个谱系绘图
