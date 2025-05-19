@@ -34,10 +34,15 @@ def main():
           仅调整方位角:
             python bearing_distance_adjust.py input.csv output_bearing.csv --bearing
             
-          自动批量处理(Windows PowerShell):
-            Get-ChildItem *.csv | Foreach-Object {
+          自动批量处理(Windows PowerShell):方法1
+            Get-ChildItem forwardOffset*.csv | Foreach-Object {
               python bearing_distance_adjust.py $_.FullName ($_.BaseName + "_processed.csv") --distance --bearing
             }
+
+          自动批量处理(Windows PowerShell):方法2
+            # 在 PowerShell 中直接运行以下命令
+            cmd /c "for %f in (""path\forwardOffset*.csv"") do python bearing_distance_adjust.py ""%f"" ""%~nf_adjusted.csv"" --distance --bearing "
+
         ''')
     )
     
