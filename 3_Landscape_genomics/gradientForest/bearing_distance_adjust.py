@@ -41,7 +41,7 @@ def main():
             
           自动批量处理(Windows PowerShell):方法2
           
-            Get-ChildItem "F:\offset数据\distance\csv\forwardOffset*.csv" | ForEach-Object {
+            Get-ChildItem "path\forwardOffset*.csv" | ForEach-Object {
             # 生成完整输出路径（与原文件同目录）
             $outputPath = Join-Path $_.Directory.FullName ($_.BaseName + "_adjusted.csv")
             # 执行处理命令
