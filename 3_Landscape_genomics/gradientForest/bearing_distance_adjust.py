@@ -26,17 +26,17 @@ def main():
         epilog=textwrap.dedent('''\
         使用示例:
           基本用法:
-            python geo_processor.py input.csv output.csv --distance --bearing
+            python bearing_distance_adjust.py input.csv output.csv --distance --bearing
             
           仅转换距离:
-            python geo_processor.py input.csv output_km.csv --distance
+            python bearing_distance_adjust.py input.csv output_km.csv --distance
             
           仅调整方位角:
-            python geo_processor.py input.csv output_bearing.csv --bearing
+            python bearing_distance_adjust.py input.csv output_bearing.csv --bearing
             
           自动批量处理(Windows PowerShell):
             Get-ChildItem *.csv | Foreach-Object {
-              python geo_processor.py $_.FullName ($_.BaseName + "_processed.csv") --distance --bearing
+              python bearing_distance_adjust.py $_.FullName ($_.BaseName + "_processed.csv") --distance --bearing
             }
         ''')
     )
