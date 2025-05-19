@@ -13,10 +13,10 @@ def process_bearing(df):
     return df
 
 def process_distance(df):
-    """处理距离单位转换（米→千米）"""
+    """处理距离单位转换（米→千米）并保留原始列"""
     if 'predDist' not in df.columns:
         raise ValueError("CSV文件中缺少必需的predDist列")
-    df['predDist'] = df['predDist'] / 1000
+    df['predDist_adjusted'] = df['predDist'] / 1000  # 新增调整列
     return df
 
 def main():
@@ -35,14 +35,18 @@ def main():
             python bearing_distance_adjust.py input.csv output_bearing.csv --bearing
             
           自动批量处理(Windows PowerShell):方法1
-            Get-ChildItem forwardOffset*.csv | Foreach-Object {
-              python bearing_distance_adjust.py $_.FullName ($_.BaseName + "_processed.csv") --distance --bearing
-            }
-
-          自动批量处理(Windows PowerShell):方法2
             # 在 PowerShell 中直接运行以下命令
             cmd /c "for %f in (""path\forwardOffset*.csv"") do python bearing_distance_adjust.py ""%f"" ""%~nf_adjusted.csv"" --distance --bearing "
-
+            
+          自动批量处理(Windows PowerShell):方法2
+            Get-ChildItem "F:\offset数据\distance\csv\forwardOffset*.csv" | ForEach-Object {
+            # 生成完整输出路径（与原文件同目录）
+            $outputPath = Join-Path $_.Directory.FullName ($_.BaseName + "_adjusted.csv")
+            
+            # 执行处理命令
+            python bearing_distance_adjust.py $_.FullName $outputPath --distance --bearing
+            Write-Host "已处理: $($_.Name) → $($outputPath)"
+            }
         ''')
     )
     
@@ -61,51 +65,47 @@ def main():
     parser.add_argument(
         '--distance',
         action='store_true',
-        help='启用距离单位转换（米→千米）'
+        help='启用距离单位转换（新增predDist_adjusted列）'
     )
     
     parser.add_argument(
         '--bearing',
         action='store_true',
-        help='启用方位角调整（[-180,180]→[0,360]）'
+        help='启用方位角调整（新增bearing_adjusted列）'
     )
 
     args = parser.parse_args()
 
     try:
-        # 参数验证
         if not args.distance and not args.bearing:
             raise ValueError("必须至少指定一个处理选项（--distance 或 --bearing）")
 
-        # 读取数据
         df = pd.read_csv(args.input_file)
-        original_rows = len(df)
-        print(f"成功读取文件: {args.input_file} ({original_rows} 条记录)")
+        print(f"成功读取: {args.input_file} ({len(df)} 条记录)")
 
-        # 执行处理流程
-        processed_columns = []
+        processed_ops = []
         if args.distance:
             df = process_distance(df)
-            processed_columns.append('predDist (米→千米)')
+            processed_ops.append('predDist_adjusted (米→千米)')
             
         if args.bearing:
             df = process_bearing(df)
-            processed_columns.append('bearing (方位角调整)')
+            processed_ops.append('bearing_adjusted (方位角调整)')
 
-        # 保存结果
         df.to_csv(args.output_file, index=False)
-        print(f"处理完成，已保存到: {args.output_file}")
-        print(f"执行操作: {', '.join(processed_columns)}")
-        print(f"输出文件列: {', '.join(df.columns)}")
+        print(f"\n处理完成: {args.output_file}")
+        print("执行操作: " + ", ".join(processed_ops))
+        print("当前列字段:")
+        print(df.columns.tolist())
 
     except FileNotFoundError:
-        print(f"错误：输入文件未找到 - {args.input_file}")
+        print(f"错误：文件未找到 - {args.input_file}")
         sys.exit(1)
     except pd.errors.EmptyDataError:
-        print("错误：输入文件为空或格式不正确")
+        print("错误：空文件或无效格式")
         sys.exit(1)
     except Exception as e:
-        print(f"处理过程中发生错误: {str(e)}")
+        print(f"运行错误: {str(e)}")
         sys.exit(1)
 
 if __name__ == "__main__":
