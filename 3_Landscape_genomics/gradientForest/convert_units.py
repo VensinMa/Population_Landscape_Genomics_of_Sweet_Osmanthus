@@ -15,9 +15,7 @@ def main():
             python convert_units.py input.csv output.csv
             
           自动批量处理(Windows):
-            for %f in (*_1m_*.csv) do (
-              python convert_units.py "%f" "%~nf_km.csv"
-            )
+            cmd /c "for %f in (""path\forwardOffset*.csv"") do python convert_units.py ""%f"" ""%~nf_km.csv"""
             
           处理含空格的文件:
             python convert_units.py "my input.csv" "my output.csv"
