@@ -35,18 +35,20 @@ def main():
             python bearing_distance_adjust.py input.csv output_bearing.csv --bearing
             
           自动批量处理(Windows PowerShell):方法1
+          
             # 在 PowerShell 中直接运行以下命令
             cmd /c "for %f in (""path\forwardOffset*.csv"") do python bearing_distance_adjust.py ""%f"" ""%~nf_adjusted.csv"" --distance --bearing "
             
           自动批量处理(Windows PowerShell):方法2
+          
             Get-ChildItem "F:\offset数据\distance\csv\forwardOffset*.csv" | ForEach-Object {
             # 生成完整输出路径（与原文件同目录）
             $outputPath = Join-Path $_.Directory.FullName ($_.BaseName + "_adjusted.csv")
-            
             # 执行处理命令
             python bearing_distance_adjust.py $_.FullName $outputPath --distance --bearing
             Write-Host "已处理: $($_.Name) → $($outputPath)"
             }
+            
         ''')
     )
     
